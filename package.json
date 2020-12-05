@@ -1,6 +1,6 @@
 {
   "name": "waelio-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Helper Utils often used in all waelio websites",
   "main": "index.js",
   "scripts": {

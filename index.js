@@ -89,6 +89,6 @@ export async function reParseString (payload) {
  * @param  {number} len   9 default
  * @return {string}
  */
-export async unction generateId (start = 2, len = 9) { 
+export async function generateId (start = 2, len = 9) { 
   return Math.random().toString(36).substr(start, len)
 }

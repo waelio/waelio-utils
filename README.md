@@ -37,8 +37,11 @@ const Result = JSONToQueryString( objectParams )
 ````javascript 
   'name=John&last=smith'
 ````
+# 
+[Back to TOP](#Index)
 #
-## QueryStringToJSON
+
+# QueryStringToJSON
 ### Function that converts a URL Query String to JSON
 #### Param `payload` Type `@param {string}` as String 
 #### Param `toObject` Type `@param {boolean}` as Boolean
@@ -54,11 +57,17 @@ const Result = QueryStringToJSON( query )
 ````javascript 
 { first: 'John', last: 'Smith' }
 ````
+# 
+[Back to TOP](#Index)
 #
+
 ## resetString
 #### @param `{string}` QueryString as `payload` 
 ### _Returns_ `decodeURIComponent( encodeURIComponent( payload ))`
+# 
+[Back to TOP](#Index)
 #
+
 ## snakeToCamel
 ### Function that converts snake_case or snake-case to camelCase "snakeCase"
 #### Example IN: `snake_case`
@@ -77,7 +86,10 @@ const Result = snakeToCamel( payload )
 'northWestMeta'
 ````
 # 
-## Base64
+[Back to TOP](#Index)
+#
+
+# Base64
 ### Converts a string to `Base64`
 ### Example: In your `.js` or `.vue` file:
 
@@ -90,12 +102,18 @@ const Result = Base64( payload )
 ````javascript 
 'bm9ydGgtd2VzdF9tZXRh'
 ````
+# 
+[Back to TOP](#Index)
 #
-## reParseString
+
+# reParseString
 ### Simple object Standardization
 ### _Returns_ `JSON.parse(JSON.stringify(payload))`
+# 
+[Back to TOP](#Index)
 #
-## generateId
+
+# generateId
 ### Generate random string/id
 #### @param  `{number}` start `2` **_OPTIONAL_**
 #### @param  `{number}` len   `9` **_OPTIONAL_**
@@ -105,8 +123,12 @@ const Result = Base64( payload )
 '3uqi11wg9'
 ````
 
+
+# 
+[Back to TOP](#Index)
 #
-## meta
+
+# meta
 ### Perfect when Using [Quasar Framework](https://quasar.dev/quasar-plugins/meta)
 
 ### Example:
@@ -141,12 +163,14 @@ return {
   }
 </script>
 ````
+# 
+[Back to TOP](#Index)
 #
-## notifyMe
+
+# notifyMe
 #### Send PWA Notifications to Site
 #### Works only in Browser
 #### Required `Message @param {string}` to send
+# 
+[Back to TOP](#Index)
 #
-
-
-[Goto TOP](#Index)

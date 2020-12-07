@@ -5,13 +5,12 @@
 1. [JSONToQueryString](#JSONToQueryString)
 2. [QueryStringToJSON](#QueryStringToJSON)
 3. [resetString](#resetString)
-4. [snakeToCame](#snakeToCamel)
-5. [camelToSnake<span style="color:green;margin-left:5px; font-size: larger; font-style:italic">New</span>](#camelToSnake)
-6. [calculateClockDrift](#calculateClockDrift)
-7. [Base64](#Base64)
-8. [generateId](#generateId)
-9. [notifyMe](#notifyMe)
-10. [meta](#meta)
+4. [snakeToCamel](#snakeToCamel)
+5. [calculateClockDrift](#calculateClockDrift)
+6. [Base64](#Base64)
+7. [generateId](#generateId)
+8. [notifyMe](#notifyMe)
+9. [meta](#meta)
 
 # Installation
 Using npm:
@@ -85,30 +84,6 @@ const Result = snakeToCamel( payload )
 ## Result:  
 ````javascript 
 'northWestMeta'
-````
-# 
-[Back to TOP](#Index)
-## camelToSnake
-### Function that converts camelCase to snake_case or snake-case "snake-case"
-#### Example IN: `snakeCase`
-#### Example Out: `snake-case`
-#### @name  camelToSnake
-#### @param {string} payload
-#### @param {boolean} hyphenated controls the delimiter: true = "-" / false = "_"
-#### _Returns_ `{string}`
-### Example: In your `.js` or `.vue` file:
-```javascript
-import { camelToSnake } from 'waelio-utils'
-const payload = 'northWestMeta'
-const Result = camelToSnake( payload )
-````
-## Result 1- `camelToSnake( payload )`  
-````javascript 
-'north_west_meta'
-````
-## Result 2- `camelToSnake( payload, true )`  
-````javascript 
-'north-west-meta'
 ````
 # 
 [Back to TOP](#Index)

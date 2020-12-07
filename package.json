@@ -7,9 +7,5 @@
     "run": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Wael Wahbeh <wahbehw@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "eslint": "^7.15.0",
-    "eslint-plugin-vue": "^7.2.0"
-  }
+  "license": "MIT"
 }

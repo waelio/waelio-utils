@@ -56,6 +56,26 @@ export function resetString (payload) {
 export function snakeToCamel (payload) {
   return (typeof payload !== 'string') ? payload : payload.replace(/([-_]\w)/g, g => g[1].toUpperCase())
 }
+/**
+ * Function that converts camelCase to snake_case or snake-case "snake-case"
+ * Example IN: snakeCase
+ * Example Out: snake-case
+ * Example Out: snake_case
+ * @name  camelToSnake
+ * @param {string} payload 
+ * @param {boolean} hyphenated controls the delimiter: true = "-" / false = "_"
+ * @returns {string}
+ */
+export function camelToSnake (payload, hyphenated = false ) {
+  return payload && payload[0].toLowerCase() + payload.slice(1, payload.length).replace(/[A-Z]/g, letter => `${hyphenated ? `-` : `_` }${letter.toLowerCase()}`);
+}
+
+export function isArray (payload) {
+  return Array.isArray(payload);
+}
+export function isObject (payload) {
+  return payload === Object(payload) && !isArray(payload) && typeof o !== 'function';
+}
 
 /**
  * Calculate Clock Drift used to calculate tile remaining before token expiration
@@ -68,7 +88,6 @@ export function calculateClockDrift (iatAccessToken, iatIdToken) {
   const iat = Math.min(iatAccessToken, iatIdToken)
   return now - iat
 }
-
 
 /**
  * Converts string to a Base64

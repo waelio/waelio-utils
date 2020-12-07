@@ -2,15 +2,15 @@
 ### The [WaelioUtils](https://github.com/waelio/waelio-utils)  exported as a Javascript modules.
 #### These are helper functions often used in all websites.
 # Index
-1. <a href="#JSONToQueryString"> JSONToQueryString</a>
-2. <a href="#QueryStringToJSON"> QueryStringToJSON</a>
-3. <a href="#resetString"> resetString</a>
-4. <a href="#snakeToCamel"> snakeToCame</a>
-5. <a href="#camelToSnake"> camelToSnake</a>
-6. <a href="#calculateClockDrift"> calculateClockDrift</a>
-7. <a href="#Base64"> Base64</a>
-8. <a href="#generateId"> generateId</a>
-9. <a href="#notifyMe"> notifyMe</a>
+1. <a href="#jsontoquerystring"> JSONToQueryString</a>
+2. <a href="#querystringtojson"> QueryStringToJSON</a>
+3. <a href="#resetstring"> resetString</a>
+4. <a href="#snaketocamel"> snakeToCame</a>
+5. <a href="#cameltosnake"> camelToSnake</a>
+6. <a href="#calculateclockdrift"> calculateClockDrift</a>
+7. <a href="#base64"> Base64</a>
+8. <a href="#generateid"> generateId</a>
+9. <a href="#notifyme"> notifyMe</a>
 10. <a href="#meta"> meta</a>
 
 # Installation
@@ -39,7 +39,7 @@ const Result = JSONToQueryString( objectParams )
   'name=John&last=smith'
 ````
 # 
-[Back to TOP](#Index)
+[Back to TOP](#index)
 #
 
 # QueryStringToJSON
@@ -59,14 +59,14 @@ const Result = QueryStringToJSON( query )
 { first: 'John', last: 'Smith' }
 ````
 # 
-[Back to TOP](#Index)
+[Back to TOP](#index)
 #
 
 # resetString
 #### @param `{string}` QueryString as `payload` 
 ### _Returns_ `decodeURIComponent( encodeURIComponent( payload ))`
 # 
-[Back to TOP](#Index)
+[Back to TOP](#index)
 #
 
 # snakeToCamel
@@ -88,7 +88,7 @@ const Result = snakeToCamel( payload )
 ````
 
 #
-[Back to TOP](#Index)
+[Back to TOP](#index)
 #
 # camelToSnake
 ### Function that converts camelCase to snake_case or snake-case "snake-case"
@@ -113,7 +113,7 @@ const Result = camelToSnake( payload )
 'north-west-meta'
 ````
 # 
-[Back to TOP](#Index)
+[Back to TOP](#index)
 #
 # Base64
 ### Converts a string to `Base64`
@@ -129,14 +129,14 @@ const Result = Base64( payload )
 'bm9ydGgtd2VzdF9tZXRh'
 ````
 # 
-[Back to TOP](#Index)
+[Back to TOP](#index)
 #
 
 # reParseString
 ### Simple object Standardization
 ### _Returns_ `JSON.parse(JSON.stringify(payload))`
 # 
-[Back to TOP](#Index)
+[Back to TOP](#index)
 #
 
 # generateId
@@ -151,7 +151,7 @@ const Result = Base64( payload )
 
 
 # 
-[Back to TOP](#Index)
+[Back to TOP](#index)
 #
 
 # meta
@@ -190,7 +190,7 @@ return {
 </script>
 ````
 # 
-[Back to TOP](#Index)
+[Back to TOP](#index)
 #
 
 # notifyMe
@@ -198,5 +198,5 @@ return {
 #### Works only in Browser
 #### Required `Message @param {string}` to send
 # 
-[Back to TOP](#Index)
+[Back to TOP](#index)
 #

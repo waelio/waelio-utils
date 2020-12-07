@@ -2,16 +2,16 @@
 ### The [WaelioUtils](https://github.com/waelio/waelio-utils)  exported as a Javascript modules.
 #### These are helper functions often used in all websites.
 # Index
-1. [JSONToQueryString](#JSONToQueryString)
-2. [QueryStringToJSON](#QueryStringToJSON)
-3. [resetString](#resetString)
-4. [snakeToCame](#snakeToCamel)
-5. [camelToSnake<span style="color:green;margin-left:5px; font-size: larger; font-style:italic">New</span>](#camelToSnake)
-6. [calculateClockDrift](#calculateClockDrift)
-7. [Base64](#Base64)
-8. [generateId](#generateId)
-9. [notifyMe](#notifyMe)
-10. [meta](#meta)
+1. <a href="#JSONToQueryString"> JSONToQueryString</a>
+2. <a href="#QueryStringToJSON"> QueryStringToJSON</a>
+3. <a href="#resetString"> resetString</a>
+4. <a href="#snakeToCamel"> snakeToCame</a>
+5. <a href="#camelToSnake"> camelToSnake</a>
+6. <a href="#calculateClockDrift"> calculateClockDrift</a>
+7. <a href="#Base64"> Base64</a>
+8. <a href="#generateId"> generateId</a>
+9. <a href="#notifyMe"> notifyMe</a>
+10. <a href="#meta"> meta</a>
 
 # Installation
 Using npm:

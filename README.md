@@ -1,7 +1,7 @@
 # Waelio Utilities
 ### The [WaelioUtils](https://github.com/waelio/waelio-utils)  exported as a Javascript modules.
 #### These are helper functions often used in all websites.
-## Index
+# Index
 1. [JSONToQueryString](#JSONToQueryString)
 2. [QueryStringToJSON](#QueryStringToJSON)
 3. [resetString](#resetString)
@@ -20,7 +20,7 @@ npm install --save waelio-utils
 ````
 
 #
-## JSONToQueryString
+# JSONToQueryString
 ### Function that converts a JSON to URL Query String
 #### Example IN: `{"first":"John", "last": "Smith"}`
 #### Example Out: `first=John&last=Smith`
@@ -62,14 +62,14 @@ const Result = QueryStringToJSON( query )
 [Back to TOP](#Index)
 #
 
-## resetString
+# resetString
 #### @param `{string}` QueryString as `payload` 
 ### _Returns_ `decodeURIComponent( encodeURIComponent( payload ))`
 # 
 [Back to TOP](#Index)
 #
 
-## snakeToCamel
+# snakeToCamel
 ### Function that converts snake_case or snake-case to camelCase "snakeCase"
 #### Example IN: `snake_case`
 #### Example Out: `snakeCase`
@@ -90,7 +90,7 @@ const Result = snakeToCamel( payload )
 #
 [Back to TOP](#Index)
 #
-## camelToSnake
+# camelToSnake
 ### Function that converts camelCase to snake_case or snake-case "snake-case"
 #### Example IN: `snakeCase`
 #### Example Out: `snake-case`

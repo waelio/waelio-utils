@@ -83,7 +83,7 @@ return decodeURIComponent(decodeURIComponent( encodeURIComponent( payload )))
 ````javascript
 import { resetString } from 'waelio-utils'
 const payload = 'https%3A%2F%2Fwaelio.com'
-const Result = snakeToCamel( payload )
+const Result = resetString( payload )
 
 Result === 'https://waelio.com'
 ````

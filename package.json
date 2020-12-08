@@ -1,7 +1,8 @@
 {
   "name": "waelio-utils",
   "version": "1.1.7",
-  "description": "Helper Utils often used in all waelio websites",
+  "description": "Helper Utils often used in websites",
+  "homepage": "https://github.com/waelio/waelio-utils#index",
   "keywords": [
     "utilities",
     "browser",
@@ -18,6 +19,13 @@
   },
   "author": "Wael Wahbeh <wahbehw@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type":"git",
+    "url":"https://github.com/waelio/waelio-utils.git"
+  },
+  "bugs": {
+    "url":"https://github.com/waelio/waelio-utils/issues"
+  },
   "devDependencies": {
     "eslint": "^7.15.0",
     "eslint-plugin-vue": "^7.2.0"

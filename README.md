@@ -1,11 +1,15 @@
 # Waelio Utilities
 ### The [WaelioUtils](https://github.com/waelio/waelio-utils)  exported as a Javascript modules.
-#### These are helper functions often used in all websites.
+#### This repo implements [Tree Shaking](https://developers.google.com/web/fundamentals/performance/optimizing-javascript/tree-shaking#what_is_tree_shaking) structure to reduce payload size
+#### Author Github: [Waelio](https://github.com/waelio)
+#### Personal Site: [waelio.com](https://waelio.com)
+#### Professional Site: [northwestmeta.com](https://northwestmeta.com)
+#
 # Index
-1. <a href="#jsontoquerystring"> JSONToQueryString</a>
-2. <a href="#querystringtojson"> QueryStringToJSON</a>
+1. <a href="#jsontoquerystring"> jsonToQueryString</a>
+2. <a href="#querystringtojson"> queryStringToJson</a>
 3. <a href="#resetstring"> resetString</a>
-4. <a href="#snaketocamel"> snakeToCame</a>
+4. <a href="#snaketocamel"> snakeToCamel</a>
 5. <a href="#cameltosnake"> camelToSnake</a>
 6. <a href="#calculateclockdrift"> calculateClockDrift</a>
 7. <a href="#base64"> Base64</a>
@@ -15,26 +19,33 @@
 
 # Installation
 Using npm:
-````
+````t
 npm install --save waelio-utils 
 ````
 
+Tree Shaking
+````javascript
+import { snakeToCamel, meta, notifyMe } from 'waelio-utils'
+// Or
+const  { snakeToCamel, meta, notifyMe } = require('waelio-utils')
+````
+
 #
-# JSONToQueryString
-### Function that converts a JSON to URL Query String
+# jsonToQueryString
+#### `Function` that converts a `JSON` to URL Query `String`
 #### Example IN: `{"first":"John", "last": "Smith"}`
 #### Example Out: `first=John&last=Smith`
 #### @param `{}` JSON payload
-### _Returns_ `String`
+#### _Returns_ `String`
 
-## Example: In your `.js` or `.vue` file:
+#### Example: In your `.js` or `.vue` file:
 
-```javascript
-import { JSONToQueryString } from 'waelio-utils'
-const objectParams = { first: 'John', last: 'Smith' }
-const Result = JSONToQueryString( objectParams )
+````javascript
+import { jsonToQueryString } from 'waelio-utils'
+const payload = { first: 'John', last: 'Smith' }
+const Result = jsonToQueryString( payload )
 ````
-## Result:
+#### Result:
 ````javascript 
   'name=John&last=smith'
 ````
@@ -42,19 +53,19 @@ const Result = JSONToQueryString( objectParams )
 [Back to TOP](#index)
 #
 
-# QueryStringToJSON
-### Function that converts a URL Query String to JSON
+# queryStringToJson
+#### Function that converts a URL Query String to JSON
 #### Param `payload` Type `@param {string}` as String 
 #### Param `toObject` Type `@param {boolean}` as Boolean
-output:  `JS Object` OR `JSON`
+#### Output:  `JS Object` OR `JSON`
 #### _Returns_ `JSON || Object`
-### Example: In your `.js` or `.vue` file:
+#### Example: In your `.js` or `.vue` file:
 ```javascript
-import { QueryStringToJSON } from 'waelio-utils'
+import { queryStringToJson } from 'waelio-utils'
 const query = name='John&last=smith'
-const Result = QueryStringToJSON( query )
+const Result = queryStringToJson( query )
 ````
-## Result:  
+#### Result:  
 ````javascript 
 { first: 'John', last: 'Smith' }
 ````
@@ -64,25 +75,36 @@ const Result = QueryStringToJSON( query )
 
 # resetString
 #### @param `{string}` QueryString as `payload` 
-### _Returns_ `decodeURIComponent( encodeURIComponent( payload ))`
+#### _Returns_ 
+````javascript
+return decodeURIComponent(decodeURIComponent( encodeURIComponent( payload )))
+````
+#### Example: In your `.js` or `.vue` file:
+````javascript
+import { resetString } from 'waelio-utils'
+const payload = 'https%3A%2F%2Fwaelio.com'
+const Result = snakeToCamel( payload )
+
+Result === 'https://waelio.com'
+````
 # 
 [Back to TOP](#index)
 #
 
 # snakeToCamel
-### Function that converts snake_case or snake-case to camelCase "snakeCase"
+#### Function that converts snake_case or snake-case to camelCase "snakeCase"
 #### Example IN: `snake_case`
 #### Example Out: `snakeCase`
 #### @name  snakeToCamel
-#### @param {string} payload QueryString
+#### @param {string} `payload` QueryString
 #### _Returns_ `{string}`
-### Example: In your `.js` or `.vue` file:
+#### Example: In your `.js` or `.vue` file:
 ```javascript
 import { snakeToCamel } from 'waelio-utils'
 const payload = 'north-west_meta'
 const Result = snakeToCamel( payload )
 ````
-## Result:  
+#### Result:  
 ````javascript 
 'northWestMeta'
 ````
@@ -91,24 +113,24 @@ const Result = snakeToCamel( payload )
 [Back to TOP](#index)
 #
 # camelToSnake
-### Function that converts camelCase to snake_case or snake-case "snake-case"
+#### Function that converts camelCase to snake_case or snake-case "snake-case"
 #### Example IN: `snakeCase`
 #### Example Out: `snake-case`
 #### @name  camelToSnake
 #### @param {string} payload
 #### @param {boolean} hyphenated controls the delimiter: true = "-" / false = "_"
 #### _Returns_ `{string}`
-### Example: In your `.js` or `.vue` file:
+#### Example: In your `.js` or `.vue` file:
 ```javascript
 import { camelToSnake } from 'waelio-utils'
 const payload = 'northWestMeta'
 const Result = camelToSnake( payload )
 ````
-## Result 1- `camelToSnake( payload )`  
+#### Result 1- `camelToSnake( payload )`  
 ````javascript 
 'north_west_meta'
 ````
-## Result 2- `camelToSnake( payload, true )`  
+#### Result 2- `camelToSnake( payload, true )`  
 ````javascript 
 'north-west-meta'
 ````
@@ -116,15 +138,15 @@ const Result = camelToSnake( payload )
 [Back to TOP](#index)
 #
 # Base64
-### Converts a string to `Base64`
-### Example: In your `.js` or `.vue` file:
+#### Converts a string to `Base64`
+#### Example: In your `.js` or `.vue` file:
 
 ```javascript
 import { Base64 } from 'waelio-utils'
 const payload = 'north-west_meta'
 const Result = Base64( payload )
 ````
-## Result:  
+#### Result:  
 ````javascript 
 'bm9ydGgtd2VzdF9tZXRh'
 ````
@@ -133,20 +155,35 @@ const Result = Base64( payload )
 #
 
 # reParseString
-### Simple object Standardization
-### _Returns_ `JSON.parse(JSON.stringify(payload))`
+#### Simple object Standardization
+#### OR object Deep Cloning <- **_Not best practice_**
+#### **_Warning_:** Watchout for `null`s, `undefined`, `NaN` and `date`s
+#### _Returns_ `JSON.parse(JSON.stringify(payload))`
+#### Example: In your `.js` or `.vue` file:
+````javascript 
+import { reParseString } from 'waelio-utils'
+
+// No magic here, use wisely
+````
+
 # 
 [Back to TOP](#index)
 #
 
 # generateId
-### Generate random string/id
+#### Generate random string/id
 #### @param  `{number}` start `2` **_OPTIONAL_**
 #### @param  `{number}` len   `9` **_OPTIONAL_**
-### _Returns_ `{string}`
-## Result: (random)  
+#### _Returns_ `{string}`
+#### Example: In your `.js` or `.vue` file:
 ````javascript 
-'3uqi11wg9'
+import { generateId } from 'waelio-utils'
+const result = generateId()
+````
+
+#### Result: (random)  
+````javascript 
+// result === '3uqi11wg9'
 ````
 
 
@@ -155,7 +192,7 @@ const Result = Base64( payload )
 #
 
 # meta
-### Perfect when Using [Quasar Framework](https://quasar.dev/quasar-plugins/meta)
+#### Perfect when Using [Quasar Framework](https://quasar.dev/quasar-plugins/meta)
 
 ### Example:
 ### in `quasar.conf.js`
@@ -169,7 +206,7 @@ return {
   }
 }
 ````
-### In a `.vue` file
+#### In a `.vue` file
 ```javascript
 <script>
   import { meta } from 'waelio-utils'
@@ -195,8 +232,14 @@ return {
 
 # notifyMe
 #### Send PWA Notifications to Site
-#### Works only in Browser
-#### Required `Message @param {string}` to send
+#### Works only in **Browser**
+#### `@param {string}` to send
+#### Example: In your `.js` or `.vue` file:
+```javascript 
+import { notifyMe } from 'waelio-utils'
+
+notifyMe('Hello World!')
+```
 # 
 [Back to TOP](#index)
 #

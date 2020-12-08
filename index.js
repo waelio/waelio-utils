@@ -3,15 +3,14 @@
  * Function that converts a JSON to URL Query String
  * Example IN: {"first":"John", "last": "Smith"}
  * Example Out: first=John&last=Smith
- * @name  JSONToQueryString
+ * @name  jsonToQueryString
  * @author  Wael Wahbeh <wahbehw@gmail.com>
  * @function
  * @global
  * @param {} -JSON payload
  * @returns QueryString 
  */
-export function JSONToQueryString (payload) {
-  payload = JSON.parse(JSON.stringify(payload))
+export function jsonToQueryString (payload) {  
   return Object.keys(payload)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(payload[key])}`).join('&')
 }
@@ -20,7 +19,7 @@ export function JSONToQueryString (payload) {
  * Function that converts a URL Query String to JSON
  * Example IN: first=John&last=Smith
  * Example Out: {"first":"John", "last": "Smith"}
- * @name  QueryStringToJSON
+ * @name  queryStringToJson
  * @author  Wael Wahbeh <wahbehw@gmail.com>
  * @function
  * @global
@@ -28,7 +27,7 @@ export function JSONToQueryString (payload) {
  * @param {boolean} toObject Return JS Object or JSON
  * @returns JSON|Object
  */
-export function QueryStringToJSON (payload, toObject = true) {
+export function queryStringToJson (payload, toObject = true) {
   if (!payload) return
   var pairs = payload.slice(1).split('&')
   var result = {}
@@ -38,8 +37,15 @@ export function QueryStringToJSON (payload, toObject = true) {
   })
   return toObject ? JSON.parse(JSON.stringify(result)) : JSON.stringify(result)
 }
+/** Decode uri component
+ * @name  resetString
+ * @author  Wael Wahbeh <wahbehw@gmail.com>
+ * @function
+ * @global
+* @param {string} payload 
+*/
 export function resetString (payload) {
-  return decodeURIComponent(encodeURIComponent(payload))
+  return decodeURIComponent(decodeURIComponent(encodeURIComponent(payload)))
 }
 
 /**

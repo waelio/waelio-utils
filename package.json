@@ -1,7 +1,8 @@
 {
   "name": "waelio-utils",
-  "version": "1.1.6",
+  "version": "1.1.5",
   "description": "Helper Utils often used in all waelio websites",
+  "keywords": ["utilities", "browser","quasar","vue","javascript", "helpers", "react", "angular"],
   "main": "index.js",
   "scripts": {
     "run": "echo \"Error: no test specified\" && exit 1"

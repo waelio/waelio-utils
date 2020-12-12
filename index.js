@@ -97,7 +97,7 @@ function calculateClockDrift (iatAccessToken, iatIdToken) {
 function Base64 (payload) {
   return btoa(unescape(encodeURIComponent(payload)))
 }
-function reParseString (payload) {
+async function reParseString (payload) {
   return await JSON.parse(JSON.stringify(await payload))
 }
 /** generate random string

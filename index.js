@@ -10,11 +10,10 @@
  * @param {} -JSON payload
  * @returns QueryString 
  */
-export function jsonToQueryString (payload) {  
+function jsonToQueryString (payload) {  
   return Object.keys(payload)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(payload[key])}`).join('&')
 }
-
 /**
  * Function that converts a URL Query String to JSON
  * Example IN: first=John&last=Smith
@@ -27,7 +26,7 @@ export function jsonToQueryString (payload) {
  * @param {boolean} toObject Return JS Object or JSON
  * @returns JSON|Object
  */
-export function queryStringToJson (payload, toObject = true) {
+function queryStringToJson (payload, toObject = true) {
   if (!payload) return
   var pairs = payload.slice(1).split('&')
   var result = {}
@@ -44,10 +43,9 @@ export function queryStringToJson (payload, toObject = true) {
  * @global
 * @param {string} payload 
 */
-export function resetString (payload) {
+function resetString (payload) {
   return decodeURIComponent(decodeURIComponent(encodeURIComponent(payload)))
 }
-
 /**
  * Function that converts snake_case or snake-case to camelCase "snakeCase"
  * Example IN: snake_case
@@ -59,7 +57,7 @@ export function resetString (payload) {
  * @param {string} payload QueryString
  * @returns {string}
  */
-export function snakeToCamel (payload) {
+function snakeToCamel (payload) {
   return (typeof payload !== 'string') ? payload : payload.replace(/([-_]\w)/g, g => g[1].toUpperCase())
 }
 /**
@@ -72,41 +70,36 @@ export function snakeToCamel (payload) {
  * @param {boolean} hyphenated controls the delimiter: true = "-" / false = "_"
  * @returns {string}
  */
-export function camelToSnake (payload, hyphenated = false ) {
+function camelToSnake (payload, hyphenated = false ) {
   return payload && payload[0].toLowerCase() + payload.slice(1, payload.length).replace(/[A-Z]/g, letter => `${hyphenated ? `-` : `_` }${letter.toLowerCase()}`);
 }
-
-export function isArray (payload) {
+function isArray (payload) {
   return Array.isArray(payload);
 }
-export function isObject (payload) {
+function isObject (payload) {
   return payload === Object(payload) && !isArray(payload) && typeof o !== 'function';
 }
-
 /**
  * Calculate Clock Drift used to calculate tile remaining before token expiration
  *  
  * @param  {} iatAccessToken IAT 
  * @param  {} iatIdToken
  */
-export function calculateClockDrift (iatAccessToken, iatIdToken) {
+function calculateClockDrift (iatAccessToken, iatIdToken) {
   const now = Math.floor(new Date() / 1000)
   const iat = Math.min(iatAccessToken, iatIdToken)
   return now - iat
 }
-
 /**
  * Converts string to a Base64
  * @param  {string} payload
  */
-export async function Base64 (payload) {
-  return await btoa(unescape(encodeURIComponent(payload)))
+function Base64 (payload) {
+  return btoa(unescape(encodeURIComponent(payload)))
 }
-
-export async function reParseString (payload) {
+function reParseString (payload) {
   return await JSON.parse(JSON.stringify(await payload))
 }
-
 /** generate random string
  * @name  generateId
  * @author  Wael Wahbeh <wahbehw@gmail.com>
@@ -114,7 +107,7 @@ export async function reParseString (payload) {
  * @param  {number} len   9 default
  * @return {string}
  */
-export async function generateId (start = 2, len = 9) { 
+function generateId (start = 2, len = 9) { 
   return Math.random().toString(36).substr(start, len)
 }
 /** PWA Notification
@@ -123,7 +116,7 @@ export async function generateId (start = 2, len = 9) {
 
  * @param  {string} notification -String
  */
-export function notifyMe(notification, Site='NorthWestMeta.com!') {
+function notifyMe(notification, Site='NorthWestMeta.com!') {
   document.addEventListener("DOMContentLoaded", () => {
     if ("Notification" in window) {
       if (Notification.permission === "granted") {
@@ -140,7 +133,7 @@ export function notifyMe(notification, Site='NorthWestMeta.com!') {
     }
   });
 }
-export function meta () {
+function meta () {
   const metaObj = { meta: {} }
   if (!this.metaTags) {
     return metaObj
@@ -169,4 +162,19 @@ export function meta () {
     metaObj.meta.twitterImage = { name: 'twitter:image', content: this.metaTags.image }
   }
   return metaObj
+}
+export { 
+  jsonToQueryString,
+  queryStringToJson,
+  resetString,
+  snakeToCamel,
+  camelToSnake,
+  isArray,
+  isObject,
+  calculateClockDrift,
+  Base64,
+  reParseString,
+  generateId,
+  notifyMe,
+  meta
 }

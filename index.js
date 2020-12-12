@@ -163,7 +163,7 @@ function meta () {
   }
   return metaObj
 }
-export { 
+module.exports = { 
   jsonToQueryString,
   queryStringToJson,
   resetString,

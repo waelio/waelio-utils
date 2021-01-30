@@ -29,5 +29,9 @@
   "devDependencies": {
     "eslint": "^7.15.0",
     "eslint-plugin-vue": "^7.2.0"
+  },
+  "peerDependencies": {
+    "vue-i18n":"^8.0.0",
+    "quasar": "^1.0.0"
   }
 }

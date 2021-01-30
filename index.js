@@ -97,8 +97,8 @@ function calculateClockDrift (iatAccessToken, iatIdToken) {
 function Base64 (payload) {
   return btoa(unescape(encodeURIComponent(payload)))
 }
-async function reParseString (payload) {
-  return await JSON.parse(JSON.stringify(await payload))
+function reParseString (payload) {
+  return JSON.parse(JSON.stringify(payload))
 }
 /** generate random string
  * @name  generateId
@@ -163,6 +163,9 @@ function meta () {
   }
   return metaObj
 }
+var storage = require('./src/utils/storage')
+var waelioConfig = require('./src/utils/waelio-config')
+var googleOneTap = require('./src/utils/google-one-tap')
 module.exports = { 
   jsonToQueryString,
   queryStringToJson,
@@ -176,5 +179,8 @@ module.exports = {
   reParseString,
   generateId,
   notifyMe,
-  meta
+  meta,
+  storage,
+  waelioConfig,
+  googleOneTap
 }

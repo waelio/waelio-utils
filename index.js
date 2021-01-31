@@ -180,18 +180,4 @@ module.exports = {
   storage,
   googleOneTap
 };
-export { jsonToQueryString };
-export { queryStringToJson };
-export { resetString };
-export { snakeToCamel };
-export { camelToSnake };
-export { isArray };
-export { isObject };
-export { calculateClockDrift };
-export { Base64 };
-export { reParseString };
-export { generateId };
-export { notifyMe };
-export { meta };
-export { storage };
-export { googleOneTap };
+

@@ -16,7 +16,6 @@
 8. <a href="#generateid"> generateId</a>
 9. <a href="#notifyme"> notifyMe</a>
 10. <a href="#meta"> meta</a>
-11. <a href="#storage"> storage</a>
 
 # Installation
 Using npm:
@@ -240,29 +239,6 @@ return {
 import { notifyMe } from 'waelio-utils'
 
 notifyMe('Hello World!')
-```
-# 
-[Back to TOP](#index)
-#
-
-# storage
-#### Based on localStorage & [Quasar - Local Storage plugin](https://quasar.dev/quasar-plugins/web-storage#LocalStorage-API)
-
-#### Example: In your `.js` or `.vue` file:
-```javascript
-import { storage, reParseString } from 'waelio'
-// Set Value
-const locale = {
-        isoName: "en-us",
-        nativeName: "English (US)"
-      }
-storage.setItem("locale", JSON.stringify(locale))
-
-// Retrieval
-if(storage.has("locale")){
-const mySavedLocale = storage.getItem("locale")
-
-}
 ```
 # 
 [Back to TOP](#index)

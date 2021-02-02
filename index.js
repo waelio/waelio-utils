@@ -164,7 +164,6 @@ function meta() {
 }
 
 var googleOneTap = require("./src/utils/google-one-tap");
-var waelioConfig = require("./src/utils/waelio-config");
 module.exports = {
   jsonToQueryString,
   queryStringToJson,
@@ -179,6 +178,5 @@ module.exports = {
   generateId,
   notifyMe,
   meta,
-  googleOneTap,
-  waelioConfig
+  googleOneTap
 };

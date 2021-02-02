@@ -100,6 +100,7 @@ function Base64(payload) {
 function reParseString(payload) {
   return JSON.parse(JSON.stringify(payload));
 }
+
 /** generate random string
  * @name  generateId
  * @author  Wael Wahbeh <wahbehw@gmail.com>
@@ -161,8 +162,9 @@ function meta() {
   }
   return metaObj;
 }
-var storage = require("./src/utils/storage");
+
 var googleOneTap = require("./src/utils/google-one-tap");
+var waelioConfig = require("./src/utils/waelio-config");
 module.exports = {
   jsonToQueryString,
   queryStringToJson,
@@ -177,7 +179,6 @@ module.exports = {
   generateId,
   notifyMe,
   meta,
-  storage,
-  googleOneTap
+  googleOneTap,
+  waelioConfig
 };
-

@@ -1,17 +1,25 @@
-import {merge} from 'lodash'
+import store from "store2";
 class Config {
   constructor() {
     this.setEnvironment();
     const _ = this;
+    this._storage = store.namespace("config");
     this._server = this.getServerVars();
     this._client = this.getClientVars();
-    this._localOverrides = this.getLocalOverrides();
+    this._dev = this.getUrgentOverrides();
 
-    this._store = merge(
-      this._client,
-      this._server,
-      this._localOverrides
+    this._store = Object.assign(
+      {},
+      { ...this._client.default },
+      { ...this._server.default },
+      { ...this._dev.default },
+      { client: this._client.default },
+      { server: this._server.default },
+      { dev: this._dev.default }
     );
+    //Do not Merge the Storage ;)
+    this._store.storage = this._storage
+    // console.log("this._store", this._store);
   }
 
   set(key, value) {
@@ -34,10 +42,12 @@ class Config {
       this._store[key] = value;
     }
   }
-  getAll()  {
-    return this._store
-  };
-
+  getAll() {
+    return this._store;
+  }
+  getItem(key) {
+    return this._store[key];
+  }
   get(key) {
     // Is the key a nested object
     if (key.match(/:/)) {
@@ -49,9 +59,24 @@ class Config {
     // Return regular key
     return this._store[key];
   }
+  client() {
+    return this.getItem('client');
+  }
+  dev() {
+    return this.getItem('dev');
+  }
+  storage() {
+    return   this._store.storage;
+  }
+  server() {
+    return this.getItem('server');
+  }
+  store() {
+    return this._store;
+  }
 
   has(key) {
-    return this.get(key) ? true : false;
+    return Boolean(this.get(key));
   }
 
   setEnvironment() {
@@ -91,17 +116,16 @@ class Config {
 
     return clientVars;
   }
-  getLocalOverrides() {
+  getUrgentOverrides() {
     let overrides;
     const filename = process.env.NODE_ENV === "production" ? "prod" : "dev";
-
     try {
       overrides =
         process.env.NODE_ENV === "production"
           ? require("app/config/prod")
           : require("app/config/dev");
 
-      console.warn(`Using local overrides in \`./config/${filename}.js\`.`);
+      console.warn(`FYI: data in \`./config/${filename}.js\` file will override Server & Client equal data/values.`);
     } catch (e) {
       overrides = {};
     }

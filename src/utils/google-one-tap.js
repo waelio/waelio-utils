@@ -20,4 +20,4 @@ function googleOneTap ({ client_id, auto_select = false, cancel_on_tap_outside =
 	};
 }
 
-export default googleOneTap;
+module.exports = { googleOneTap }

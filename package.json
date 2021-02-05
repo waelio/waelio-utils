@@ -1,5 +1,5 @@
 {
-  "name": "waelio-utils",
+  "name": "@waelio/waelio-utils",
   "version": "1.1.20",
   "description": "Helper Utils often used in websites",
   "homepage": "https://github.com/waelio/waelio-utils#index",
@@ -15,7 +15,8 @@
   ],
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test":  "exit 0"
   },
   "author": "Wael Wahbeh <wahbehw@gmail.com>",
   "license": "MIT",

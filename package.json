@@ -1,6 +1,6 @@
 {
   "name": "@waelio/waelio-utils",
-  "version": "1.1.21",
+  "version": "1.1.22",
   "description": "Helper Utils often used in websites",
   "homepage": "https://github.com/waelio/waelio-utils#index",
   "keywords": [
@@ -13,7 +13,7 @@
     "react",
     "angular"
   ],
-  "private":"false",
+  "private": "false",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

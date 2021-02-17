@@ -1,4 +1,2 @@
 node_modules/
-.npmrc
-/.npmrc
-./.npmrc
+.env

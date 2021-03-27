@@ -20,4 +20,5 @@ function googleOneTap ({ client_id, auto_select = false, cancel_on_tap_outside =
 	};
 }
 
-module.exports = { googleOneTap }
+export default function googleOneTap = googleOneTap;
+exports {googleOneTap}

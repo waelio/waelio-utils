@@ -1,3 +1,5 @@
+const googleOneTap = require("./src/utils/google-one-tap");
+
 /**
  * Function that converts a JSON to URL Query String
  * Example IN: {"first":"John", "last": "Smith"}
@@ -163,8 +165,15 @@ function meta() {
   return metaObj;
 }
 
-var googleOneTap = require("./src/utils/google-one-tap");
-module.exports = {
+//ID SNiffer
+const sniffId = function(payload) {
+  const { id, _id, Id, iD } = payload;
+  const newId = id || _id || Id || iD;
+  return newId || false;
+};
+
+
+export default {
   jsonToQueryString,
   queryStringToJson,
   resetString,
@@ -180,3 +189,18 @@ module.exports = {
   meta,
   googleOneTap
 };
+
+exports {  jsonToQueryString,
+  queryStringToJson,
+  resetString,
+  snakeToCamel,
+  camelToSnake,
+  isArray,
+  isObject,
+  calculateClockDrift,
+  Base64,
+  reParseString,
+  generateId,
+  notifyMe,
+  meta,
+  googleOneTap}

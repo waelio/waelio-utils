@@ -1,5 +1,3 @@
-const googleOneTap = require("./src/utils/google-one-tap");
-
 /**
  * Function that converts a JSON to URL Query String
  * Example IN: {"first":"John", "last": "Smith"}
@@ -102,7 +100,6 @@ function Base64(payload) {
 function reParseString(payload) {
   return JSON.parse(JSON.stringify(payload));
 }
-
 /** generate random string
  * @name  generateId
  * @author  Wael Wahbeh <wahbehw@gmail.com>
@@ -164,43 +161,11 @@ function meta() {
   }
   return metaObj;
 }
-
 //ID SNiffer
-const sniffId = function(payload) {
+function sniffId (payload) {
   const { id, _id, Id, iD } = payload;
   const newId = id || _id || Id || iD;
   return newId || false;
-};
+}
 
-
-export default {
-  jsonToQueryString,
-  queryStringToJson,
-  resetString,
-  snakeToCamel,
-  camelToSnake,
-  isArray,
-  isObject,
-  calculateClockDrift,
-  Base64,
-  reParseString,
-  generateId,
-  notifyMe,
-  meta,
-  googleOneTap
-};
-
-exports {  jsonToQueryString,
-  queryStringToJson,
-  resetString,
-  snakeToCamel,
-  camelToSnake,
-  isArray,
-  isObject,
-  calculateClockDrift,
-  Base64,
-  reParseString,
-  generateId,
-  notifyMe,
-  meta,
-  googleOneTap}
+export { Base64, calculateClockDrift, camelToSnake, generateId, isArray, isObject, jsonToQueryString, meta, notifyMe, queryStringToJson, reParseString, resetString, snakeToCamel, sniffId };

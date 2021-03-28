@@ -1,3 +1,6 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
 
 /**
  * Function that converts a JSON to URL Query String
@@ -10,7 +13,7 @@
  * @param {} -JSON payload
  * @returns QueryString
  */
-export function jsonToQueryString(payload) {
+function jsonToQueryString(payload) {
   return Object.keys(payload)
     .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(payload[key])}`)
     .join("&");
@@ -27,7 +30,7 @@ export function jsonToQueryString(payload) {
  * @param {boolean} toObject Return JS Object or JSON
  * @returns JSON|Object
  */
-export function queryStringToJson(payload, toObject = true) {
+function queryStringToJson(payload, toObject = true) {
   if (!payload) return;
   var pairs = payload.slice(1).split("&");
   var result = {};
@@ -44,7 +47,7 @@ export function queryStringToJson(payload, toObject = true) {
  * @global
  * @param {string} payload
  */
-export function resetString(payload) {
+function resetString(payload) {
   return decodeURIComponent(decodeURIComponent(encodeURIComponent(payload)));
 }
 /**
@@ -58,7 +61,7 @@ export function resetString(payload) {
  * @param {string} payload QueryString
  * @returns {string}
  */
-export function snakeToCamel(payload) {
+function snakeToCamel(payload) {
   return typeof payload !== "string" ? payload : payload.replace(/([-_]\w)/g, (g) => g[1].toUpperCase());
 }
 /**
@@ -71,13 +74,13 @@ export function snakeToCamel(payload) {
  * @param {boolean} hyphenated controls the delimiter: true = "-" / false = "_"
  * @returns {string}
  */
-export function camelToSnake(payload, hyphenated = false) {
+function camelToSnake(payload, hyphenated = false) {
   return payload && payload[0].toLowerCase() + payload.slice(1, payload.length).replace(/[A-Z]/g, (letter) => `${hyphenated ? `-` : `_`}${letter.toLowerCase()}`);
 }
-export function isArray(payload) {
+function isArray(payload) {
   return Array.isArray(payload);
 }
-export function isObject(payload) {
+function isObject(payload) {
   return payload === Object(payload) && !isArray(payload) && typeof o !== "function";
 }
 /**
@@ -86,7 +89,7 @@ export function isObject(payload) {
  * @param  {} iatAccessToken IAT
  * @param  {} iatIdToken
  */
-export function calculateClockDrift(iatAccessToken, iatIdToken) {
+function calculateClockDrift(iatAccessToken, iatIdToken) {
   const now = Math.floor(new Date() / 1000);
   const iat = Math.min(iatAccessToken, iatIdToken);
   return now - iat;
@@ -95,10 +98,10 @@ export function calculateClockDrift(iatAccessToken, iatIdToken) {
  * Converts string to a Base64
  * @param  {string} payload
  */
-export function Base64(payload) {
+function Base64(payload) {
   return btoa(unescape(encodeURIComponent(payload)));
 }
-export function reParseString(payload) {
+function reParseString(payload) {
   return JSON.parse(JSON.stringify(payload));
 }
 /** generate random string
@@ -108,7 +111,7 @@ export function reParseString(payload) {
  * @param  {number} len   9 default
  * @return {string}
  */
-export function generateId(start = 2, len = 9) {
+function generateId(start = 2, len = 9) {
   return Math.random().toString(36).substr(start, len);
 }
 /** PWA Notification
@@ -117,7 +120,7 @@ export function generateId(start = 2, len = 9) {
 
  * @param  {string} notification -String
  */
-export function notifyMe(notification, Site = "NorthWestMeta.com!") {
+function notifyMe(notification, Site = "NorthWestMeta.com!") {
   document.addEventListener("DOMContentLoaded", () => {
     if ("Notification" in window) {
       if (Notification.permission === "granted") {
@@ -132,7 +135,7 @@ export function notifyMe(notification, Site = "NorthWestMeta.com!") {
     }
   });
 }
-export function meta() {
+function meta() {
   const metaObj = { meta: {} };
   if (!this.metaTags) {
     return metaObj;
@@ -163,8 +166,23 @@ export function meta() {
   return metaObj;
 }
 //ID SNiffer
-export function sniffId (payload) {
+function sniffId (payload) {
   const { id, _id, Id, iD } = payload;
   const newId = id || _id || Id || iD;
   return newId || false;
-};
+}
+
+exports.Base64 = Base64;
+exports.calculateClockDrift = calculateClockDrift;
+exports.camelToSnake = camelToSnake;
+exports.generateId = generateId;
+exports.isArray = isArray;
+exports.isObject = isObject;
+exports.jsonToQueryString = jsonToQueryString;
+exports.meta = meta;
+exports.notifyMe = notifyMe;
+exports.queryStringToJson = queryStringToJson;
+exports.reParseString = reParseString;
+exports.resetString = resetString;
+exports.snakeToCamel = snakeToCamel;
+exports.sniffId = sniffId;

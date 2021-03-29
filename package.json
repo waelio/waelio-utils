@@ -13,7 +13,6 @@
     "react",
     "angular"
   ],
-  "private": "false",
   "main": "main.js",
   "scripts": {
     "start": "rollup -c",

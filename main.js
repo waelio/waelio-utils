@@ -1,10 +1,21 @@
-import { sniffId, meta, notifyMe, generateId, reParseString, Base64, calculateClockDrift, isObject, isArray, camelToSnake, snakeToCamel, resetString, queryStringToJson, jsonToQueryString } from './src/utils';
+const { sniffId, meta, notifyMe, generateId, reParseString, Base64, calculateClockDrift, isObject, isArray, camelToSnake, snakeToCamel, resetString, queryStringToJson, jsonToQueryString } = require('./src/utils');
 
-export { sniffId, meta, notifyMe, generateId, reParseString, Base64, calculateClockDrift, isObject, isArray, camelToSnake, snakeToCamel, resetString, queryStringToJson, jsonToQueryString }
-export default {
-  input: './src/utils',
-  output: 'dist/waelioUtils.js',
-  format: 'esm',
-  exports: 'named', /** Disable warning for default imports */
-  sourcemap: true,
-};
+module.exports = sniffId;
+module.exports = meta;
+module.exports = notifyMe;
+module.exports = generateId;
+module.exports = reParseString;
+module.exports = Base64;
+module.exports = calculateClockDrift;
+module.exports = isObject;
+module.exports = isArray;
+module.exports = camelToSnake;
+module.exports = camelToSnake;
+module.exports = resetString;
+module.exports = queryStringToJson;
+module.exports = jsonToQueryString;
+
+
+const waelioUtils = { sniffId, meta, notifyMe, generateId, reParseString, Base64, calculateClockDrift, isObject, isArray, camelToSnake, snakeToCamel, resetString, queryStringToJson, jsonToQueryString };
+
+module.exports = waelioUtils

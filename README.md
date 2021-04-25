@@ -16,19 +16,23 @@
 8. <a href="#generateid"> generateId</a>
 9. <a href="#notifyme"> notifyMe</a>
 10. <a href="#meta"> meta</a>
-
+11. <a href="#sniffId"> sniffId</a>
+12. <a href="#hideRandom"> hideRandom</a>
+13. <a href="#_rotateArray"> _rotateArray</a>
+14. <a href="#_equals"> _equals</a>
+15. <a href="#_repeat"> _repeat</a>
 # Installation
 Using npm:
-````t
+```bash
 npm install --save waelio-utils 
-````
+```
 
 Tree Shaking
-````javascript
+```javascript
 import { snakeToCamel, meta, notifyMe } from 'waelio-utils'
 // Or
 const  { snakeToCamel, meta, notifyMe } = require('waelio-utils')
-````
+```
 
 #
 # jsonToQueryString
@@ -235,11 +239,43 @@ return {
 #### Works only in **Browser**
 #### `@param {string}` to send
 #### Example: In your `.js` or `.vue` file:
-```javascript 
+````javascript
 import { notifyMe } from 'waelio-utils'
-
 notifyMe('Hello World!')
-```
+````
 # 
 [Back to TOP](#index)
 #
+
+# sniffId
+## Sniff/Get id from ID||Id,_Id,id
+[Back to TOP](#index)
+
+# hideRandom
+## hide random parts array by number
+[Back to TOP](#index)
+
+# _rotateArray
+## Rotate array 
+````js
+import { _rotateArray } from 'waelio-utils'
+const testArray = [
+  [1,2,3],
+  [1,2,3],
+  [1,2,3]
+]
+
+const test1 = _rotateArray(testArray)
+// [ [1,1,1], [2,2,2], [3,3,3] ]
+
+````
+[Back to TOP](#index)
+
+# _equals
+## compare 2 arrays with equal size
+
+[Back to TOP](#index)
+
+# _repeat
+## repeat a function n times
+[Back to TOP](#index)

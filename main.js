@@ -1,21 +1,26 @@
-const { sniffId, meta, notifyMe, generateId, reParseString, Base64, calculateClockDrift, isObject, isArray, camelToSnake, snakeToCamel, resetString, queryStringToJson, jsonToQueryString } = require('./src/utils');
+const { jsonToQueryString,queryStringToJson,resetString,snakeToCamel,camelToSnake,isArray,isObject,calculateClockDrift,Base64,reParseString,generateId,notifyMe,meta,sniffId,hideRandom,_rotateArray,_equals,_repeat } = require('./src/utils');
 
-module.exports = sniffId;
-module.exports = meta;
-module.exports = notifyMe;
-module.exports = generateId;
-module.exports = reParseString;
-module.exports = Base64;
-module.exports = calculateClockDrift;
+module.exports = jsonToQueryString
+module.exports = queryStringToJson
+module.exports = resetString
+module.exports = snakeToCamel
+module.exports = camelToSnake
+module.exports = isArray
 module.exports = isObject;
-module.exports = isArray;
-module.exports = camelToSnake;
-module.exports = camelToSnake;
-module.exports = resetString;
-module.exports = queryStringToJson;
-module.exports = jsonToQueryString;
+module.exports = calculateClockDrift
+module.exports = Base64;
+module.exports = reParseString;
+module.exports = generateId;
+module.exports = notifyMe
+module.exports = meta
+module.exports = sniffId
+module.exports = hideRandom
+module.exports = _rotateArray
+module.exports = _equals
+module.exports = _repeat
 
 
-const waelioUtils = { sniffId, meta, notifyMe, generateId, reParseString, Base64, calculateClockDrift, isObject, isArray, camelToSnake, snakeToCamel, resetString, queryStringToJson, jsonToQueryString };
+
+const waelioUtils = { jsonToQueryString,queryStringToJson,resetString,snakeToCamel,camelToSnake,isArray,isObject,calculateClockDrift,Base64,reParseString,generateId,notifyMe,meta,sniffId,hideRandom,_rotateArray,_equals,_repeat };
 
 module.exports = waelioUtils

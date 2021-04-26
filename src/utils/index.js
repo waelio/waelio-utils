@@ -228,17 +228,16 @@ function sniffId(payload) {
   return newId || false
 }
 exports.sniffId = sniffId
-
-function hideRandom(array, difficulty = 3) {
+function _hideRandom(array, difficulty = 3, replacement = '') {
   for (let i = 0; i < array.length; ++i) {
     for (let k = 0; k < difficulty; ++k) {
       const randomColumnIndex = Math.floor(Math.random() * array.length)
-      array[i][randomColumnIndex] = ''
+      array[i][randomColumnIndex] = replacement
     }
   }
   return array
 }
-exports.hideRandom = hideRandom
+exports._hideRandom = _hideRandom
 
 function _rotateArray(array) {
   // Calculate the width and height of the Array

@@ -19,10 +19,10 @@
 9. <a href="#notifyme"> notifyMe</a>
 10. <a href="#meta"> meta</a>
 11. <a href="#sniffId"> sniffId</a>
-12. <a href="#hideRandom"> hideRandom</a>
-13. <a href="#_rotateArray"> \_rotateArray</a>
-14. <a href="#_equals"> \_equals</a>
-15. <a href="#_repeat"> \_repeat</a>
+12. <a href="#hideRandom"> \_hideRandom</a>
+13. <a href="#rotateArray"> \_rotateArray</a>
+14. <a href="#equals"> \_equals</a>
+15. <a href="#repeat"> \_repeat</a>
 
 # Installation
 
@@ -371,11 +371,30 @@ var newId = sniffId(response);
 #
 
 # hideRandom
+### Hide random array indexes
 
-## hide random parts array by number
-
+```` 
+@params array
+@params difficulty = 3
+@params replacement = ''
+````
+Example:
 ```javascript
-// Examples coming soon
+import { _hideRandom } from 'waelio-utils'
+const arr = [
+        [1, 2, 3],
+        [1, 2, 3],
+        [1, 2, 3]
+      ]
+const test = _hideRandom(arr, 3)
+
+/* random
+
+  [1, 2, ""]
+  ["", 2, ""]
+  ["", "", 3]
+
+*/
 ```
 
 #
@@ -384,7 +403,7 @@ var newId = sniffId(response);
 
 #
 
-# \_rotateArray
+# rotateArray (_rotateArray)
 
 ## Rotate array
 
@@ -397,7 +416,11 @@ const testArray = [
 ];
 
 const test1 = _rotateArray(testArray);
-// [ [1,1,1], [2,2,2], [3,3,3] ]
+/* 
+  [1, 1, 1],
+  [2, 2, 2],
+  [3, 3, 3]
+*/
 ```
 
 #
@@ -406,13 +429,14 @@ const test1 = _rotateArray(testArray);
 
 #
 
-# \_equals
+# equals (_equals)
 
 ### compare 2 arrays with equal size
 
 Example:
 
 ```javascript
+import { _equals } from 'waelio-utils';
 const array1 = [123456];
 const array2 = [123455];
 const test = _equals(array1, array2);
@@ -426,13 +450,14 @@ const test = _equals(array1, array2);
 
 #
 
-# \_repeat
+# repeat ( _repeat )
 
 ### Repeat function N times
 
 ### Example:
 
 ```javascript
+import { _repeat } from 'waelio-utils';
 let counter = 0;
 const f1 = () => counter++;
 _repeat(5)(f1);

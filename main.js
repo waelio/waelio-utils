@@ -1,5 +1,5 @@
-const { jsonToQueryString,queryStringToJson,resetString,snakeToCamel,camelToSnake,isArray,isObject,calculateClockDrift,Base64,reParseString,generateId,notifyMe,meta,sniffId,hideRandom,_rotateArray,_equals,_repeat } = require('./src/utils');
-const waelioUtils = { jsonToQueryString,queryStringToJson,resetString,snakeToCamel,camelToSnake,isArray,isObject,calculateClockDrift,Base64,reParseString,generateId,notifyMe,meta,sniffId,hideRandom,_rotateArray,_equals,_repeat };
+const { jsonToQueryString,queryStringToJson,resetString,snakeToCamel,camelToSnake,isArray,isObject,calculateClockDrift,Base64,reParseString,generateId,notifyMe,meta,sniffId,_hideRandom,_rotateArray,_equals,_repeat } = require('./src/utils');
+const waelioUtils = { jsonToQueryString,queryStringToJson,resetString,snakeToCamel,camelToSnake,isArray,isObject,calculateClockDrift,Base64,reParseString,generateId,notifyMe,meta,sniffId,_hideRandom,_rotateArray,_equals,_repeat };
 
 exports.jsonToQueryString = jsonToQueryString
 exports.queryStringToJson = queryStringToJson
@@ -15,7 +15,7 @@ exports.generateId = generateId;
 exports.notifyMe = notifyMe
 exports.meta = meta
 exports.sniffId = sniffId
-exports.hideRandom = hideRandom
+exports._hideRandom = _hideRandom
 exports._rotateArray = _rotateArray
 exports._equals = _equals
 exports._repeat = _repeat

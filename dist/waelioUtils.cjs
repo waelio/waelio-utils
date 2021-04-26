@@ -1,5 +1,7 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * Function that converts a JSON to URL Query String
  * Example IN: {"first":"John", "last": "Smith"}
@@ -18,7 +20,7 @@ function jsonToQueryString(payload) {
     )
     .join('&')
 }
-var utils = jsonToQueryString;
+var jsonToQueryString_1 = jsonToQueryString;
 
 /**
  * Function that converts a URL Query String to JSON
@@ -41,7 +43,7 @@ function queryStringToJson(payload, toObject = true) {
   });
   return toObject ? JSON.parse(JSON.stringify(result)) : JSON.stringify(result)
 }
-var utils = queryStringToJson;
+var queryStringToJson_1 = queryStringToJson;
 
 /** Decode uri component
  * @name  resetString
@@ -53,7 +55,7 @@ var utils = queryStringToJson;
 function resetString(payload) {
   return decodeURIComponent(decodeURIComponent(encodeURIComponent(payload)))
 }
-var utils = resetString;
+var resetString_1 = resetString;
 
 /**
  * Function that converts snake_case or snake-case to camelCase "snakeCase"
@@ -71,7 +73,7 @@ function snakeToCamel(payload) {
     ? payload
     : payload.replace(/([-_]\w)/g, (g) => g[1].toUpperCase())
 }
-var utils = snakeToCamel;
+var snakeToCamel_1 = snakeToCamel;
 
 /**
  * Function that converts camelCase to snake_case or snake-case "snake-case"
@@ -95,7 +97,7 @@ function camelToSnake(payload, hyphenated = false) {
         )
   )
 }
-var utils = camelToSnake;
+var camelToSnake_1 = camelToSnake;
 
 /**
 Test isArray
@@ -103,14 +105,14 @@ Test isArray
 function isArray(payload) {
   return Array.isArray(payload)
 }
-var utils = isArray;
+var isArray_1 = isArray;
 
 function isObject(payload) {
   return (
     payload === Object(payload) && !isArray(payload) && typeof o !== 'function'
   )
 }
-var utils = isObject;
+var isObject_1 = isObject;
 
 /**
  * Calculate Clock Drift used to calculate tile remaining before token expiration
@@ -123,7 +125,7 @@ function calculateClockDrift(iatAccessToken, iatIdToken) {
   const iat = Math.min(iatAccessToken, iatIdToken);
   return now - iat
 }
-var utils = calculateClockDrift;
+var calculateClockDrift_1 = calculateClockDrift;
 
 /**
  * Converts string to a Base64
@@ -132,12 +134,12 @@ var utils = calculateClockDrift;
 function Base64(payload) {
   return btoa(unescape(encodeURIComponent(payload)))
 }
-var utils = Base64;
+var Base64_1 = Base64;
 
 function reParseString(payload) {
   return JSON.parse(JSON.stringify(payload))
 }
-var utils = reParseString;
+var reParseString_1 = reParseString;
 
 /** generate random string
  * @name  generateId
@@ -149,7 +151,7 @@ var utils = reParseString;
 function generateId(start = 2, len = 9) {
   return Math.random().toString(36).substr(start, len)
 }
-var utils = generateId;
+var generateId_1 = generateId;
 
 /** PWA Notification
  * Send Notification to Site
@@ -171,7 +173,7 @@ function notifyMe(notification, Site = 'NorthWestMeta.com!') {
     }
   });
 }
-var utils = notifyMe;
+var notifyMe_1 = notifyMe;
 
 function meta() {
   const metaObj = { meta: {} };
@@ -221,7 +223,7 @@ function meta() {
   }
   return metaObj
 }
-var utils = meta;
+var meta_1 = meta;
 
 //ID SNiffer
 function sniffId(payload) {
@@ -229,7 +231,7 @@ function sniffId(payload) {
   const newId = id || _id || Id || iD;
   return newId || false
 }
-var utils = sniffId;
+var sniffId_1 = sniffId;
 
 function hideRandom(array, difficulty = 3) {
   for (let i = 0; i < array.length; ++i) {
@@ -240,7 +242,7 @@ function hideRandom(array, difficulty = 3) {
   }
   return array
 }
-var utils = hideRandom;
+var hideRandom_1 = hideRandom;
 
 function _rotateArray(array) {
   // Calculate the width and height of the Array
@@ -276,7 +278,7 @@ function _rotateArray(array) {
   return t
 }
 
-var utils = _rotateArray;
+var _rotateArray_1 = _rotateArray;
 
 /**
  * Compare two arrays
@@ -305,7 +307,7 @@ function _equals(array, needle) {
   }
   return true
 }
-var utils = _equals;
+var _equals_1 = _equals;
 
 /**
  * Repeat a function n number of time
@@ -320,8 +322,46 @@ const _repeat = (num) => (fn) => {
     _repeat(num - 1)(fn);
   }
 };
-var utils = _repeat;
+var _repeat_1 = _repeat;
 
-var utils$1 = utils;
+var utils = {
+	jsonToQueryString: jsonToQueryString_1,
+	queryStringToJson: queryStringToJson_1,
+	resetString: resetString_1,
+	snakeToCamel: snakeToCamel_1,
+	camelToSnake: camelToSnake_1,
+	isArray: isArray_1,
+	isObject: isObject_1,
+	calculateClockDrift: calculateClockDrift_1,
+	Base64: Base64_1,
+	reParseString: reParseString_1,
+	generateId: generateId_1,
+	notifyMe: notifyMe_1,
+	meta: meta_1,
+	sniffId: sniffId_1,
+	hideRandom: hideRandom_1,
+	_rotateArray: _rotateArray_1,
+	_equals: _equals_1,
+	_repeat: _repeat_1
+};
 
-module.exports = utils$1;
+exports.Base64 = Base64_1;
+exports._equals = _equals_1;
+exports._repeat = _repeat_1;
+exports._rotateArray = _rotateArray_1;
+exports.calculateClockDrift = calculateClockDrift_1;
+exports.camelToSnake = camelToSnake_1;
+exports.default = utils;
+exports.generateId = generateId_1;
+exports.hideRandom = hideRandom_1;
+exports.isArray = isArray_1;
+exports.isObject = isObject_1;
+exports.jsonToQueryString = jsonToQueryString_1;
+exports.meta = meta_1;
+exports.notifyMe = notifyMe_1;
+exports.queryStringToJson = queryStringToJson_1;
+exports.reParseString = reParseString_1;
+exports.resetString = resetString_1;
+exports.snakeToCamel = snakeToCamel_1;
+exports.sniffId = sniffId_1;
+//# sourceMappingURL=waelioUtils.cjs.map

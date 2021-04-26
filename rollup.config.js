@@ -1,26 +1,33 @@
-import resolve from '@rollup/plugin-node-resolve';
-import json from '@rollup/plugin-json';
-import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve'
+import json from '@rollup/plugin-json'
+import commonjs from '@rollup/plugin-commonjs'
 
-export default 
-  [
+export default [
   {
     input: 'src/utils',
-    plugins: [ resolve(),json(),commonjs()],
+    plugins: [resolve(), json(), commonjs()],
     output: [
       {
         file: 'dist/waelioUtils.cjs',
-        format: 'cjs'
+        name: 'waelioUtils',
+        format: 'cjs',
+        exports: 'named',
+        sourcemap: true,
       },
       {
         file: 'dist/waelioUtils.js',
         name: 'waelioUtils',
-        format: 'umd'
+        format: 'umd',
+        exports: 'named',
+        sourcemap: true,
       },
       {
         file: 'dist/waelioUtils.ejs',
-        format: 'esm'
-      }
-    ]
-  }  
-  ]
+        name: 'waelioUtils',
+        format: 'esm',
+        exports: 'named',
+        sourcemap: true,
+      },
+    ],
+  },
+]

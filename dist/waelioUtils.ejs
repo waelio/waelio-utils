@@ -228,17 +228,16 @@ function sniffId(payload) {
   return newId || false
 }
 var sniffId_1 = sniffId;
-
-function hideRandom(array, difficulty = 3) {
+function _hideRandom(array, difficulty = 3, replacement = '') {
   for (let i = 0; i < array.length; ++i) {
     for (let k = 0; k < difficulty; ++k) {
       const randomColumnIndex = Math.floor(Math.random() * array.length);
-      array[i][randomColumnIndex] = '';
+      array[i][randomColumnIndex] = replacement;
     }
   }
   return array
 }
-var hideRandom_1 = hideRandom;
+var _hideRandom_1 = _hideRandom;
 
 function _rotateArray(array) {
   // Calculate the width and height of the Array
@@ -335,12 +334,12 @@ var utils = {
 	notifyMe: notifyMe_1,
 	meta: meta_1,
 	sniffId: sniffId_1,
-	hideRandom: hideRandom_1,
+	_hideRandom: _hideRandom_1,
 	_rotateArray: _rotateArray_1,
 	_equals: _equals_1,
 	_repeat: _repeat_1
 };
 
 export default utils;
-export { Base64_1 as Base64, _equals_1 as _equals, _repeat_1 as _repeat, _rotateArray_1 as _rotateArray, calculateClockDrift_1 as calculateClockDrift, camelToSnake_1 as camelToSnake, generateId_1 as generateId, hideRandom_1 as hideRandom, isArray_1 as isArray, isObject_1 as isObject, jsonToQueryString_1 as jsonToQueryString, meta_1 as meta, notifyMe_1 as notifyMe, queryStringToJson_1 as queryStringToJson, reParseString_1 as reParseString, resetString_1 as resetString, snakeToCamel_1 as snakeToCamel, sniffId_1 as sniffId };
+export { Base64_1 as Base64, _equals_1 as _equals, _hideRandom_1 as _hideRandom, _repeat_1 as _repeat, _rotateArray_1 as _rotateArray, calculateClockDrift_1 as calculateClockDrift, camelToSnake_1 as camelToSnake, generateId_1 as generateId, isArray_1 as isArray, isObject_1 as isObject, jsonToQueryString_1 as jsonToQueryString, meta_1 as meta, notifyMe_1 as notifyMe, queryStringToJson_1 as queryStringToJson, reParseString_1 as reParseString, resetString_1 as resetString, snakeToCamel_1 as snakeToCamel, sniffId_1 as sniffId };
 //# sourceMappingURL=waelioUtils.ejs.map

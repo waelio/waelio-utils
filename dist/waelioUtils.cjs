@@ -232,17 +232,16 @@ function sniffId(payload) {
   return newId || false
 }
 var sniffId_1 = sniffId;
-
-function hideRandom(array, difficulty = 3) {
+function _hideRandom(array, difficulty = 3, replacement = '') {
   for (let i = 0; i < array.length; ++i) {
     for (let k = 0; k < difficulty; ++k) {
       const randomColumnIndex = Math.floor(Math.random() * array.length);
-      array[i][randomColumnIndex] = '';
+      array[i][randomColumnIndex] = replacement;
     }
   }
   return array
 }
-var hideRandom_1 = hideRandom;
+var _hideRandom_1 = _hideRandom;
 
 function _rotateArray(array) {
   // Calculate the width and height of the Array
@@ -339,7 +338,7 @@ var utils = {
 	notifyMe: notifyMe_1,
 	meta: meta_1,
 	sniffId: sniffId_1,
-	hideRandom: hideRandom_1,
+	_hideRandom: _hideRandom_1,
 	_rotateArray: _rotateArray_1,
 	_equals: _equals_1,
 	_repeat: _repeat_1
@@ -347,13 +346,13 @@ var utils = {
 
 exports.Base64 = Base64_1;
 exports._equals = _equals_1;
+exports._hideRandom = _hideRandom_1;
 exports._repeat = _repeat_1;
 exports._rotateArray = _rotateArray_1;
 exports.calculateClockDrift = calculateClockDrift_1;
 exports.camelToSnake = camelToSnake_1;
 exports.default = utils;
 exports.generateId = generateId_1;
-exports.hideRandom = hideRandom_1;
 exports.isArray = isArray_1;
 exports.isObject = isObject_1;
 exports.jsonToQueryString = jsonToQueryString_1;

@@ -2,7 +2,7 @@
 
 ### The [WaelioUtils](https://github.com/waelio/waelio-utils) exported as a Javascript modules.
 
-### In browser: `<script src="https://unpkg.com/waelio-utils@latest/dist/waelioUtils.js"></script>`
+##### In browser: `<script src="https://unpkg.com/waelio-utils@latest/dist/waelioUtils.js"></script>`
 
 #
 

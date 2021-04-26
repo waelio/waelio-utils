@@ -13,6 +13,14 @@
     "react",
     "angular"
   ],
+  "files": [
+    "dist/waelioUtils.cjs",
+    "dist/waelioUtils.cjs.map",
+    "dist/waelioUtils.ejs",
+    "dist/waelioUtils.ejs.map",
+    "dist/waelioUtils.js",
+    "dist/waelioUtils.js.map"
+  ],
   "main": "main.js",
   "scripts": {
     "start": "rollup -c",

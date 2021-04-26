@@ -126,6 +126,7 @@ exports.calculateClockDrift = calculateClockDrift
 /**
  * Converts string to a Base64
  * @param  {string} payload
+ * @returns {string}
  */
 function Base64(payload) {
   return btoa(unescape(encodeURIComponent(payload)))
@@ -151,8 +152,9 @@ exports.generateId = generateId
 
 /** PWA Notification
  * Send Notification to Site
- * Works only in Browser
- * @param  {string} notification -String
+ * Browser only
+ * @param  {string} notification -Message to send
+ * @param  {string} Site -Website name
  */
 function notifyMe(notification, Site = 'NorthWestMeta.com!') {
   document.addEventListener('DOMContentLoaded', () => {
@@ -221,13 +223,21 @@ function meta() {
 }
 exports.meta = meta
 
-//ID SNiffer
+/**
+ * @param  {object} payload
+ * @returns string||boolean||number
+ */
 function sniffId(payload) {
   const { id, _id, Id, iD } = payload
   const newId = id || _id || Id || iD
   return newId || false
 }
 exports.sniffId = sniffId
+/**
+ * @param  {array} array
+ * @param  {number} difficulty=3
+ * @param  {string} replacement=''
+ */
 function _hideRandom(array, difficulty = 3, replacement = '') {
   for (let i = 0; i < array.length; ++i) {
     for (let k = 0; k < difficulty; ++k) {
@@ -238,7 +248,10 @@ function _hideRandom(array, difficulty = 3, replacement = '') {
   return array
 }
 exports._hideRandom = _hideRandom
-
+/**
+ * Rotates array counter clock
+ * @param  {array} array
+ */
 function _rotateArray(array) {
   // Calculate the width and height of the Array
   let w = array.length || 0
@@ -272,11 +285,10 @@ function _rotateArray(array) {
 
   return t
 }
-
 exports._rotateArray = _rotateArray
 
 /**
- * Compare two arrays
+ * Compare two arrays of equal size
  * @param {array} array
  * @param {array} needle
  * @returns {boolean}

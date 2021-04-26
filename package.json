@@ -21,7 +21,7 @@
     "dist/waelioUtils.js",
     "dist/waelioUtils.js.map"
   ],
-  "main": "main.js",
+  "main": "dist/waelioUtils.js",
   "scripts": {
     "start": "rollup -c",
     "test": "jasmine"
@@ -65,7 +65,7 @@
     "yarn": ">= 1.21.1"
   },
   "directories": {
-    "src": "example",
-    "test": "tests"
+    "src": "dist",
+    "test": "spec"
   }
 }

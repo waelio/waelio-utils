@@ -16,7 +16,7 @@ function jsonToQueryString(payload) {
     )
     .join('&')
 }
-module.exports = jsonToQueryString
+exports.jsonToQueryString = jsonToQueryString
 
 /**
  * Function that converts a URL Query String to JSON
@@ -39,7 +39,7 @@ function queryStringToJson(payload, toObject = true) {
   })
   return toObject ? JSON.parse(JSON.stringify(result)) : JSON.stringify(result)
 }
-module.exports = queryStringToJson
+exports.queryStringToJson = queryStringToJson
 
 /** Decode uri component
  * @name  resetString
@@ -51,7 +51,7 @@ module.exports = queryStringToJson
 function resetString(payload) {
   return decodeURIComponent(decodeURIComponent(encodeURIComponent(payload)))
 }
-module.exports = resetString
+exports.resetString = resetString
 
 /**
  * Function that converts snake_case or snake-case to camelCase "snakeCase"
@@ -69,7 +69,7 @@ function snakeToCamel(payload) {
     ? payload
     : payload.replace(/([-_]\w)/g, (g) => g[1].toUpperCase())
 }
-module.exports = snakeToCamel
+exports.snakeToCamel = snakeToCamel
 
 /**
  * Function that converts camelCase to snake_case or snake-case "snake-case"
@@ -93,7 +93,7 @@ function camelToSnake(payload, hyphenated = false) {
         )
   )
 }
-module.exports = camelToSnake
+exports.camelToSnake = camelToSnake
 
 /**
 Test isArray
@@ -101,14 +101,14 @@ Test isArray
 function isArray(payload) {
   return Array.isArray(payload)
 }
-module.exports = isArray
+exports.isArray = isArray
 
 function isObject(payload) {
   return (
     payload === Object(payload) && !isArray(payload) && typeof o !== 'function'
   )
 }
-module.exports = isObject
+exports.isObject = isObject
 
 /**
  * Calculate Clock Drift used to calculate tile remaining before token expiration
@@ -121,7 +121,7 @@ function calculateClockDrift(iatAccessToken, iatIdToken) {
   const iat = Math.min(iatAccessToken, iatIdToken)
   return now - iat
 }
-module.exports = calculateClockDrift
+exports.calculateClockDrift = calculateClockDrift
 
 /**
  * Converts string to a Base64
@@ -130,12 +130,12 @@ module.exports = calculateClockDrift
 function Base64(payload) {
   return btoa(unescape(encodeURIComponent(payload)))
 }
-module.exports = Base64
+exports.Base64 = Base64
 
 function reParseString(payload) {
   return JSON.parse(JSON.stringify(payload))
 }
-module.exports = reParseString
+exports.reParseString = reParseString
 
 /** generate random string
  * @name  generateId
@@ -147,7 +147,7 @@ module.exports = reParseString
 function generateId(start = 2, len = 9) {
   return Math.random().toString(36).substr(start, len)
 }
-module.exports = generateId
+exports.generateId = generateId
 
 /** PWA Notification
  * Send Notification to Site
@@ -169,7 +169,7 @@ function notifyMe(notification, Site = 'NorthWestMeta.com!') {
     }
   })
 }
-module.exports = notifyMe
+exports.notifyMe = notifyMe
 
 function meta() {
   const metaObj = { meta: {} }
@@ -219,7 +219,7 @@ function meta() {
   }
   return metaObj
 }
-module.exports = meta
+exports.meta = meta
 
 //ID SNiffer
 function sniffId(payload) {
@@ -227,7 +227,7 @@ function sniffId(payload) {
   const newId = id || _id || Id || iD
   return newId || false
 }
-module.exports = sniffId
+exports.sniffId = sniffId
 
 function hideRandom(array, difficulty = 3) {
   for (let i = 0; i < array.length; ++i) {
@@ -238,7 +238,7 @@ function hideRandom(array, difficulty = 3) {
   }
   return array
 }
-module.exports = hideRandom
+exports.hideRandom = hideRandom
 
 function _rotateArray(array) {
   // Calculate the width and height of the Array
@@ -274,7 +274,7 @@ function _rotateArray(array) {
   return t
 }
 
-module.exports = _rotateArray
+exports._rotateArray = _rotateArray
 
 /**
  * Compare two arrays
@@ -303,7 +303,7 @@ function _equals(array, needle) {
   }
   return true
 }
-module.exports = _equals
+exports._equals = _equals
 
 /**
  * Repeat a function n number of time
@@ -318,4 +318,4 @@ const _repeat = (num) => (fn) => {
     _repeat(num - 1)(fn)
   }
 }
-module.exports = _repeat
+exports._repeat = _repeat

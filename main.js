@@ -1,26 +1,22 @@
 const { jsonToQueryString,queryStringToJson,resetString,snakeToCamel,camelToSnake,isArray,isObject,calculateClockDrift,Base64,reParseString,generateId,notifyMe,meta,sniffId,hideRandom,_rotateArray,_equals,_repeat } = require('./src/utils');
-
-module.exports = jsonToQueryString
-module.exports = queryStringToJson
-module.exports = resetString
-module.exports = snakeToCamel
-module.exports = camelToSnake
-module.exports = isArray
-module.exports = isObject;
-module.exports = calculateClockDrift
-module.exports = Base64;
-module.exports = reParseString;
-module.exports = generateId;
-module.exports = notifyMe
-module.exports = meta
-module.exports = sniffId
-module.exports = hideRandom
-module.exports = _rotateArray
-module.exports = _equals
-module.exports = _repeat
-
-
-
 const waelioUtils = { jsonToQueryString,queryStringToJson,resetString,snakeToCamel,camelToSnake,isArray,isObject,calculateClockDrift,Base64,reParseString,generateId,notifyMe,meta,sniffId,hideRandom,_rotateArray,_equals,_repeat };
 
-module.exports = waelioUtils
+exports.jsonToQueryString = jsonToQueryString
+exports.queryStringToJson = queryStringToJson
+exports.resetString = resetString
+exports.snakeToCamel = snakeToCamel
+exports.camelToSnake = camelToSnake
+exports.isArray = isArray
+exports.isObject = isObject;
+exports.calculateClockDrift = calculateClockDrift
+exports.Base64 = Base64;
+exports.reParseString = reParseString;
+exports.generateId = generateId;
+exports.notifyMe = notifyMe
+exports.meta = meta
+exports.sniffId = sniffId
+exports.hideRandom = hideRandom
+exports._rotateArray = _rotateArray
+exports._equals = _equals
+exports._repeat = _repeat
+exports.waelioUtils = waelioUtils

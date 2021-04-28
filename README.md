@@ -8,6 +8,10 @@
 ### The [WaelioUtils](https://github.com/waelio/waelio-utils) exported as a Javascript modules.
 
 #
+## Chat Support
+Ask questions at the official [Dicord Channel](https://discord.gg/tBZ2Fmdb7E)
+
+Discord Server: https://discord.gg/tBZ2Fmdb7E
 
 # Index
 

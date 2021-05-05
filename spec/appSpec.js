@@ -46,3 +46,30 @@ describe('_repeat from waelioUtils', () => {
     expect(counter).toEqual(5)
   })
 })
+
+const { _cleanResponse } = waelioUtils
+describe('clean response from waelioUtils', () => {
+  const axios = require('axios')
+  const testEndpoint = 'https://api.picmymenu.com/restaurants'
+  it('should clean response', async () => {
+    const response = await axios(testEndpoint)
+    const test = _cleanResponse(response)
+    // console.log(test)
+    expect(test.data).toBeTruthy()
+    expect(test.data.length).toBeTruthy()
+  })
+})
+
+const { _to } = waelioUtils
+describe('deconstruct response method from waelioUtils', () => {
+  const axios = require('axios')
+  const testEndpoint = 'https://api.picmymenu.com/restaurants'
+  it('should create promise', async () => {
+    const response = await _to(axios(testEndpoint))
+    const test = ([reject, resolve] = response)
+    console.log(reject)
+    console.log(resolve)
+    // expect(test.data).toBeTruthy()
+    // expect(test.data.length).toBeTruthy()
+  })
+})

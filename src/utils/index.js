@@ -1,3 +1,5 @@
+const _ = require('lodash')
+
 /**
  * Function that converts a JSON to URL Query String
  * Example IN: {"first":"John", "last": "Smith"}
@@ -330,3 +332,43 @@ const _repeat = (num) => (fn) => {
   }
 }
 exports._repeat = _repeat
+
+function cleanResponse(response) {
+  const data = _.get(response, 'data')
+  return !!data ? reParseString(data) : response
+}
+exports._cleanResponse = cleanResponse
+
+function to(promise) {
+  return promise
+    .then((result) => cleanResponse(result))
+    .catch((err) => [err, null])
+}
+exports._to = to
+
+function parseErrors(err) {
+  if (err.name) {
+    return err.message
+  } else {
+    return _.map(_.get(err, 'errors', []), (err) =>
+      err.message.replace('Path ', '').replace('`', '').replace('`', ''),
+    ).join('<br>')
+  }
+}
+exports._parseErrors = parseErrors
+
+function formatErrors(err) {
+  var errors = {}
+  _.get(err, 'inner', []).forEach((err) => {
+    if (_.get(err, 'path') && _.get(err, 'message')) {
+      errors[err.path] = err.message
+    }
+  })
+  return errors
+}
+exports._formatErrors = formatErrors
+
+const a_or_an = function a_or_an(field) {
+  return /[aeiou]/.test(field.charAt(0)) ? 'an' : 'a'
+}
+exports.a_or_an = a_or_an

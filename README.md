@@ -1,13 +1,16 @@
-
 # Waelio Utilities
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/waelio?locale.x=en_US) 
-[![NPM version](https://img.shields.io/npm/v/waelio-utils.svg?style=flat)](https://www.npmjs.com/package/waelio-utils) 
-[![NPM monthly downloads](https://img.shields.io/npm/dm/waelio-utils.svg?style=flat)](https://npmjs.org/package/waelio-utils) 
-[![NPM total downloads](https://img.shields.io/npm/dt/waelio-utils.svg?style=flat)](https://npmjs.org/package/waelio-utils)
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/waelio?locale.x=en_US) [![NPM version](https://img.shields.io/npm/v/waelio-utils.svg?style=flat&color=red&label=NPM)](https://www.npmjs.com/package/waelio-utils) [![NPM monthly downloads](https://img.shields.io/npm/dm/waelio-utils.svg?style=flat)](https://npmjs.org/package/waelio-utils) [![NPM total downloads](https://img.shields.io/npm/dt/waelio-utils.svg?style=flat&color=purple&label=Downloads)](https://npmjs.org/package/waelio-utils)
 
 ### The [WaelioUtils](https://github.com/waelio/waelio-utils) exported as a Javascript modules.
 
 #
+
+## Chat Support
+
+Ask questions at the official [Dicord Channel](https://discord.gg/tBZ2Fmdb7E)
+
+Discord Server: https://discord.gg/tBZ2Fmdb7E
 
 # Index
 
@@ -21,22 +24,31 @@
 8. <a href="#generateid"> generateId</a>
 9. <a href="#notifyme"> notifyMe</a>
 10. <a href="#meta"> meta</a>
-11. <a href="#sniffId"> sniffId</a>
-12. <a href="#hideRandom"> \_hideRandom</a>
-13. <a href="#rotateArray"> \_rotateArray</a>
-14. <a href="#equals"> \_equals</a>
-15. <a href="#repeat"> \_repeat</a>
+11. <a href="#SniffId"> sniffId</a>
+12. <a href="#HideRandom"> \_hideRandom</a>
+13. <a href="#RotateArray"> \_rotateArray</a>
+14. <a href="#Equals"> \_equals</a>
+15. <a href="#Repeat"> \_repeat</a>
+16. <a href="#CleanResponse">cleanResponse</a>
+17. <a href="#To">to</a>
+18. <a href="#ParseErrors">parseErrors</a>
+19. <a href="#FormatErrors">formatErrors</a>
+20. <a href="#AOrAn">a_or_an</a>
 
 # Installation
 
 Using npm:
+
 ```bash
 npm install --save waelio-utils
 ```
-In browser: 
-````html
+
+In browser:
+
+```html
 <script src="https://unpkg.com/waelio-utils@latest/dist/waelioUtils.js"></script>
-````
+```
+
 Tree Shaking (Recommended)
 
 ```javascript
@@ -357,7 +369,7 @@ notifyMe('Hello World!');
 
 #
 
-# sniffId
+# SniffId
 
 ### Deconstruct `id,Id,_Id,id` from Object
 
@@ -376,22 +388,25 @@ var newId = sniffId(response);
 #
 
 # hideRandom
+
 ### Hide random array indexes
 
-```` 
+```
 @params array
 @params difficulty = 3
 @params replacement = ''
-````
+```
+
 Example:
+
 ```javascript
-import { _hideRandom } from 'waelio-utils'
+import { _hideRandom } from 'waelio-utils';
 const arr = [
-        [1, 2, 3],
-        [1, 2, 3],
-        [1, 2, 3]
-      ]
-const test = _hideRandom(arr, 3)
+  [1, 2, 3],
+  [1, 2, 3],
+  [1, 2, 3]
+];
+const test = _hideRandom(arr, 3);
 
 /* random
 
@@ -408,7 +423,7 @@ const test = _hideRandom(arr, 3)
 
 #
 
-# rotateArray (_rotateArray)
+# rotateArray (\_rotateArray)
 
 ## Rotate array
 
@@ -434,7 +449,7 @@ const test1 = _rotateArray(testArray);
 
 #
 
-# equals (_equals)
+# equals (\_equals)
 
 ### compare 2 arrays with equal size
 
@@ -455,7 +470,7 @@ const test = _equals(array1, array2);
 
 #
 
-# repeat ( _repeat )
+# Repeat ( \_repeat )
 
 ### Repeat function N times
 
@@ -469,6 +484,66 @@ _repeat(5)(f1);
 
 // counter === 5
 ```
+
+#
+
+[Back to TOP](#index)
+
+#
+
+# Equals
+
+equals
+
+#
+
+[Back to TOP](#index)
+
+#
+
+# CleanResponse
+
+clean response
+
+#
+
+[Back to TOP](#index)
+
+#
+
+# To
+
+To Function
+
+#
+
+[Back to TOP](#index)
+
+#
+
+# ParseErrors
+
+Parse Errors
+
+#
+
+[Back to TOP](#index)
+
+#
+
+# FormatErrors
+
+errors formatter
+
+#
+
+[Back to TOP](#index)
+
+#
+
+# AOrAn
+
+AOrAn
 
 #
 

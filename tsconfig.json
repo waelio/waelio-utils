@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "ESNext",
+    "target": "es2016",
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
+    "strict": true,
+    "esModuleInterop": true,
+    "incremental": false,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": false,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "paths": {
+      "~/*": [
+        "src/*"
+      ]
+    }
+  },
+  "exclude": [
+    "r_n_d",
+    "spec",
+    "example",
+    "dist",
+    "node_modules",
+    "src/utils/meta"
+  ]
+}

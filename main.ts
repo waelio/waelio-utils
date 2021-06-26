@@ -1,31 +1,59 @@
-import { _cleanResponse, _formatErrors, _equals, _hideRandom, _parseErrors, _repeat, _rotateArray, _to, _To, a_or_an, Base64, toBase64, calculateClockDrift, camelToSnake, generateId, isArray, isObject, jsonToQueryString, meta, notifyMe, queryStringToJson, reParseString, resetString, snakeToCamel, sniffId, } from './src/utils';
+import {
+  _cleanResponse,
+  _formatErrors,
+  _equals,
+  _hideRandom,
+  _parseErrors,
+  _repeat,
+  _rotateArray,
+  _to,
+  _To,
+  a_or_an,
+  Base64,
+  toBase64,
+  calculateClockDrift,
+  camelToSnake,
+  generateId,
+  isArray,
+  isObject,
+  jsonToQueryString,
+  meta,
+  notifyMe,
+  queryStringToJson,
+  reParseString,
+  resetString,
+  snakeToCamel,
+  sniffId,
+} from './src/utils';
+
 const waelioUtils = {
-    _cleanResponse,
-    _formatErrors,
-    _equals,
-    _hideRandom,
-    _parseErrors,
-    _repeat,
-    _rotateArray,
-    _to,
-    _To,
-    a_or_an,
-    Base64,
-    toBase64,
-    calculateClockDrift,
-    camelToSnake,
-    generateId,
-    isArray,
-    isObject,
-    jsonToQueryString,
-    meta,
-    notifyMe,
-    queryStringToJson,
-    reParseString,
-    resetString,
-    snakeToCamel,
-    sniffId,
+  _cleanResponse,
+  _formatErrors,
+  _equals,
+  _hideRandom,
+  _parseErrors,
+  _repeat,
+  _rotateArray,
+  _to,
+  _To,
+  a_or_an,
+  Base64,
+  toBase64,
+  calculateClockDrift,
+  camelToSnake,
+  generateId,
+  isArray,
+  isObject,
+  jsonToQueryString,
+  meta,
+  notifyMe,
+  queryStringToJson,
+  reParseString,
+  resetString,
+  snakeToCamel,
+  sniffId,
 };
+
 // export { _cleanResponse };
 // export { _formatErrors };
 // export { _equals };
@@ -53,5 +81,7 @@ const waelioUtils = {
 // export { resetString };
 // export { snakeToCamel };
 // export { sniffId };
-export { waelioUtils };
+
+export { waelioUtils }
+
 console.log(waelioUtils);

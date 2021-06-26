@@ -23,6 +23,7 @@ import { reParseString } from './re_parse_string';
 import { resetString } from './reset_string';
 import { snakeToCamel } from './snake_to_camel';
 import { sniffId } from './sniff_id';
+
 export { _cleanResponse };
 export { _formatErrors };
 export { _equals };
@@ -34,7 +35,7 @@ export { _to };
 export { _To };
 export { a_or_an };
 export { Base64, toBase64 };
-export { calculateClockDrift };
+export { calculateClockDrift }; 
 export { camelToSnake };
 export { generateId };
 export { isArray };

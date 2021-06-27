@@ -1,5 +1,5 @@
 import { _cleanResponse, _formatErrors, _equals, _hideRandom, _parseErrors, _repeat, _rotateArray, _to, _To, a_or_an, Base64, toBase64, calculateClockDrift, camelToSnake, generateId, isArray, isObject, jsonToQueryString, meta, notifyMe, queryStringToJson, reParseString, resetString, snakeToCamel, sniffId, } from './src/utils';
-const waelioUtils = {
+export const waelioUtils = {
     _cleanResponse,
     _formatErrors,
     _equals,
@@ -24,7 +24,7 @@ const waelioUtils = {
     reParseString,
     resetString,
     snakeToCamel,
-    sniffId,
+    sniffId
 };
 export { _cleanResponse };
 export { _formatErrors };
@@ -53,4 +53,4 @@ export { reParseString };
 export { resetString };
 export { snakeToCamel };
 export { sniffId };
-export { waelioUtils };
+// export { waelioUtils };

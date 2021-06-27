@@ -1,5 +1,5 @@
-const { waelioUtils } = import('../main');
-console.log('waelioUtils', waelioUtils)
+const { waelioUtils } = require('../dist/waelioUtils');
+console.log('waelioUtils', waelioUtils);
 
 describe('waelioUtils must be an object', function () {
   it('Must be Object', function () {
@@ -66,9 +66,10 @@ describe('deconstruct response method from waelioUtils', () => {
   const testEndpoint = 'https://api.picmymenu.com/restaurants';
   it('should create promise', async () => {
     const response = await _to(axios(testEndpoint));
-    const test = ([reject, resolve] = response);
-    console.log(reject);
-    console.log(resolve);
+    console.log('🚀 ~ file: appSpec.ts ~ line 69 ~ it ~ response', response);
+    const { reject, resolve } = response;
+    console.log('reject', reject);
+    console.log('resolve', resolve);
     // expect(test.data).toBeTruthy()
     // expect(test.data.length).toBeTruthy()
   });

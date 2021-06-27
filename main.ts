@@ -83,5 +83,3 @@ export { snakeToCamel };
 export { sniffId };
 
 export { waelioUtils }
-
-console.log(waelioUtils);

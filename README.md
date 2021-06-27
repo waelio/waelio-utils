@@ -29,14 +29,14 @@ Discord Server: https://discord.gg/tBZ2Fmdb7E
 9. <a href="#notifyme"> notifyMe</a>
 10. <a href="#meta"> meta</a>
 11. <a href="#SniffId"> sniffId</a>
-12. <a href="#HideRandom"> \_hideRandom</a>
-13. <a href="#RotateArray"> \_rotateArray</a>
-14. <a href="#Equals"> \_equals</a>
-15. <a href="#Repeat"> \_repeat</a>
-16. <a href="#CleanResponse">cleanResponse</a>
-17. <a href="#To">to</a>
-18. <a href="#ParseErrors">parseErrors</a>
-19. <a href="#FormatErrors">formatErrors</a>
+12. <a href="#HideRandom">_hideRandom</a>
+13. <a href="#RotateArray">_rotateArray</a>
+14. <a href="#Equals"> _equals</a>
+15. <a href="#Repeat"> _repeat</a>
+16. <a href="#CleanResponse">_cleanResponse</a>
+17. <a href="#To">_to</a>
+18. <a href="#ParseErrors">_parseErrors</a>
+19. <a href="#FormatErrors">_formatErrors</a>
 20. <a href="#AOrAn">a_or_an</a>
 
 # Installation

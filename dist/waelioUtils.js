@@ -17210,14 +17210,11 @@
 	}.call(commonjsGlobal));
 	});
 
-	const reParseString = (payload) => {
-	    return JSON.parse(JSON.stringify(payload));
-	};
-
 	// @ts-nocheck
+	const reParseString$1 = (payload) => (payload ? JSON.parse(JSON.stringify(payload)) : payload);
 	const _cleanResponse = (response) => {
-	    const data = lodash.get(response, 'data');
-	    return !!data ? reParseString(data) : response;
+	  const data = lodash.get(response, 'data');
+	  return !!data ? reParseString$1(data) : response;
 	};
 
 	/**
@@ -17380,13 +17377,12 @@
 	/**
 	Test isArray
 	*/
-	const isArray$1 = (payload) => {
+	const isArray = (payload) => {
 	    return Array.isArray(payload);
 	};
 
-	const { isArray } = require('./is_array');
 	const isObject = (payload) => {
-	    return payload === Object(payload) && !isArray(payload) && typeof payload !== 'function';
+	    return payload === Object(payload) && !Array.isArray(payload) && typeof payload !== 'function';
 	};
 
 	// @ts-nocheck
@@ -17521,6 +17517,10 @@
 	    return toObject ? JSON.parse(JSON.stringify(result)) : JSON.stringify(result);
 	};
 
+	const reParseString = (payload) => {
+	    return JSON.parse(JSON.stringify(payload));
+	};
+
 	/** Decode uri component
 	 * @name  resetString
 	 * @author  Wael Wahbeh <wahbehw@gmail.com>
@@ -17573,7 +17573,7 @@
 	    calculateClockDrift,
 	    camelToSnake,
 	    generateId,
-	    isArray: isArray$1,
+	    isArray,
 	    isObject,
 	    jsonToQueryString,
 	    meta,

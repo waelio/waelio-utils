@@ -1,8 +1,8 @@
 // @ts-nocheck
 import { get } from 'lodash';
-import { reParseString } from './re_parse_string';
+const reParseString = (payload) => (payload ? JSON.parse(JSON.stringify(payload)) : payload);
 const _cleanResponse = (response) => {
-    const data = get(response, 'data');
-    return !!data ? reParseString(data) : response;
+  const data = get(response, 'data');
+  return !!data ? reParseString(data) : response;
 };
 export { _cleanResponse };

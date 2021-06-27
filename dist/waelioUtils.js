@@ -17213,8 +17213,8 @@
 	// @ts-nocheck
 	const reParseString$1 = (payload) => (payload ? JSON.parse(JSON.stringify(payload)) : payload);
 	const _cleanResponse = (response) => {
-	  const data = lodash.get(response, 'data');
-	  return !!data ? reParseString$1(data) : response;
+	    const data = lodash.get(response, 'data');
+	    return !!data ? reParseString$1(data) : response;
 	};
 
 	/**

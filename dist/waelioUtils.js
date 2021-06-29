@@ -17377,11 +17377,11 @@
 	/**
 	Test isArray
 	*/
-	const isArray = (payload) => {
+	const isArray$1 = (payload) => {
 	    return Array.isArray(payload);
 	};
 
-	const isObject = (payload) => {
+	const isObject$1 = (payload) => {
 	    return payload === Object(payload) && !Array.isArray(payload) && typeof payload !== 'function';
 	};
 
@@ -17557,6 +17557,42 @@
 	    return newId || false;
 	};
 
+	const isObject = (payload) => {
+	    return payload === Object(payload) && !Array.isArray(payload) && typeof payload !== 'function';
+	};
+	const isArray = (payload) => {
+	    return Array.isArray(payload);
+	};
+	const isFunction = (functionToCheck) => typeof functionToCheck === 'function';
+	const _encrypt = (salt, text) => {
+	    switch (true) {
+	        case isObject(text):
+	            text = JSON.stringify(text); /*? */
+	            break;
+	        case isArray(text):
+	            text = JSON.stringify(text); /*? */
+	            break;
+	        case isFunction(text) /*?*/:
+	            text = text.toString(); /*? */
+	            break;
+	    }
+	    const textToChars = (text) => text.split('').map((c) => c.charCodeAt(0)); /*?*/
+	    const byteHex = (n) => ('0' + Number(n).toString(16)).substr(-2); /*?*/
+	    const applySaltToChar = (code) => textToChars(salt).reduce((a, b) => a ^ b, code); /*?*/
+	    return text.split('').map(textToChars).map(applySaltToChar).map(byteHex).join('');
+	};
+
+	const _decrypt = (salt, encoded) => {
+	    const textToChars = (text) => text.split('').map((c) => c.charCodeAt(0));
+	    const applySaltToChar = (code) => textToChars(salt).reduce((a, b) => a ^ b, code);
+	    return encoded
+	        .match(/.{1,2}/g)
+	        .map((hex) => parseInt(hex, 16))
+	        .map(applySaltToChar)
+	        .map((charCode) => String.fromCharCode(charCode))
+	        .join('');
+	};
+
 	const waelioUtils = {
 	    _cleanResponse,
 	    _formatErrors,
@@ -17573,8 +17609,8 @@
 	    calculateClockDrift,
 	    camelToSnake,
 	    generateId,
-	    isArray,
-	    isObject,
+	    isArray: isArray$1,
+	    isObject: isObject$1,
 	    jsonToQueryString,
 	    meta,
 	    notifyMe,
@@ -17583,11 +17619,15 @@
 	    resetString,
 	    snakeToCamel,
 	    sniffId,
+	    _encrypt,
+	    _decrypt
 	};
 
 	exports.Base64 = Base64;
 	exports._To = _to;
 	exports._cleanResponse = _cleanResponse;
+	exports._decrypt = _decrypt;
+	exports._encrypt = _encrypt;
 	exports._equals = _equals;
 	exports._formatErrors = _formatErrors;
 	exports._hideRandom = _hideRandom;
@@ -17600,8 +17640,8 @@
 	exports.camelToSnake = camelToSnake;
 	exports.formatErrors = _formatErrors;
 	exports.generateId = generateId;
-	exports.isArray = isArray;
-	exports.isObject = isObject;
+	exports.isArray = isArray$1;
+	exports.isObject = isObject$1;
 	exports.jsonToQueryString = jsonToQueryString;
 	exports.meta = meta;
 	exports.notifyMe = notifyMe;

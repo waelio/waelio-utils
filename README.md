@@ -38,6 +38,8 @@ Discord Server: https://discord.gg/tBZ2Fmdb7E
 18. <a href="#ParseErrors">_parseErrors</a>
 19. <a href="#FormatErrors">_formatErrors</a>
 20. <a href="#AOrAn">a_or_an</a>
+21. <a href="#encrypt">_encrypt</a>
+22. <a href="#decrypt">_decrypt</a>
 
 # Installation
 

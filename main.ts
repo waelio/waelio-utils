@@ -24,6 +24,8 @@ import {
   resetString,
   snakeToCamel,
   sniffId,
+  _encrypt,
+  _decrypt
 } from './src/utils';
 
 const waelioUtils = {
@@ -52,6 +54,8 @@ const waelioUtils = {
   resetString,
   snakeToCamel,
   sniffId,
+    _encrypt,
+  _decrypt
 };
 
 export { _cleanResponse };
@@ -81,5 +85,6 @@ export { reParseString };
 export { resetString };
 export { snakeToCamel };
 export { sniffId };
-
+export { _encrypt };
+export { _decrypt };
 export { waelioUtils }

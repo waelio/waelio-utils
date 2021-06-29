@@ -23,6 +23,8 @@ import { reParseString } from './re_parse_string';
 import { resetString } from './reset_string';
 import { snakeToCamel } from './snake_to_camel';
 import { sniffId } from './sniff_id';
+import { _encrypt } from './encrypt';
+import { _decrypt } from './decrypt';
 
 export { _cleanResponse };
 export { _formatErrors };
@@ -48,3 +50,5 @@ export { reParseString };
 export { resetString };
 export { snakeToCamel };
 export { sniffId };
+export { _encrypt };
+export { _decrypt };

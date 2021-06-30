@@ -3,15 +3,17 @@ import json from '@rollup/plugin-json';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import tsTreeshaking from 'rollup-plugin-ts-treeshaking';
+import bundleSize from 'rollup-plugin-bundle-size';
 
 export default [
   {
     input: './main.ts',
-    plugins: [resolve(), json(), commonjs(), typescript(), tsTreeshaking()],
+    external: ['lodash', 'axios'],
+    plugins: [resolve(), json(), commonjs(), typescript(), tsTreeshaking(), bundleSize()],
     onwarn: function (warning) {
       if (warning.code === 'THIS_IS_UNDEFINED') {
         return;
-      }      
+      }
       console.warn(warning.message);
     },
     output: [

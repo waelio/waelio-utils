@@ -90,16 +90,22 @@ const demo = {
   __v: 0
 };
 
-it('Should Encrypt a payload', async () => {
-  const encrypted_text = await _encrypt(salt, 'demo');
+it('Should Encrypt a payload', async() => {
+  const encrypted_text = await _encrypt(salt, demo); /*?*/
+  // console.log("🚀 ~ file: appSpec.ts ~ line 95 ~ it ~ encrypted_text", encrypted_text)
   expect(encrypted_text).toBeTruthy();
   expect(encrypted_text).not.toEqual(demo);
 });
 
-it('Should decrypt a payload', async () => {
-  const encrypted_text = await _encrypt('salt', demo);
-  const decrypted_string = await _decrypt('salt', encrypted_text);
+it('Should Encrypt && decrypt a payload', async () => {
+  const encrypted_text = await _encrypt(salt, demo); /*?*/
+  // console.log("🚀 ~ file: appSpec.ts ~ line 102 ~ it ~ demo", demo)
+  // console.log('------');
+  // console.log('🚀 ~ file: appSpec.ts ~ line 103 ~ it ~ encrypted_text', encrypted_text);
+  // console.log('------');
+  const decrypted_string = await _decrypt(salt, encrypted_text); /*?*/
+  // console.log('🚀 ~ file: appSpec.ts ~ line 105 ~ it ~ decrypted_string', await JSON.parse(decrypted_string));
   expect(encrypted_text).toBeTruthy();
   expect(decrypted_string).toBeTruthy();
-  expect(demo).toEqual(decrypted_string);
+  expect(demo).toEqual(JSON.parse(decrypted_string));
 });

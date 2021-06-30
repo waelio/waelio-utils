@@ -14,12 +14,7 @@
     "angular"
   ],
   "files": [
-    "dist/waelioUtils.cjs",
-    "dist/waelioUtils.cjs.map",
-    "dist/waelioUtils.ejs",
-    "dist/waelioUtils.ejs.map",
-    "dist/waelioUtils.js",
-    "dist/waelioUtils.js.map"
+    "dist/*"
   ],
   "main": "dist/waelioUtils.js",
   "scripts": {
@@ -43,6 +38,7 @@
     "eslint": "^7.15.0",
     "jasmine": "^3.7.0",
     "jsdoc-to-markdown": "^7.0.1",
+    "lodash": "^4.17.21",
     "rollup": "^2.43.0",
     "rollup-plugin-ts": "^1.4.0",
     "rollup-plugin-ts-treeshaking": "^1.0.2",

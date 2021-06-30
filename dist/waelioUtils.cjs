@@ -17375,11 +17375,11 @@ const generateId = (start = 2, len = 9) => {
 /**
 Test isArray
 */
-const isArray$1 = (payload) => {
+const isArray$2 = (payload) => {
     return Array.isArray(payload);
 };
 
-const isObject$1 = (payload) => {
+const isObject$2 = (payload) => {
     return payload === Object(payload) && !Array.isArray(payload) && typeof payload !== 'function';
 };
 
@@ -17555,40 +17555,54 @@ const sniffId = (payload) => {
     return newId || false;
 };
 
+const isObject$1 = (payload) => {
+    return payload === Object(payload) && !Array.isArray(payload) && typeof payload !== 'function';
+};
+const isArray$1 = (payload) => {
+    return Array.isArray(payload);
+};
+const isFunction = (functionToCheck) => typeof functionToCheck === 'function';
+const isValid$1 = (payload) => isObject$1(payload) || isArray$1(payload) || (typeof payload === 'string' && payload.trim().length > 0);
+const _encrypt = (salt, text) => {
+    if (isValid$1(salt) && isValid$1(text)) {
+        switch (true) {
+            case isObject$1(text):
+                text = JSON.stringify(text);
+                break;
+            case isArray$1(text):
+                text = JSON.stringify(text);
+                break;
+            case isFunction(text):
+                text = text.toString();
+                break;
+        }
+        const textToChars = (text) => text.split('').map((c) => c.charCodeAt(0));
+        const byteHex = (n) => ('0' + Number(n).toString(16)).substr(-2);
+        const applySaltToChar = (code) => textToChars(salt).reduce((a, b) => a ^ b, code);
+        return text.split('').map(textToChars).map(applySaltToChar).map(byteHex).join('');
+    }
+    throw 'Invalid salt or payload!';
+};
+
 const isObject = (payload) => {
     return payload === Object(payload) && !Array.isArray(payload) && typeof payload !== 'function';
 };
 const isArray = (payload) => {
     return Array.isArray(payload);
 };
-const isFunction = (functionToCheck) => typeof functionToCheck === 'function';
-const _encrypt = (salt, text) => {
-    switch (true) {
-        case isObject(text):
-            text = JSON.stringify(text); /*? */
-            break;
-        case isArray(text):
-            text = JSON.stringify(text); /*? */
-            break;
-        case isFunction(text) /*?*/:
-            text = text.toString(); /*? */
-            break;
-    }
-    const textToChars = (text) => text.split('').map((c) => c.charCodeAt(0)); /*?*/
-    const byteHex = (n) => ('0' + Number(n).toString(16)).substr(-2); /*?*/
-    const applySaltToChar = (code) => textToChars(salt).reduce((a, b) => a ^ b, code); /*?*/
-    return text.split('').map(textToChars).map(applySaltToChar).map(byteHex).join('');
-};
-
+const isValid = (payload) => isObject(payload) || isArray(payload) || (typeof payload === 'string' && payload.trim().length > 0);
 const _decrypt = (salt, encoded) => {
-    const textToChars = (text) => text.split('').map((c) => c.charCodeAt(0));
-    const applySaltToChar = (code) => textToChars(salt).reduce((a, b) => a ^ b, code);
-    return encoded
-        .match(/.{1,2}/g)
-        .map((hex) => parseInt(hex, 16))
-        .map(applySaltToChar)
-        .map((charCode) => String.fromCharCode(charCode))
-        .join('');
+    if (isValid(encoded)) {
+        const textToChars = (text) => text.split('').map((c) => c.charCodeAt(0));
+        const applySaltToChar = (code) => textToChars(salt).reduce((a, b) => a ^ b, code);
+        return encoded
+            .match(/.{1,2}/g)
+            .map((hex) => parseInt(hex, 16))
+            .map(applySaltToChar)
+            .map((charCode) => String.fromCharCode(charCode))
+            .join('');
+    }
+    throw 'Invalid salt or encoded!';
 };
 
 const waelioUtils = {
@@ -17607,8 +17621,8 @@ const waelioUtils = {
     calculateClockDrift,
     camelToSnake,
     generateId,
-    isArray: isArray$1,
-    isObject: isObject$1,
+    isArray: isArray$2,
+    isObject: isObject$2,
     jsonToQueryString,
     meta,
     notifyMe,
@@ -17638,8 +17652,8 @@ exports.calculateClockDrift = calculateClockDrift;
 exports.camelToSnake = camelToSnake;
 exports.formatErrors = _formatErrors;
 exports.generateId = generateId;
-exports.isArray = isArray$1;
-exports.isObject = isObject$1;
+exports.isArray = isArray$2;
+exports.isObject = isObject$2;
 exports.jsonToQueryString = jsonToQueryString;
 exports.meta = meta;
 exports.notifyMe = notifyMe;

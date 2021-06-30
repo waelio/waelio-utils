@@ -1,22 +1,35 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "ESNext",
-    "target": "es2016",
-    "lib": [
-      "DOM",
-      "ESNext"
-    ],
-    "strict": true,
-    "esModuleInterop": true,
-    "incremental": false,
-    "skipLibCheck": true,
+    "rootDir": ".",
+    "outDir": "dist",
+    "sourceMap": false,
+    "noEmit": true,
+    "target": "esnext",
+    "module": "esnext",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
+    "allowJs": false,
+    "skipLibCheck": true,
     "noUnusedLocals": true,
     "strictNullChecks": true,
-    "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
+    "noImplicitThis": true,
+    "noImplicitReturns": false,
+    "strict": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "removeComments": false,
+    "jsx": "preserve",
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "types": [
+      "node"
+    ],
+    "forceConsistentCasingInFileNames": true,
     "typeRoots": [
       "node_modules/@types"
     ],

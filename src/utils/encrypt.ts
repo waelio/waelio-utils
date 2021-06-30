@@ -5,17 +5,20 @@ const isArray = (payload: any): boolean => {
   return Array.isArray(payload);
 };
 const isFunction = (functionToCheck): boolean => typeof functionToCheck === 'function';
+const isBullShit = (payload) : boolean => !!payload;
 
 const _encrypt = (salt, text) => {
   switch (true) {
+    case isBullShit(text):
+      return null
     case isObject(text):
-      text = JSON.stringify(text); /*? */
+      text = JSON.stringify(text); 
       break;
     case isArray(text):
-      text = JSON.stringify(text); /*? */
+      text = JSON.stringify(text);
       break;
-    case isFunction(text) /*?*/:
-      text = text.toString(); /*? */
+    case isFunction(text):
+      text = text.toString();
       break;
     default:
       break;

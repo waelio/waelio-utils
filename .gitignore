@@ -3,3 +3,7 @@ node_modules/
 .ignore*
 .npmrc
 .npmrc*
+spec/
+.github/
+.vscode/
+example/

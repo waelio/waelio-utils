@@ -14,7 +14,7 @@
     "angular"
   ],
   "files": [
-    "dist/*"
+    "/dist"
   ],
   "main": "dist/waelioUtils.js",
   "scripts": {

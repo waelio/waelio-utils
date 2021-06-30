@@ -14,9 +14,14 @@
     "angular"
   ],
   "files": [
-    "/dist",
-    "/src/utils"
+    "dist",
+    "src/utils"
   ],
+  "directories": {
+    "src": "src",
+    "dist": "dist",
+    "test": "spec"
+  },
   "main": "dist/waelioUtils.js",
   "size-limit": [
     {
@@ -28,7 +33,11 @@
     "start": "rollup -c && size-limit",
     "test": "jasmine && size-limit"
   },
-  "author": "Wael Wahbeh <wahbehw@gmail.com>",
+  "author": {
+    "name": "Wael Wahbeh",
+    "email": "wahbehw@gmail.com",
+    "url": "https://waelio.com"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -69,9 +78,5 @@
     "node": ">= 10.18.1",
     "npm": ">= 6.13.4",
     "yarn": ">= 1.21.1"
-  },
-  "directories": {
-    "src": "dist",
-    "test": "spec"
   }
 }

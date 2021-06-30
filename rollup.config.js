@@ -4,11 +4,12 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import tsTreeshaking from 'rollup-plugin-ts-treeshaking';
 import bundleSize from 'rollup-plugin-bundle-size';
+import pkg from './package.json';
 
 export default [
   {
     input: './main.ts',
-    external: ['lodash', 'axios'],
+    external: Object.keys(pkg.devDependencies),
     plugins: [resolve(), json(), commonjs(), typescript(), tsTreeshaking(), bundleSize()],
     onwarn: function (warning) {
       if (warning.code === 'THIS_IS_UNDEFINED') {

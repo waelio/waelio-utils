@@ -22,6 +22,7 @@
     "dist/waelioUtils.js.map",
     "dist/waelioUtils.ts",
     "dist/waelioUtils.ts.map",
+    "dist/lib/utils/main.d.ts",
     "dist/lib/utils/a_or_an.d.ts",
     "dist/lib/utils/base64.d.ts",
     "dist/lib/utils/calculate_clock_drift.d.ts",

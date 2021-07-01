@@ -1,3 +1,4 @@
+import ts from 'rollup-plugin-ts';
 import resolve from '@rollup/plugin-node-resolve';
 import json from '@rollup/plugin-json';
 import commonjs from '@rollup/plugin-commonjs';
@@ -10,7 +11,7 @@ export default [
   {
     input: './main.ts',
     external: Object.keys(pkg.devDependencies),
-    plugins: [resolve(), json(), commonjs(), typescript(), tsTreeshaking(), bundleSize()],
+    plugins: [resolve(), json(), commonjs(), typescript(), tsTreeshaking(), bundleSize(), ts({ tsconfig: 'tsconfig.json' })],
     onwarn: function (warning) {
       if (warning.code === 'THIS_IS_UNDEFINED') {
         return;
@@ -26,6 +27,13 @@ export default [
         sourcemap: true
       },
       {
+        file: 'dist/waelioUtils.ejs',
+        name: 'waelioUtils',
+        format: 'es',
+        exports: 'named',
+        sourcemap: true
+      },
+      {
         file: 'dist/waelioUtils.js',
         name: 'waelioUtils',
         format: 'umd',
@@ -33,10 +41,10 @@ export default [
         sourcemap: true
       },
       {
-        file: 'dist/waelioUtils.ejs',
+        file: 'dist/waelioUtils.ts',
         name: 'waelioUtils',
-        format: 'esm',
-        exports: 'named',
+        format: 'iife',
+        exports: 'auto',
         sourcemap: true
       }
     ]

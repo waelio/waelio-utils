@@ -2,9 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": ".",
-    "outDir": "dist/lib/",
+    "outDir": "dist/lib/utils",
     "sourceMap": true,
-    "noEmit": true,
+    "noEmit": false,
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",

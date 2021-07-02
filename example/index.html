@@ -9,18 +9,25 @@
 </head>
 <body>
   <h1><u>Waelio-Utils</u></h1>
-  <h1>Testing - <span id="target"></span></h1>
+  <h1>Testing - <span id="test"></span></h1>
   <li>camelToSnake: <span id="camelToSnake"></span></li>
   <li>snakeToCamel: <span id="snakeToCamel"></span></li>
   <li>generateId: <span id="generateId"></span></li>
-  <div id="target"></div>
-  <div id="testing"></div>
+
 
   <script>
-    var target = document.getElementById('testing') 
-    console.log('%cMyProject%cline:15%capp', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(1, 77, 103);padding:3px;border-radius:2px', app)
-    var payload = 'just a test'
-    target.innerHTML += '<br>'+ snakeToCamel(payload)
+    var payload = 'just_test'
+    var payload = 'justTest'
+    var test = document.getElementById('test') 
+    var _camelToSnake = document.getElementById('camelToSnake') 
+    var _snakeToCamel = document.getElementById('snakeToCamel') 
+    var _generateId = document.getElementById('generateId') 
+
+    test.innerHTML += '<br>'+ payload
+    _camelToSnake.innerHTML += '<br>'+ waelioUtils.camelToSnake(payload)
+    _snakeToCamel.innerHTML += '<br>'+ waelioUtils.snakeToCamel(payload)
+    _generateId.innerHTML += '<br>'+ waelioUtils.generateId()
+
   </script>
 </body>
 </html>

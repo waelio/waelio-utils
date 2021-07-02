@@ -25,7 +25,6 @@ import * as snakeToCamel from './snake_to_camel';
 import * as sniffId from './sniff_id';
 import * as _encrypt from './encrypt';
 import * as _decrypt from './decrypt';
-
 // export const _cleanResponse = _cleanResponse;
 // export const _formatErrors = _formatErrors;
 // export const _equals = _equals;
@@ -53,7 +52,6 @@ import * as _decrypt from './decrypt';
 // export const sniffId = sniffId;
 // export const _encrypt = _encrypt;
 // export const _decrypt = _decrypt;
-
 export { _cleanResponse };
 export { _formatErrors };
 export { _equals };
@@ -80,3 +78,4 @@ export { snakeToCamel };
 export { sniffId };
 export { _encrypt };
 export { _decrypt };
+//# sourceMappingURL=index.js.map

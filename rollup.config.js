@@ -5,7 +5,9 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import tsTreeshaking from 'rollup-plugin-ts-treeshaking';
 import bundleSize from 'rollup-plugin-bundle-size';
+import multi from '@rollup/plugin-multi-entry';
 import pkg from './package.json';
+import utl from './package.json';
 
 export default [
   {
@@ -48,5 +50,46 @@ export default [
         sourcemap: true
       }
     ]
+  },
+  {
+    input: [
+      '_cleanResponse.ts',
+      '_formatErrors.ts',
+      '_equals.ts',
+      '_hideRandom.ts',
+      '_parseErrors.ts',
+      '_repeat.ts',
+      '_rotateArray.ts',
+      '_to.ts',
+      '_To.ts',
+      'a_or_an.ts',
+      'Base64.ts',
+      'toBase64.ts',
+      'calculateClockDrift.ts',
+      'camelToSnake.ts',
+      'generateId.ts',
+      'isArray.ts',
+      'isObject.ts',
+      'jsonToQueryString.ts',
+      'meta.ts',
+      'notifyMe.ts',
+      'queryStringToJson.ts',
+      'reParseString.ts',
+      'resetString.ts',
+      'snakeToCamel.ts',
+      'sniffId.ts',
+      '_encrypt.ts',
+      '_decrypt.ts'
+    ],
+    plugins: [resolve(), json(), commonjs(), typescript(), tsTreeshaking(), ts({ tsconfig: 'tsconfig.json' }), multi()],
+    onwarn: function (warning) {
+      if (warning.code === 'THIS_IS_UNDEFINED') {
+        return;
+      }
+      console.warn(warning.message);
+    },
+    output: {
+      dir: 'dist'
+    }
   }
 ];

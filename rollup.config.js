@@ -51,45 +51,45 @@ export default [
       }
     ]
   },
-  // {
-  //   input: [
-  //     '_cleanResponse.js',
-  //     '_formatErrors.js',
-  //     '_equals.js',
-  //     '_hideRandom.js',
-  //     '_parseErrors.js',
-  //     '_repeat.js',
-  //     '_rotateArray.js',
-  //     '_to.js',
-  //     '_To.js',
-  //     'a_or_an.js',
-  //     'Base64.js',
-  //     'toBase64.js',
-  //     'calculateClockDrift.js',
-  //     'camelToSnake.js',
-  //     'generateId.js',
-  //     'isArray.js',
-  //     'isObject.js',
-  //     'jsonToQueryString.js',
-  //     'meta.js',
-  //     'notifyMe.js',
-  //     'queryStringToJson.js',
-  //     'reParseString.js',
-  //     'resetString.js',
-  //     'snakeToCamel.js',
-  //     'sniffId.js',
-  //     '_encrypt.js',
-  //     '_decrypt.js'
-  //   ],
-  //   plugins: [resolve(), json(), commonjs(), typescript(), tsTreeshaking(), ts({ tsconfig: 'tsconfig.json' }), multi()],
-  //   onwarn: function (warning) {
-  //     if (warning.code === 'THIS_IS_UNDEFINED') {
-  //       return;
-  //     }
-  //     console.warn(warning.message);
-  //   },
-  //   output: {
-  //     dir: 'dist'
-  //   }
-  // }
+  {
+    input: [
+      '_cleanResponse.js',
+      '_formatErrors.js',
+      '_equals.js',
+      '_hideRandom.js',
+      '_parseErrors.js',
+      '_repeat.js',
+      '_rotateArray.js',
+      '_to.js',
+      '_To.js',
+      'a_or_an.js',
+      'Base64.js',
+      'toBase64.js',
+      'calculateClockDrift.js',
+      'camelToSnake.js',
+      'generateId.js',
+      'isArray.js',
+      'isObject.js',
+      'jsonToQueryString.js',
+      'meta.js',
+      'notifyMe.js',
+      'queryStringToJson.js',
+      'reParseString.js',
+      'resetString.js',
+      'snakeToCamel.js',
+      'sniffId.js',
+      '_encrypt.js',
+      '_decrypt.js'
+    ],
+    plugins: [resolve(), json(), commonjs(), typescript(), tsTreeshaking(), ts({ tsconfig: 'tsconfig.json' }), multi()],
+    onwarn: function (warning) {
+      if (warning.code === 'THIS_IS_UNDEFINED') {
+        return;
+      }
+      console.warn(warning.message);
+    },
+    output: {
+      dir: 'dist'
+    }
+  }
 ];

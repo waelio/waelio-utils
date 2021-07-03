@@ -1,45 +1,61 @@
 # Waelio Utilities
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/waelio?locale.x=en_US) [![NPM version](https://img.shields.io/npm/v/waelio-utils.svg?style=flat&color=red&label=NPM)](https://www.npmjs.com/package/waelio-utils) [![NPM monthly downloads](https://img.shields.io/npm/dm/waelio-utils.svg?style=flat)](https://npmjs.org/package/waelio-utils) [![NPM total downloads](https://img.shields.io/npm/dt/waelio-utils.svg?style=flat&color=purple&label=Downloads)](https://npmjs.org/package/waelio-utils)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/waelio?locale.x=en_US) [![NPM version](https://img.shields.io/npm/v/waelio-utils.svg?style=flat&color=red&label=NPM)](https://www.npmjs.com/package/waelio-utils) [![NPM monthly downloads](https://img.shields.io/npm/dm/waelio-utils.svg?style=flat)](https://npmjs.org/package/waelio-utils) [![NPM total downloads](https://img.shields.io/npm/dt/waelio-utils.svg?style=flat&color=purple&label=Downloads)](https://npmjs.org/package/waelio-utils) [![Join the chat at https://discord.gg/tBZ2Fmdb7E](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/tBZ2Fmdb7E)
 
 ### The [WaelioUtils](https://github.com/waelio/waelio-utils) exported as a Javascript modules.
 
-#
-## Chat Support
-Ask questions at the official [Dicord Channel](https://discord.gg/tBZ2Fmdb7E)
-
-Discord Server: https://discord.gg/tBZ2Fmdb7E
-
-## Chat Support
-
-Ask questions at the official [Dicord Channel](https://discord.gg/tBZ2Fmdb7E)
-
-Discord Server: https://discord.gg/tBZ2Fmdb7E
+## This package has been rewritten in `TypeScript`
 
 # Index
 
-1. <a href="#jsontoquerystring"> jsonToQueryString</a>
-2. <a href="#querystringtojson"> queryStringToJson</a>
-3. <a href="#resetstring"> resetString</a>
-4. <a href="#snaketocamel"> snakeToCamel</a>
-5. <a href="#cameltosnake"> camelToSnake</a>
-6. <a href="#calculateclockdrift"> calculateClockDrift</a>
-7. <a href="#base64"> Base64</a>
-8. <a href="#generateid"> generateId</a>
-9. <a href="#notifyme"> notifyMe</a>
-10. <a href="#meta"> meta</a>
-11. <a href="#SniffId"> sniffId</a>
-12. <a href="#HideRandom">_hideRandom</a>
-13. <a href="#RotateArray">_rotateArray</a>
-14. <a href="#Equals"> _equals</a>
-15. <a href="#Repeat"> _repeat</a>
-16. <a href="#CleanResponse">_cleanResponse</a>
-17. <a href="#To">_to</a>
-18. <a href="#ParseErrors">_parseErrors</a>
-19. <a href="#FormatErrors">_formatErrors</a>
-20. <a href="#AOrAn">a_or_an</a>
-21. <a href="#encrypt">_encrypt</a>
-22. <a href="#decrypt">_decrypt</a>
+<ol>
+<li>Strings</li>
+<div style="display: flex;     flex-wrap: wrap; align-content: flex-start;    justify-content: start;">
+  <div style="padding:.25rem; width: 150px;"><a href="#jsontoquerystring"> jsonToQueryString</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#querystringtojson"> queryStringToJson</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#resetstring"> resetString</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#snaketocamel"> snakeToCamel</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#cameltosnake"> camelToSnake</a></div>  
+  <div style="padding:.25rem; width: 150px;"><a href="#base64"> toBase64</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#generateid"> generateId</a></div>    
+  <div style="padding:.25rem; width: 150px;"><a href="#SniffId"> sniffId</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#AOrAn">a_or_an</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a></div>
+</div>
+<hr />
+<li>Arrays</li>
+<div style="display: flex;     flex-wrap: wrap; align-content: flex-start;    justify-content: start;">
+  <div style="padding:.25rem; width: 150px;"><a href="#HideRandom">_hideRandom</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#RotateArray">_rotateArray</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#Equals"> _equals</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#Repeat"> _repeat</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a></div>
+</div>
+<hr />
+<li>Objects</li>
+<div style="display: flex;     flex-wrap: wrap; align-content: flex-start;    justify-content: start;">
+  <div style="padding:.25rem; width: 150px;"><a href="#SniffId"> sniffId</a></div> 
+  <div style="padding:.25rem; width: 150px;"><a href="#CleanResponse">_cleanResponse</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#ParseErrors">_parseErrors</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#FormatErrors">_formatErrors</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a></div>
+</div>
+<hr />
+<li>Other</li>
+<div style="display: flex;     flex-wrap: wrap; align-content: flex-start;    justify-content: start;">
+  <div style="padding:.25rem; width: 150px;"><a href="#calculateclockdrift"> calculateClockDrift</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#notifyme"> notifyMe</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#meta"> meta</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#To">_To</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#ParseErrors">_parseErrors</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#FormatErrors">_formatErrors</a></div>
+  <div style="padding:.25rem; width: 150px;"><a href="#AOrAn">a_or_an</a></div>
+</div>
+<hr />
+</ol>
 
 # Installation
 
@@ -78,7 +94,7 @@ const { snakeToCamel, meta, notifyMe } = require('waelio-utils');
 
 #### _Returns_ `String`
 
-#### Example: In your `.js` or `.vue` file:
+#### Example: In your `.js` or `.ts` file:
 
 ```javascript
 import { jsonToQueryString } from 'waelio-utils';
@@ -90,7 +106,6 @@ const Result = jsonToQueryString(payload);
 
 ```javascript
 'name=John&last=smith';
-
 ```
 
 #
@@ -111,7 +126,7 @@ const Result = jsonToQueryString(payload);
 
 #### _Returns_ `JSON || Object`
 
-#### Example: In your `.js` or `.vue` file:
+#### Example: In your `.js` or `.ts` file:
 
 ```javascript
 import { queryStringToJson } from 'waelio-utils';
@@ -133,7 +148,7 @@ const Result = queryStringToJson(query);
 
 # resetString
 
-#### Example: In your `.js` or `.vue` file:
+#### Example: In your `.js` or `.ts` file:
 
 ```javascript
 import { resetString } from 'waelio-utils';
@@ -164,7 +179,7 @@ Result === 'https://waelio.com';
 
 #### _Returns_ `{string}`
 
-#### Example: In your `.js` or `.vue` file:
+#### Example: In your `.js` or `.ts` file:
 
 ```javascript
 import { snakeToCamel } from 'waelio-utils';
@@ -176,7 +191,6 @@ const Result = snakeToCamel(payload);
 
 ```javascript
 'northWestMeta';
-
 ```
 
 #
@@ -201,7 +215,7 @@ const Result = snakeToCamel(payload);
 
 #### _Returns_ `{string}`
 
-#### Example: In your `.js` or `.vue` file:
+#### Example: In your `.js` or `.ts` file:
 
 ```javascript
 import { camelToSnake } from 'waelio-utils';
@@ -213,14 +227,12 @@ const Result = camelToSnake(payload);
 
 ```javascript
 'north_west_meta';
-
 ```
 
 #### Result 2- `camelToSnake( payload, true )`
 
 ```javascript
 'north-west-meta';
-
 ```
 
 #
@@ -231,12 +243,14 @@ const Result = camelToSnake(payload);
 
 # Base64
 
+### -- > Renamed as `toBase64` < --
+
 #### Converts a string to `Base64`
 
-#### Example: In your `.js` or `.vue` file:
+#### Example: In your `.js` or `.ts` file:
 
 ```javascript
-import { Base64 } from 'waelio-utils';
+import { toBase64 } from 'waelio-utils';
 const payload = 'north-west_meta';
 const Result = Base64(payload);
 ```
@@ -245,7 +259,6 @@ const Result = Base64(payload);
 
 ```javascript
 'bm9ydGgtd2VzdF9tZXRh';
-
 ```
 
 #
@@ -264,7 +277,7 @@ const Result = Base64(payload);
 
 #### _Returns_ `JSON.parse(JSON.stringify(payload))`
 
-#### Example: In your `.js` or `.vue` file:
+#### Example: In your `.js` or `.ts` file:
 
 ```javascript
 import { reParseString } from 'waelio-utils';
@@ -288,7 +301,7 @@ import { reParseString } from 'waelio-utils';
 
 #### _Returns_ `{string}`
 
-#### Example: In your `.js` or `.vue` file:
+#### Example: In your `.js` or `.ts` file:
 
 ```javascript
 import { generateId } from 'waelio-utils';
@@ -308,6 +321,8 @@ const result = generateId();
 #
 
 # Quasar/Vue JS Stuff:
+
+### Will be relocated to `@waelio\utils` in the future
 
 #### Perfect when Using [Quasar Framework](https://quasar.dev/quasar-plugins/meta)
 
@@ -362,7 +377,7 @@ return {
 
 #### `@param {string}` to send
 
-#### Example: In your `.js` or `.vue` file:
+#### Example: In your `.js` or `.ts` file:
 
 ```javascript
 import { notifyMe } from 'waelio-utils';
@@ -393,7 +408,7 @@ var newId = sniffId(response);
 
 #
 
-# hideRandom
+# HideRandom
 
 ### Hide random array indexes
 
@@ -486,6 +501,7 @@ const test = _equals(array1, array2);
 import { _repeat } from 'waelio-utils';
 let counter = 0;
 const f1 = () => counter++;
+
 _repeat(5)(f1);
 
 // counter === 5
@@ -499,7 +515,17 @@ _repeat(5)(f1);
 
 # Equals
 
-equals
+### Example:
+
+```javascript
+import { _equals } from 'waelio-utils';
+const arr1 = [1, 2, 3, 4, 5];
+const arr2 = [1, 2, 3, 4, 5];
+const arr3 = [1, 2, 3, 4, 5, 6];
+
+_equals(arr1, arr2); // true
+_equals(arr1, arr3); // false
+```
 
 #
 
@@ -508,6 +534,41 @@ equals
 #
 
 # CleanResponse
+
+### Example:
+
+```js
+import { _cleanResponse } from 'waelio-utils';
+
+const demoRes = {
+  total: 1,
+  limit: 10,
+  skip: 0,
+  data: [
+    {
+      _id: '650937936xc8b143d8c575d2a',
+      name: 'Some Data',
+      user: '679363c6dc8b123d8c575d29',
+      createdAt: '2021-05-06T06:14:09.209Z',
+      updatedAt: '2021-05-06T06:14:09.209Z',
+      __v: 0
+    }
+  ]
+};
+
+const cleanRes = _cleanResponse(demoRes);
+/* [ 
+      {
+        "_id": "650937936xc8b143d8c575d2a",
+        "name": "Some Data",
+        "user": "679363c6dc8b123d8c575d29",
+        "createdAt": "2021-05-06T06:14:09.209Z",
+        "updatedAt": "2021-05-06T06:14:09.209Z",
+        "__v": 0
+      }
+    ]
+  */
+```
 
 clean response
 
@@ -519,7 +580,8 @@ clean response
 
 # To
 
-To Function
+### To Function
+### Documentation soon!
 
 #
 
@@ -529,7 +591,8 @@ To Function
 
 # ParseErrors
 
-Parse Errors
+### Parse Errors
+### Documentation soon!
 
 #
 
@@ -539,7 +602,8 @@ Parse Errors
 
 # FormatErrors
 
-errors formatter
+### errors formatter
+### Documentation soon!
 
 #
 
@@ -549,7 +613,50 @@ errors formatter
 
 # AOrAn
 
-AOrAn
+### Example:
+
+```js
+import { a_or_an } from 'waelio-utils'
+const payload1 = "apple";
+const payload2 = "bananas";
+const payload3 = "orange";
+
+a_or_an(payload1 // an
+a_or_an(payload2) // a
+a_or_an(payload3) // an
+
+```
+
+#
+
+[Back to TOP](#index)
+
+#
+
+# \_encrypt
+
+# \_decrypt
+
+#### Possible payloads `string`, `object` & `array`, no functions yet.
+
+### Example:
+
+```js
+import { _encrypt, _decrypt, generateId _equal } from 'waelio-utils'
+
+const salt = generateId() // "g9rlygzjd"
+const payload1 = "What ever you want"
+const payload2 = { message: "What ever you want" }
+
+const encrypted = _encrypt(salt, payload1)  //"7d424b5e0a4f5c4f580a53455f0a5d4b445e"
+const decrypted = _decrypt(salt, encrypted) // "What ever you want"
+
+const encrypted2 = _encrypt(salt, payload2)  //"7d424b5e0a4f5c4f580a53455f0a5d4b445e"
+const decrypted2 = _decrypt(salt, encrypted2) // "{\"message\":\"What ever you want\"}"
+
+const dblCheck = _equal(payload2, JSON.parse(decrypted2)) // true
+
+```
 
 #
 

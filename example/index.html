@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://unpkg.com/waelio-utils@latest/dist/waelioUtils.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <title>Waelio Utils</title>
 </head>
-<body>
+
+<body class="container py-2 bg-dark dark text-light">
   <h1><u>Waelio-Utils</u></h1>
   <h1>Testing - <span id="test"></span></h1>
   <li>camelToSnake: <span id="camelToSnake"></span></li>
   <li>snakeToCamel: <span id="snakeToCamel"></span></li>
   <li>generateId: <span id="generateId"></span></li>
+  <li>Rotate Array: <code lang="js" id="rotate"></code></li>
 
 
   <script>
-    var payload = 'just_test'
-    var payload = 'justTest'
-    var test = document.getElementById('test') 
-    var _camelToSnake = document.getElementById('camelToSnake') 
-    var _snakeToCamel = document.getElementById('snakeToCamel') 
-    var _generateId = document.getElementById('generateId') 
-
-    test.innerHTML += '<br>'+ payload
-    _camelToSnake.innerHTML += '<br>'+ waelioUtils.camelToSnake(payload)
-    _snakeToCamel.innerHTML += '<br>'+ waelioUtils.snakeToCamel(payload)
-    _generateId.innerHTML += '<br>'+ waelioUtils.generateId()
+    var payload='just_test'
+    var payload='justTest'
+    var test=document.getElementById('test')
+    var _camelToSnake=document.getElementById('camelToSnake')
+    var _snakeToCamel=document.getElementById('snakeToCamel')
+    var _generateId=document.getElementById('generateId')
+    var rotate=document.getElementById('rotate')
+    const a=[
+      [1,2,3],
+      [4,5,6],
+      [7,8,9],
+    ]
+    test.innerHTML+='<br>'+payload
+    _camelToSnake.innerHTML+='<br>'+waelioUtils.camelToSnake(payload)
+    _snakeToCamel.innerHTML+='<br>'+waelioUtils.snakeToCamel(payload)
+    _generateId.innerHTML+='<br>'+waelioUtils.generateId()
+    rotate.innerHTML= '<br><pre>' + waelioUtils._rotateArray(a).reverse() + '</pre>'
 
   </script>
 </body>
+
 </html>

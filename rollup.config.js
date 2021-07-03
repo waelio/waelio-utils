@@ -11,7 +11,7 @@ import utl from './package.json';
 
 export default [
   {
-    input: './main.ts',
+    input: './waelioUtils.ts',
     external: Object.keys(pkg.devDependencies),
     plugins: [resolve(), json(), commonjs(), typescript(), tsTreeshaking(), bundleSize(), ts({ tsconfig: 'tsconfig.json' })],
     onwarn: function (warning) {

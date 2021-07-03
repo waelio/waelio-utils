@@ -22,12 +22,13 @@
     "dist": "dist",
     "test": "spec"
   },
-  "main": "dist/waelioUtils.js",
+  "main": "dist/waelioUtils.ts",
   "size-limit": [
     {
       "path": "dist/waelioUtils.*js"
     }
   ],
+  "types": "waelioUtils.d.ts",
   "scripts": {
     "size": "rollup -c && size-limit",
     "start": "rollup -c && size-limit",

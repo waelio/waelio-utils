@@ -5,56 +5,76 @@
 ### The [WaelioUtils](https://github.com/waelio/waelio-utils) exported as a Javascript modules.
 
 ### This package has been rewritten in `TypeScript`
+
 #
 
 # Index
 
 <ol>
 <li>Strings</li>
-<div style="display: flex;     flex-wrap: wrap; align-content: flex-start;    justify-content: start;">
-  <div style="padding:.25rem; width: 150px;"><a href="#jsontoquerystring"> jsonToQueryString</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#querystringtojson"> queryStringToJson</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#resetstring"> resetString</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#snaketocamel"> snakeToCamel</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#cameltosnake"> camelToSnake</a></div>  
-  <div style="padding:.25rem; width: 150px;"><a href="#base64"> toBase64</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#generateid"> generateId</a></div>    
-  <div style="padding:.25rem; width: 150px;"><a href="#SniffId"> sniffId</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#AOrAn">a_or_an</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a></div>
-</div>
+<table>
+  <tr>  
+    <td><div style="padding:.25rem; width: 150px;"><a href="#jsontoquerystring"> jsonToQueryString</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#querystringtojson"> queryStringToJson</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#resetstring"> resetString</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#snaketocamel"> snakeToCamel</a></div></td>
+  </tr>
+  <tr>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#cameltosnake"> camelToSnake</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#base64"> toBase64</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#generateid"> generateId</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#SniffId"> sniffId</a></div></td>
+  </tr>
+  <tr>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#AOrAn">a_or_an</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a></div></td>
+  </tr>
+</table>
+
 <hr />
 <li>Arrays</li>
-<div style="display: flex;     flex-wrap: wrap; align-content: flex-start;    justify-content: start;">
-  <div style="padding:.25rem; width: 150px;"><a href="#HideRandom">_hideRandom</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#RotateArray">_rotateArray</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#Equals"> _equals</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#Repeat"> _repeat</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a></div>
-</div>
+  <table>
+    <tr>
+      <td><div style="padding:.25rem; width: 150px;"><a href="#HideRandom">_hideRandom</a></div></td>
+      <td><div style="padding:.25rem; width: 150px;"><a href="#RotateArray">_rotateArray</a></div></td>
+      <td><div style="padding:.25rem; width: 150px;"><a href="#Equals"> _equals</a></div></td>
+      <td><div style="padding:.25rem; width: 150px;"><a href="#Repeat"> _repeat</a></div></td>
+    </tr>
+    <tr>
+      <td><div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a></div></td>
+      <td><div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a></div></td>
+    </tr>
+</table>
 <hr />
 <li>Objects</li>
-<div style="display: flex;     flex-wrap: wrap; align-content: flex-start;    justify-content: start;">
-  <div style="padding:.25rem; width: 150px;"><a href="#SniffId"> sniffId</a></div> 
-  <div style="padding:.25rem; width: 150px;"><a href="#CleanResponse">_cleanResponse</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#ParseErrors">_parseErrors</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#FormatErrors">_formatErrors</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a></div>
-</div>
+<table>
+  <tr>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#SniffId"> sniffId</a></div> </td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#CleanResponse">_cleanResponse</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#ParseErrors">_parseErrors</a></div></td>
+  </tr>
+  <tr>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#FormatErrors">_formatErrors</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a></div></td>
+  </tr>
+</table>
 <hr />
 <li>Other</li>
-<div style="display: flex;     flex-wrap: wrap; align-content: flex-start;    justify-content: start;">
-  <div style="padding:.25rem; width: 150px;"><a href="#calculateclockdrift"> calculateClockDrift</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#notifyme"> notifyMe</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#meta"> meta</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#To">_To</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#ParseErrors">_parseErrors</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#FormatErrors">_formatErrors</a></div>
-  <div style="padding:.25rem; width: 150px;"><a href="#AOrAn">a_or_an</a></div>
-</div>
+<table>
+  <tr>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#calculateclockdrift"> calculateClockDrift</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#notifyme"> notifyMe</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#meta"> meta</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#To">_To</a></div></td>
+  </tr>
+  <tr>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#ParseErrors">_parseErrors</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#FormatErrors">_formatErrors</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#AOrAn">a_or_an</a></div></td>
+  </tr>
+</table>
 <hr />
 </ol>
 
@@ -582,6 +602,7 @@ clean response
 # To
 
 ### To Function
+
 ### Documentation soon!
 
 #
@@ -593,6 +614,7 @@ clean response
 # ParseErrors
 
 ### Parse Errors
+
 ### Documentation soon!
 
 #
@@ -604,6 +626,7 @@ clean response
 # FormatErrors
 
 ### errors formatter
+
 ### Documentation soon!
 
 #

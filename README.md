@@ -633,9 +633,9 @@ a_or_an(payload3) // an
 
 #
 
-# \_encrypt
+# encrypt
 
-# \_decrypt
+# decrypt
 
 #### Possible payloads `string`, `object` & `array`, no functions yet.
 

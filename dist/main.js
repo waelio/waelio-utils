@@ -56,4 +56,5 @@ export { snakeToCamel };
 export { sniffId };
 export { _encrypt };
 export { _decrypt };
+export { waelioUtils };
 //# sourceMappingURL=main.js.map

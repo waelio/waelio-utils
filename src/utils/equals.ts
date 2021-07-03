@@ -6,7 +6,7 @@
  *
  * @author Wael Wahbeh
  */
-const _equals = (array: any[], needle: any[]): boolean => {
+export const _equals = (array: any[], needle: any[]): boolean => {
   // if the array or needle are a falsy value, return
   if (!array || !needle) return false;
   // compare lengths - can save a lot of time
@@ -25,8 +25,3 @@ const _equals = (array: any[], needle: any[]): boolean => {
 
   return true;
 };
-
-export { _equals };
-
-
-_equals([1,2,3],[1,2,3, 4])

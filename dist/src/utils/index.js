@@ -25,5 +25,61 @@ import * as snakeToCamel from './snake_to_camel';
 import * as sniffId from './sniff_id';
 import * as _encrypt from './encrypt';
 import * as _decrypt from './decrypt';
-export { _cleanResponse, _formatErrors, _equals, _hideRandom, _parseErrors, _repeat, _rotateArray, _to, _To, a_or_an, Base64, toBase64, calculateClockDrift, camelToSnake, generateId, isArray, isObject, jsonToQueryString, meta, notifyMe, queryStringToJson, reParseString, resetString, snakeToCamel, sniffId, _encrypt, _decrypt };
+const waelioUtils = {
+    _cleanResponse,
+    _formatErrors,
+    _equals,
+    _hideRandom,
+    _parseErrors,
+    _repeat,
+    _rotateArray,
+    _to,
+    _To,
+    a_or_an,
+    Base64,
+    toBase64,
+    calculateClockDrift,
+    camelToSnake,
+    generateId,
+    isArray,
+    isObject,
+    jsonToQueryString,
+    meta,
+    notifyMe,
+    queryStringToJson,
+    reParseString,
+    resetString,
+    snakeToCamel,
+    sniffId,
+    _encrypt,
+    _decrypt
+};
+export { _cleanResponse };
+export { _formatErrors };
+export { _equals };
+export { _hideRandom };
+export { _parseErrors };
+export { _repeat };
+export { _rotateArray };
+export { _to };
+export { _To };
+export { a_or_an };
+export { Base64 };
+export { toBase64 };
+export { calculateClockDrift };
+export { camelToSnake };
+export { generateId };
+export { isArray };
+export { isObject };
+export { jsonToQueryString };
+export { meta };
+export { notifyMe };
+export { queryStringToJson };
+export { reParseString };
+export { resetString };
+export { snakeToCamel };
+export { sniffId };
+export { _encrypt };
+export { _decrypt };
+export { waelioUtils };
 //# sourceMappingURL=index.js.map

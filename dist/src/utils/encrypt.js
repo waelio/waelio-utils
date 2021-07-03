@@ -6,7 +6,7 @@ const isArray = (payload) => {
 };
 const isFunction = (functionToCheck) => typeof functionToCheck === 'function';
 const isValid = (payload) => isObject(payload) || isArray(payload) || (typeof payload === 'string' && payload.trim().length > 0);
-const _encrypt = (salt, text) => {
+export const _encrypt = (salt, text) => {
     if (isValid(salt) && isValid(text)) {
         switch (true) {
             case isObject(text):
@@ -29,5 +29,4 @@ const _encrypt = (salt, text) => {
     throw 'Invalid salt or payload!';
     return 'null';
 };
-export { _encrypt };
 //# sourceMappingURL=encrypt.js.map

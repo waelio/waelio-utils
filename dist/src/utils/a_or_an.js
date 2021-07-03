@@ -1,5 +1,4 @@
-const a_or_an = function a_or_an(field) {
+export const a_or_an = function (field) {
     return /[aeiou]/.test(field.charAt(0)) ? 'an' : 'a';
 };
-export { a_or_an };
 //# sourceMappingURL=a_or_an.js.map

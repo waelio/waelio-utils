@@ -3,7 +3,6 @@
  * @param  {string} payload
  * @returns {string}
  */
-function Base64(payload: string) {
+export const Base64 = function (payload: string) {
   return btoa(unescape(encodeURIComponent(payload)));
 }
-export { Base64 };

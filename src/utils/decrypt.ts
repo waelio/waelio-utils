@@ -6,7 +6,7 @@ const isArray = (payload: any): boolean => {
 };
 const isValid = (payload): boolean => isObject(payload) || isArray(payload) || (typeof payload === 'string' && payload.trim().length > 0);
 
-const _decrypt = (salt, encoded) => {
+export const _decrypt = (salt, encoded) => {
   if (isValid(encoded)) {
     const textToChars = (text) => text.split('').map((c) => c.charCodeAt(0));
     const applySaltToChar = (code) => textToChars(salt).reduce((a, b) => a ^ b, code);
@@ -21,4 +21,4 @@ const _decrypt = (salt, encoded) => {
     return 'null';
 };
 
-export { _decrypt };
+

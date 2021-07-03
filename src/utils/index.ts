@@ -26,9 +26,7 @@ import * as sniffId from './sniff_id';
 import * as _encrypt from './encrypt';
 import * as _decrypt from './decrypt';
 
-
-
-export {
+const waelioUtils = {
   _cleanResponse,
   _formatErrors,
   _equals,
@@ -57,3 +55,32 @@ export {
   _encrypt,
   _decrypt
 };
+
+export { _cleanResponse };
+export { _formatErrors };
+export { _equals };
+export { _hideRandom };
+export { _parseErrors };
+export { _repeat };
+export { _rotateArray };
+export { _to };
+export { _To };
+export { a_or_an };
+export { Base64 };
+export { toBase64 };
+export { calculateClockDrift };
+export { camelToSnake };
+export { generateId };
+export { isArray };
+export { isObject };
+export { jsonToQueryString };
+export { meta };
+export { notifyMe };
+export { queryStringToJson };
+export { reParseString };
+export { resetString };
+export { snakeToCamel };
+export { sniffId };
+export { _encrypt };
+export { _decrypt };
+export { waelioUtils };

@@ -8,8 +8,7 @@
  * @param {boolean} hyphenated controls the delimiter: true = "-" / false = "_"
  * @returns {string}
  */
-const camelToSnake = (payload, hyphenated = false) => {
+export const camelToSnake = (payload, hyphenated = false) => {
     return payload && payload[0].toLowerCase() + payload.slice(1, payload.length).replace(/[A-Z]/g, (letter) => `${hyphenated ? `-` : `_`}${letter.toLowerCase()}`);
 };
-export { camelToSnake };
 //# sourceMappingURL=camel_to_snake.js.map

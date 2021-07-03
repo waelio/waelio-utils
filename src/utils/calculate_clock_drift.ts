@@ -4,9 +4,8 @@
  * @param  {} iatAccessToken IAT
  * @param  {} iatIdToken
  */
-const calculateClockDrift = (iatAccessToken: number, iatIdToken: number) => {
+export const calculateClockDrift = (iatAccessToken: number, iatIdToken: number) => {
   const now = Math.floor(Date.now() / 1000);
   const iat = Math.min(iatAccessToken, iatIdToken);
   return now - iat;
 };
-export { calculateClockDrift };

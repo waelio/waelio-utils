@@ -5,7 +5,7 @@ const get = (payload) => {
   return data.data ? data.data : data; /*?*/
 };
 
-const _formatErrors = (err) => {
+export const _formatErrors = (err) => {
   var errors = {};
   get(err, 'inner', []).forEach((err) => {
     if (get(err, 'path') && get(err, 'message')) {
@@ -14,4 +14,4 @@ const _formatErrors = (err) => {
   });
   return errors;
 };
-export { _formatErrors };
+

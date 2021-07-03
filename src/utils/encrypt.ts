@@ -6,7 +6,7 @@ const isArray = (payload: any): boolean => {
 };
 const isFunction = (functionToCheck): boolean => typeof functionToCheck === 'function';
 const isValid = (payload): boolean => isObject(payload) || isArray(payload) || (typeof payload === 'string' && payload.trim().length > 0);
-const _encrypt = (salt, text) => {
+export const _encrypt = (salt, text) => {
   if (isValid(salt) && isValid(text)) {
     switch (true) {
       case isObject(text):
@@ -30,5 +30,3 @@ const _encrypt = (salt, text) => {
   throw 'Invalid salt or payload!';
   return 'null';
 };
-
-export { _encrypt };

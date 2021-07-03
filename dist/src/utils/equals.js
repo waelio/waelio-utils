@@ -6,7 +6,7 @@
  *
  * @author Wael Wahbeh
  */
-const _equals = (array, needle) => {
+export const _equals = (array, needle) => {
     // if the array or needle are a falsy value, return
     if (!array || !needle)
         return false;
@@ -25,6 +25,4 @@ const _equals = (array, needle) => {
     }
     return true;
 };
-export { _equals };
-_equals([1, 2, 3], [1, 2, 3, 4]);
 //# sourceMappingURL=equals.js.map

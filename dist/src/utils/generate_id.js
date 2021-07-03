@@ -5,8 +5,7 @@
  * @param  {number} len   9 default
  * @return {string}
  */
-const generateId = (start = 2, len = 9) => {
+export const generateId = (start = 2, len = 9) => {
     return Math.random().toString(36).substr(start, len);
 };
-export { generateId };
 //# sourceMappingURL=generate_id.js.map

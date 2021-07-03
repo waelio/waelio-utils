@@ -26,57 +26,34 @@ import * as sniffId from './sniff_id';
 import * as _encrypt from './encrypt';
 import * as _decrypt from './decrypt';
 
-// export const _cleanResponse = _cleanResponse;
-// export const _formatErrors = _formatErrors;
-// export const _equals = _equals;
-// export const _hideRandom = _hideRandom;
-// export const _parseErrors = _parseErrors;
-// export const _repeat = _repeat;
-// export const _rotateArray = _rotateArray;
-// export const _to = _to;
-// export const _To = _to;
-// export const a_or_an = a_or_an;
-// export const Base64 = Base64;
-// export const toBase64 = Base64;
-// export const calculateClockDrift = calculateClockDrift;
-// export const camelToSnake = camelToSnake;
-// export const generateId = generateId;
-// export const isArray = isArray;
-// export const isObject = isObject;
-// export const jsonToQueryString = jsonToQueryString;
-// export const meta = meta;
-// export const notifyMe = notifyMe;
-// export const queryStringToJson = queryStringToJson;
-// export const reParseString = reParseString;
-// export const resetString = resetString;
-// export const snakeToCamel = snakeToCamel;
-// export const sniffId = sniffId;
-// export const _encrypt = _encrypt;
-// export const _decrypt = _decrypt;
 
-export { _cleanResponse };
-export { _formatErrors };
-export { _equals };
-export { _hideRandom };
-export { _parseErrors };
-export { _repeat };
-export { _rotateArray };
-export { _to };
-export { _To };
-export { a_or_an };
-export { Base64, toBase64 };
-export { calculateClockDrift };
-export { camelToSnake };
-export { generateId };
-export { isArray };
-export { isObject };
-export { jsonToQueryString };
-export { meta };
-export { notifyMe };
-export { queryStringToJson };
-export { reParseString };
-export { resetString };
-export { snakeToCamel };
-export { sniffId };
-export { _encrypt };
-export { _decrypt };
+
+export {
+  _cleanResponse,
+  _formatErrors,
+  _equals,
+  _hideRandom,
+  _parseErrors,
+  _repeat,
+  _rotateArray,
+  _to,
+  _To,
+  a_or_an,
+  Base64,
+  toBase64,
+  calculateClockDrift,
+  camelToSnake,
+  generateId,
+  isArray,
+  isObject,
+  jsonToQueryString,
+  meta,
+  notifyMe,
+  queryStringToJson,
+  reParseString,
+  resetString,
+  snakeToCamel,
+  sniffId,
+  _encrypt,
+  _decrypt
+};

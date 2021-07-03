@@ -22,7 +22,7 @@
     "dist": "dist",
     "test": "spec"
   },
-  "main": "dist/waelioUtils.ts",
+  "main": "dist/waelioUtils.js",
   "size-limit": [
     {
       "path": "dist/waelioUtils.*js"

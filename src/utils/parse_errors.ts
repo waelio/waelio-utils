@@ -1,12 +1,13 @@
-// @ts-nocheck
-
-import { map, get } from 'lodash';
-
+const get = (payload) => {
+  const error = payload;
+  return error.errors ? error.errors : payload;
+};
 const _parseErrors = (err: any) => {
   if (err && err.name) {
     return err.message || err.name;
   } else {
-    return map(get(err, 'errors', []), (err) => err.message.replace('Path ', '').replace('`', '').replace('`', '')).join('<br>');
+    return get(err);
   }
 };
+
 export { _parseErrors };

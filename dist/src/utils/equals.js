@@ -1,7 +1,3 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * Compare two arrays of equal size
  * @param {array} array
@@ -29,39 +25,6 @@ const _equals = (array, needle) => {
     }
     return true;
 };
+export { _equals };
 _equals([1, 2, 3], [1, 2, 3, 4]);
-
-// const waelioUtils = {
-//   _cleanResponse,
-//   _formatErrors,
-//   _equals,
-//   _hideRandom,
-//   _parseErrors,
-//   _repeat,
-//   _rotateArray,
-//   _to,
-//   _To,
-//   a_or_an,
-//   Base64,
-//   toBase64,
-//   calculateClockDrift,
-//   camelToSnake,
-//   generateId,
-//   isArray,
-//   isObject,
-//   jsonToQueryString,
-//   meta,
-//   notifyMe,
-//   queryStringToJson,
-//   reParseString,
-//   resetString,
-//   snakeToCamel,
-//   sniffId,
-//     _encrypt,
-//   _decrypt
-// };
-function waelioUtils() {
-}
-
-exports.default = waelioUtils;
-//# sourceMappingURL=waelioUtils.cjs.map
+//# sourceMappingURL=equals.js.map

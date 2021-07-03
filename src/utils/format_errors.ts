@@ -1,6 +1,9 @@
 // @ts-nocheck
 
-import { get } from 'lodash';
+const get = (payload) => {
+  const data = payload; /*?*/
+  return data.data ? data.data : data; /*?*/
+};
 
 const _formatErrors = (err) => {
   var errors = {};

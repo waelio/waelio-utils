@@ -40,7 +40,6 @@ const _equals = (array, needle) => {
     }
     return true;
 };
-_equals([1, 2, 3], [1, 2, 3, 4]);
 
 var _equals$1 = /*#__PURE__*/Object.freeze({
   __proto__: null,
@@ -134,7 +133,7 @@ var _To = /*#__PURE__*/Object.freeze({
   _to: _to
 });
 
-const a_or_an = function a_or_an(field) {
+const a_or_an = function (field) {
     return /[aeiou]/.test(field.charAt(0)) ? 'an' : 'a';
 };
 
@@ -148,9 +147,9 @@ var a_or_an$1 = /*#__PURE__*/Object.freeze({
  * @param  {string} payload
  * @returns {string}
  */
-function Base64(payload) {
+const Base64 = function (payload) {
     return btoa(unescape(encodeURIComponent(payload)));
-}
+};
 
 var toBase64 = /*#__PURE__*/Object.freeze({
   __proto__: null,
@@ -561,5 +560,5 @@ const waelioUtils = {
 };
 
 export default waelioUtils;
-export { toBase64 as Base64, _To, _cleanResponse$1 as _cleanResponse, _decrypt$1 as _decrypt, _encrypt$1 as _encrypt, _equals$1 as _equals, _formatErrors$1 as _formatErrors, _hideRandom$1 as _hideRandom, _parseErrors$1 as _parseErrors, _repeat$1 as _repeat, _rotateArray$1 as _rotateArray, _To as _to, a_or_an$1 as a_or_an, calculateClockDrift$1 as calculateClockDrift, camelToSnake$1 as camelToSnake, generateId$1 as generateId, isArray$3 as isArray, isObject$3 as isObject, jsonToQueryString$1 as jsonToQueryString, meta$1 as meta, notifyMe$1 as notifyMe, queryStringToJson$1 as queryStringToJson, reParseString$1 as reParseString, resetString$1 as resetString, snakeToCamel$1 as snakeToCamel, sniffId$1 as sniffId, toBase64 };
+export { toBase64 as Base64, _To, _cleanResponse$1 as _cleanResponse, _decrypt$1 as _decrypt, _encrypt$1 as _encrypt, _equals$1 as _equals, _formatErrors$1 as _formatErrors, _hideRandom$1 as _hideRandom, _parseErrors$1 as _parseErrors, _repeat$1 as _repeat, _rotateArray$1 as _rotateArray, _To as _to, a_or_an$1 as a_or_an, calculateClockDrift$1 as calculateClockDrift, camelToSnake$1 as camelToSnake, generateId$1 as generateId, isArray$3 as isArray, isObject$3 as isObject, jsonToQueryString$1 as jsonToQueryString, meta$1 as meta, notifyMe$1 as notifyMe, queryStringToJson$1 as queryStringToJson, reParseString$1 as reParseString, resetString$1 as resetString, snakeToCamel$1 as snakeToCamel, sniffId$1 as sniffId, toBase64, waelioUtils };
 //# sourceMappingURL=waelioUtils.ejs.map

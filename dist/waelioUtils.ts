@@ -43,7 +43,6 @@ var waelioUtils = (function (exports) {
       }
       return true;
   };
-  _equals([1, 2, 3], [1, 2, 3, 4]);
 
   var _equals$1 = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -137,7 +136,7 @@ var waelioUtils = (function (exports) {
     _to: _to
   });
 
-  const a_or_an = function a_or_an(field) {
+  const a_or_an = function (field) {
       return /[aeiou]/.test(field.charAt(0)) ? 'an' : 'a';
   };
 
@@ -151,9 +150,9 @@ var waelioUtils = (function (exports) {
    * @param  {string} payload
    * @returns {string}
    */
-  function Base64(payload) {
+  const Base64 = function (payload) {
       return btoa(unescape(encodeURIComponent(payload)));
-  }
+  };
 
   var toBase64 = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -591,6 +590,7 @@ var waelioUtils = (function (exports) {
   exports.snakeToCamel = snakeToCamel$1;
   exports.sniffId = sniffId$1;
   exports.toBase64 = toBase64;
+  exports.waelioUtils = waelioUtils;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 

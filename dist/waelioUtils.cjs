@@ -2,20 +2,15 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const reParseString$2 = (payload) => (payload ? JSON.parse(JSON.stringify(payload)) : payload);
+const reParseString$1 = (payload) => (payload ? JSON.parse(JSON.stringify(payload)) : payload);
 const get$2 = (payload) => {
     const data = payload; /*?*/
     return data.data ? data.data : data; /*?*/
 };
 const _cleanResponse = (response) => {
     const data = get$2(response); /*?*/
-    return !!data ? (data.length && data.length > 1 ? data : reParseString$2(data)) : response;
+    return !!data ? (data.length && data.length > 1 ? data : reParseString$1(data)) : response;
 };
-
-var _cleanResponse$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  _cleanResponse: _cleanResponse
-});
 
 /**
  * Compare two arrays of equal size
@@ -45,11 +40,6 @@ const _equals = (array, needle) => {
     return true;
 };
 
-var _equals$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  _equals: _equals
-});
-
 /**
  * @param  {array} array
  * @param  {number} difficulty=3
@@ -65,11 +55,6 @@ const _hideRandom = (array, difficulty = 3, replacement = '') => {
     return array;
 };
 
-var _hideRandom$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  _hideRandom: _hideRandom
-});
-
 /**
  * Repeat a function n number of time
  * @param {number} num - How many times a function must run
@@ -83,11 +68,6 @@ const _repeat = (num) => (fn) => {
         _repeat(num - 1)(fn);
     }
 };
-
-var _repeat$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  _repeat: _repeat
-});
 
 // @ts-nocheck
 /**
@@ -123,28 +103,17 @@ const _rotateArray = (array) => {
     return t;
 };
 
-var _rotateArray$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  _rotateArray: _rotateArray
-});
-
 const _to = (promise) => {
     return promise.then((result) => _cleanResponse(result)).catch((err) => [err, null]);
 };
 
-var _To = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  _to: _to
-});
+const _To = (promise) => {
+    return promise.then((result) => _cleanResponse(result)).catch((err) => [err, null]);
+};
 
 const a_or_an = function (field) {
     return /[aeiou]/.test(field.charAt(0)) ? 'an' : 'a';
 };
-
-var a_or_an$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  a_or_an: a_or_an
-});
 
 /**
  * Converts string to a Base64
@@ -155,10 +124,14 @@ const Base64 = function (payload) {
     return btoa(unescape(encodeURIComponent(payload)));
 };
 
-var toBase64 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  Base64: Base64
-});
+/**
+ * Converts string to a Base64
+ * @param  {string} payload
+ * @returns {string}
+ */
+const toBase64 = function (payload) {
+    return btoa(unescape(encodeURIComponent(payload)));
+};
 
 /**
  * Calculate Clock Drift used to calculate tile remaining before token expiration
@@ -171,11 +144,6 @@ const calculateClockDrift = (iatAccessToken, iatIdToken) => {
     const iat = Math.min(iatAccessToken, iatIdToken);
     return now - iat;
 };
-
-var calculateClockDrift$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  calculateClockDrift: calculateClockDrift
-});
 
 /**
  * Function that converts camelCase to snake_case or snake-case "snake-case"
@@ -190,11 +158,6 @@ var calculateClockDrift$1 = /*#__PURE__*/Object.freeze({
 const camelToSnake = (payload, hyphenated = false) => {
     return payload && payload[0].toLowerCase() + payload.slice(1, payload.length).replace(/[A-Z]/g, (letter) => `${hyphenated ? `-` : `_`}${letter.toLowerCase()}`);
 };
-
-var camelToSnake$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  camelToSnake: camelToSnake
-});
 
 // @ts-nocheck
 const get$1 = (payload) => {
@@ -211,11 +174,6 @@ const _formatErrors = (err) => {
     return errors;
 };
 
-var _formatErrors$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  _formatErrors: _formatErrors
-});
-
 /** generate random string
  * @name  generateId
  * @author  Wael Wahbeh <wahbehw@gmail.com>
@@ -227,11 +185,6 @@ const generateId = (start = 2, len = 9) => {
     return Math.random().toString(36).substr(start, len);
 };
 
-var generateId$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  generateId: generateId
-});
-
 /**
 Test isArray
 */
@@ -239,19 +192,9 @@ const isArray$2 = (payload) => {
     return Array.isArray(payload);
 };
 
-var isArray$3 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  isArray: isArray$2
-});
-
 const isObject$2 = (payload) => {
     return payload === Object(payload) && !Array.isArray(payload) && typeof payload !== 'function';
 };
-
-var isObject$3 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  isObject: isObject$2
-});
 
 // @ts-nocheck
 /**
@@ -270,11 +213,6 @@ const jsonToQueryString = (payload) => {
         .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(payload[key])}`)
         .join('&');
 };
-
-var jsonToQueryString$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  jsonToQueryString: jsonToQueryString
-});
 
 // @ts-nocheck
 const meta = () => {
@@ -327,11 +265,6 @@ const meta = () => {
     return metaObj;
 };
 
-var meta$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  meta: meta
-});
-
 // @ts-nocheck
 /** PWA Notification
  * Send Notification to Site
@@ -361,11 +294,6 @@ const notifyMe = (notification, Site = 'NorthWestMeta.com!') => {
     });
 };
 
-var notifyMe$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  notifyMe: notifyMe
-});
-
 const get = (payload) => {
     const error = payload;
     return error.errors ? error.errors : payload;
@@ -378,11 +306,6 @@ const _parseErrors = (err) => {
         return get(err);
     }
 };
-
-var _parseErrors$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  _parseErrors: _parseErrors
-});
 
 // @ts-nocheck
 /**
@@ -408,19 +331,9 @@ const queryStringToJson = (payload, toObject = true) => {
     return toObject ? JSON.parse(JSON.stringify(result)) : JSON.stringify(result);
 };
 
-var queryStringToJson$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  queryStringToJson: queryStringToJson
-});
-
 const reParseString = (payload) => {
     return JSON.parse(JSON.stringify(payload));
 };
-
-var reParseString$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  reParseString: reParseString
-});
 
 /** Decode uri component
  * @name  resetString
@@ -432,11 +345,6 @@ var reParseString$1 = /*#__PURE__*/Object.freeze({
 const resetString = (payload) => {
     return decodeURIComponent(decodeURIComponent(encodeURIComponent(payload)));
 };
-
-var resetString$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  resetString: resetString
-});
 
 /**
  * Function that converts snake_case or snake-case to camelCase "snakeCase"
@@ -453,11 +361,6 @@ const snakeToCamel = (payload) => {
     return typeof payload !== 'string' ? payload : payload.replace(/([-_]\w)/g, (g) => g[1].toUpperCase());
 };
 
-var snakeToCamel$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  snakeToCamel: snakeToCamel
-});
-
 /**
  * @param  {object} payload
  * @returns string||boolean||number
@@ -467,11 +370,6 @@ const sniffId = (payload) => {
     const newId = id || _id || Id || iD;
     return newId || false;
 };
-
-var sniffId$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  sniffId: sniffId
-});
 
 const isObject$1 = (payload) => {
     return payload === Object(payload) && !Array.isArray(payload) && typeof payload !== 'function';
@@ -502,11 +400,6 @@ const _encrypt = (salt, text) => {
     throw 'Invalid salt or payload!';
 };
 
-var _encrypt$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  _encrypt: _encrypt
-});
-
 const isObject = (payload) => {
     return payload === Object(payload) && !Array.isArray(payload) && typeof payload !== 'function';
 };
@@ -528,68 +421,63 @@ const _decrypt = (salt, encoded) => {
     throw 'Invalid salt or encoded!';
 };
 
-var _decrypt$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  _decrypt: _decrypt
-});
-
 const waelioUtils = {
-    _cleanResponse: _cleanResponse$1,
-    _formatErrors: _formatErrors$1,
-    _equals: _equals$1,
-    _hideRandom: _hideRandom$1,
-    _parseErrors: _parseErrors$1,
-    _repeat: _repeat$1,
-    _rotateArray: _rotateArray$1,
-    _to: _To,
+    _cleanResponse,
+    _formatErrors,
+    _equals,
+    _hideRandom,
+    _parseErrors,
+    _repeat,
+    _rotateArray,
+    _to,
     _To,
-    a_or_an: a_or_an$1,
-    Base64: toBase64,
+    a_or_an,
+    Base64,
     toBase64,
-    calculateClockDrift: calculateClockDrift$1,
-    camelToSnake: camelToSnake$1,
-    generateId: generateId$1,
-    isArray: isArray$3,
-    isObject: isObject$3,
-    jsonToQueryString: jsonToQueryString$1,
-    meta: meta$1,
-    notifyMe: notifyMe$1,
-    queryStringToJson: queryStringToJson$1,
-    reParseString: reParseString$1,
-    resetString: resetString$1,
-    snakeToCamel: snakeToCamel$1,
-    sniffId: sniffId$1,
-    _encrypt: _encrypt$1,
-    _decrypt: _decrypt$1
+    calculateClockDrift,
+    camelToSnake,
+    generateId,
+    isArray: isArray$2,
+    isObject: isObject$2,
+    jsonToQueryString,
+    meta,
+    notifyMe,
+    queryStringToJson,
+    reParseString,
+    resetString,
+    snakeToCamel,
+    sniffId,
+    _encrypt,
+    _decrypt
 };
 
-exports.Base64 = toBase64;
+exports.Base64 = Base64;
 exports._To = _To;
-exports._cleanResponse = _cleanResponse$1;
-exports._decrypt = _decrypt$1;
-exports._encrypt = _encrypt$1;
-exports._equals = _equals$1;
-exports._formatErrors = _formatErrors$1;
-exports._hideRandom = _hideRandom$1;
-exports._parseErrors = _parseErrors$1;
-exports._repeat = _repeat$1;
-exports._rotateArray = _rotateArray$1;
-exports._to = _To;
-exports.a_or_an = a_or_an$1;
-exports.calculateClockDrift = calculateClockDrift$1;
-exports.camelToSnake = camelToSnake$1;
+exports._cleanResponse = _cleanResponse;
+exports._decrypt = _decrypt;
+exports._encrypt = _encrypt;
+exports._equals = _equals;
+exports._formatErrors = _formatErrors;
+exports._hideRandom = _hideRandom;
+exports._parseErrors = _parseErrors;
+exports._repeat = _repeat;
+exports._rotateArray = _rotateArray;
+exports._to = _to;
+exports.a_or_an = a_or_an;
+exports.calculateClockDrift = calculateClockDrift;
+exports.camelToSnake = camelToSnake;
 exports.default = waelioUtils;
-exports.generateId = generateId$1;
-exports.isArray = isArray$3;
-exports.isObject = isObject$3;
-exports.jsonToQueryString = jsonToQueryString$1;
-exports.meta = meta$1;
-exports.notifyMe = notifyMe$1;
-exports.queryStringToJson = queryStringToJson$1;
-exports.reParseString = reParseString$1;
-exports.resetString = resetString$1;
-exports.snakeToCamel = snakeToCamel$1;
-exports.sniffId = sniffId$1;
+exports.generateId = generateId;
+exports.isArray = isArray$2;
+exports.isObject = isObject$2;
+exports.jsonToQueryString = jsonToQueryString;
+exports.meta = meta;
+exports.notifyMe = notifyMe;
+exports.queryStringToJson = queryStringToJson;
+exports.reParseString = reParseString;
+exports.resetString = resetString;
+exports.snakeToCamel = snakeToCamel;
+exports.sniffId = sniffId;
 exports.toBase64 = toBase64;
 exports.waelioUtils = waelioUtils;
 //# sourceMappingURL=waelioUtils.cjs.map

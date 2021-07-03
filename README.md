@@ -4,7 +4,8 @@
 
 ### The [WaelioUtils](https://github.com/waelio/waelio-utils) exported as a Javascript modules.
 
-## This package has been rewritten in `TypeScript`
+### This package has been rewritten in `TypeScript`
+#
 
 # Index
 

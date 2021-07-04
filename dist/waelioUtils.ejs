@@ -519,7 +519,7 @@ var isArray = function (payload) {
     return Array.isArray(payload);
 };
 var isFunction = function (functionToCheck) { return typeof functionToCheck === 'function'; };
-var isValid = function (payload) { return isObject(payload) || isArray(payload) || (typeof payload === 'string' && payload.trim().length > 0); };
+var isValid = function (payload) { return isObject(payload) || isArray(payload) || (typeof payload === 'string' && payload.trim().length > 2); };
 var _encrypt = function (salt, text) {
     if (isValid(salt) && isValid(text)) {
         switch (true) {
@@ -552,7 +552,7 @@ var isObject = function (payload) {
 var isArray = function (payload) {
     return Array.isArray(payload);
 };
-var isValid = function (payload) { return isObject(payload) || isArray(payload) || (typeof payload === 'string' && payload.trim().length > 0); };
+var isValid = function (payload) { return isObject(payload) || isArray(payload) || (typeof payload === 'string' && payload.trim().length > 2); };
 var _decrypt = function (salt, encoded) {
     if (isValid(encoded)) {
         var textToChars_1 = function (text) { return text.split('').map(function (c) { return c.charCodeAt(0); }); };

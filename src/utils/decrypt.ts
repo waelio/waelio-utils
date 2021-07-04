@@ -4,7 +4,7 @@ const isObject = (payload: any): boolean => {
 const isArray = (payload: any): boolean => {
   return Array.isArray(payload);
 };
-const isValid = (payload): boolean => isObject(payload) || isArray(payload) || (typeof payload === 'string' && payload.trim().length > 0);
+const isValid = (payload): boolean => isObject(payload) || isArray(payload) || (typeof payload === 'string' && payload.trim().length > 2);
 
 export const _decrypt = (salt, encoded) => {
   if (isValid(encoded)) {
@@ -20,5 +20,3 @@ export const _decrypt = (salt, encoded) => {
     throw 'Invalid salt or encoded!';
     return 'null';
 };
-
-

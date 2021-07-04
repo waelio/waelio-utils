@@ -2,7 +2,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": ".",
-    "outDir": "dist",
     "sourceMap": true,
     "noEmit": false,
     "target": "esnext",
@@ -21,6 +20,8 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "removeComments": false,
+    "declaration": true,
+    "emitDeclarationOnly": false,
     "jsx": "preserve",
     "lib": [
       "esnext",
@@ -43,7 +44,6 @@
     "r_n_d",
     "spec",
     "example",
-    "dist",
     "node_modules",
     "src/utils/meta"
   ]

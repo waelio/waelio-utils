@@ -569,64 +569,7 @@ var _decrypt = function (salt, encoded) {
 exports._decrypt = _decrypt;
 });
 
-var utils = createCommonjsModule(function (module, exports) {
-exports.__esModule = true;
-exports.waelioUtils = exports._decrypt = exports._encrypt = exports.sniffId = exports.snakeToCamel = exports.resetString = exports.reParseString = exports.queryStringToJson = exports.notifyMe = exports.meta = exports.jsonToQueryString = exports.isObject = exports.isArray = exports.generateId = exports.camelToSnake = exports.calculateClockDrift = exports.toBase64 = exports.Base64 = exports.a_or_an = exports._To = exports._to = exports._rotateArray = exports._repeat = exports._parseErrors = exports._hideRandom = exports._equals = exports._formatErrors = exports._cleanResponse = void 0;
-
-exports._cleanResponse = clean_response._cleanResponse;
-
-exports._equals = equals._equals;
-
-exports._hideRandom = hide_random._hideRandom;
-
-exports._repeat = repeat._repeat;
-
-exports._rotateArray = rotate_array._rotateArray;
-
-exports._to = to._to;
-
-exports._To = _To_1._To;
-
-exports.a_or_an = a_or_an_1.a_or_an;
-
-exports.Base64 = base64.Base64;
-
-exports.toBase64 = toBase64_1.toBase64;
-
-exports.calculateClockDrift = calculate_clock_drift.calculateClockDrift;
-
-exports.camelToSnake = camel_to_snake.camelToSnake;
-
-exports._formatErrors = format_errors._formatErrors;
-
-exports.generateId = generate_id.generateId;
-
-exports.isArray = is_array.isArray;
-
-exports.isObject = is_object.isObject;
-
-exports.jsonToQueryString = json_to_query_string.jsonToQueryString;
-
-exports.meta = meta_1.meta;
-
-exports.notifyMe = notify_me.notifyMe;
-
-exports._parseErrors = parse_errors._parseErrors;
-
-exports.queryStringToJson = query_string_to_json.queryStringToJson;
-
-exports.reParseString = re_parse_string.reParseString;
-
-exports.resetString = reset_string.resetString;
-
-exports.snakeToCamel = snake_to_camel.snakeToCamel;
-
-exports.sniffId = sniff_id.sniffId;
-
-exports._encrypt = encrypt._encrypt;
-
-exports._decrypt = decrypt._decrypt;
-var waelioUtils = {
+const waelioUtils = {
     _cleanResponse: clean_response._cleanResponse,
     _formatErrors: format_errors._formatErrors,
     _equals: equals._equals,
@@ -655,66 +598,33 @@ var waelioUtils = {
     _encrypt: encrypt._encrypt,
     _decrypt: decrypt._decrypt
 };
-exports.waelioUtils = waelioUtils;
-});
 
-const waelioUtils = {
-    _cleanResponse: utils._cleanResponse,
-    _formatErrors: utils._formatErrors,
-    _equals: utils._equals,
-    _hideRandom: utils._hideRandom,
-    _parseErrors: utils._parseErrors,
-    _repeat: utils._repeat,
-    _rotateArray: utils._rotateArray,
-    _to: utils._to,
-    _To: utils._To,
-    a_or_an: utils.a_or_an,
-    Base64: utils.Base64,
-    toBase64: utils.toBase64,
-    calculateClockDrift: utils.calculateClockDrift,
-    camelToSnake: utils.camelToSnake,
-    generateId: utils.generateId,
-    isArray: utils.isArray,
-    isObject: utils.isObject,
-    jsonToQueryString: utils.jsonToQueryString,
-    meta: utils.meta,
-    notifyMe: utils.notifyMe,
-    queryStringToJson: utils.queryStringToJson,
-    reParseString: utils.reParseString,
-    resetString: utils.resetString,
-    snakeToCamel: utils.snakeToCamel,
-    sniffId: utils.sniffId,
-    _encrypt: utils._encrypt,
-    _decrypt: utils._decrypt
-};
-
-var Base64 = utils.Base64;
-var _To = utils._To;
-var _cleanResponse = utils._cleanResponse;
-var _decrypt = utils._decrypt;
-var _encrypt = utils._encrypt;
-var _equals = utils._equals;
-var _formatErrors = utils._formatErrors;
-var _hideRandom = utils._hideRandom;
-var _parseErrors = utils._parseErrors;
-var _repeat = utils._repeat;
-var _rotateArray = utils._rotateArray;
-var _to = utils._to;
-var a_or_an = utils.a_or_an;
-var calculateClockDrift = utils.calculateClockDrift;
-var camelToSnake = utils.camelToSnake;
-export default waelioUtils;
-var generateId = utils.generateId;
-var isArray = utils.isArray;
-var isObject = utils.isObject;
-var jsonToQueryString = utils.jsonToQueryString;
-var meta = utils.meta;
-var notifyMe = utils.notifyMe;
-var queryStringToJson = utils.queryStringToJson;
-var reParseString = utils.reParseString;
-var resetString = utils.resetString;
-var snakeToCamel = utils.snakeToCamel;
-var sniffId = utils.sniffId;
-var toBase64 = utils.toBase64;
+var Base64 = base64.Base64;
+var _To = _To_1._To;
+var _cleanResponse = clean_response._cleanResponse;
+var _decrypt = decrypt._decrypt;
+var _encrypt = encrypt._encrypt;
+var _equals = equals._equals;
+var _formatErrors = format_errors._formatErrors;
+var _hideRandom = hide_random._hideRandom;
+var _parseErrors = parse_errors._parseErrors;
+var _repeat = repeat._repeat;
+var _rotateArray = rotate_array._rotateArray;
+var _to = to._to;
+var a_or_an = a_or_an_1.a_or_an;
+var calculateClockDrift = calculate_clock_drift.calculateClockDrift;
+var camelToSnake = camel_to_snake.camelToSnake;
+var generateId = generate_id.generateId;
+var isArray = is_array.isArray;
+var isObject = is_object.isObject;
+var jsonToQueryString = json_to_query_string.jsonToQueryString;
+var meta = meta_1.meta;
+var notifyMe = notify_me.notifyMe;
+var queryStringToJson = query_string_to_json.queryStringToJson;
+var reParseString = re_parse_string.reParseString;
+var resetString = reset_string.resetString;
+var snakeToCamel = snake_to_camel.snakeToCamel;
+var sniffId = sniff_id.sniffId;
+var toBase64 = toBase64_1.toBase64;
 export { Base64, _To, _cleanResponse, _decrypt, _encrypt, _equals, _formatErrors, _hideRandom, _parseErrors, _repeat, _rotateArray, _to, a_or_an, calculateClockDrift, camelToSnake, generateId, isArray, isObject, jsonToQueryString, meta, notifyMe, queryStringToJson, reParseString, resetString, snakeToCamel, sniffId, toBase64, waelioUtils };
 //# sourceMappingURL=waelioUtils.ejs.map

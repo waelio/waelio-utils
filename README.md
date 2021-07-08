@@ -598,34 +598,32 @@ clean response
 [Back to TOP](#index)
 
 #
-
 # To
 
+Turn any function to Promise
+```javascript
+
+  [null, resolve] // resolve
+  [reject, null] // reject
+
+```
+
+
+Example:
+```javascript
+import { _To } from 'waelio-utils';
+import axios = 'axios';
+const testEndpoint = 'https://api.picmymenu.com/restaurants';
+const response = await _To(axios(testEndpoint));
+const [ reject, resolve ] = response;
+
+expect(response).toBeTruthy() // true
+expect(resolve).toBeTruthy() // true
+expect(reject).not.toBeTruthy() //true
+expect(resolve.data.length).toBeTruthy(); //true
+
+```
 ### To Function
-
-### Documentation soon!
-
-#
-
-[Back to TOP](#index)
-
-#
-
-# ParseErrors
-
-### Parse Errors
-
-### Documentation soon!
-
-#
-
-[Back to TOP](#index)
-
-#
-
-# FormatErrors
-
-### errors formatter
 
 ### Documentation soon!
 

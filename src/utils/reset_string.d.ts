@@ -5,5 +5,4 @@
  * @global
  * @param {string} payload
  */
-declare const resetString: (payload: string) => string;
-export { resetString };
+export declare const resetString: (payload: string) => string;

@@ -5,5 +5,4 @@
  * @returns {void}
  * @author Wael Wahbeh
  */
-declare const _repeat: (num: number) => (fn: any) => void;
-export { _repeat };
+export declare const _repeat: (num: number) => (fn: any) => void;

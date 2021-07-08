@@ -9,7 +9,6 @@
  * @param {} -JSON payload
  * @returns QueryString
  */
-declare const jsonToQueryString: (payload: {
+export declare const jsonToQueryString: (payload: {
     string;
 }) => string;
-export { jsonToQueryString };

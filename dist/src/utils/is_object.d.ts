@@ -1,2 +1,1 @@
-declare const isObject: (payload: any) => boolean;
-export { isObject };
+export declare const isObject: (payload: any) => boolean;

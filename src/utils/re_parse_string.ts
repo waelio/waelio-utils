@@ -1,4 +1,4 @@
-const reParseString = (payload: string) => {
+export const reParseString = (payload: string) => {
   return JSON.parse(JSON.stringify(payload));
 };
-export { reParseString };
+

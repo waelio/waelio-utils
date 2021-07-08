@@ -5,10 +5,10 @@
  * @returns {void}
  * @author Wael Wahbeh
  */
-const _repeat = (num: number) => (fn: any) => {
+export const _repeat = (num: number) => (fn: any) => {
   if (num > 0) {
     fn();
     _repeat(num - 1)(fn);
   }
 };
-export { _repeat }
+

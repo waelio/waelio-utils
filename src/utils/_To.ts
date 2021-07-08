@@ -1,5 +1,10 @@
-import { _cleanResponse } from './clean_response';
-export const _To = (promise: Promise<any>) => {
-  return promise.then((result) => _cleanResponse(result)).catch((err) => [err, null]);
-};
+import { _get } from './_get';
 
+export const _To = async (promise: Promise<any>) => {
+    return new Promise((resolve, reject)=> {
+      return Promise.resolve(promise)
+      .then(result => resolve([null, _get(result)]))         
+      .catch((err) => reject([err, null]));
+    })
+
+};

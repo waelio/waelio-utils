@@ -1,6 +1,3 @@
-"use strict";
-exports.__esModule = true;
-exports.camelToSnake = void 0;
 /**
  * Function that converts camelCase to snake_case or snake-case "snake-case"
  * Example IN: snakeCase
@@ -11,8 +8,7 @@ exports.camelToSnake = void 0;
  * @param {boolean} hyphenated controls the delimiter: true = "-" / false = "_"
  * @returns {string}
  */
-var camelToSnake = function (payload, hyphenated) {
-    if (hyphenated === void 0) { hyphenated = false; }
-    return payload && payload[0].toLowerCase() + payload.slice(1, payload.length).replace(/[A-Z]/g, function (letter) { return "" + (hyphenated ? "-" : "_") + letter.toLowerCase(); });
+export const camelToSnake = (payload, hyphenated = false) => {
+    return payload && payload[0].toLowerCase() + payload.slice(1, payload.length).replace(/[A-Z]/g, (letter) => `${hyphenated ? `-` : `_`}${letter.toLowerCase()}`);
 };
-exports.camelToSnake = camelToSnake;
+//# sourceMappingURL=camel_to_snake.js.map

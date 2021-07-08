@@ -1,11 +1,8 @@
-"use strict";
-exports.__esModule = true;
-exports._parseErrors = void 0;
-var get = function (payload) {
-    var error = payload;
+const get = (payload) => {
+    const error = payload;
     return error.errors ? error.errors : payload;
 };
-var _parseErrors = function (err) {
+export const _parseErrors = (err) => {
     if (err && err.name) {
         return err.message || err.name;
     }
@@ -13,4 +10,4 @@ var _parseErrors = function (err) {
         return get(err);
     }
 };
-exports._parseErrors = _parseErrors;
+//# sourceMappingURL=parse_errors.js.map

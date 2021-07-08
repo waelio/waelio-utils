@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-const meta = () => {
+export const meta = () => {
   const metaObj = { meta: {} };
 
   if (typeof this === 'undefined') return metaObj;
@@ -49,4 +49,4 @@ const meta = () => {
   }
   return metaObj;
 };
-export { meta };
+

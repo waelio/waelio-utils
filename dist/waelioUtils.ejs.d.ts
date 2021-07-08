@@ -33,8 +33,8 @@ declare const waelioUtils: {
     _parseErrors: (err: any) => any;
     _repeat: (num: number) => (fn: any) => void;
     _rotateArray: (array: string | number[]) => false | never[];
-    _to: (promise: Promise<any>) => Promise<any>;
-    _To: (promise: Promise<any>) => Promise<any>;
+    _to: (promise: Promise<any>) => Promise<unknown>;
+    _To: (promise: Promise<any>) => Promise<unknown>;
     a_or_an: (field: string) => "an" | "a";
     Base64: (payload: string) => string;
     toBase64: (payload: string) => string;
@@ -59,7 +59,7 @@ declare const waelioUtils: {
     resetString: (payload: string) => string;
     snakeToCamel: (payload: string) => string;
     sniffId: (payload: any) => any;
-    _encrypt: (salt: any, text: any) => any;
-    _decrypt: (salt: any, encoded: any) => any;
+    _encrypt: (salt: any, payload: any) => any;
+    _decrypt: (salt: string | undefined, payload: any, asFunction?: boolean | undefined) => any;
 };
 export { _cleanResponse, _formatErrors, _equals, _hideRandom, _parseErrors, _repeat, _rotateArray, _to, _To, a_or_an, Base64, toBase64, calculateClockDrift, camelToSnake, generateId, isArray, isObject, jsonToQueryString, meta, notifyMe, queryStringToJson, reParseString, resetString, snakeToCamel, sniffId, _encrypt, _decrypt, waelioUtils };

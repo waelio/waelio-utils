@@ -60,20 +60,22 @@ describe('clean response from waelioUtils', () => {
   });
 });
 
-// const { _To } = waelioUtils;
-// describe('deconstruct response method from waelioUtils', () => {
-//   const axios = require('axios');
-//   const testEndpoint = 'https://api.picmymenu.com/restaurants';
-//   it('should create promise', async () => {
-//     const response = await _To(axios(testEndpoint));
-//     // console.log('🚀 ~ file: appSpec.ts ~ line 69 ~ it ~ response', response);
-//     const [ reject, resolve ] = response;
-//     console.log('reject', reject);
-//     console.log('resolve', resolve);
-//     expect(test.data).toBeTruthy()
-//     // expect(test.data.length).toBeTruthy()
-//   });
-// });
+const { _To } = waelioUtils;
+describe('deconstruct response method from waelioUtils', () => {
+  const axios = require('axios');
+  const testEndpoint = 'https://api.picmymenu.com/restaurants';
+  it('should create promise', async () => {
+    const response = await _To(axios(testEndpoint));
+    // console.log('🚀 ~ file: appSpec.ts ~ line 69 ~ it ~ response', response);
+    const [ reject, resolve ] = response;
+    // console.log('reject', reject);
+    // console.log('resolve', resolve);
+    expect(response).toBeTruthy()
+    expect(resolve).toBeTruthy()
+    expect(reject).not.toBeTruthy()
+    expect(resolve.data.length).toBeTruthy();
+  });
+});
 
 const { _encrypt, _decrypt } = waelioUtils;
 const salt = 'waelio';

@@ -1,35 +1,34 @@
-"use strict";
-exports.__esModule = true;
-exports._encrypt = void 0;
-var isObject = function (payload) {
-    return payload === Object(payload) && !Array.isArray(payload) && typeof payload !== 'function';
-};
-var isArray = function (payload) {
-    return Array.isArray(payload);
-};
-var isFunction = function (functionToCheck) { return typeof functionToCheck === 'function'; };
-var isValid = function (payload) { return isObject(payload) || isArray(payload) || (typeof payload === 'string' && payload.trim().length > 2); };
-var _encrypt = function (salt, text) {
-    if (isValid(salt) && isValid(text)) {
+import { isValid } from './is_valid';
+import { isObject } from './is_object';
+import { isArray } from './is_array';
+import { isFunction } from './is_function';
+export const _encrypt = (salt, payload) => {
+    if (!payload && !!salt) {
+        payload = salt;
+        salt = 'salt';
+    }
+    if (isValid(salt) && (isValid(payload) || isFunction(payload))) {
         switch (true) {
-            case isObject(text):
-                text = JSON.stringify(text);
+            case isObject(payload) /*?*/:
+                payload = JSON.stringify(payload);
                 break;
-            case isArray(text):
-                text = JSON.stringify(text);
+            case isArray(payload) /*?*/:
+                payload = JSON.stringify(payload);
                 break;
-            case isFunction(text):
-                text = text.toString();
+            case isFunction(payload) /*?*/:
+                payload = payload.toString();
+                // payload = new Function('return ' + fString)();
                 break;
             default:
+                payload = payload.toString();
                 break;
         }
-        var textToChars_1 = function (text) { return text.split('').map(function (c) { return c.charCodeAt(0); }); };
-        var byteHex = function (n) { return ('0' + Number(n).toString(16)).substr(-2); };
-        var applySaltToChar = function (code) { return textToChars_1(salt).reduce(function (a, b) { return a ^ b; }, code); };
-        return text.split('').map(textToChars_1).map(applySaltToChar).map(byteHex).join('');
+        const textToChars = (payload) => payload.split('').map((c) => c.charCodeAt(0)); /*?*/
+        const byteHex = (n) => ('0' + Number(n).toString(16)).substr(-2); /*?*/
+        const applySaltToChar = (code) => textToChars(salt).reduce((a, b) => a ^ b, code); /*?*/
+        return payload.split('').map(textToChars).map(applySaltToChar).map(byteHex).join('');
     }
     throw 'Invalid salt or payload!';
-    return 'null';
+    return 'payload';
 };
-exports._encrypt = _encrypt;
+//# sourceMappingURL=encrypt.js.map

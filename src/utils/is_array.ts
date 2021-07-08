@@ -1,7 +1,4 @@
-/**
-Test isArray
-*/
-const isArray = (payload: any): boolean => {
+
+export const isArray = (payload: any): boolean => {
   return Array.isArray(payload);
 };
-export { isArray };

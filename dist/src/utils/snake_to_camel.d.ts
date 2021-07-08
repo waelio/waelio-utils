@@ -9,5 +9,4 @@
  * @param {string} payload QueryString
  * @returns {string}
  */
-declare const snakeToCamel: (payload: string) => string;
-export { snakeToCamel };
+export declare const snakeToCamel: (payload: string) => string;

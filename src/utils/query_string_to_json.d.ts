@@ -9,7 +9,6 @@
  * @param {boolean} toObject Return JS Object or JSON
  * @returns JSON|Object
  */
-declare const queryStringToJson: (payload: string | {
+export declare const queryStringToJson: (payload: string | {
     string;
 }, toObject?: boolean) => any;
-export { queryStringToJson };

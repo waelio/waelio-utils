@@ -1,10 +1,4 @@
-"use strict";
-exports.__esModule = true;
-exports.isArray = void 0;
-/**
-Test isArray
-*/
-var isArray = function (payload) {
+export const isArray = (payload) => {
     return Array.isArray(payload);
 };
-exports.isArray = isArray;
+//# sourceMappingURL=is_array.js.map

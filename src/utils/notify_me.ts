@@ -6,7 +6,7 @@
  * @param  {string} notification -Message to send
  * @param  {string} Site -Website name
  */
-const notifyMe = (notification: string | { string }, Site = 'NorthWestMeta.com!'): void => {
+export const notifyMe = (notification: string | { string }, Site = 'NorthWestMeta.com!'): void => {
   document.addEventListener('DOMContentLoaded', () => {
     if ('Notification' in window) {
       if (Notification.permission === 'granted') {
@@ -26,4 +26,4 @@ const notifyMe = (notification: string | { string }, Site = 'NorthWestMeta.com!'
     }
   });
 };
-export { notifyMe };
+

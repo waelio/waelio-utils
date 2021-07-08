@@ -11,9 +11,8 @@
  * @param {} -JSON payload
  * @returns QueryString
  */
-const jsonToQueryString = (payload: { string }): string => {
+export const jsonToQueryString = (payload: { string }): string => {
   return Object.keys(payload)
     .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(payload[key])}`)
     .join('&');
 };
-export { jsonToQueryString };

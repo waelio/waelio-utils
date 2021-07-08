@@ -1,2 +1,1 @@
-declare const _parseErrors: (err: any) => any;
-export { _parseErrors };
+export declare const _parseErrors: (err: any) => any;

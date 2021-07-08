@@ -4,7 +4,6 @@
  * @param  {string} notification -Message to send
  * @param  {string} Site -Website name
  */
-declare const notifyMe: (notification: string | {
+export declare const notifyMe: (notification: string | {
     string;
 }, Site?: string) => void;
-export { notifyMe };

@@ -1,4 +1,3 @@
-declare const meta: () => {
+export declare const meta: () => {
     meta: {};
 };
-export { meta };

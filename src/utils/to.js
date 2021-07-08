@@ -1,8 +1,9 @@
-"use strict";
-exports.__esModule = true;
-exports._to = void 0;
-var clean_response_1 = require("./clean_response");
-var _to = function (promise) {
-    return promise.then(function (result) { return clean_response_1._cleanResponse(result); })["catch"](function (err) { return [err, null]; });
+import { _get } from './_get';
+export const _to = (promise) => {
+    return new Promise((resolve, reject) => {
+        return Promise.resolve(promise)
+            .then((result) => resolve([null, _get(result)]))
+            .catch((err) => reject([err, null]));
+    });
 };
-exports._to = _to;
+//# sourceMappingURL=to.js.map

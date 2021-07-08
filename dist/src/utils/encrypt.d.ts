@@ -1,1 +1,1 @@
-export declare const _encrypt: (salt: any, text: any) => any;
+export declare const _encrypt: (salt: any, payload: any) => any;

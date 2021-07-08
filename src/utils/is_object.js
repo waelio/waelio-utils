@@ -1,7 +1,5 @@
-"use strict";
-exports.__esModule = true;
-exports.isObject = void 0;
-var isObject = function (payload) {
-    return payload === Object(payload) && !Array.isArray(payload) && typeof payload !== 'function';
+import { isArray } from "./is_array";
+export const isObject = (payload) => {
+    return payload === Object(payload) && !isArray(payload) && typeof payload !== 'function';
 };
-exports.isObject = isObject;
+//# sourceMappingURL=is_object.js.map

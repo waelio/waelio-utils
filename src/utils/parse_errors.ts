@@ -2,7 +2,7 @@ const get = (payload) => {
   const error = payload;
   return error.errors ? error.errors : payload;
 };
-const _parseErrors = (err: any) => {
+export const _parseErrors = (err: any) => {
   if (err && err.name) {
     return err.message || err.name;
   } else {
@@ -10,4 +10,3 @@ const _parseErrors = (err: any) => {
   }
 };
 
-export { _parseErrors };

@@ -648,12 +648,12 @@ a_or_an(payload3) // an
 
 #
 
-# decrypt
+# encrypt
 ## Possible payloads `string`, `object` & `array` or `function`
 ### _encrypt: `_encrypt(salt, payload)` 
 If ***`salt`*** is not provided it will revert to the string `"salt"` as the default ***`salt`***.
 #### <hr />
-# encrypt
+# decrypt
 ### Scenario 1 `payload` is NOT a `function`
 ### _decrypt: `_decrypt(salt, payload)`
 If ***`salt`*** is not provided and `asFunction` is `false` it will revert to the string `"salt"` as the default ***`salt`***

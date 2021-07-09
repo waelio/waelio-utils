@@ -15,7 +15,7 @@
   ],
   "files": [
     "dist/*",
-    "src/*"
+    "src/utils/*"
   ],
   "directories": {
     "src": "src",

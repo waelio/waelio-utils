@@ -32,12 +32,6 @@
   "types": "waelioUtils.d.ts",
   "scripts": {
     "clean": "node ./tools/clean.ts",
-    "prepublishOnly": "npm run build",
-    "build:cjs": "rollup -c tools/rollup.cjs.js",
-    "build:esm": "rollup -c tools/rollup.esm.js",
-    "format": "prettier --write src tools examples",
-    "examples": "rollup -c examples/rollup.config.js",
-    "build": "npm run clean & npm run build:cjs & npm run build:esm && npm run examples && npm run format",
     "size": "rollup -c && size-limit",
     "start": "rollup -c && size-limit",
     "test": "jasmine && size-limit"

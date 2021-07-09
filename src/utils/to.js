@@ -1,12 +1,10 @@
-"use strict";
-exports.__esModule = true;
-exports._To = exports._to = void 0;
-var _get_1 = require("./_get");
-var _to = function (promise) {
-    return new Promise(function (resolve, reject) {
+import { _Get } from './_get';
+export const _to = (promise) => {
+    return new Promise((resolve, reject) => {
         return Promise.resolve(promise)
-            .then(function (result) { return resolve([null, _get_1._Get(result)]); })["catch"](function (err) { return reject([err, null]); });
+            .then((result) => resolve([null, _Get(result)]))
+            .catch((err) => reject([err, null]));
     });
 };
-exports._to = _to;
-exports._To = exports._to;
+export const _To = _to;
+//# sourceMappingURL=to.js.map

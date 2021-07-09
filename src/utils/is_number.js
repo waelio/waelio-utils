@@ -1,6 +1,3 @@
-"use strict";
-exports.__esModule = true;
-exports.isNumber = void 0;
-var is_string_1 = require("./is_string");
-var isNumber = function (payload) { return !is_string_1.isString(payload) && !isNaN(parseFloat(payload)) && isFinite(payload); };
-exports.isNumber = isNumber;
+import { isString } from './is_string';
+export const isNumber = (payload) => !isString(payload) && !isNaN(parseFloat(payload)) && isFinite(payload);
+//# sourceMappingURL=is_number.js.map

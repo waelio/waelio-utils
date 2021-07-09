@@ -28,41 +28,43 @@ import { snakeToCamel } from './snake_to_camel';
 import { sniffId } from './sniff_id';
 import { _encrypt } from './encrypt';
 import { _decrypt } from './decrypt';
-
-export default function waelioUtils() {
-  _cleanResponse
-  _equals
-  _hideRandom
-  _repeat
-  _rotateArray
-  _to
-  _To
-  _Get
-  a_or_an
-  Base64
-  toBase64
-  calculateClockDrift
-  camelToSnake
-  generateId
-  isArray
-  isObject
-  isFunction
-  isString
-  isValid
-  isNumber
-  jsonToQueryString
-  meta
-  notifyMe
-  queryStringToJson
-  reParseString
-  resetString
-  snakeToCamel
-  sniffId
-  _encrypt
+const pkg = {
+  _cleanResponse,
+  _equals,
+  _hideRandom,
+  _repeat,
+  _rotateArray,
+  _to,
+  _To,
+  _Get,
+  a_or_an,
+  Base64,
+  toBase64,
+  calculateClockDrift,
+  camelToSnake,
+  generateId,
+  isArray,
+  isObject,
+  isFunction,
+  isString,
+  isValid,
+  isNumber,
+  jsonToQueryString,
+  meta,
+  notifyMe,
+  queryStringToJson,
+  reParseString,
+  resetString,
+  snakeToCamel,
+  sniffId,
+  _encrypt,
   _decrypt
+};
+export default function waelioUtils() {
+  pkg
 }
 
-
+export { pkg as waelioUtils };
 export { _cleanResponse } from './clean_response';
 export { _equals } from './equals';
 export { _hideRandom } from './hide_random';

@@ -1,4 +1,45 @@
+declare const pkg: {
+    _cleanResponse: (response: any) => any;
+    _equals: (array: any[], needle: any[]) => boolean;
+    _hideRandom: (array: any[], difficulty?: number, replacement?: string) => any[];
+    _repeat: (num: number) => (fn: any) => void;
+    _rotateArray: (array: string | number[]) => false | never[];
+    _to: (promise: Promise<any>) => Promise<unknown>;
+    _To: (promise: Promise<any>) => Promise<unknown>;
+    _Get: (data: any) => any;
+    a_or_an: (field: string) => "an" | "a";
+    Base64: (payload: string) => string;
+    toBase64: (payload: string) => string;
+    calculateClockDrift: (iatAccessToken: number, iatIdToken: number) => number;
+    camelToSnake: (payload: string, hyphenated?: boolean) => string;
+    generateId: (start?: number, len?: number) => string;
+    isArray: (payload: any) => boolean;
+    isObject: (payload: any) => boolean;
+    isFunction: (payload: any) => any;
+    isString: (payload: any) => boolean;
+    isValid: (payload: any) => boolean;
+    isNumber: (payload: any) => boolean;
+    jsonToQueryString: (payload: {
+        string: any;
+    }) => string;
+    meta: () => {
+        meta: {};
+    };
+    notifyMe: (notification: string | {
+        string: any;
+    }, Site?: string) => void;
+    queryStringToJson: (payload: string | {
+        string: any;
+    }, toObject?: boolean) => any;
+    reParseString: (payload: string) => any;
+    resetString: (payload: string) => string;
+    snakeToCamel: (payload: string) => string;
+    sniffId: (payload: any) => any;
+    _encrypt: (salt: any, payload: any) => any;
+    _decrypt: (salt: string | undefined, payload: any, asFunction?: boolean) => any;
+};
 export default function waelioUtils(): void;
+export { pkg as waelioUtils };
 export { _cleanResponse } from './clean_response';
 export { _equals } from './equals';
 export { _hideRandom } from './hide_random';

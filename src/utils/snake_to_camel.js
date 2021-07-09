@@ -1,6 +1,3 @@
-"use strict";
-exports.__esModule = true;
-exports.snakeToCamel = void 0;
 /**
  * Function that converts snake_case or snake-case to camelCase "snakeCase"
  * Example IN: snake_case
@@ -12,7 +9,7 @@ exports.snakeToCamel = void 0;
  * @param {string} payload QueryString
  * @returns {string}
  */
-var snakeToCamel = function (payload) {
-    return typeof payload !== 'string' ? payload : payload.replace(/([-_]\w)/g, function (g) { return g[1].toUpperCase(); });
+export const snakeToCamel = (payload) => {
+    return typeof payload !== 'string' ? payload : payload.replace(/([-_]\w)/g, (g) => g[1].toUpperCase());
 };
-exports.snakeToCamel = snakeToCamel;
+//# sourceMappingURL=snake_to_camel.js.map

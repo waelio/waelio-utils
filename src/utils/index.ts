@@ -29,67 +29,67 @@ import { sniffId } from './sniff_id';
 import { _encrypt } from './encrypt';
 import { _decrypt } from './decrypt';
 
-const waelioUtils = {
-  _cleanResponse,
-  _equals,
-  _hideRandom,
-  _repeat,
-  _rotateArray,
-  _to,
-  _To,
-  _Get,
-  a_or_an,
-  Base64,
-  toBase64,
-  calculateClockDrift,
-  camelToSnake,
-  generateId,
-  isArray,
-  isObject,
-  isFunction,
-  isString,
-  isValid,
-  isNumber,
-  jsonToQueryString,
-  meta,
-  notifyMe,
-  queryStringToJson,
-  reParseString,
-  resetString,
-  snakeToCamel,
-  sniffId,
-  _encrypt,
+export default function waelioUtils() {
+  _cleanResponse
+  _equals
+  _hideRandom
+  _repeat
+  _rotateArray
+  _to
+  _To
+  _Get
+  a_or_an
+  Base64
+  toBase64
+  calculateClockDrift
+  camelToSnake
+  generateId
+  isArray
+  isObject
+  isFunction
+  isString
+  isValid
+  isNumber
+  jsonToQueryString
+  meta
+  notifyMe
+  queryStringToJson
+  reParseString
+  resetString
+  snakeToCamel
+  sniffId
+  _encrypt
   _decrypt
-};
+}
 
-export { _cleanResponse };
-export { _equals };
-export { _hideRandom };
-export { _repeat };
-export { _rotateArray };
-export { _to };
-export { _To };
-export { _Get };
-export { a_or_an };
-export { Base64 };
-export { toBase64 };
-export { calculateClockDrift };
-export { camelToSnake };
-export { generateId };
-export { isArray };
-export { isObject };
-export { isFunction };
-export { isString };
-export { isValid };
-export { isNumber };
-export { jsonToQueryString };
-export { meta };
-export { notifyMe };
-export { queryStringToJson };
-export { reParseString };
-export { resetString };
-export { snakeToCamel };
-export { sniffId };
-export { _encrypt };
-export { _decrypt };
-export { waelioUtils };
+
+export { _cleanResponse } from './clean_response';
+export { _equals } from './equals';
+export { _hideRandom } from './hide_random';
+export { _repeat } from './repeat';
+export { _rotateArray } from './rotate_array';
+export { _to } from './to';
+export { _To } from './to';
+export { _Get } from './_get';
+export { a_or_an } from './a_or_an';
+export { Base64 } from './base64';
+export { toBase64 } from './toBase64';
+export { calculateClockDrift } from './calculate_clock_drift';
+export { camelToSnake } from './camel_to_snake';
+export { generateId } from './generate_id';
+export { isArray } from './is_array';
+export { isObject } from './is_object';
+export { isFunction } from './is_function';
+export { isString } from './is_string';
+export { isValid } from './is_valid';
+export { isNumber } from './is_number';
+export { jsonToQueryString } from './json_to_query_string';
+export { meta } from './meta';
+export { notifyMe } from './notify_me';
+export { queryStringToJson } from './query_string_to_json';
+export { reParseString } from './re_parse_string';
+export { resetString } from './reset_string';
+export { snakeToCamel } from './snake_to_camel';
+export { sniffId } from './sniff_id';
+export { _encrypt } from './encrypt';
+export { _decrypt } from './decrypt';

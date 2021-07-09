@@ -1,28 +1,26 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": ".",
-    "rootDir": ".",
+    "pretty": true,
+    "newLine": "LF",
+    "baseUrl":"./",
+    "module": "ESNext",
+    "declaration": true,
+    "alwaysStrict": true,
     "sourceMap": true,
     "noEmit": false,
     "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "allowJs": true,
-    "skipLibCheck": true,
-    "noUnusedLocals": true,
-    "strictNullChecks": true,
+    "importHelpers": true,
     "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "strictNullChecks": true,
     "noImplicitThis": true,
     "noImplicitReturns": false,
     "strict": true,
     "isolatedModules": true,
     "experimentalDecorators": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "removeComments": false,
-    "declaration": true,
-    "emitDeclarationOnly": false,
-    "jsx": "preserve",
     "lib": [
       "esnext",
       "dom"
@@ -40,12 +38,15 @@
       ]
     }
   },
+  "include": [
+    "src/**/*"
+  ],
   "exclude": [
-    "r_n_d",
-    "spec",
-    "example",
+    "./r_n_d",
+    "./spec",
+    "./example",
     "node_modules",
-    "src/utils/meta",
-    "dist"
+    "./src/utils/meta",
+    "./dist/**/*"
   ]
 }

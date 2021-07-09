@@ -8,6 +8,7 @@ import bundleSize from 'rollup-plugin-bundle-size';
 import pkg from './package.json';
 import utl from './package.json';
 
+
 export default [
   {
     input: './src/waelioUtils.ts',

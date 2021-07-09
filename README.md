@@ -52,10 +52,8 @@
   <tr>
     <td><div style="padding:.25rem; width: 150px;"><a href="#SniffId"> sniffId</a></div> </td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#CleanResponse">_cleanResponse</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#ParseErrors">_parseErrors</a></div></td>
   </tr>
   <tr>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#FormatErrors">_formatErrors</a></div></td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a></div></td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a></div></td>
   </tr>
@@ -70,8 +68,6 @@
     <td><div style="padding:.25rem; width: 150px;"><a href="#To">_To</a></div></td>
   </tr>
   <tr>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#ParseErrors">_parseErrors</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#FormatErrors">_formatErrors</a></div></td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#AOrAn">a_or_an</a></div></td>
   </tr>
 </table>
@@ -598,7 +594,7 @@ clean response
 [Back to TOP](#index)
 
 #
-# To
+# _To
 
 Turn any function to Promise
 ```javascript
@@ -623,9 +619,6 @@ expect(reject).not.toBeTruthy() //true
 expect(resolve.data.length).toBeTruthy(); //true
 
 ```
-### To Function
-
-### Documentation soon!
 
 #
 

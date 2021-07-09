@@ -1,1 +1,1 @@
-export declare const _get: (data: any) => any;
+export declare const _Get: (data: any) => any;

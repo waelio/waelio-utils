@@ -7,7 +7,7 @@
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
-    "allowJs": false,
+    "allowJs": true,
     "skipLibCheck": true,
     "noUnusedLocals": true,
     "strictNullChecks": true,
@@ -45,6 +45,7 @@
     "spec",
     "example",
     "node_modules",
-    "src/utils/meta"
+    "src/utils/meta",
+    "dist"
   ]
 }

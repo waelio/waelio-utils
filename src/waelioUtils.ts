@@ -1,13 +1,12 @@
 import {
   _cleanResponse,
-  _formatErrors,
   _equals,
   _hideRandom,
-  _parseErrors,
   _repeat,
   _rotateArray,
   _to,
   _To,
+  _Get,
   a_or_an,
   Base64,
   toBase64,
@@ -16,6 +15,10 @@ import {
   generateId,
   isArray,
   isObject,
+  isFunction,
+  isString,
+  isValid,
+  isNumber,
   jsonToQueryString,
   meta,
   notifyMe,
@@ -26,18 +29,17 @@ import {
   sniffId,
   _encrypt,
   _decrypt
-} from './src/utils';
+} from './utils/index';
 
 const waelioUtils = {
   _cleanResponse,
-  _formatErrors,
   _equals,
   _hideRandom,
-  _parseErrors,
   _repeat,
   _rotateArray,
   _to,
   _To,
+  _Get,
   a_or_an,
   Base64,
   toBase64,
@@ -46,6 +48,10 @@ const waelioUtils = {
   generateId,
   isArray,
   isObject,
+  isFunction,
+  isString,
+  isValid,
+  isNumber,
   jsonToQueryString,
   meta,
   notifyMe,
@@ -60,14 +66,13 @@ const waelioUtils = {
 export default waelioUtils;
 
 export { _cleanResponse };
-export { _formatErrors };
 export { _equals };
 export { _hideRandom };
-export { _parseErrors };
 export { _repeat };
 export { _rotateArray };
 export { _to };
 export { _To };
+export { _Get };
 export { a_or_an };
 export { Base64 };
 export { toBase64 };
@@ -76,6 +81,10 @@ export { camelToSnake };
 export { generateId };
 export { isArray };
 export { isObject };
+export { isFunction };
+export { isString };
+export { isValid };
+export { isNumber };
 export { jsonToQueryString };
 export { meta };
 export { notifyMe };

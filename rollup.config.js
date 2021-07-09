@@ -10,7 +10,7 @@ import utl from './package.json';
 
 export default [
   {
-    input: './src/utils/index.ts',
+    input: './src/waelioUtils.ts',
     external: Object.keys(pkg.devDependencies),
     plugins: [resolve(), json(), commonjs(), typescript(), tsTreeshaking(), bundleSize(), ts({ tsconfig: 'tsconfig.json' })],
     onwarn: function (warning) {
@@ -44,7 +44,7 @@ export default [
       {
         file: 'dist/waelioUtils.ts',
         name: 'waelioUtils',
-        format: 'es',
+        format: 'es',        
         exports: 'auto',
         sourcemap: true
       }

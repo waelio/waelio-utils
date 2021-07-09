@@ -10,7 +10,7 @@ const isObject = (payload) => {
     return payload === Object(payload) && !isArray(payload) && typeof payload !== 'function';
 };
 
-const _get = (data) => {
+const _Get = (data) => {
     switch (true) {
         case !data:
             return false;
@@ -36,7 +36,7 @@ const _get = (data) => {
     return data;
 };
 
-const _cleanResponse = (response) => _get(response) || response;
+const _cleanResponse = (response) => _Get(response) || response;
 
 /**
  * Compare two arrays of equal size
@@ -132,18 +132,11 @@ const _rotateArray = (array) => {
 const _to = (promise) => {
     return new Promise((resolve, reject) => {
         return Promise.resolve(promise)
-            .then((result) => resolve([null, _get(result)]))
+            .then((result) => resolve([null, _Get(result)]))
             .catch((err) => reject([err, null]));
     });
 };
-
-const _To = async (promise) => {
-    return new Promise((resolve, reject) => {
-        return Promise.resolve(promise)
-            .then(result => resolve([null, _get(result)]))
-            .catch((err) => reject([err, null]));
-    });
-};
+const _To = _to;
 
 const a_or_an = function (field) {
     return /[aeiou]/.test(field.charAt(0)) ? 'an' : 'a';
@@ -193,17 +186,6 @@ const camelToSnake = (payload, hyphenated = false) => {
     return payload && payload[0].toLowerCase() + payload.slice(1, payload.length).replace(/[A-Z]/g, (letter) => `${hyphenated ? `-` : `_`}${letter.toLowerCase()}`);
 };
 
-// @ts-nocheck
-const _formatErrors = (err) => {
-    var errors = {};
-    get(err, 'inner', []).forEach((err) => {
-        if (_get(err) && _get(err)) {
-            errors[err.path] = err.message;
-        }
-    });
-    return errors;
-};
-
 /** generate random string
  * @name  generateId
  * @author  Wael Wahbeh <wahbehw@gmail.com>
@@ -214,6 +196,14 @@ const _formatErrors = (err) => {
 const generateId = (start = 2, len = 9) => {
     return Math.random().toString(36).substr(start, len);
 };
+
+const isFunction = (payload) => payload && {}.toString.call(payload) === '[object Function]' && typeof payload === 'function';
+
+const isString = (payload) => !!payload && typeof payload === 'string' && payload.trim().length > 0;
+
+const isNumber = (payload) => !isString(payload) && !isNaN(parseFloat(payload)) && isFinite(payload);
+
+const isValid = (payload) => isObject(payload) || isArray(payload) || isString(payload) || isNumber(payload);
 
 // @ts-nocheck
 /**
@@ -313,19 +303,6 @@ const notifyMe = (notification, Site = 'NorthWestMeta.com!') => {
     });
 };
 
-const get$1 = (payload) => {
-    const error = payload;
-    return error.errors ? error.errors : payload;
-};
-const _parseErrors = (err) => {
-    if (err && err.name) {
-        return err.message || err.name;
-    }
-    else {
-        return get$1(err);
-    }
-};
-
 // @ts-nocheck
 /**
  * Function that converts a URL Query String to JSON
@@ -390,14 +367,6 @@ const sniffId = (payload) => {
     return newId || false;
 };
 
-const isString = (payload) => !!payload && typeof payload === 'string' && payload.trim().length > 0;
-
-const isNumber = (payload) => !isString(payload) && !isNaN(parseFloat(payload)) && isFinite(payload);
-
-const isValid = (payload) => isObject(payload) || isArray(payload) || isString(payload) || isNumber(payload);
-
-const isFunction = (payload) => payload && {}.toString.call(payload) === '[object Function]' && typeof payload === 'function';
-
 const _encrypt = (salt, payload) => {
     if (!payload && !!salt) {
         payload = salt;
@@ -452,14 +421,13 @@ const _decrypt = (salt = 'salt', payload, asFunction = false) => {
 
 const waelioUtils = {
     _cleanResponse,
-    _formatErrors,
     _equals,
     _hideRandom,
-    _parseErrors,
     _repeat,
     _rotateArray,
     _to,
     _To,
+    _Get,
     a_or_an,
     Base64,
     toBase64,
@@ -468,6 +436,10 @@ const waelioUtils = {
     generateId,
     isArray,
     isObject,
+    isFunction,
+    isString,
+    isValid,
+    isNumber,
     jsonToQueryString,
     meta,
     notifyMe,
@@ -481,23 +453,27 @@ const waelioUtils = {
 };
 
 exports.Base64 = Base64;
+exports._Get = _Get;
 exports._To = _To;
 exports._cleanResponse = _cleanResponse;
 exports._decrypt = _decrypt;
 exports._encrypt = _encrypt;
 exports._equals = _equals;
-exports._formatErrors = _formatErrors;
 exports._hideRandom = _hideRandom;
-exports._parseErrors = _parseErrors;
 exports._repeat = _repeat;
 exports._rotateArray = _rotateArray;
 exports._to = _to;
 exports.a_or_an = a_or_an;
 exports.calculateClockDrift = calculateClockDrift;
 exports.camelToSnake = camelToSnake;
+exports.default = waelioUtils;
 exports.generateId = generateId;
 exports.isArray = isArray;
+exports.isFunction = isFunction;
+exports.isNumber = isNumber;
 exports.isObject = isObject;
+exports.isString = isString;
+exports.isValid = isValid;
 exports.jsonToQueryString = jsonToQueryString;
 exports.meta = meta;
 exports.notifyMe = notifyMe;

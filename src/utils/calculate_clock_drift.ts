@@ -9,3 +9,4 @@ export const calculateClockDrift = (iatAccessToken: number, iatIdToken: number) 
   const iat = Math.min(iatAccessToken, iatIdToken);
   return now - iat;
 };
+export default { calculateClockDrift };

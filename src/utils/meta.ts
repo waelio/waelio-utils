@@ -50,3 +50,4 @@ export const meta = () => {
   return metaObj;
 };
 
+export default { meta };

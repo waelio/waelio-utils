@@ -9,3 +9,4 @@ export const resetString = (payload: string): string => {
   return decodeURIComponent(decodeURIComponent(encodeURIComponent(payload)));
 };
 
+export default { resetString };

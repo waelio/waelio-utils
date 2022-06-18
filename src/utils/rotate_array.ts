@@ -39,4 +39,4 @@ export const _rotateArray = (array: string | number[]) => {
 
   return t;
 };
-
+export default { _rotateArray };

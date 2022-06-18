@@ -1,7 +1,7 @@
 import { isObject } from './is_object';
 import { isArray } from './is_array';
 
-export const _Get = (data) => {
+export const _Get = (data: any) => {
   switch (true) {
     case !data:
       return false;
@@ -20,3 +20,4 @@ export const _Get = (data) => {
   }
   return data;
 };
+export default { _Get };

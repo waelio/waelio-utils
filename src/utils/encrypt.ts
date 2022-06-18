@@ -4,12 +4,12 @@ import { isObject } from './is_object';
 import { isArray } from './is_array';
 import { isFunction } from './is_function';
 
-export const _encrypt = (salt , payload) => {
+export const _encrypt = (salt, payload) => {
   if (!payload && !!salt) {
     payload = salt;
     salt = 'salt';
   }
-  if ( isValid(salt) && ( isValid(payload) || isFunction(payload) )  )   {
+  if (isValid(salt) && (isValid(payload) || isFunction(payload))) {
     switch (true) {
       case isObject(payload) /*?*/:
         payload = JSON.stringify(payload);
@@ -25,11 +25,13 @@ export const _encrypt = (salt , payload) => {
         payload = payload.toString();
         break;
     }
-    const textToChars = (payload) => payload.split('').map((c) => c.charCodeAt(0)); /*?*/
-    const byteHex = (n) => ('0' + Number(n).toString(16)).substr(-2); /*?*/
-    const applySaltToChar = (code) => textToChars(salt).reduce((a, b) => a ^ b, code); /*?*/
+    const textToChars = (payload: string) => payload.split('').map((c: string) => c.charCodeAt(0)); /*?*/
+    const byteHex = (n: string) => ('0' + Number(n).toString(16)).slice(-2); /*?*/
+    const applySaltToChar = (code: number) => textToChars(salt).reduce((a, b) => a ^ b, code); /*?*/
     return payload.split('').map(textToChars).map(applySaltToChar).map(byteHex).join('');
   }
   throw 'Invalid salt or payload!';
   return 'payload';
 };
+
+export default { _encrypt }

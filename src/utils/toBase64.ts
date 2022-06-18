@@ -6,3 +6,4 @@
 export const toBase64 = function (payload: string) {
   return btoa(unescape(encodeURIComponent(payload)));
 }
+export default { toBase64 };

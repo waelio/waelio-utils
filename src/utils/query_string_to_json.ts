@@ -21,3 +21,5 @@ export const queryStringToJson = (payload: string | { string }, toObject: boolea
   });
   return toObject ? JSON.parse(JSON.stringify(result)) : JSON.stringify(result);
 };
+
+export default { queryStringToJson };

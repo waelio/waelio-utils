@@ -8,3 +8,4 @@ export const sniffId = (payload: any) => {
   return newId || false;
 };
 
+export default { sniffId };

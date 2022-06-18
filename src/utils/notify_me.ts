@@ -27,3 +27,4 @@ export const notifyMe = (notification: string | { string }, Site = 'NorthWestMet
   });
 };
 
+export default { notifyMe };

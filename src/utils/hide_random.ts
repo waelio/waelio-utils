@@ -13,3 +13,4 @@ export const _hideRandom = (array: Array<any>, difficulty: number = 3, replaceme
   return array;
 };
 
+export default { _hideRandom };

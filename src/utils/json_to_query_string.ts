@@ -16,3 +16,5 @@ export const jsonToQueryString = (payload: { string }): string => {
     .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(payload[key])}`)
     .join('&');
 };
+
+export default { jsonToQueryString };

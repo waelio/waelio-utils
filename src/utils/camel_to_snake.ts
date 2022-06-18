@@ -12,3 +12,4 @@ export const camelToSnake = (payload: string, hyphenated: boolean = false): stri
   return payload && payload[0].toLowerCase() + payload.slice(1, payload.length).replace(/[A-Z]/g, (letter) => `${hyphenated ? `-` : `_`}${letter.toLowerCase()}`);
 };
 
+export default { camelToSnake };

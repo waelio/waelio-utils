@@ -15,7 +15,9 @@
   ],
   "files": [
     "dist/*",
-    "src/utils/*"
+    "src/utils/*",
+    "src/utils/index.js",
+    "src/utils/index.d.ts"
   ],
   "directories": {
     "src": "src",
@@ -37,8 +39,8 @@
     "test": "jasmine && size-limit"
   },
   "author": {
-    "name": "Wael Wahbeh",
-    "email": "wahbehw@gmail.com",
+    "name": "Peace Marshal",
+    "email": "wahbehw@me.com",
     "url": "https://waelio.com"
   },
   "license": "MIT",

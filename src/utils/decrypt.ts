@@ -1,7 +1,7 @@
-import applySaltToChar from '~/helpers/applySaltToChar';
+import applySaltToChar from '../helpers/applySaltToChar';
 import { _encrypt } from './encrypt';
 import { isValid } from './is_valid';
-export const _decrypt = (salt = 'salt', payload, asFunction = false) => {
+const _decrypt = (salt = 'salt', payload, asFunction = false) => {
   if (!payload && !!salt) {
     payload = salt;
     salt = 'salt';
@@ -20,3 +20,4 @@ export const _decrypt = (salt = 'salt', payload, asFunction = false) => {
   throw 'Invalid salt or payload!';
 };
 export default { _decrypt };
+export { _decrypt };

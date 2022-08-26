@@ -37,14 +37,16 @@
     ],
     "paths": {
       "~/*": [
-        "src/*"
+        "src/utils/"
       ]
     }
   },
   "include": [
-    "src/**/*"
+    "src/utils",
+    "src/helpers"
   ],
   "exclude": [
+    "./tools",
     "./r_n_d",
     "./spec",
     "./example",

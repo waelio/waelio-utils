@@ -1,444 +1,182 @@
-(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined'
-    ? factory(exports)
-    : typeof define === 'function' && define.amd
-    ? define(['exports'], factory)
-    : ((global = typeof globalThis !== 'undefined' ? globalThis : global || self), factory((global.waelioUtils = {})));
-})(undefined, function (exports) {
-  const isArray = (payload) => {
-    return Array.isArray(payload);
-  };
-
-  const isObject = (payload) => {
-    return payload === Object(payload) && !isArray(payload) && typeof payload !== 'function';
-  };
-
-  const _Get = (data) => {
-    switch (true) {
-      case !data:
-        return false;
-      case isObject(data):
-        return data.data ? data.data : data;
-      case isArray(data.data):
-        if (data.data.length === 0) return data.data.data;
-        else if (data.data.length === 1) return data.data.data[0];
-        else if (data.data.length > 1) return data.data;
-      case isArray(data):
-        if (data.length === 0) return data;
-        else if (data.length === 1) return data[0].data;
-        else if (data.length > 1) return data;
-      default:
-        return data;
-    }
-    return data;
-  };
-
-  const _cleanResponse = (response) => _Get(response) || response;
-
-  /**
-   * Compare two arrays of equal size
-   * @param {array} array
-   * @param {array} needle
-   * @returns {boolean}
-   *
-   * @author Wael Wahbeh
-   */
-  const _equals = (array, needle) => {
-    // if the array or needle are a falsy value, return
-    if (!array || !needle) return false;
-    // compare lengths - can save a lot of time
-    if (needle.length != array.length) return false;
-    for (let i = 0, l = needle.length; i < l; i++) {
-      // Check if we have nested arrays
-      if (Array.isArray(needle[i]) && Array.isArray(needle[i])) {
-        // recurse into the nested arrays
-        return _equals(array[i], needle[i]);
-      } else if (needle[i] !== array[i]) {
-        return false;
-      }
-    }
-    return true;
-  };
-
-  /**
-   * @param  {array} array
-   * @param  {number} difficulty=3
-   * @param  {string} replacement=''
-   */
-  const _hideRandom = (array, difficulty = 3, replacement = '') => {
-    for (let i = 0; i < array.length; ++i) {
-      for (let k = 0; k < difficulty; ++k) {
-        const randomColumnIndex = Math.floor(Math.random() * array.length);
-        array[i][randomColumnIndex] = replacement;
-      }
-    }
-    return array;
-  };
-
-  /**
-   * Repeat a function n number of time
-   * @param {number} num - How many times a function must run
-   * @param {function} fn - The function to repeat
-   * @returns {void}
-   * @author Wael Wahbeh
-   */
-  const _repeat = (num) => (fn) => {
-    if (num > 0) {
-      fn();
-      _repeat(num - 1)(fn);
-    }
-  };
-
-  // @ts-nocheck
-  /**
-   * Rotates array counter clock
-   * @param  {array} array
-   */
-  const _rotateArray = (array) => {
-    if (!array || !array.length) return false;
-    // Calculate the width and height of the Array
-    let w = array.length || 0;
-    let h = Array.isArray(array[0]) ? array[0].length : 0;
-    // In case it is a zero matrix, no transpose needed.
-    if (h === 0 || w === 0) {
-      return [];
-    }
-    /**
-     * @type {number} i Counter
-     * @type {number} j Counter
-     * @type {Array<number>} t Transposed data is stored in this array.
-     */
-    let i,
-      j,
-      t = [];
-    // Loop through every item in the outer array (height)
-    for (i = 0; i < h; i++) {
-      // Insert a new row (array)
-      t[i] = [];
-      // Loop through every item per item in outer array (width)
-      for (j = 0; j < w; j++) {
-        // Save transposed data.
-        t[i][j] = array[j][i];
-      }
-    }
-    return t;
-  };
-
-  const _to = (promise) => {
-    return new Promise((resolve, reject) => {
-      return Promise.resolve(promise)
-        .then((result) => resolve([null, _Get(result)]))
-        .catch((err) => reject([err, null]));
-    });
-  };
-  const _To = _to;
-
-  const a_or_an = function (field) {
-    return /[aeiou]/.test(field.charAt(0)) ? 'an' : 'a';
-  };
-
-  /**
-   * Converts string to a Base64
-   * @param  {string} payload
-   * @returns {string}
-   */
-  const Base64 = function (payload) {
-    return btoa(unescape(encodeURIComponent(payload)));
-  };
-
-  /**
-   * Converts string to a Base64
-   * @param  {string} payload
-   * @returns {string}
-   */
-  const toBase64 = function (payload) {
-    return btoa(unescape(encodeURIComponent(payload)));
-  };
-
-  /**
-   * Calculate Clock Drift used to calculate tile remaining before token expiration
-   *
-   * @param  {} iatAccessToken IAT
-   * @param  {} iatIdToken
-   */
-  const calculateClockDrift = (iatAccessToken, iatIdToken) => {
-    const now = Math.floor(Date.now() / 1000);
-    const iat = Math.min(iatAccessToken, iatIdToken);
-    return now - iat;
-  };
-
-  /**
-   * Function that converts camelCase to snake_case or snake-case "snake-case"
-   * Example IN: snakeCase
-   * Example Out: snake-case
-   * Example Out: snake_case
-   * @name  camelToSnake
-   * @param {string} payload
-   * @param {boolean} hyphenated controls the delimiter: true = "-" / false = "_"
-   * @returns {string}
-   */
-  const camelToSnake = (payload, hyphenated = false) => {
-    return payload && payload[0].toLowerCase() + payload.slice(1, payload.length).replace(/[A-Z]/g, (letter) => `${hyphenated ? `-` : `_`}${letter.toLowerCase()}`);
-  };
-
-  /** generate random string
-   * @name  generateId
-   * @author  Wael Wahbeh <wahbehw@gmail.com>
-   * @param  {number} start 2 default
-   * @param  {number} len   9 default
-   * @return {string}
-   */
-  const generateId = (start = 2, len = 9) => {
-    return Math.random().toString(36).substr(start, len);
-  };
-
-  const isFunction = (payload) => payload && {}.toString.call(payload) === '[object Function]' && typeof payload === 'function';
-
-  const isString = (payload) => !!payload && typeof payload === 'string' && payload.trim().length > 0;
-
-  const isNumber = (payload) => !isString(payload) && !isNaN(parseFloat(payload)) && isFinite(payload);
-
-  const isValid = (payload) => isObject(payload) || isArray(payload) || isString(payload) || isNumber(payload);
-
-  // @ts-nocheck
-  /**
-   * Function that converts a JSON to URL Query String
-   * Example IN: {"first":"John", "last": "Smith"}
-   * Example Out: first=John&last=Smith
-   * @name  jsonToQueryString
-   * @author  Wael Wahbeh <wahbehw@gmail.com>
-   * @function
-   * @global
-   * @param {} -JSON payload
-   * @returns QueryString
-   */
-  const jsonToQueryString = (payload) => {
-    return Object.keys(payload)
-      .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(payload[key])}`)
-      .join('&');
-  };
-
-  // @ts-nocheck
-  const meta = () => {
-    const metaObj = { meta: {} };
-    return metaObj;
-    if (typeof undefined['metaTags'] === 'undefined') return metaObj;
-    if (undefined.metaTags.title);
-    if (undefined.metaTags.description);
-    if (undefined.metaTags.url);
-    if (undefined.metaTags.image);
-    return metaObj;
-  };
-
-  // @ts-nocheck
-  /** PWA Notification
-   * Send Notification to Site
-   * Browser only
-   * @param  {string} notification -Message to send
-   * @param  {string} Site -Website name
-   */
-  const notifyMe = (notification, Site = 'NorthWestMeta.com!') => {
-    document.addEventListener('DOMContentLoaded', () => {
-      if ('Notification' in window) {
-        if (Notification.permission === 'granted') {
-          const payload = {
-            detail: `Welcome to ${Site}`,
-            bubbles: true,
-            cancelable: true
-          };
-          return new Notification(notification || payload);
-        } else if (Notification.permission !== 'denied') {
-          Notification.requestPermission().then(function (permission) {
-            if (permission === 'granted') {
-              return new Notification(notification || `Welcome to ${Site}`);
-            }
-          });
-        }
-      }
-    });
-  };
-
-  // @ts-nocheck
-  /**
-   * Function that converts a URL Query String to JSON
-   * Example Out: {"first":"John", "last": "Smith"}
-   * @name  queryStringToJson
-   * @author  Wael Wahbeh <wahbehw@gmail.com>
-   * @function
-   * @global
-   * @param {string} payload QueryString
-   * @param {boolean} toObject Return JS Object or JSON
-   * @returns JSON|Object
-   */
-  const queryStringToJson = (payload, toObject = true) => {
-    if (!payload) return;
-    var pairs = payload.slice(1).split('&');
-    var result = {};
-    pairs.forEach((pair) => {
-      pair = pair.split('=');
-      result[pair[0]] = decodeURIComponent(pair[1] || '');
-    });
-    return toObject ? JSON.parse(JSON.stringify(result)) : JSON.stringify(result);
-  };
-
-  const reParseString = (payload) => {
-    return JSON.parse(JSON.stringify(payload));
-  };
-
-  /** Decode uri component
-   * @name  resetString
-   * @author  Wael Wahbeh <wahbehw@gmail.com>
-   * @function
-   * @global
-   * @param {string} payload
-   */
-  const resetString = (payload) => {
-    return decodeURIComponent(decodeURIComponent(encodeURIComponent(payload)));
-  };
-
-  /**
-   * Function that converts snake_case or snake-case to camelCase "snakeCase"
-   * Example IN: snake_case
-   * Example Out: snakeCase
-   * @name  snakeToCamel
-   * @author  Wael Wahbeh <wahbehw@gmail.com>
-   * @function
-   * @global
-   * @param {string} payload QueryString
-   * @returns {string}
-   */
-  const snakeToCamel = (payload) => {
-    return typeof payload !== 'string' ? payload : payload.replace(/([-_]\w)/g, (g) => g[1].toUpperCase());
-  };
-
-  /**
-   * @param  {object} payload
-   * @returns string||boolean||number
-   */
-  const sniffId = (payload) => {
-    const { id, _id, Id, iD } = payload;
-    const newId = id || _id || Id || iD;
-    return newId || false;
-  };
-
-  const _encrypt = (salt, payload) => {
-    if (!payload && !!salt) {
-      payload = salt;
-      salt = 'salt';
-    }
-    if (isValid(salt) && (isValid(payload) || isFunction(payload))) {
-      switch (true) {
-        case isObject(payload) /*?*/:
-          payload = JSON.stringify(payload);
-          break;
-        case isArray(payload) /*?*/:
-          payload = JSON.stringify(payload);
-          break;
-        case isFunction(payload) /*?*/:
-          payload = payload.toString();
-          // payload = new Function('return ' + fString)();
-          break;
-        default:
-          payload = payload.toString();
-          break;
-      }
-      const textToChars = (payload) => payload.split('').map((c) => c.charCodeAt(0)); /*?*/
-      const byteHex = (n) => ('0' + Number(n).toString(16)).substr(-2); /*?*/
-      const applySaltToChar = (code) => textToChars(salt).reduce((a, b) => a ^ b, code); /*?*/
-      return payload.split('').map(textToChars).map(applySaltToChar).map(byteHex).join('');
-    }
-    throw 'Invalid salt or payload!';
-  };
-
-  const _decrypt = (salt = 'salt', payload, asFunction = false) => {
-    if (!payload && !!salt) {
-      payload = salt;
-      salt = 'salt';
-    }
-    if (isValid(salt) && isValid(payload)) {
-      const textToChars = (text) => text.split('').map((c) => c.charCodeAt(0));
-      const applySaltToChar = (code) => textToChars(salt).reduce((a, b) => a ^ b, code);
-      const decryptString = payload
-        .match(/.{1,2}/g)
-        .map((hex) => parseInt(hex, 16))
-        .map(applySaltToChar)
-        .map((charCode) => String.fromCharCode(charCode))
-        .join('');
-      if (!asFunction) return decryptString;
-      else {
-        return new Function('return ' + decryptString)();
-      }
-    }
-    throw 'Invalid salt or payload!';
-  };
-
-  const pkg = {
-    _cleanResponse,
-    _equals,
-    _hideRandom,
-    _repeat,
-    _rotateArray,
-    _to,
-    _To,
-    _Get,
-    a_or_an,
-    Base64,
-    toBase64,
-    calculateClockDrift,
-    camelToSnake,
-    generateId,
-    isArray,
-    isObject,
-    isFunction,
-    isString,
-    isValid,
-    isNumber,
-    jsonToQueryString,
-    meta,
-    notifyMe,
-    queryStringToJson,
-    reParseString,
-    resetString,
-    snakeToCamel,
-    sniffId,
-    _encrypt,
-    _decrypt
-  };
-  function waelioUtils() {}
-
-  exports.Base64 = Base64;
-  exports._Get = _Get;
-  exports._To = _To;
-  exports._cleanResponse = _cleanResponse;
-  exports._decrypt = _decrypt;
-  exports._encrypt = _encrypt;
-  exports._equals = _equals;
-  exports._hideRandom = _hideRandom;
-  exports._repeat = _repeat;
-  exports._rotateArray = _rotateArray;
-  exports._to = _to;
-  exports.a_or_an = a_or_an;
-  exports.calculateClockDrift = calculateClockDrift;
-  exports.camelToSnake = camelToSnake;
-  exports.default = waelioUtils;
-  exports.generateId = generateId;
-  exports.isArray = isArray;
-  exports.isFunction = isFunction;
-  exports.isNumber = isNumber;
-  exports.isObject = isObject;
-  exports.isString = isString;
-  exports.isValid = isValid;
-  exports.jsonToQueryString = jsonToQueryString;
-  exports.meta = meta;
-  exports.notifyMe = notifyMe;
-  exports.queryStringToJson = queryStringToJson;
-  exports.reParseString = reParseString;
-  exports.resetString = resetString;
-  exports.snakeToCamel = snakeToCamel;
-  exports.sniffId = sniffId;
-  exports.toBase64 = toBase64;
-  exports.waelioUtils = pkg;
-
-  Object.defineProperty(exports, '__esModule', { value: true });
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+exports.__esModule = true;
+exports.WaelioUtils = exports._decrypt = exports._encrypt = exports.sniffId = exports.snakeToCamel = exports.resetString = exports.reParseString = exports.queryStringToJson = exports.notifyMe = exports.jsonToQueryString = exports.isNumber = exports.isValid = exports.isString = exports.isFunction = exports.isObject = exports.isArray = exports.generateId = exports.camelToSnake = exports.calculateClockDrift = exports.toBase64 = exports.a_or_an = exports._Get = exports._To = exports._rotateArray = exports._repeat = exports._hideRandom = exports._equals = exports._cleanResponse = void 0;
+var clean_response_1 = require("./src/utils/clean_response");
+var equals_1 = require("./src/utils/equals");
+var hide_random_1 = require("./src/utils/hide_random");
+var repeat_1 = require("./src/utils/repeat");
+var rotate_array_1 = require("./src/utils/rotate_array");
+var to_1 = require("./src/utils/to");
+var _get_1 = require("./src/utils/_get");
+var a_or_an_1 = require("./src/utils/a_or_an");
+var toBase64_1 = require("./src/utils/toBase64");
+var calculate_clock_drift_1 = require("./src/utils/calculate_clock_drift");
+var camel_to_snake_1 = require("./src/utils/camel_to_snake");
+var generate_id_1 = require("./src/utils/generate_id");
+var is_array_1 = require("./src/utils/is_array");
+var is_object_1 = require("./src/utils/is_object");
+var is_function_1 = require("./src/utils/is_function");
+var is_string_1 = require("./src/utils/is_string");
+var is_valid_1 = require("./src/utils/is_valid");
+var is_number_1 = require("./src/utils/is_number");
+var json_to_query_string_1 = require("./src/utils/json_to_query_string");
+var notify_me_1 = require("./src/utils/notify_me");
+var query_string_to_json_1 = require("./src/utils/query_string_to_json");
+var re_parse_string_1 = require("./src/utils/re_parse_string");
+var reset_string_1 = require("./src/utils/reset_string");
+var snake_to_camel_1 = require("./src/utils/snake_to_camel");
+var sniff_id_1 = require("./src/utils/sniff_id");
+var encrypt_1 = require("./src/utils/encrypt");
+var decrypt_1 = require("./src/utils/decrypt");
+var clean_response_2 = require("./src/utils/clean_response");
+__createBinding(exports, clean_response_2, "_cleanResponse");
+var equals_2 = require("./src/utils/equals");
+__createBinding(exports, equals_2, "_equals");
+var hide_random_2 = require("./src/utils/hide_random");
+__createBinding(exports, hide_random_2, "_hideRandom");
+var repeat_2 = require("./src/utils/repeat");
+__createBinding(exports, repeat_2, "_repeat");
+var rotate_array_2 = require("./src/utils/rotate_array");
+__createBinding(exports, rotate_array_2, "_rotateArray");
+var to_2 = require("./src/utils/to");
+__createBinding(exports, to_2, "_To");
+var _get_2 = require("./src/utils/_get");
+__createBinding(exports, _get_2, "_Get");
+var a_or_an_2 = require("./src/utils/a_or_an");
+__createBinding(exports, a_or_an_2, "a_or_an");
+var toBase64_2 = require("./src/utils/toBase64");
+__createBinding(exports, toBase64_2, "toBase64");
+var calculate_clock_drift_2 = require("./src/utils/calculate_clock_drift");
+__createBinding(exports, calculate_clock_drift_2, "calculateClockDrift");
+var camel_to_snake_2 = require("./src/utils/camel_to_snake");
+__createBinding(exports, camel_to_snake_2, "camelToSnake");
+var generate_id_2 = require("./src/utils/generate_id");
+__createBinding(exports, generate_id_2, "generateId");
+var is_array_2 = require("./src/utils/is_array");
+__createBinding(exports, is_array_2, "isArray");
+var is_object_2 = require("./src/utils/is_object");
+__createBinding(exports, is_object_2, "isObject");
+var is_function_2 = require("./src/utils/is_function");
+__createBinding(exports, is_function_2, "isFunction");
+var is_string_2 = require("./src/utils/is_string");
+__createBinding(exports, is_string_2, "isString");
+var is_valid_2 = require("./src/utils/is_valid");
+__createBinding(exports, is_valid_2, "isValid");
+var is_number_2 = require("./src/utils/is_number");
+__createBinding(exports, is_number_2, "isNumber");
+var json_to_query_string_2 = require("./src/utils/json_to_query_string");
+__createBinding(exports, json_to_query_string_2, "jsonToQueryString");
+var notify_me_2 = require("./src/utils/notify_me");
+__createBinding(exports, notify_me_2, "notifyMe");
+var query_string_to_json_2 = require("./src/utils/query_string_to_json");
+__createBinding(exports, query_string_to_json_2, "queryStringToJson");
+var re_parse_string_2 = require("./src/utils/re_parse_string");
+__createBinding(exports, re_parse_string_2, "reParseString");
+var reset_string_2 = require("./src/utils/reset_string");
+__createBinding(exports, reset_string_2, "resetString");
+var snake_to_camel_2 = require("./src/utils/snake_to_camel");
+__createBinding(exports, snake_to_camel_2, "snakeToCamel");
+var sniff_id_2 = require("./src/utils/sniff_id");
+__createBinding(exports, sniff_id_2, "sniffId");
+var encrypt_2 = require("./src/utils/encrypt");
+__createBinding(exports, encrypt_2, "_encrypt");
+var decrypt_2 = require("./src/utils/decrypt");
+__createBinding(exports, decrypt_2, "_decrypt");
+var WaelioUtils = function () {
+    return {
+        _cleanResponse: clean_response_1._cleanResponse,
+        _equals: equals_1._equals,
+        _hideRandom: hide_random_1._hideRandom,
+        _repeat: repeat_1._repeat,
+        _rotateArray: rotate_array_1._rotateArray,
+        _To: to_1._To,
+        _Get: _get_1._Get,
+        a_or_an: a_or_an_1.a_or_an,
+        toBase64: toBase64_1.toBase64,
+        calculateClockDrift: calculate_clock_drift_1.calculateClockDrift,
+        camelToSnake: camel_to_snake_1.camelToSnake,
+        generateId: generate_id_1.generateId,
+        isArray: is_array_1.isArray,
+        isObject: is_object_1.isObject,
+        isFunction: is_function_1.isFunction,
+        isString: is_string_1.isString,
+        isValid: is_valid_1.isValid,
+        isNumber: is_number_1.isNumber,
+        jsonToQueryString: json_to_query_string_1.jsonToQueryString,
+        notifyMe: notify_me_1.notifyMe,
+        queryStringToJson: query_string_to_json_1.queryStringToJson,
+        reParseString: re_parse_string_1.reParseString,
+        resetString: reset_string_1.resetString,
+        snakeToCamel: snake_to_camel_1.snakeToCamel,
+        sniffId: sniff_id_1.sniffId,
+        _encrypt: encrypt_1._encrypt,
+        _decrypt: decrypt_1._decrypt
+    };
+};
+exports.WaelioUtils = WaelioUtils;
+exports["default"] = (function () {
+    clean_response_1._cleanResponse;
+    equals_1._equals;
+    hide_random_1._hideRandom;
+    repeat_1._repeat;
+    rotate_array_1._rotateArray;
+    to_1._To;
+    _get_1._Get;
+    a_or_an_1.a_or_an;
+    toBase64_1.toBase64;
+    calculate_clock_drift_1.calculateClockDrift;
+    camel_to_snake_1.camelToSnake;
+    generate_id_1.generateId;
+    is_array_1.isArray;
+    is_object_1.isObject;
+    is_function_1.isFunction;
+    is_string_1.isString;
+    is_valid_1.isValid;
+    is_number_1.isNumber;
+    json_to_query_string_1.jsonToQueryString;
+    notify_me_1.notifyMe;
+    query_string_to_json_1.queryStringToJson;
+    re_parse_string_1.reParseString;
+    reset_string_1.resetString;
+    snake_to_camel_1.snakeToCamel;
+    sniff_id_1.sniffId;
+    encrypt_1._encrypt;
+    decrypt_1._decrypt;
+    return {
+        WaelioUtils: exports.WaelioUtils,
+        _cleanResponse: clean_response_1._cleanResponse,
+        _equals: equals_1._equals,
+        _hideRandom: hide_random_1._hideRandom,
+        _repeat: repeat_1._repeat,
+        _rotateArray: rotate_array_1._rotateArray,
+        _To: to_1._To,
+        _Get: _get_1._Get,
+        a_or_an: a_or_an_1.a_or_an,
+        toBase64: toBase64_1.toBase64,
+        calculateClockDrift: calculate_clock_drift_1.calculateClockDrift,
+        camelToSnake: camel_to_snake_1.camelToSnake,
+        generateId: generate_id_1.generateId,
+        isArray: is_array_1.isArray,
+        isObject: is_object_1.isObject,
+        isFunction: is_function_1.isFunction,
+        isString: is_string_1.isString,
+        isValid: is_valid_1.isValid,
+        isNumber: is_number_1.isNumber,
+        jsonToQueryString: json_to_query_string_1.jsonToQueryString,
+        notifyMe: notify_me_1.notifyMe,
+        queryStringToJson: query_string_to_json_1.queryStringToJson,
+        reParseString: re_parse_string_1.reParseString,
+        resetString: reset_string_1.resetString,
+        snakeToCamel: snake_to_camel_1.snakeToCamel,
+        sniffId: sniff_id_1.sniffId,
+        _encrypt: encrypt_1._encrypt,
+        _decrypt: decrypt_1._decrypt
+    };
 });
-//# sourceMappingURL=waelioUtils.ts.map

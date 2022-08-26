@@ -3,7 +3,7 @@
  * @param  {number} difficulty=3
  * @param  {string} replacement=''
  */
-export const _hideRandom = (array: Array<any>, difficulty: number = 3, replacement: string = '') => {
+const _hideRandom = (array: Array<any>, difficulty: number = 3, replacement: string = '') => {
   for (let i = 0; i < array.length; ++i) {
     for (let k = 0; k < difficulty; ++k) {
       const randomColumnIndex = Math.floor(Math.random() * array.length);
@@ -14,3 +14,4 @@ export const _hideRandom = (array: Array<any>, difficulty: number = 3, replaceme
 };
 
 export default { _hideRandom };
+export  { _hideRandom };

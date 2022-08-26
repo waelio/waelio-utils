@@ -4,7 +4,7 @@ import { isObject } from './is_object';
 import { isArray } from './is_array';
 import { isFunction } from './is_function';
 
-export const _encrypt = (salt, payload) => {
+const _encrypt = (salt, payload) => {
   if (!payload && !!salt) {
     payload = salt;
     salt = 'salt';
@@ -35,3 +35,4 @@ export const _encrypt = (salt, payload) => {
 };
 
 export default { _encrypt }
+export { _encrypt }

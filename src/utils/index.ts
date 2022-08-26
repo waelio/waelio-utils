@@ -1,5 +1,5 @@
 import { _cleanResponse } from './clean_response';
-import { equalsPayloadType, _equals } from './equals';
+import { _equals } from './equals';
 import { _hideRandom } from './hide_random';
 import { _repeat } from './repeat';
 import { _rotateArray } from './rotate_array';
@@ -26,37 +26,123 @@ import { sniffId } from './sniff_id';
 import { _encrypt } from './encrypt';
 import { _decrypt } from './decrypt';
 
-function waelioUtils(this: any): void { }
-waelioUtils._generateId = (start?: number, len?: number) => generateId(start, len) as string;
-waelioUtils._isArray = (payload: any[]) => isArray(payload) as boolean;
-waelioUtils._isObject = (payload: any) => isObject(payload) as boolean;
-waelioUtils._isFunction = (payload: any) => isFunction(payload) as boolean;
-waelioUtils._isString = (payload: any) => isString(payload) as boolean;
-waelioUtils._isNumber = (payload: any) => isNumber(payload) as boolean;
-waelioUtils._isValid = (payload: any) => isValid(payload) as boolean;
-waelioUtils._jsonToQueryString = (payload: any) => jsonToQueryString(payload) as string;
-waelioUtils._queryStringToJson = (payload: any) => queryStringToJson(payload) as object;
-waelioUtils._notifyMe = (notification: string | { string: any; }, Site?: string) => notifyMe(notification, Site) as void;
-waelioUtils._reParseString = (payload: any) => reParseString(payload) as string;
-waelioUtils._resetString = (payload: any) => resetString(payload) as string;
-waelioUtils._snakeToCamel = (payload) => snakeToCamel(payload) as string;
-waelioUtils._camelToSnake = (payload: string, hyphenated?: boolean) => camelToSnake(payload, hyphenated) as string;
-waelioUtils._aOrAn = (payload: any) => a_or_an(payload) as string;
-waelioUtils._sniffId = (payload: any) => sniffId(payload) as string;
-waelioUtils._encrypt = (salt: string | undefined, payload: string) => _encrypt(salt, payload) as string;
-waelioUtils._decrypt = (salt: string | undefined, payload: any, asFunction?: boolean) => _decrypt(salt, payload, asFunction) as string;
-waelioUtils._cleanResponse = (response: object) => _cleanResponse(response) as object;
-waelioUtils._equals = (array: equalsPayloadType, needle: equalsPayloadType) => _equals(array, needle) as boolean;
-waelioUtils._hideRandom = (array: string[] | number[], difficulty: number, replacement?: string) => _hideRandom(array, difficulty, replacement) as any;
-waelioUtils._repeat = (num: number) => _repeat(num) as any;
-waelioUtils._rotateArray = (array: string | number[]) => _rotateArray(array) as any[];
-waelioUtils._to = (promise: Promise<any>) => _To(promise) as any;
-waelioUtils._To = (promise: Promise<any>) => _To(promise) as any;
-waelioUtils._get = (data: any) => _Get(data) as any;
-waelioUtils._toBase64 = (payload: string) => toBase64(payload) as string;
-waelioUtils._calculateClockDrift = (iatAccessToken: number, iatIdToken: number) => calculateClockDrift(iatAccessToken, iatIdToken) as number;
-waelioUtils._toBase64 = (arg: string) => toBase64(arg) as string;
+export { _cleanResponse } from './clean_response';
+export { _equals } from './equals';
+export { _hideRandom } from './hide_random';
+export { _repeat } from './repeat';
+export { _rotateArray } from './rotate_array';
+export { _To } from './to';
+export { _Get } from './_get';
+export { a_or_an } from './a_or_an';
+export { toBase64 } from './toBase64';
+export { calculateClockDrift } from './calculate_clock_drift';
+export { camelToSnake } from './camel_to_snake';
+export { generateId } from './generate_id';
+export { isArray } from './is_array';
+export { isObject } from './is_object';
+export { isFunction } from './is_function';
+export { isString } from './is_string';
+export { isValid } from './is_valid';
+export { isNumber } from './is_number';
+export { jsonToQueryString } from './json_to_query_string';
+export { notifyMe } from './notify_me';
+export { queryStringToJson } from './query_string_to_json';
+export { reParseString } from './re_parse_string';
+export { resetString } from './reset_string';
+export { snakeToCamel } from './snake_to_camel';
+export { sniffId } from './sniff_id';
+export { _encrypt } from './encrypt';
+export { _decrypt } from './decrypt';
 
 
-export default waelioUtils;
-export { waelioUtils };
+
+export const WaelioUtils = () => {
+  _cleanResponse
+  _equals
+  _hideRandom
+  _repeat
+  _rotateArray
+  _To
+  _Get
+  a_or_an
+  toBase64
+  calculateClockDrift
+  camelToSnake
+  generateId
+  isArray
+  isObject
+  isFunction
+  isString
+  isValid
+  isNumber
+  jsonToQueryString
+  notifyMe
+  queryStringToJson
+  reParseString
+  resetString
+  snakeToCamel
+  sniffId
+  _encrypt
+  _decrypt
+  return {
+    _cleanResponse,
+    _equals,
+    _hideRandom,
+    _repeat,
+    _rotateArray,
+    _To,
+    _Get,
+    a_or_an,
+    toBase64,
+    calculateClockDrift,
+    camelToSnake,
+    generateId,
+    isArray,
+    isObject,
+    isFunction,
+    isString,
+    isValid,
+    isNumber,
+    jsonToQueryString,
+    notifyMe,
+    queryStringToJson,
+    reParseString,
+    resetString,
+    snakeToCamel,
+    sniffId,
+    _encrypt,
+    _decrypt,
+  }
+}
+export default () => {
+  return {
+    WaelioUtils,
+    _cleanResponse,
+    _equals,
+    _hideRandom,
+    _repeat,
+    _rotateArray,
+    _To,
+    _Get,
+    a_or_an,
+    toBase64,
+    calculateClockDrift,
+    camelToSnake,
+    generateId,
+    isArray,
+    isObject,
+    isFunction,
+    isString,
+    isValid,
+    isNumber,
+    jsonToQueryString,
+    notifyMe,
+    queryStringToJson,
+    reParseString,
+    resetString,
+    snakeToCamel,
+    sniffId,
+    _encrypt,
+    _decrypt,
+  }
+}

@@ -4,26 +4,36 @@
  * @param {array} needle
  * @returns {boolean}
  *
- * @author Wael Wahbeh
+ * @author Peace Marshal
  */
-export type equalsPayloadType = number[] | string[] | []
-export const _equals = (array: equalsPayloadType, needle: equalsPayloadType): boolean => {
-  // if the array or needle are a falsy value, return
-  if (!(array && array.length) || !(needle && needle.length)) return false;
-  // compare lengths - can save a lot of time
-  if (needle.length !== array.length) return false;
+export type equalsPayloadType = string | number | number[] | string[] | []
+const _equals = (arr: equalsPayloadType, needle: equalsPayloadType): boolean => {
+  // if the arr or needle are a falsy value, return
+  if (!(arr || !arr.toString.length || !(needle && needle.toString().length))) return false;
 
-  for (let i = 0, l = needle.length; i < l; i++) {
-    // Check if we have nested arrays
+  for (let i = 0, l = needle.toString().length; i < l; i++) {
+    // Check if we have nested arrs
     if (Array.isArray(needle[i]) && Array.isArray(needle[i])) {
-      // recurse into the nested arrays
-      return _equals(array[i], needle[i]);
-
-    } else if (needle[i] !== array[i]) {
+      try {
+        // recurse into the nested arrs
+        return _equals(arr[i], needle[i] as Partial<string | number>)
+      } catch (error) {
+        return false;
+      }
+    } else if (needle[i] !== arr[i]) {
       return false;
     }
   }
 
   return true;
 };
-export default _equals;
+export default { _equals };
+export { _equals };
+
+// Testing - Thank you ​Quokka PRO 
+// _equals('hello', 'hello') /*?*/
+// _equals('hello', 'world') /*?*/
+// _equals('hello', ['h', 'e', 'l', 'l', 'o']) /*?*/
+// _equals('hello', ['h', 'e', 'l', 'l', 'o', 'w']) /*?*/
+// _equals('hello', ['h', 'e', 'l', 'l', 'o', 'w', 'o']) /*?*/
+// _equals('hello', ['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r']) /*?*/

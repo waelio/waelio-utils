@@ -56,93 +56,62 @@ export { _decrypt } from './decrypt';
 
 
 
-export const WaelioUtils = () => {
-  _cleanResponse
-  _equals
-  _hideRandom
-  _repeat
-  _rotateArray
-  _To
-  _Get
-  a_or_an
-  toBase64
-  calculateClockDrift
-  camelToSnake
-  generateId
-  isArray
-  isObject
-  isFunction
-  isString
-  isValid
-  isNumber
-  jsonToQueryString
-  notifyMe
-  queryStringToJson
-  reParseString
-  resetString
-  snakeToCamel
-  sniffId
-  _encrypt
-  _decrypt
-  return {
-    _cleanResponse,
-    _equals,
-    _hideRandom,
-    _repeat,
-    _rotateArray,
-    _To,
-    _Get,
-    a_or_an,
-    toBase64,
-    calculateClockDrift,
-    camelToSnake,
-    generateId,
-    isArray,
-    isObject,
-    isFunction,
-    isString,
-    isValid,
-    isNumber,
-    jsonToQueryString,
-    notifyMe,
-    queryStringToJson,
-    reParseString,
-    resetString,
-    snakeToCamel,
-    sniffId,
-    _encrypt,
-    _decrypt,
-  }
-}
-export default () => {
-  return {
-    WaelioUtils,
-    _cleanResponse,
-    _equals,
-    _hideRandom,
-    _repeat,
-    _rotateArray,
-    _To,
-    _Get,
-    a_or_an,
-    toBase64,
-    calculateClockDrift,
-    camelToSnake,
-    generateId,
-    isArray,
-    isObject,
-    isFunction,
-    isString,
-    isValid,
-    isNumber,
-    jsonToQueryString,
-    notifyMe,
-    queryStringToJson,
-    reParseString,
-    resetString,
-    snakeToCamel,
-    sniffId,
-    _encrypt,
-    _decrypt,
-  }
-}
+export const WaelioUtils = ({
+  _cleanResponse,
+  _equals,
+  _hideRandom,
+  _repeat,
+  _rotateArray,
+  _To,
+  _Get,
+  a_or_an,
+  toBase64,
+  calculateClockDrift,
+  camelToSnake,
+  generateId,
+  isArray,
+  isObject,
+  isFunction,
+  isString,
+  isValid,
+  isNumber,
+  jsonToQueryString,
+  notifyMe,
+  queryStringToJson,
+  reParseString,
+  resetString,
+  snakeToCamel,
+  sniffId,
+  _encrypt,
+  _decrypt,
+})
+
+export default ({
+  _cleanResponse,
+  _equals,
+  _hideRandom,
+  _repeat,
+  _rotateArray,
+  _To,
+  _Get,
+  a_or_an,
+  toBase64,
+  calculateClockDrift,
+  camelToSnake,
+  generateId,
+  isArray,
+  isObject,
+  isFunction,
+  isString,
+  isValid,
+  isNumber,
+  jsonToQueryString,
+  notifyMe,
+  queryStringToJson,
+  reParseString,
+  resetString,
+  snakeToCamel,
+  sniffId,
+  _encrypt,
+  _decrypt,
+});

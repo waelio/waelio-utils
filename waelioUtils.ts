@@ -26,8 +26,6 @@ import { sniffId } from './src/utils/sniff_id';
 import { _encrypt } from './src/utils/encrypt';
 import { _decrypt } from './src/utils/decrypt';
 
-
-
 export { _cleanResponse } from './src/utils/clean_response';
 export { _equals } from './src/utils/equals';
 export { _hideRandom } from './src/utils/hide_random';
@@ -56,95 +54,63 @@ export { sniffId } from './src/utils/sniff_id';
 export { _encrypt } from './src/utils/encrypt';
 export { _decrypt } from './src/utils/decrypt';
 
+export const WaelioUtils = ({
+  _cleanResponse,
+  _equals,
+  _hideRandom,
+  _repeat,
+  _rotateArray,
+  _To,
+  _Get,
+  a_or_an,
+  toBase64,
+  calculateClockDrift,
+  camelToSnake,
+  generateId,
+  isArray,
+  isObject,
+  isFunction,
+  isString,
+  isValid,
+  isNumber,
+  jsonToQueryString,
+  notifyMe,
+  queryStringToJson,
+  reParseString,
+  resetString,
+  snakeToCamel,
+  sniffId,
+  _encrypt,
+  _decrypt
+});
 
 
-export const WaelioUtils = () => {
-  return {
-    _cleanResponse,
-    _equals,
-    _hideRandom,
-    _repeat,
-    _rotateArray,
-    _To,
-    _Get,
-    a_or_an,
-    toBase64,
-    calculateClockDrift,
-    camelToSnake,
-    generateId,
-    isArray,
-    isObject,
-    isFunction,
-    isString,
-    isValid,
-    isNumber,
-    jsonToQueryString,
-    notifyMe,
-    queryStringToJson,
-    reParseString,
-    resetString,
-    snakeToCamel,
-    sniffId,
-    _encrypt,
-    _decrypt,
-  }
-}
-export default () => {
-  _cleanResponse
-    _equals
-    _hideRandom
-    _repeat
-    _rotateArray
-    _To
-    _Get
-    a_or_an
-    toBase64
-    calculateClockDrift
-    camelToSnake
-    generateId
-    isArray
-    isObject
-    isFunction
-    isString
-    isValid
-    isNumber
-    jsonToQueryString
-    notifyMe
-    queryStringToJson
-    reParseString
-    resetString
-    snakeToCamel
-    sniffId
-    _encrypt
-    _decrypt
-  return {
-    WaelioUtils,
-    _cleanResponse,
-    _equals,
-    _hideRandom,
-    _repeat,
-    _rotateArray,
-    _To,
-    _Get,
-    a_or_an,
-    toBase64,
-    calculateClockDrift,
-    camelToSnake,
-    generateId,
-    isArray,
-    isObject,
-    isFunction,
-    isString,
-    isValid,
-    isNumber,
-    jsonToQueryString,
-    notifyMe,
-    queryStringToJson,
-    reParseString,
-    resetString,
-    snakeToCamel,
-    sniffId,
-    _encrypt,
-    _decrypt,
-  }
-}
+export default ({
+  _cleanResponse,
+  _equals,
+  _hideRandom,
+  _repeat,
+  _rotateArray,
+  _To,
+  _Get,
+  a_or_an,
+  toBase64,
+  calculateClockDrift,
+  camelToSnake,
+  generateId,
+  isArray,
+  isObject,
+  isFunction,
+  isString,
+  isValid,
+  isNumber,
+  jsonToQueryString,
+  notifyMe,
+  queryStringToJson,
+  reParseString,
+  resetString,
+  snakeToCamel,
+  sniffId,
+  _encrypt,
+  _decrypt,  
+});

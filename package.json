@@ -14,24 +14,22 @@
     "angular"
   ],
   "files": [
-    "dist/*",
-    "src/utils/*",
-    "src/utils/index.js",
-    "src/utils/index.d.ts"
+    "dist/*"
   ],
+  "exports": "./dist/",
   "directories": {
     "src": "src",
     "dist": "dist",
     "test": "spec"
   },
   "sideEffects": false,
-  "main": "./waelioUtils.js",
+  "main": "./waelioUtils",
   "size-limit": [
     {
-      "path": "dist/waelioUtils.*js"
+      "path": "dist/waelioUtils"
     }
   ],
-  "types": "waelioUtils.d.ts",
+  "types": "./dist/waelioUtils.d.ts",
   "scripts": {
     "clean": "node ./tools/clean.ts",
     "size": "rollup -c && size-limit",

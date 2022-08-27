@@ -37,7 +37,7 @@
     "start": "rollup -c",
     "test": "jasmine && size-limit"
   },
-  "exports": "./dist",
+  "exports": "./dist/*",
   "author": {
     "name": "Peace Marshal",
     "email": "wahbehw@me.com",

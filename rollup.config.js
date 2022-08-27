@@ -1,19 +1,29 @@
-import ts from 'rollup-plugin-ts';
 import resolve from '@rollup/plugin-node-resolve';
 import json from '@rollup/plugin-json';
 import commonjs from '@rollup/plugin-commonjs';
-import typescript from 'rollup-plugin-typescript2';
+import typescript from '@rollup/plugin-typescript';
 import tsTreeshaking from 'rollup-plugin-ts-treeshaking';
 import bundleSize from 'rollup-plugin-bundle-size';
 import pkg from './package.json';
+import dts from 'rollup-plugin-dts'
 import utl from './package.json';
-
 
 export default [
   {
-    input: './src/utils/index.ts',
+    input: './src/waelioUtils.ts',
     external: Object.keys(pkg.devDependencies),
-    plugins: [resolve(), json(), commonjs(), typescript(), tsTreeshaking(), bundleSize(), ts({ tsconfig: 'tsconfig.json' })],
+    plugins: [resolve(), dts(), json(), commonjs(), typescript({
+      compilerOptions: {
+        "importHelpers": true,
+        "isolatedModules": true,
+        "newLine": "LF",
+        "declaration": true,
+        "declarationDir": "dist/types",
+        "declarationMap": true,
+        "experimentalDecorators": true,
+        lib: ["es5", "es6", "dom"], target: "es5"
+      }
+    }), tsTreeshaking(), bundleSize()],
     onwarn: function (warning) {
       if (warning.code === 'THIS_IS_UNDEFINED') {
         return;
@@ -45,10 +55,11 @@ export default [
       {
         file: 'dist/waelioUtils.ts',
         name: 'waelioUtils',
-        format: 'es',        
+        format: 'es',
         exports: 'auto',
         sourcemap: true
       }
     ]
-  }
+  },
+  ,
 ];

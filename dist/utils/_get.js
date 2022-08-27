@@ -1,22 +1,19 @@
-"use strict";
-exports.__esModule = true;
-exports._Get = void 0;
-var is_object_1 = require("./is_object");
-var is_array_1 = require("./is_array");
-var _Get = function (data) {
+import { isObject } from './is_object';
+import { isArray } from './is_array';
+const _Get = (data) => {
     switch (true) {
         case !data:
             return false;
-        case (0, is_object_1.isObject)(data):
+        case isObject(data):
             return data.data ? data.data : data;
-        case (0, is_array_1.isArray)(data.data):
+        case isArray(data.data):
             if (data.data.length === 0)
                 return data.data.data;
             else if (data.data.length === 1)
                 return data.data.data[0];
             else if (data.data.length > 1)
                 return data.data;
-        case (0, is_array_1.isArray)(data):
+        case isArray(data):
             if (data.length === 0)
                 return data;
             else if (data.length === 1)
@@ -27,5 +24,6 @@ var _Get = function (data) {
             return data;
     }
 };
-exports._Get = _Get;
-exports["default"] = { _Get: _Get };
+export default { _Get };
+export { _Get };
+//# sourceMappingURL=_get.js.map

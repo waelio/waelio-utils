@@ -5,4 +5,3 @@ export { textToChars };
 
 
 // Testing - Thank you ​Quokka PRO
-// textToChars('hello') /*?*/

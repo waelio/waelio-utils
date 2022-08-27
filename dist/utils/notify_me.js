@@ -1,20 +1,16 @@
-"use strict";
 // @ts-nocheck
-exports.__esModule = true;
-exports.notifyMe = void 0;
 /** PWA Notification
  * Send Notification to Site
  * Browser only
  * @param  {string} notification -Message to send
  * @param  {string} Site -Website name
  */
-var notifyMe = function (notification, Site) {
-    if (Site === void 0) { Site = 'NorthWestMeta.com!'; }
-    document.addEventListener('DOMContentLoaded', function () {
+export const notifyMe = (notification, Site = 'NorthWestMeta.com!') => {
+    document.addEventListener('DOMContentLoaded', () => {
         if ('Notification' in window) {
             if (Notification.permission === 'granted') {
-                var payload = {
-                    detail: "Welcome to ".concat(Site),
+                const payload = {
+                    detail: `Welcome to ${Site}`,
                     bubbles: true,
                     cancelable: true
                 };
@@ -23,12 +19,12 @@ var notifyMe = function (notification, Site) {
             else if (Notification.permission !== 'denied') {
                 Notification.requestPermission().then(function (permission) {
                     if (permission === 'granted') {
-                        return new Notification(notification || "Welcome to ".concat(Site));
+                        return new Notification(notification || `Welcome to ${Site}`);
                     }
                 });
             }
         }
     });
 };
-exports.notifyMe = notifyMe;
-exports["default"] = { notifyMe: exports.notifyMe };
+export default { notifyMe };
+//# sourceMappingURL=notify_me.js.map

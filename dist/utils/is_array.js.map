@@ -1,0 +1,1 @@
+{"version":3,"file":"is_array.js","sourceRoot":"","sources":["../../src/utils/is_array.ts"],"names":[],"mappings":"AACA,MAAM,CAAC,MAAM,OAAO,GAAG,CAAC,OAAY,EAAW,EAAE;IAC/C,OAAO,KAAK,CAAC,OAAO,CAAC,OAAO,CAAC,CAAC;AAChC,CAAC,CAAC;AACF,eAAe,EAAE,OAAO,EAAE,CAAC"}

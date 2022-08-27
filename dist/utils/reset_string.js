@@ -1,6 +1,3 @@
-"use strict";
-exports.__esModule = true;
-exports.resetString = void 0;
 /** Decode uri component
  * @name  resetString
  * @author  Wael Wahbeh <wahbehw@gmail.com>
@@ -8,8 +5,8 @@ exports.resetString = void 0;
  * @global
  * @param {string} payload
  */
-var resetString = function (payload) {
+export const resetString = (payload) => {
     return decodeURIComponent(decodeURIComponent(encodeURIComponent(payload)));
 };
-exports.resetString = resetString;
-exports["default"] = { resetString: exports.resetString };
+export default { resetString };
+//# sourceMappingURL=reset_string.js.map

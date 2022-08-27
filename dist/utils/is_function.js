@@ -1,6 +1,3 @@
-"use strict";
-exports.__esModule = true;
-exports.isFunction = void 0;
-var isFunction = function (payload) { return payload && {}.toString.call(payload) === '[object Function]' && typeof payload === 'function'; };
-exports.isFunction = isFunction;
-exports["default"] = { isFunction: exports.isFunction };
+export const isFunction = (payload) => payload && {}.toString.call(payload) === '[object Function]' && typeof payload === 'function';
+export default { isFunction };
+//# sourceMappingURL=is_function.js.map

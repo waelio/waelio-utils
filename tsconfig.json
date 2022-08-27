@@ -2,11 +2,14 @@
   "compileOnSave": true,
   "compilerOptions": {
     "alwaysStrict": true,
+    "listFiles": false,
     "baseUrl": "./",
     "importHelpers": true,
     "isolatedModules": true,
     "newLine": "LF",
     "declaration": true,
+    "declarationDir": "dist/types",
+    "declarationMap": true,
     "experimentalDecorators": true,
     "module": "ESNext",
     "moduleResolution": "node",
@@ -15,7 +18,7 @@
     "noImplicitAny": false,
     "noImplicitThis": true,
     "noImplicitReturns": false,
-    "outDir": "dist2",
+    "outDir": "dist",
     "pretty": true,
     "target": "esnext",
     "noUnusedLocals": true,
@@ -24,6 +27,8 @@
     "sourceMap": true,
     "strict": true,
     "strictNullChecks": true,
+
+    
     "lib": [
       "esnext",
       "dom"
@@ -33,17 +38,17 @@
     ],
     "forceConsistentCasingInFileNames": true,
     "typeRoots": [
-      "node_modules/@types"
+      "node_modules/@types",
+      "dist/types"
     ],
     "paths": {
       "~/*": [
-        "src/utils/"
+        "./waelioUtils.ts"
       ]
     }
   },
   "include": [
-    "src/utils",
-    "src/helpers"
+    "src/"
   ],
   "exclude": [
     "./tools",

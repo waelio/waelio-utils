@@ -1,7 +1,4 @@
-"use strict";
 // @ts-nocheck
-exports.__esModule = true;
-exports.jsonToQueryString = void 0;
 /**
  * Function that converts a JSON to URL Query String
  * Example IN: {"first":"John", "last": "Smith"}
@@ -13,10 +10,10 @@ exports.jsonToQueryString = void 0;
  * @param {} -JSON payload
  * @returns QueryString
  */
-var jsonToQueryString = function (payload) {
+export const jsonToQueryString = (payload) => {
     return Object.keys(payload)
-        .map(function (key) { return "".concat(encodeURIComponent(key), "=").concat(encodeURIComponent(payload[key])); })
+        .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(payload[key])}`)
         .join('&');
 };
-exports.jsonToQueryString = jsonToQueryString;
-exports["default"] = { jsonToQueryString: exports.jsonToQueryString };
+export default { jsonToQueryString };
+//# sourceMappingURL=json_to_query_string.js.map

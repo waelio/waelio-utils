@@ -11,25 +11,28 @@
     "javascript",
     "helpers",
     "react",
-    "angular"
+    "angular",
+    "nuxt3"
   ],
-  "files": [
+  "files": [    
     "dist/*"
   ],
-  "exports": "./dist/",
+  "exports": [
+    "./dist"
+  ],
   "directories": {
     "src": "src",
     "dist": "dist",
     "test": "spec"
   },
   "sideEffects": false,
-  "main": "./waelioUtils",
+  "main": "./dist/waelioUtils",
   "size-limit": [
     {
       "path": "dist/waelioUtils"
     }
   ],
-  "types": "./dist/waelioUtils.d.ts",
+  "types": "dist/types",
   "scripts": {
     "clean": "node ./tools/clean.ts",
     "size": "rollup -c && size-limit",

@@ -1,17 +1,14 @@
-"use strict";
 // @ts-nocheck
-exports.__esModule = true;
-exports._rotateArray = void 0;
 /**
  * Rotates array counter clock
  * @param  {array} array
  */
-var _rotateArray = function (array) {
+export const _rotateArray = (array) => {
     if (!array || !array.length)
         return false;
     // Calculate the width and height of the Array
-    var w = array.length || 0;
-    var h = Array.isArray(array[0]) ? array[0].length : 0;
+    let w = array.length || 0;
+    let h = Array.isArray(array[0]) ? array[0].length : 0;
     // In case it is a zero matrix, no transpose needed.
     if (h === 0 || w === 0) {
         return [];
@@ -21,7 +18,7 @@ var _rotateArray = function (array) {
      * @type {number} j Counter
      * @type {Array<number>} t Transposed data is stored in this array.
      */
-    var i, j, t = [];
+    let i, j, t = [];
     // Loop through every item in the outer array (height)
     for (i = 0; i < h; i++) {
         // Insert a new row (array)
@@ -34,5 +31,5 @@ var _rotateArray = function (array) {
     }
     return t;
 };
-exports._rotateArray = _rotateArray;
-exports["default"] = { _rotateArray: exports._rotateArray };
+export default { _rotateArray };
+//# sourceMappingURL=rotate_array.js.map

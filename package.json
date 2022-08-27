@@ -15,10 +15,10 @@
     "nuxt3"
   ],
   "files": [
-    "dist/*"
+    "dist/**"
   ],
   "exports": [
-    "./dist"
+    "./dist/"
   ],
   "directories": {
     "src": "src",
@@ -36,7 +36,7 @@
   "scripts": {
     "clean": "node ./tools/clean.ts",
     "size": "rollup -c && size-limit",
-    "start": "rollup -c && size-limit",
+    "start": "",
     "test": "jasmine && size-limit"
   },
   "author": {

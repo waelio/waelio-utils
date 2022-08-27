@@ -1,6 +1,6 @@
 {
   "name": "waelio-utils",
-  "version": "3.2.9",
+  "version": "3.2.10",
   "description": "Helper Utils often used in websites",
   "homepage": "https://github.com/waelio/waelio-utils#index",
   "keywords": [
@@ -37,10 +37,10 @@
     "start": "rollup -c",
     "test": "jasmine && size-limit"
   },
-  "exports":{
-      ".": "./dist/types/waelioUtils.d.ts",
-      "./waelioUtils": "./dist/waelioUtils.js",      
-      "./package.json": "./package.json"
+  "exports": {
+    ".": "./dist/types/waelioUtils.d.ts",
+    "./waelioUtils": "./dist/waelioUtils.js",
+    "./package.json": "./package.json"
   },
   "author": {
     "name": "Peace Marshal",

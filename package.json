@@ -37,7 +37,11 @@
     "start": "rollup -c",
     "test": "jasmine && size-limit"
   },
-  "exports": "./dist/*",
+  "exports":{
+      ".": "./dist/types/waelioUtils.d.ts",
+      "./waelioUtils": "./dist/waelioUtils.js",      
+      "./package.json": "./package.json"
+  },
   "author": {
     "name": "Peace Marshal",
     "email": "wahbehw@me.com",

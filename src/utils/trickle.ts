@@ -17,7 +17,7 @@ declare type ReduceStage2 = (paylod: Partial<Row>) => number;
 
 
 
-export const _trickle_first_stage = ((row: Row) => {
+export const trickle_first_stage = ((row: Row) => {
   const index = 0;
   return [
     sumOf([row[index] as number, row[index + 1] as number, row[index + 2] as number]),
@@ -26,15 +26,15 @@ export const _trickle_first_stage = ((row: Row) => {
   ]
 }) as ReduceStage1;
 
-export const _trickle_socond_stage = ((row: [Digit, Digit, Digit]) => {
+export const trickle_socond_stage = ((row: [Digit, Digit, Digit]) => {
   const index = 0;
   return sumOf([row[index] as number, row[index + 1] as number, row[index + 2] as number]);
 }) as unknown as ReduceStage2;
 
 
 let tb: number[] = [19, 8, 92, 37, 46, 58, 6, 97, 78]/*?*/
-const test = _trickle_first_stage(tb) /*?*/
+const test = trickle_first_stage(tb) /*?*/
 
 test /*?*/
-const test2 = _trickle_socond_stage(test)/*?*/
+const test2 = trickle_socond_stage(test)/*?*/
 test2 /*?*/

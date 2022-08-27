@@ -1,5 +1,6 @@
-import { _Get } from './_get';
- const _cleanResponse = (response: object): object => _Get(response) || response;
+import { get } from './get';
 
-export default { _cleanResponse };
-export { _cleanResponse };
+const cleanResponse =  (response: object) => get(response) || response;
+
+ 
+export { cleanResponse };

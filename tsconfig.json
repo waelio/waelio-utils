@@ -27,8 +27,6 @@
     "sourceMap": true,
     "strict": true,
     "strictNullChecks": true,
-
-    
     "lib": [
       "esnext",
       "dom"
@@ -39,11 +37,11 @@
     "forceConsistentCasingInFileNames": true,
     "typeRoots": [
       "node_modules/@types",
-      "dist/types"
+      "types/"
     ],
     "paths": {
       "~/*": [
-        "./waelioUtils.ts"
+        "./src/*"
       ]
     }
   },

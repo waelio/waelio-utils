@@ -1,10 +1,9 @@
-import { _decrypt } from './decrypt'
 import { isValid } from './is_valid';
 import { isObject } from './is_object';
 import { isArray } from './is_array';
 import { isFunction } from './is_function';
 
-const _encrypt = (salt, payload) => {
+const encrypt = (salt, payload) => {
   if (!payload && !!salt) {
     payload = salt;
     salt = 'salt';
@@ -34,5 +33,5 @@ const _encrypt = (salt, payload) => {
   return 'payload';
 };
 
-export default { _encrypt }
-export { _encrypt }
+export default { encrypt }
+export { encrypt }

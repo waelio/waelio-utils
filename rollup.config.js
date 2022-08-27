@@ -12,15 +12,12 @@ export default [
   {
     input: './src/waelioUtils.ts',
     external: Object.keys(pkg.devDependencies),
-    plugins: [resolve(), dts(), json(), commonjs(), typescript({
+    plugins: [resolve(),  json(), commonjs(), typescript({
       compilerOptions: {
-        "importHelpers": true,
         "isolatedModules": true,
-        "newLine": "LF",
         "declaration": true,
         "declarationDir": "dist/types",
         "declarationMap": true,
-        "experimentalDecorators": true,
         lib: ["es5", "es6", "dom"], target: "es5"
       }
     }), tsTreeshaking(), bundleSize()],
@@ -55,11 +52,16 @@ export default [
       {
         file: 'dist/waelioUtils.ts',
         name: 'waelioUtils',
-        format: 'es',
+        format: 'amd',
         exports: 'auto',
         sourcemap: true
       }
     ]
   },
+  {
+    input: 'src/waelioUtils.d.ts',
+    output: 'dist/types',
+    plugins: [dts()]
+  }
   ,
 ];

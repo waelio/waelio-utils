@@ -1,10 +1,10 @@
-import { _cleanResponse } from './src/utils/clean_response';
+import { cleanResponse as _cleanResponse } from './src/utils/clean_response';
 import { _equals } from './src/utils/equals';
 import { _hideRandom } from './src/utils/hide_random';
 import { _repeat } from './src/utils/repeat';
 import { _rotateArray } from './src/utils/rotate_array';
 import { _To } from './src/utils/to';
-import { _Get } from './src/utils/_get';
+import { _Get as _get } from './src/utils/get';
 import { a_or_an as _a_or_an } from './src/utils/a_or_an';
 import { toBase64 as _toBase64 } from './src/utils/toBase64';
 import { calculateClockDrift as _calculateClockDrift } from './src/utils/calculate_clock_drift';
@@ -33,7 +33,7 @@ export namespace WaelioTools {
     _rotateArray: typeof _rotateArray;
     _To: typeof _To;
     _sniffId: typeof _sniffId;
-    _Get: typeof _Get;
+    _get: typeof _get;
     _toBase64: typeof _toBase64;
     _calculateClockDrift: typeof _calculateClockDrift;
     _generateId: typeof _generateId;
@@ -62,7 +62,7 @@ export { _hideRandom }
 export { _repeat }
 export { _rotateArray }
 export { _To }
-export { _Get }
+export { _get }
 export { _a_or_an }
 export { _toBase64 }
 export { _calculateClockDrift }
@@ -91,7 +91,7 @@ export const WaelioUtils: WaelioTools.Utils = ({
   _repeat,
   _rotateArray,
   _To,
-  _Get,
+  _get,
   _a_or_an,
   _toBase64,
   _calculateClockDrift,

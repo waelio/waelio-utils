@@ -7,4 +7,3 @@ function textToChars(p) {
 exports["default"] = textToChars;
 exports.textToChars = textToChars;
 // Testing - Thank you ​Quokka PRO
-// textToChars('hello') /*?*/

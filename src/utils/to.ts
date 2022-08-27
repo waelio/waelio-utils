@@ -1,12 +1,15 @@
-import { _Get } from './_get';
-const _to = (promise: Promise<any>) => {
-  return new Promise((resolve, reject) => {
-    return Promise.resolve(promise)
-      .then((result) => resolve([null, _Get(result)]))
-      .catch((err) => reject([err, null]));
+import { get } from './get';
+const to = (promise: Promise<any>) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+const result = await Promise.resolve(promise);
+return resolve([null, get(result)]);
+} catch (err) {
+return reject([err, null]);
+}
   });
 };
-const _To = _to;
 
-export default { _To: _to };
-export { _To }
+
+export default { to };
+export { to }

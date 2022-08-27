@@ -17,16 +17,14 @@
   "files": [
     "dist/**"
   ],
-  "exports": [
-    "./dist"
-  ],
+  
   "directories": {
     "src": "src",
     "dist": "dist",
     "test": "spec"
   },
   "sideEffects": false,
-  "main": "waelioUtils",
+  "main": "dist/waelioUtils",
   "size-limit": [
     {
       "path": "dist/waelioUtils"

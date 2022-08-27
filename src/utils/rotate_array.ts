@@ -4,7 +4,7 @@
  * Rotates array counter clock
  * @param  {array} array
  */
-export const rotateArray = (array: string | number[]) => {
+export default function rotateArray(array: string | number[]) {
   if (!array || !array.length) return false;
 
   // Calculate the width and height of the Array
@@ -39,4 +39,4 @@ export const rotateArray = (array: string | number[]) => {
 
   return t;
 };
-export default { rotateArray };
+export { rotateArray };

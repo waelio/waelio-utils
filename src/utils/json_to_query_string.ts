@@ -11,10 +11,10 @@
  * @param {} -JSON payload
  * @returns QueryString
  */
-export const jsonToQueryString = (payload: { string }): string => {
+export default function jsonToQueryString(payload: string) {
   return Object.keys(payload)
     .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(payload[key])}`)
     .join('&');
 };
 
-export default { jsonToQueryString };
+export { jsonToQueryString };

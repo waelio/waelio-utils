@@ -1,6 +1,6 @@
 import { isArray } from "./is_array";
 
-export const isObject = (payload: any): boolean => {
+export default function isObject(payload: any) {
   return payload === Object(payload) && !isArray(payload) && typeof payload !== 'function';
 };
-export default { isObject };
+export { isObject };

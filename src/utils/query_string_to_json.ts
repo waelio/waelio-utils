@@ -11,7 +11,7 @@
  * @param {boolean} toObject Return JS Object or JSON
  * @returns JSON|Object
  */
-export const queryStringToJson = (payload: string | { string }, toObject: boolean = true) => {
+export default function queryStringToJson(payload: string | {}, toObject: boolean = true) {
   if (!payload) return;
   var pairs = payload.slice(1).split('&');
   var result = {};
@@ -22,4 +22,4 @@ export const queryStringToJson = (payload: string | { string }, toObject: boolea
   return toObject ? JSON.parse(JSON.stringify(result)) : JSON.stringify(result);
 };
 
-export default { queryStringToJson };
+export { queryStringToJson };

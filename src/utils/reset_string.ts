@@ -5,8 +5,8 @@
  * @global
  * @param {string} payload
  */
-export const resetString = (payload: string): string => {
+export default function resetString(payload: string): string {
   return decodeURIComponent(decodeURIComponent(encodeURIComponent(payload)));
 };
 
-export default { resetString };
+export { resetString };

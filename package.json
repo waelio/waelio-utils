@@ -44,7 +44,8 @@
   "typesVersions": {
     "*": {
       "waelioUtils": [
-        "dist/waelioUtils.d.ts"
+        "dist/waelioUtils.d.ts",
+        "dist/types/"
       ]
     }
   },

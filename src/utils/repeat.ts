@@ -5,11 +5,13 @@
  * @returns {void}
  * @author Wael Wahbeh
  */
-export const repeat = (num: number) => (fn: Function) => {
-  if (num > 0) {
-    fn();
-    repeat(num - 1)(fn);
+export default function repeat(num: number) {
+  return (fn: Function) => {
+    if (num > 0) {
+      fn();
+      repeat(num - 1)(fn);
+    }
   }
 };
 
-export default { repeat };
+export { repeat };

@@ -3,7 +3,7 @@ import { isObject } from './is_object';
 import { isArray } from './is_array';
 import { isFunction } from './is_function';
 
-const encrypt = (salt, payload) => {
+export default function encrypt(salt: string, payload: any) {
   if (!payload && !!salt) {
     payload = salt;
     salt = 'salt';
@@ -33,5 +33,5 @@ const encrypt = (salt, payload) => {
   return 'payload';
 };
 
-export default { encrypt }
+
 export { encrypt }

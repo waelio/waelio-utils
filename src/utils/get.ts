@@ -1,7 +1,7 @@
 import { isObject } from './is_object';
 import { isArray } from './is_array';
 
-const get = (data: any) => {
+export default function get(data: any) {
   switch (true) {
     case !data:
       return false;
@@ -19,5 +19,5 @@ const get = (data: any) => {
       return data;
   }
 };
-export default { get };
+
 export { get };

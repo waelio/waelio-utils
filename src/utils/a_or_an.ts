@@ -1,4 +1,4 @@
-export const a_or_an = function (field: string) {
+export default function a_or_an(field: string) {
   return /[aeiou]/.test(field.charAt(0)) ? 'an' : 'a';
 };
-export default { a_or_an };
+export { a_or_an };

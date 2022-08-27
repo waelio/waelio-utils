@@ -25,13 +25,72 @@ import { snakeToCamel } from './utils/snake_to_camel';
 import { sniffId } from './utils/sniff_id';
 import { encrypt } from './utils/encrypt';
 import { decrypt } from './utils/decrypt';
+
+
+// Expoerts
+export { cleanResponse as _cleanResponse };
+export { equals as _equals };
+export { hideRandom as _hideRandom };
+export { repeat as _repeat };
+export { rotateArray as _rotateArray };
+export { to as _to };
+export { get as _get };
+export { a_or_an as _a_or_an };
+export { toBase64 as _toBase64 };
+export { calculateClockDrift as _calculateClockDrift };
+export { camelToSnake as _camelToSnake };
+export { generateId as _generateId };
+export { isArray };
+export { isObject };
+export { isFunction };
+export { isString };
+export { isValid };
+export { isNumber };
+export { jsonToQueryString as _jsonToQueryString };
+export { notifyMe as _notifyMe };
+export { queryStringToJson as _queryStringToJson };
+export { reParseString as _reParseString };
+export { resetString as _resetString };
+export { snakeToCamel as _snakeToCamel };
+export { sniffId as _sniffId };
+export { encrypt as _encrypt };
+export { decrypt as _decrypt };
+export const WaelioUtils: WaelioTools.Utils = ({
+  _cleanResponse: cleanResponse,
+  _equals: equals,
+  _hideRandom: hideRandom,
+  _repeat: repeat,
+  _rotateArray: rotateArray,
+  _to: to,
+  _get: get,
+  _a_or_an: a_or_an,
+  _toBase64: toBase64,
+  _calculateClockDrift: calculateClockDrift,
+  _camelToSnake: camelToSnake,
+  _generateId: generateId,
+  _isArray: isArray,
+  _isObject: isObject,
+  _isFunction: isFunction,
+  _isString: isString,
+  _isValid: isValid,
+  _isNumber: isNumber,
+  _jsonToQueryString: jsonToQueryString,
+  _notifyMe: notifyMe,
+  _queryStringToJson: queryStringToJson,
+  _reParseString: reParseString,
+  _resetString: resetString,
+  _snakeToCamel: snakeToCamel,
+  _sniffId: sniffId,
+  _encrypt: encrypt,
+  _decrypt: decrypt,
+});
 export namespace WaelioTools {
   export interface Utils {
     _cleanResponse: typeof cleanResponse;
     _hideRandom: typeof hideRandom;
     _repeat: typeof repeat;
     _rotateArray: typeof rotateArray;
-    _To: typeof to;
+    _to: typeof to;
     _sniffId: typeof sniffId;
     _get: typeof get;
     _toBase64: typeof toBase64;
@@ -56,66 +115,6 @@ export namespace WaelioTools {
     _isNumber: typeof isNumber;
   }
 }
-export const WaelioUtils: WaelioTools.Utils = ({
-  _cleanResponse: cleanResponse,
-  _equals: equals,
-  _hideRandom: hideRandom,
-  _repeat: repeat,
-  _rotateArray: rotateArray,
-  _To: to,
-  _get: get,
-  _a_or_an: a_or_an,
-  _toBase64: toBase64,
-  _calculateClockDrift: calculateClockDrift,
-  _camelToSnake: camelToSnake,
-  _generateId: generateId,
-  _isArray: isArray,
-  _isObject: isObject,
-  _isFunction: isFunction,
-  _isString: isString,
-  _isValid: isValid,
-  _isNumber: isNumber,
-  _jsonToQueryString: jsonToQueryString,
-  _notifyMe: notifyMe,
-  _queryStringToJson: queryStringToJson,
-  _reParseString: reParseString,
-  _resetString: resetString,
-  _snakeToCamel: snakeToCamel,
-  _sniffId: sniffId,
-  _encryp: encrypt,
-  _decrypt: decrypt,
-});
-
-// Expoerts
-export { cleanResponse as _cleanResponse } ;
-export { equals as _equals } ;
-export { hideRandom as _hideRandom } ;
-export { repeat as _repeat } ;
-export { rotateArray as _rotateArray } ;
-export { to as _to } ;
-export { get as _get } ;
-export { a_or_an as _a_or_an } ;
-export { toBase64 as _toBase64 } ;
-export { calculateClockDrift as _calculateClockDrift } ;
-export { camelToSnake as _camelToSnake } ;
-export { generateId as _generateId } ;
-export { isArray } ;
-export { isObject } ;
-export { isFunction } ;
-export { isString } ;
-export { isValid } ;
-export { isNumber } ;
-export { jsonToQueryString as _jsonToQueryString } ;
-export { notifyMe as _notifyMe } ;
-export { queryStringToJson as _queryStringToJson } ;
-export { reParseString as _reParseString } ;
-export { resetString as _resetString } ;
-export { snakeToCamel as _snakeToCamel } ;
-export { sniffId as _sniffId } ;
-export { encrypt as _encrypt } ;
-export { decrypt as _decrypt } ;
-
-
 
 export default ({
   _cleanResponse: cleanResponse,
@@ -145,4 +144,4 @@ export default ({
   _sniffId: sniffId,
   _encryp: encrypt,
   _decrypt: decrypt,
-});
+}) 

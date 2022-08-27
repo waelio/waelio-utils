@@ -5,9 +5,9 @@
  * @param  {number} len   9 default
  * @return {string}
  */
-const generateId = (start = 2, len = 9): string => {
+export default function generateId(start = 2, len = 9) {
   return Math.random().toString(36).substr(start, len);
 };
 
-export default { generateId }
+
 export { generateId }

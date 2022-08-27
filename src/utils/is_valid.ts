@@ -4,5 +4,5 @@ import { isString } from './is_string'
 import { isNumber } from './is_number';
 
 
-export const isValid = (payload: object | [] | string | number): boolean => isObject(payload) || isArray(payload) || isString(payload) || isNumber(payload)
-export default { isValid }
+export default function isValid(payload: object | [] | string | number | any) { return isObject(payload) || isArray(payload) || isString(payload) || isNumber(payload) }
+export { isValid }

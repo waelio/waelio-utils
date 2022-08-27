@@ -8,7 +8,7 @@
     "isolatedModules": true,
     "newLine": "LF",
     "declaration": true,
-    "declarationDir": "dist/types",
+    "declarationDir": "dis/types",
     "declarationMap": true,
     "experimentalDecorators": true,
     "module": "ESNext",
@@ -27,6 +27,8 @@
     "sourceMap": true,
     "strict": true,
     "strictNullChecks": true,
+
+    
     "lib": [
       "esnext",
       "dom"

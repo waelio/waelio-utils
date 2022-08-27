@@ -9,7 +9,7 @@
  * @param {string} payload QueryString
  * @returns {string}
  */
-export const snakeToCamel = (payload: string): string => {
+export default function snakeToCamel(payload: string) {
   return typeof payload !== 'string' ? payload : payload.replace(/([-_]\w)/g, (g) => g[1].toUpperCase());
 };
-export default { snakeToCamel };
+export { snakeToCamel };

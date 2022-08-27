@@ -25,48 +25,47 @@ import { snakeToCamel } from './snake_to_camel';
 import { sniffId } from './sniff_id';
 import { encrypt } from './encrypt';
 import { decrypt } from './decrypt';
+
+
 // Expoerts
-export { cleanResponse as _cleanResponse } from './clean_response';
-export { equals as _equals  } from './equals';
-export { hideRandom as _hideRandom } from './hide_random';
-export { repeat as _repeat } from './repeat';
-export { rotateArray as _rotateArray } from './rotate_array';
-export { to as _to } from './to';
-export { get as _get } from './get';
-export { a_or_an as _a_or_an } from './a_or_an';
-export { toBase64 as _toBase64 } from './to_base_64';
-export { calculateClockDrift as _calculateClockDrift } from './calculate_clock_drift';
-export { camelToSnake as _camelToSnake } from './camel_to_snake';
-export { generateId as _generateId } from './generate_id';
-export { isArray  } from './is_array';
-export { isObject  } from './is_object';
-export { isFunction  } from './is_function';
-export { isString  } from './is_string';
-export { isValid  } from './is_valid';
-export { isNumber  } from './is_number';
-export { jsonToQueryString as _jsonToQueryString } from './json_to_query_string';
-export { notifyMe as _notifyMe } from './notify_me';
-export { queryStringToJson as _queryStringToJson } from './query_string_to_json';
-export { reParseString as _reParseString } from './re_parse_string';
-export { resetString as _resetString } from './reset_string';
-export { snakeToCamel as _snakeToCamel } from './snake_to_camel';
-export { sniffId as _sniffId } from './sniff_id';
-export { encrypt as _encrypt } from './encrypt';
-export { decrypt as _decrypt } from './decrypt';
-
-
-
-export const WaelioUtils = ({
-  _cleanResponse: cleanResponse ,
-  _equals : equals,
-  _hideRandom :hideRandom,
-  _repeat :repeat,
+export { cleanResponse as _cleanResponse };
+export { equals as _equals };
+export { hideRandom as _hideRandom };
+export { repeat as _repeat };
+export { rotateArray as _rotateArray };
+export { to as _to };
+export { get as _get };
+export { a_or_an as _a_or_an };
+export { toBase64 as _toBase64 };
+export { calculateClockDrift as _calculateClockDrift };
+export { camelToSnake as _camelToSnake };
+export { generateId as _generateId };
+export { isArray };
+export { isObject };
+export { isFunction };
+export { isString };
+export { isValid };
+export { isNumber };
+export { jsonToQueryString as _jsonToQueryString };
+export { notifyMe as _notifyMe };
+export { queryStringToJson as _queryStringToJson };
+export { reParseString as _reParseString };
+export { resetString as _resetString };
+export { snakeToCamel as _snakeToCamel };
+export { sniffId as _sniffId };
+export { encrypt as _encrypt };
+export { decrypt as _decrypt };
+export const WaelioUtils: WaelioTools.Utils = ({
+  _cleanResponse: cleanResponse,
+  _equals: equals,
+  _hideRandom: hideRandom,
+  _repeat: repeat,
   _rotateArray: rotateArray,
-  _To :to,
-  _get :get,
-  _a_or_an : a_or_an,
-  _toBase64:toBase64,
-  _calculateClockDrift :calculateClockDrift,
+  _to: to,
+  _get: get,
+  _a_or_an: a_or_an,
+  _toBase64: toBase64,
+  _calculateClockDrift: calculateClockDrift,
   _camelToSnake: camelToSnake,
   _generateId: generateId,
   _isArray: isArray,
@@ -81,37 +80,68 @@ export const WaelioUtils = ({
   _reParseString: reParseString,
   _resetString: resetString,
   _snakeToCamel: snakeToCamel,
-  _sniffId:sniffId,
-  _encrypt:encrypt,
-  _decrypt:decrypt,
-})
+  _sniffId: sniffId,
+  _encrypt: encrypt,
+  _decrypt: decrypt,
+});
+export namespace WaelioTools {
+  export interface Utils {
+    _cleanResponse: typeof cleanResponse;
+    _hideRandom: typeof hideRandom;
+    _repeat: typeof repeat;
+    _rotateArray: typeof rotateArray;
+    _to: typeof to;
+    _sniffId: typeof sniffId;
+    _get: typeof get;
+    _toBase64: typeof toBase64;
+    _calculateClockDrift: typeof calculateClockDrift;
+    _generateId: typeof generateId;
+    _notifyMe: typeof notifyMe;
+    _jsonToQueryString: typeof jsonToQueryString;
+    _queryStringToJson: typeof queryStringToJson;
+    _reParseString: typeof reParseString;
+    _resetString: typeof resetString;
+    _camelToSnake: typeof camelToSnake;
+    _snakeToCamel: typeof snakeToCamel;
+    _equals: typeof equals;
+    _a_or_an: typeof a_or_an;
+    _encrypt: typeof encrypt;
+    _decrypt: typeof decrypt;
+    _isArray: typeof isArray;
+    _isObject: typeof isObject;
+    _isFunction: typeof isFunction;
+    _isString: typeof isString;
+    _isValid: typeof isValid;
+    _isNumber: typeof isNumber;
+  }
+}
 
 export default ({
-  _cleanResponse:cleanResponse,
-  _equals:equals,
-  _hideRandom:hideRandom,
-  _repeat:repeat,
-  _rotateArray:rotateArray,
-  _To:to,
-  _get:get,
-  _a_or_an:a_or_an,
-  _toBase64:toBase64,
-  _calculateClockDrift:calculateClockDrift,
-  _camelToSnake:camelToSnake,
-  _generateId:generateId,
-  _isArray:isArray,
-  _isObject:isObject,
-  _isFunction:isFunction,
-  _isString:isString,
-  _isValid:isValid,
-  _isNumber:isNumber,
-  _jsonToQueryString:jsonToQueryString,
-  _notifyMe:notifyMe,
-  _queryStringToJson:queryStringToJson,
-  _reParseString:reParseString,
-  _resetString:resetString,
-  _snakeToCamel:snakeToCamel,
-  _sniffId:sniffId,
-  _encryp:encrypt,
-  _decrypt:decrypt,
-});
+  _cleanResponse: cleanResponse,
+  _equals: equals,
+  _hideRandom: hideRandom,
+  _repeat: repeat,
+  _rotateArray: rotateArray,
+  _To: to,
+  _get: get,
+  _a_or_an: a_or_an,
+  _toBase64: toBase64,
+  _calculateClockDrift: calculateClockDrift,
+  _camelToSnake: camelToSnake,
+  _generateId: generateId,
+  _isArray: isArray,
+  _isObject: isObject,
+  _isFunction: isFunction,
+  _isString: isString,
+  _isValid: isValid,
+  _isNumber: isNumber,
+  _jsonToQueryString: jsonToQueryString,
+  _notifyMe: notifyMe,
+  _queryStringToJson: queryStringToJson,
+  _reParseString: reParseString,
+  _resetString: resetString,
+  _snakeToCamel: snakeToCamel,
+  _sniffId: sniffId,
+  _encryp: encrypt,
+  _decrypt: decrypt,
+}) 

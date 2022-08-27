@@ -1,5 +1,5 @@
 
-export const isArray = (payload: any): boolean => {
-  return Array.isArray(payload);
+export default function isArray  (payload: any) {
+  return !!Array.isArray(payload);
 };
-export default { isArray };
+export  { isArray };

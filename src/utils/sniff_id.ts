@@ -2,10 +2,10 @@
  * @param  {object} payload
  * @returns string||boolean||number
  */
-export const sniffId = (payload: any) => {
+export default function sniffId(payload: any) {
   const { id, _id, Id, iD } = payload;
   const newId = id || _id || Id || iD;
   return newId || false;
 };
 
-export default { sniffId };
+export { sniffId };

@@ -644,35 +644,7 @@ var WaelioUtils = ({
     _encrypt: encrypt_1.encrypt,
     _decrypt: decrypt_1.decrypt,
 });
-var waelioUtils = ({
-    _cleanResponse: clean_response.cleanResponse,
-    _equals: equals_1.equals,
-    _hideRandom: hide_random.hideRandom,
-    _repeat: repeat_1.repeat,
-    _rotateArray: rotate_array.rotateArray,
-    _To: to_1.to,
-    _get: get_1.get,
-    _a_or_an: a_or_an_1.a_or_an,
-    _toBase64: to_base_64.toBase64,
-    _calculateClockDrift: calculate_clock_drift.calculateClockDrift,
-    _camelToSnake: camel_to_snake.camelToSnake,
-    _generateId: generate_id.generateId,
-    _isArray: is_array.isArray,
-    _isObject: is_object.isObject,
-    _isFunction: is_function.isFunction,
-    _isString: is_string.isString,
-    _isValid: is_valid.isValid,
-    _isNumber: is_number.isNumber,
-    _jsonToQueryString: json_to_query_string.jsonToQueryString,
-    _notifyMe: notify_me.notifyMe,
-    _queryStringToJson: query_string_to_json.queryStringToJson,
-    _reParseString: re_parse_string.reParseString,
-    _resetString: reset_string.resetString,
-    _snakeToCamel: snake_to_camel.snakeToCamel,
-    _sniffId: sniff_id.sniffId,
-    _encryp: encrypt_1.encrypt,
-    _decrypt: decrypt_1.decrypt,
-});
+var waelioUtils = { WaelioUtils: WaelioUtils };
 
 exports.WaelioUtils = WaelioUtils;
 exports._a_or_an = a_or_an_1.a_or_an;

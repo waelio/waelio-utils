@@ -84,32 +84,4 @@ exports.WaelioUtils = ({
     _encrypt: encrypt_1.encrypt,
     _decrypt: decrypt_1.decrypt
 });
-exports["default"] = ({
-    _cleanResponse: clean_response_1.cleanResponse,
-    _equals: equals_1.equals,
-    _hideRandom: hide_random_1.hideRandom,
-    _repeat: repeat_1.repeat,
-    _rotateArray: rotate_array_1.rotateArray,
-    _To: to_1.to,
-    _get: get_1.get,
-    _a_or_an: a_or_an_1.a_or_an,
-    _toBase64: to_base_64_1.toBase64,
-    _calculateClockDrift: calculate_clock_drift_1.calculateClockDrift,
-    _camelToSnake: camel_to_snake_1.camelToSnake,
-    _generateId: generate_id_1.generateId,
-    _isArray: is_array_1.isArray,
-    _isObject: is_object_1.isObject,
-    _isFunction: is_function_1.isFunction,
-    _isString: is_string_1.isString,
-    _isValid: is_valid_1.isValid,
-    _isNumber: is_number_1.isNumber,
-    _jsonToQueryString: json_to_query_string_1.jsonToQueryString,
-    _notifyMe: notify_me_1.notifyMe,
-    _queryStringToJson: query_string_to_json_1.queryStringToJson,
-    _reParseString: re_parse_string_1.reParseString,
-    _resetString: reset_string_1.resetString,
-    _snakeToCamel: snake_to_camel_1.snakeToCamel,
-    _sniffId: sniff_id_1.sniffId,
-    _encryp: encrypt_1.encrypt,
-    _decrypt: decrypt_1.decrypt
-});
+exports["default"] = { WaelioUtils: exports.WaelioUtils };

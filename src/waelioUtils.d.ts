@@ -85,32 +85,6 @@ export declare namespace WaelioTools {
     }
 }
 declare const _default: {
-    _cleanResponse: (response: object) => object;
-    _equals: typeof equals;
-    _hideRandom: typeof hideRandom;
-    _repeat: typeof repeat;
-    _rotateArray: typeof rotateArray;
-    _To: typeof to;
-    _get: typeof get;
-    _a_or_an: typeof a_or_an;
-    _toBase64: typeof toBase64;
-    _calculateClockDrift: typeof calculateClockDrift;
-    _camelToSnake: typeof camelToSnake;
-    _generateId: typeof generateId;
-    _isArray: typeof isArray;
-    _isObject: typeof isObject;
-    _isFunction: typeof isFunction;
-    _isString: typeof isString;
-    _isValid: typeof isValid;
-    _isNumber: typeof isNumber;
-    _jsonToQueryString: typeof jsonToQueryString;
-    _notifyMe: typeof notifyMe;
-    _queryStringToJson: typeof queryStringToJson;
-    _reParseString: typeof reParseString;
-    _resetString: typeof resetString;
-    _snakeToCamel: typeof snakeToCamel;
-    _sniffId: typeof sniffId;
-    _encryp: typeof encrypt;
-    _decrypt: typeof decrypt;
+    WaelioUtils: WaelioTools.Utils;
 };
 export default _default;

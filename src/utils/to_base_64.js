@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 exports.__esModule = true;
 exports.toBase64 = void 0;
 /**
@@ -7,7 +7,7 @@ exports.toBase64 = void 0;
  * @returns {string}
  */
 function toBase64(payload) {
-    return btoa(unescape(encodeURIComponent(payload)));
+  return btoa(unescape(encodeURIComponent(payload)));
 }
-exports["default"] = toBase64;
+exports['default'] = toBase64;
 exports.toBase64 = toBase64;

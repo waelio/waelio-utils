@@ -20,6 +20,6 @@ export default function queryStringToJson(payload: string | {}, toObject: boolea
     result[pair[0]] = decodeURIComponent(pair[1] || '');
   });
   return toObject ? JSON.parse(JSON.stringify(result)) : JSON.stringify(result);
-};
+}
 
 export { queryStringToJson };

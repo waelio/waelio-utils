@@ -7,7 +7,6 @@
  */
 export default function generateId(start = 2, len = 9) {
   return Math.random().toString(36).substr(start, len);
-};
+}
 
-
-export { generateId }
+export { generateId };

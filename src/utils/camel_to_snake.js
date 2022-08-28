@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 exports.__esModule = true;
 exports.camelToSnake = void 0;
 /**
@@ -12,8 +12,16 @@ exports.camelToSnake = void 0;
  * @returns {string}
  */
 function camelToSnake(payload, hyphenated) {
-    if (hyphenated === void 0) { hyphenated = false; }
-    return payload && payload[0].toLowerCase() + payload.slice(1, payload.length).replace(/[A-Z]/g, function (letter) { return "".concat(hyphenated ? "-" : "_").concat(letter.toLowerCase()); });
+  if (hyphenated === void 0) {
+    hyphenated = false;
+  }
+  return (
+    payload &&
+    payload[0].toLowerCase() +
+      payload.slice(1, payload.length).replace(/[A-Z]/g, function (letter) {
+        return ''.concat(hyphenated ? '-' : '_').concat(letter.toLowerCase());
+      })
+  );
 }
-exports["default"] = camelToSnake;
+exports['default'] = camelToSnake;
 exports.camelToSnake = camelToSnake;

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 exports.__esModule = true;
 exports.calculateClockDrift = void 0;
 /**
@@ -8,10 +8,9 @@ exports.calculateClockDrift = void 0;
  * @param  {} iatIdToken
  */
 function calculateClockDrift(iatAccessToken, iatIdToken) {
-    var now = Math.floor(Date.now() / 1000);
-    var iat = Math.min(iatAccessToken, iatIdToken);
-    return now - iat;
+  var now = Math.floor(Date.now() / 1000);
+  var iat = Math.min(iatAccessToken, iatIdToken);
+  return now - iat;
 }
-exports["default"] = calculateClockDrift;
+exports['default'] = calculateClockDrift;
 exports.calculateClockDrift = calculateClockDrift;
-;

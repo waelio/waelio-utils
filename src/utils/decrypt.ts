@@ -7,14 +7,15 @@ export default function decrypt(salt: string = 'salt', payload: string, asFuncti
 
   /* eslint-disable */
   if (!!isValid(salt) && !!isValid(payload)) {
-    const decryptString: string | undefined = payload.match(/.{1,2}/g)?.map((hex: string) => parseInt(hex, 16))
-      .map((c) => applySaltToChar(c, salt)).map((charCode: number) => String.fromCharCode(charCode))
+    const decryptString: string | undefined = payload
+      .match(/.{1,2}/g)
+      ?.map((hex: string) => parseInt(hex, 16))
+      .map((c) => applySaltToChar(c, salt))
+      .map((charCode: number) => String.fromCharCode(charCode))
       .join('');
 
     return asFunction ? new Function('decryptString', 'return decryptString') : decryptString;
-
   }
   throw 'Invalid salt or payload!';
-
 }
 export { decrypt };

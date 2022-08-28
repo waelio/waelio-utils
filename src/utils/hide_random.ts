@@ -11,6 +11,6 @@ export default function hideRandom(array: Array<any>, difficulty: number = 3, re
     }
   }
   return array;
-};
+}
 
 export { hideRandom };

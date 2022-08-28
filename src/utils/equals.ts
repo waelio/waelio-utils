@@ -6,9 +6,9 @@
  *
  * @author Peace Marshal
  */
-export type equalsPayloadType = string | number | number[] | string[] | []
+export type equalsPayloadType = string | number | number[] | string[] | [];
 
-export default function equals (arr: equalsPayloadType, needle: equalsPayloadType)  {
+export default function equals(arr: equalsPayloadType, needle: equalsPayloadType) {
   // if the arr or needle are a falsy value, return
   if (!(arr || !arr.toString.length || !(needle && needle.toString().length))) return false;
 
@@ -17,7 +17,7 @@ export default function equals (arr: equalsPayloadType, needle: equalsPayloadTyp
     if (Array.isArray(needle[i]) && Array.isArray(needle[i])) {
       try {
         // recurse into the nested arrs
-        return equals(arr[i], needle[i] as Partial<string | number>)
+        return equals(arr[i], needle[i] as Partial<string | number>);
       } catch (error) {
         return false;
       }
@@ -27,8 +27,6 @@ export default function equals (arr: equalsPayloadType, needle: equalsPayloadTyp
   }
 
   return true;
-};
-
-
+}
 
 export { equals };

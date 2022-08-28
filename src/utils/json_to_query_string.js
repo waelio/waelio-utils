@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 // @ts-nocheck
 exports.__esModule = true;
 exports.jsonToQueryString = void 0;
@@ -14,10 +14,11 @@ exports.jsonToQueryString = void 0;
  * @returns QueryString
  */
 function jsonToQueryString(payload) {
-    return Object.keys(payload)
-        .map(function (key) { return "".concat(encodeURIComponent(key), "=").concat(encodeURIComponent(payload[key])); })
-        .join('&');
+  return Object.keys(payload)
+    .map(function (key) {
+      return ''.concat(encodeURIComponent(key), '=').concat(encodeURIComponent(payload[key]));
+    })
+    .join('&');
 }
-exports["default"] = jsonToQueryString;
+exports['default'] = jsonToQueryString;
 exports.jsonToQueryString = jsonToQueryString;
-;

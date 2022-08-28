@@ -54,37 +54,37 @@ export { encrypt as _encrypt };
 export { decrypt as _decrypt };
 export declare const WaelioUtils: WaelioTools.Utils;
 export declare namespace WaelioTools {
-    interface Utils {
-        _cleanResponse: typeof cleanResponse;
-        _hideRandom: typeof hideRandom;
-        _repeat: typeof repeat;
-        _rotateArray: typeof rotateArray;
-        _to: typeof to;
-        _sniffId: typeof sniffId;
-        _get: typeof get;
-        _toBase64: typeof toBase64;
-        _calculateClockDrift: typeof calculateClockDrift;
-        _generateId: typeof generateId;
-        _notifyMe: typeof notifyMe;
-        _jsonToQueryString: typeof jsonToQueryString;
-        _queryStringToJson: typeof queryStringToJson;
-        _reParseString: typeof reParseString;
-        _resetString: typeof resetString;
-        _camelToSnake: typeof camelToSnake;
-        _snakeToCamel: typeof snakeToCamel;
-        _equals: typeof equals;
-        _a_or_an: typeof a_or_an;
-        _encrypt: typeof encrypt;
-        _decrypt: typeof decrypt;
-        _isArray: typeof isArray;
-        _isObject: typeof isObject;
-        _isFunction: typeof isFunction;
-        _isString: typeof isString;
-        _isValid: typeof isValid;
-        _isNumber: typeof isNumber;
-    }
+  interface Utils {
+    _cleanResponse: typeof cleanResponse;
+    _hideRandom: typeof hideRandom;
+    _repeat: typeof repeat;
+    _rotateArray: typeof rotateArray;
+    _to: typeof to;
+    _sniffId: typeof sniffId;
+    _get: typeof get;
+    _toBase64: typeof toBase64;
+    _calculateClockDrift: typeof calculateClockDrift;
+    _generateId: typeof generateId;
+    _notifyMe: typeof notifyMe;
+    _jsonToQueryString: typeof jsonToQueryString;
+    _queryStringToJson: typeof queryStringToJson;
+    _reParseString: typeof reParseString;
+    _resetString: typeof resetString;
+    _camelToSnake: typeof camelToSnake;
+    _snakeToCamel: typeof snakeToCamel;
+    _equals: typeof equals;
+    _a_or_an: typeof a_or_an;
+    _encrypt: typeof encrypt;
+    _decrypt: typeof decrypt;
+    _isArray: typeof isArray;
+    _isObject: typeof isObject;
+    _isFunction: typeof isFunction;
+    _isString: typeof isString;
+    _isValid: typeof isValid;
+    _isNumber: typeof isNumber;
+  }
 }
 declare const _default: {
-    WaelioUtils: WaelioTools.Utils;
+  WaelioUtils: WaelioTools.Utils;
 };
 export default _default;

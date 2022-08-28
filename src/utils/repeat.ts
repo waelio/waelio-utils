@@ -11,7 +11,7 @@ export default function repeat(num: number) {
       fn();
       repeat(num - 1)(fn);
     }
-  }
-};
+  };
+}
 
 export { repeat };

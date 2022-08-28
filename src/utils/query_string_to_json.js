@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 // @ts-nocheck
 exports.__esModule = true;
 exports.queryStringToJson = void 0;
@@ -14,17 +14,17 @@ exports.queryStringToJson = void 0;
  * @returns JSON|Object
  */
 function queryStringToJson(payload, toObject) {
-    if (toObject === void 0) { toObject = true; }
-    if (!payload)
-        return;
-    var pairs = payload.slice(1).split('&');
-    var result = {};
-    pairs.forEach(function (pair) {
-        pair = pair.split('=');
-        result[pair[0]] = decodeURIComponent(pair[1] || '');
-    });
-    return toObject ? JSON.parse(JSON.stringify(result)) : JSON.stringify(result);
+  if (toObject === void 0) {
+    toObject = true;
+  }
+  if (!payload) return;
+  var pairs = payload.slice(1).split('&');
+  var result = {};
+  pairs.forEach(function (pair) {
+    pair = pair.split('=');
+    result[pair[0]] = decodeURIComponent(pair[1] || '');
+  });
+  return toObject ? JSON.parse(JSON.stringify(result)) : JSON.stringify(result);
 }
-exports["default"] = queryStringToJson;
+exports['default'] = queryStringToJson;
 exports.queryStringToJson = queryStringToJson;
-;

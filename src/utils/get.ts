@@ -18,6 +18,6 @@ export default function get(data: any) {
     default:
       return data;
   }
-};
+}
 
 export { get };

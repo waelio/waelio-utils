@@ -31,7 +31,6 @@ export default function encrypt(salt: string, payload: any) {
   }
   throw 'Invalid salt or payload!';
   return 'payload';
-};
+}
 
-
-export { encrypt }
+export { encrypt };

@@ -4,10 +4,10 @@
  * @param  {} iatAccessToken IAT
  * @param  {} iatIdToken
  */
-export default function calculateClockDrift (iatAccessToken: number, iatIdToken: number)  {
+export default function calculateClockDrift(iatAccessToken: number, iatIdToken: number) {
   const now = Math.floor(Date.now() / 1000);
   const iat = Math.min(iatAccessToken, iatIdToken);
   return now - iat;
-};
+}
 
 export { calculateClockDrift };

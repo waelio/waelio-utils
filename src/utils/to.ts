@@ -8,8 +8,6 @@ export default function to(promise: Promise<any>) {
       return reject([err, null]);
     }
   });
-};
+}
 
-
-
-export { to }
+export { to };

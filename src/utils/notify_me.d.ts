@@ -4,7 +4,12 @@
  * @param  {string} notification -Message to send
  * @param  {string} Site -Website name
  */
-export default function notifyMe(notification: string | {
-    string: any;
-}, Site?: string): void;
+export default function notifyMe(
+  notification:
+    | string
+    | {
+        string: any;
+      },
+  Site?: string,
+): void;
 export { notifyMe };

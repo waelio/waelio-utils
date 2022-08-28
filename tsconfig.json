@@ -1,56 +1,27 @@
-{
+{  
+
   "compileOnSave": true,
   "compilerOptions": {
     "alwaysStrict": true,
-    "listFiles": false,
-    "baseUrl": "./",
-    "importHelpers": true,
-    "isolatedModules": true,
-    "newLine": "LF",
     "declaration": true,
-    "declarationDir": "dist/types",
-    "declarationMap": true,
-    "experimentalDecorators": true,
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "noEmit": false,
     "noEmitOnError": true,
     "noImplicitAny": false,
     "noImplicitThis": true,
-    "noImplicitReturns": false,
-    "outDir": "dist",
-    "pretty": true,
-    "target": "esnext",
-    "noUnusedLocals": true,
-    "removeComments": false,
-    "skipLibCheck": false,
-    "sourceMap": true,
+    "declarationMap": true,
+    "module": "CommonJS",
+    "target": "ES5",
+    "outDir": "./lib",
+    "declarationDir": "./lib",
     "strict": true,
-    "strictNullChecks": true,
-
-    
-    "lib": [
-      "esnext",
-      "dom"
-    ],
-    "types": [
-      "node"
-    ],
-    "forceConsistentCasingInFileNames": true,
-    "typeRoots": [
-      "node_modules/@types",
-      "types/"
-    ],
-    "paths": {
-      "~/*": [
-        "./src/*"
-      ]
-    }
+    "pretty": true,
+    "removeComments": true,
+    "sourceMap": true
   },
   "include": [
     "src/"
   ],
   "exclude": [
+    "./tsconfig.json",
     "./tools",
     "./r_n_d",
     "./spec",

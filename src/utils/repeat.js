@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 exports.__esModule = true;
 exports.repeat = void 0;
 /**
@@ -9,13 +9,12 @@ exports.repeat = void 0;
  * @author Wael Wahbeh
  */
 function repeat(num) {
-    return function (fn) {
-        if (num > 0) {
-            fn();
-            repeat(num - 1)(fn);
-        }
-    };
+  return function (fn) {
+    if (num > 0) {
+      fn();
+      repeat(num - 1)(fn);
+    }
+  };
 }
-exports["default"] = repeat;
+exports['default'] = repeat;
 exports.repeat = repeat;
-;

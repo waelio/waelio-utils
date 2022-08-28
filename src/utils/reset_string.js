@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 exports.__esModule = true;
 exports.resetString = void 0;
 /** Decode uri component
@@ -9,8 +9,7 @@ exports.resetString = void 0;
  * @param {string} payload
  */
 function resetString(payload) {
-    return decodeURIComponent(decodeURIComponent(encodeURIComponent(payload)));
+  return decodeURIComponent(decodeURIComponent(encodeURIComponent(payload)));
 }
-exports["default"] = resetString;
+exports['default'] = resetString;
 exports.resetString = resetString;
-;

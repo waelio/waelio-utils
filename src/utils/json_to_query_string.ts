@@ -15,6 +15,6 @@ export default function jsonToQueryString(payload: string) {
   return Object.keys(payload)
     .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(payload[key])}`)
     .join('&');
-};
+}
 
 export { jsonToQueryString };

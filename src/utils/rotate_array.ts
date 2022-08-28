@@ -38,5 +38,5 @@ export default function rotateArray(array: string | number[]) {
   }
 
   return t;
-};
+}
 export { rotateArray };

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 exports.__esModule = true;
 exports.snakeToCamel = void 0;
 /**
@@ -13,8 +13,11 @@ exports.snakeToCamel = void 0;
  * @returns {string}
  */
 function snakeToCamel(payload) {
-    return typeof payload !== 'string' ? payload : payload.replace(/([-_]\w)/g, function (g) { return g[1].toUpperCase(); });
+  return typeof payload !== 'string'
+    ? payload
+    : payload.replace(/([-_]\w)/g, function (g) {
+        return g[1].toUpperCase();
+      });
 }
-exports["default"] = snakeToCamel;
+exports['default'] = snakeToCamel;
 exports.snakeToCamel = snakeToCamel;
-;

@@ -1,5 +1,4 @@
-
-export default function isArray  (payload: any) {
+export default function isArray(payload: any) {
   return !!Array.isArray(payload);
-};
-export  { isArray };
+}
+export { isArray };

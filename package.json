@@ -38,7 +38,7 @@
     "test": "jasmine && size-limit"
   },
   "exports": {
-    ".": "./dist/waelioUtils.js",
+    ".": "./dist/waelioUtils.d.ts",
     "./package.json": "./package.json"
   },
   "typesVersions": {

@@ -26,7 +26,6 @@ import { sniffId } from './sniff_id';
 import { encrypt } from './encrypt';
 import { decrypt } from './decrypt';
 
-
 // Expoerts
 export { cleanResponse as _cleanResponse };
 export { equals as _equals };
@@ -56,7 +55,7 @@ export { sniffId as _sniffId };
 export { encrypt as _encrypt };
 export { decrypt as _decrypt };
 
-export const WaelioUtils: WaelioTools.Utils = ({
+export const WaelioUtils: WaelioTools.Utils = {
   _cleanResponse: cleanResponse,
   _equals: equals,
   _hideRandom: hideRandom,
@@ -84,9 +83,7 @@ export const WaelioUtils: WaelioTools.Utils = ({
   _sniffId: sniffId,
   _encrypt: encrypt,
   _decrypt: decrypt,
-})
-
-
+};
 
 export namespace WaelioTools {
   export interface Utils {
@@ -119,4 +116,4 @@ export namespace WaelioTools {
     _isNumber: typeof isNumber;
   }
 }
-export default { WaelioUtils }
+export default { WaelioUtils };

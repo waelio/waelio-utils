@@ -6,9 +6,6 @@ test('_cleanResponse', async () => {
   const response = await fetch(url).then(response => response.json())
   const reP = await _reParseString(response) 
   let test = _cleanResponse(reP);
-  console.log(test);
-  
-
 
   const arrayTest = Object.keys(reP)
   expect(test).toBeTruthy();

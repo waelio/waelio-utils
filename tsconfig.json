@@ -11,7 +11,7 @@
     "module": "CommonJS",
     "target": "ES5",
     "outDir": "./lib",
-    "declarationDir": "./lib",
+    "declarationDir": "./lib/types",
     "strict": true,
     "pretty": true,
     "removeComments": true,

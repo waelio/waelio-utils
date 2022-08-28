@@ -26,6 +26,7 @@ import { sniffId } from './sniff_id';
 import { encrypt } from './encrypt';
 import { decrypt } from './decrypt';
 
+
 // Expoerts
 export { cleanResponse as _cleanResponse };
 export { equals as _equals };
@@ -54,7 +55,8 @@ export { snakeToCamel as _snakeToCamel };
 export { sniffId as _sniffId };
 export { encrypt as _encrypt };
 export { decrypt as _decrypt };
-export const WaelioUtils: WaelioTools.Utils = {
+
+export const WaelioUtils: WaelioTools.Utils = ({
   _cleanResponse: cleanResponse,
   _equals: equals,
   _hideRandom: hideRandom,
@@ -82,7 +84,10 @@ export const WaelioUtils: WaelioTools.Utils = {
   _sniffId: sniffId,
   _encrypt: encrypt,
   _decrypt: decrypt,
-};
+})
+
+
+
 export namespace WaelioTools {
   export interface Utils {
     _cleanResponse: typeof cleanResponse;
@@ -114,33 +119,4 @@ export namespace WaelioTools {
     _isNumber: typeof isNumber;
   }
 }
-
-export default {
-  _cleanResponse: cleanResponse,
-  _equals: equals,
-  _hideRandom: hideRandom,
-  _repeat: repeat,
-  _rotateArray: rotateArray,
-  _To: to,
-  _get: get,
-  _a_or_an: a_or_an,
-  _toBase64: toBase64,
-  _calculateClockDrift: calculateClockDrift,
-  _camelToSnake: camelToSnake,
-  _generateId: generateId,
-  _isArray: isArray,
-  _isObject: isObject,
-  _isFunction: isFunction,
-  _isString: isString,
-  _isValid: isValid,
-  _isNumber: isNumber,
-  _jsonToQueryString: jsonToQueryString,
-  _notifyMe: notifyMe,
-  _queryStringToJson: queryStringToJson,
-  _reParseString: reParseString,
-  _resetString: resetString,
-  _snakeToCamel: snakeToCamel,
-  _sniffId: sniffId,
-  _encryp: encrypt,
-  _decrypt: decrypt,
-};
+export default { WaelioUtils }

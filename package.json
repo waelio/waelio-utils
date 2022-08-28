@@ -27,6 +27,7 @@
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
   },
+  "files": ["lib/**/*"],
   "author": {
     "name": "Peace Marshal",
     "email": "wahbehw@me.com",

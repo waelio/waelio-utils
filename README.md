@@ -84,7 +84,7 @@ npm install --save waelio-utils
 In browser:
 
 ```html
-<script src="https://unpkg.com/waelio-utils@latest/dist/waelioUtils.js"></script>
+<script src="https://unpkg.com/waelio-utils@latest/lib/waelioUtils.js"></script>
 ```
 
 Tree Shaking (Recommended)

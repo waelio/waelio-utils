@@ -64,7 +64,7 @@
     <td><div style="padding:.25rem; width: 150px;"><a href="#calculateclockdrift"> calculateClockDrift</a></div></td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#notifyme"> notifyMe</a></div></td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#meta"> meta</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#To">_To</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#To">_to</a></div></td>
   </tr>
   <tr>
     <td><div style="padding:.25rem; width: 150px;"><a href="#AOrAn">a_or_an</a></div></td>
@@ -84,7 +84,7 @@ npm install --save waelio-utils
 In browser:
 
 ```html
-<script src="https://unpkg.com/waelio-utils@latest/dist/waelioUtils.js"></script>
+<script src="https://unpkg.com/waelio-utils@latest/lib/waelioUtils.js"></script>
 ```
 
 Tree Shaking (Recommended)

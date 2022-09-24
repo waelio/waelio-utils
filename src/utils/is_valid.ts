@@ -6,8 +6,8 @@ import { isNumber } from './is_number';
 /**
  *  Verifies  payload is Array or object or string or Number
  *  Returns boolean
- * 
- * @param payload 
+ *
+ * @param payload
  * @return boolean
  */
 export default function isValid(payload: object | [] | string | number | any) {

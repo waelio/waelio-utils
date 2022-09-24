@@ -1,6 +1,6 @@
 /**
  * A OR AN resolver
- * Returns A or AN 
+ * Returns A or AN
  * @param field string
  * @return 'a' | 'an'
  */

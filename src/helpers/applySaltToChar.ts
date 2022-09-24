@@ -1,9 +1,7 @@
 // import { isArray } from '../waelioUtils';
-import textToChars from './textToChars';
+// import textToChars from './textToChars';
 
-
-export const applySaltToChar = (charachter: number[], salt = 'salt') => {
-  
-  textToChars(salt).reduce((previousValue: number[], currentValue: number[]) => previousValue ^ currentValue, charachter);
+export function applySaltToChar(c, salt) {
+    // return textToChars(salt).reduce((a, b) => a ^ b, c);
 }
 export default applySaltToChar;

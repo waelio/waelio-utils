@@ -4,11 +4,11 @@ import * as Utf8 from 'crypto-js/enc-utf8';
 
 /**
  * decrypt (new)
- * 
- * @param payload 
- * @param salt 
+ *
+ * @param payload
+ * @param salt
  */
-export default function decrypt(payload: string, salt ='secret key 007') {
+export default function decrypt(payload: string, salt = 'secret key 007') {
   if (!isValid(payload)) return payload;
 
   const bytes = AES.decrypt(payload, salt);

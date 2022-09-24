@@ -7,6 +7,6 @@ import { toUTF8Array } from './toUTF8Array';
  * @return number
  */
 export default function textToChars(payload: string) {
-  return payload.split('').map(sr=> toUTF8Array(sr) );
+  return payload.split('').map((sr) => toUTF8Array(sr));
 }
 export { textToChars };

@@ -1,6 +1,6 @@
 /**
  * byteHex
- * 
+ *
  * @param n number
  * @return string
  */

@@ -2,7 +2,7 @@ import { get } from './get';
 
 /**
  * cleanResponse
- * 
+ *
  * extends get function
  * @param response object
  * @return object

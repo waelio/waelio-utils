@@ -40,12 +40,6 @@ export { toBase64 as _toBase64 };
 export { calculateClockDrift as _calculateClockDrift };
 export { camelToSnake as _camelToSnake };
 export { generateId as _generateId };
-export { isArray };
-export { isObject };
-export { isFunction };
-export { isString };
-export { isValid };
-export { isNumber };
 export { jsonToQueryString as _jsonToQueryString };
 export { notifyMe as _notifyMe };
 export { queryStringToJson as _queryStringToJson };
@@ -55,8 +49,14 @@ export { snakeToCamel as _snakeToCamel };
 export { sniffId as _sniffId };
 export { encrypt as _encrypt };
 export { decrypt as _decrypt };
+export { isArray };
+export { isObject };
+export { isFunction };
+export { isString };
+export { isValid };
+export { isNumber };
 
-export const WaelioUtils: WaelioTools.Utils = ({
+export const WaelioUtils: WaelioTools.Utils = {
   _cleanResponse: cleanResponse,
   _equals: equals,
   _hideRandom: hideRandom,
@@ -69,12 +69,12 @@ export const WaelioUtils: WaelioTools.Utils = ({
   _calculateClockDrift: calculateClockDrift,
   _camelToSnake: camelToSnake,
   _generateId: generateId,
-  _isArray: isArray,
-  _isObject: isObject,
-  _isFunction: isFunction,
-  _isString: isString,
-  _isValid: isValid,
-  _isNumber: isNumber,
+  isArray: isArray,
+  isObject: isObject,
+  isFunction: isFunction,
+   isString: isString,
+  isValid: isValid,
+  isNumber: isNumber,
   _jsonToQueryString: jsonToQueryString,
   _notifyMe: notifyMe,
   _queryStringToJson: queryStringToJson,
@@ -84,7 +84,7 @@ export const WaelioUtils: WaelioTools.Utils = ({
   _sniffId: sniffId,
   _encrypt: encrypt,
   _decrypt: decrypt,
-})
+};
 
 
 
@@ -111,12 +111,12 @@ export namespace WaelioTools {
     _a_or_an: typeof a_or_an;
     _encrypt: typeof encrypt;
     _decrypt: typeof decrypt;
-    _isArray: typeof isArray;
-    _isObject: typeof isObject;
-    _isFunction: typeof isFunction;
-    _isString: typeof isString;
-    _isValid: typeof isValid;
-    _isNumber: typeof isNumber;
+    isArray: typeof isArray;
+    isObject: typeof isObject;
+    isFunction: typeof isFunction;
+    isString: typeof isString;
+    isValid: typeof isValid;
+    isNumber: typeof isNumber;
   }
 }
 export default { WaelioUtils }

@@ -1,21 +1,19 @@
-import applySaltToChar from '../helpers/applySaltToChar';
-// import { encrypt } from './encrypt';
 import { isValid } from './is_valid';
-export default function decrypt(salt: string = 'salt', payload: string, asFunction: boolean = false) {
-  if (!payload) payload = salt;
-  if (!salt) salt = 'salt';
+import * as AES from 'crypto-js/aes';
+import * as Utf8 from 'crypto-js/enc-utf8';
 
-  /* eslint-disable */
-  if (!!isValid(salt) && !!isValid(payload)) {
-    const decryptString: string | undefined = payload
-      .match(/.{1,2}/g)
-      ?.map((hex: string) => parseInt(hex, 16))
-      .map((c) => applySaltToChar(c, salt))
-      .map((charCode: number) => String.fromCharCode(charCode))
-      .join('');
+/**
+ * decrypt (new)
+ * 
+ * @param payload 
+ * @param salt 
+ */
+export default function decrypt(payload: string, salt ='secret key 007') {
+  if (!isValid(payload)) return payload;
 
-    return asFunction ? new Function('decryptString', 'return decryptString') : decryptString;
-  }
-  throw 'Invalid salt or payload!';
+  const bytes = AES.decrypt(payload, salt);
+  const originalText = bytes.toString(Utf8);
+  return originalText;
 }
+
 export { decrypt };

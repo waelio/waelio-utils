@@ -1,4 +1,10 @@
-export default function byteHex(n: number): string {
-  return ('0' + Number(n).toString(16)).substring(-2); /*?*/
-}
-export { byteHex };
+/**
+ * byteHex
+ * 
+ * @param n number
+ * @return string
+ */
+export const byteHex = (n: number): string => {
+  return ('000' + Number(n).toString(16)).substring(-4);
+};
+export default byteHex;

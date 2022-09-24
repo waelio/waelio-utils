@@ -1,8 +1,9 @@
 import { get } from './get';
-export default function to(promise: Promise<[any, any]>) {
-  return new Promise(async (resolve, reject) => {
+export default  function to(promise: Promise<[any, any]>) {
+
+   ()=> new Promise(async (resolve:any, reject:any) => {
     try {
-      const result = await Promise.resolve(promise);
+      const result = await promise;
       return resolve([null, get(result)]);
     } catch (err) {
       return reject([err, null]);

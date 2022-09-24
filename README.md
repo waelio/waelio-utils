@@ -648,18 +648,17 @@ a_or_an(payload3) // an
 #
 
 # encrypt
-## Possible payloads `string`, `object` & `array` or `function`
-### _encrypt: `_encrypt(salt, payload)` 
+## Possible payloads `string`, `object` & `array` , `number`
+### _encrypt: `_encrypt(payload, salt?)` 
 If ***`salt`*** is not provided it will revert to the string `"salt"` as the default ***`salt`***.
 #### <hr />
 # decrypt
-### Scenario 1 `payload` is NOT a `function`
-### _decrypt: `_decrypt(salt, payload)`
+### _decrypt: `_decrypt(payload, salt)`
 If ***`salt`*** is not provided and `asFunction` is `false` it will revert to the string `"salt"` as the default ***`salt`***
 #### <hr />
-### Scenario 2 `payload` IS `function`
-#### _decrypt: `_decrypt(salt, payload, asFunction = false)` 
-***`salt`*** IS required, ***`payload`*** is required and `asFunction` must be `true` like ***`_decrypt(salt, function, true)`***
+
+#### _decrypt: `_decrypt(payload, salt?)` 
+
 #### <hr />
 ### Example:
 
@@ -672,18 +671,13 @@ const payload2 = { message: "What ever you want" }
 const payload3 = function(params) {
   return  {name: params } 
 }
-const encrypted1 = _encrypt(salt, payload1) //7d424b5e0a4f5c4f580a53455f0a5d4b445e 
- const decrypted2 = _decrypt(salt, encrypted1)// "What ever you want"
+const encrypted1 = _encrypt(payload1)
+ const decrypted2 = _decrypt(encrypted1) // "What ever you want"
 
-const encrypted3 = _encrypt(salt, payload2)//5108474f59594b4d4f0810087d424b5e0a4f5c4f580a53455f0a5d4b445e0857 
-const decrypted3 = _decrypt(salt, encrypted3)// {"message":"What ever you want"} 
+const encrypted3 = _encrypt(payload2, salt)
+const decrypted3 = _decrypt(encrypted3, salt)// {"message":"What ever you want"} 
 
-const encrypted4 = _encrypt(salt, payload3)// 4c5f44495e4345440a025a4b584b4759030a51200a0a0a0a0a0a0a0a5c4b580a0e750e490a170a0e750e5d4c021b0311200a0a0a0a0a0a0a0a584f5e5f58440a0e750e5d021b060a1e1c060a0e750e4903060a0e750e5d5c021b060a1e1c060a0d1b061e1c0d060a0e750e49060a0d510a444b474f100a5a4b584b47590a570d060a510a444b474f100a5a4b584b47590a57060a0d0e750e444f0d060a1a060a1b060a510a49424b444d4f634e100a0d5c5258524d0d0a570311200a0a0a0a57 
-
-// Function
-const decrypted4 = _decrypt(salt, encrypted4, true) // [FN]
-decrypted4('Wael') // {name: 'Wael' }
-
+const encrypted4 = _encrypt(payload3, salt)// 4c5f44495e4345440a025a4b584b4759030a51200a0a0a0a0a0a0a0a5c4b580a0e750e490a170a0e750e5d4c021b0311200a0a0a0a0a0a0a0a584f5e5f58440a0e750e5d021b060a1e1c060a0e750e4903060a0e750e5d5c021b060a1e1c060a0d1b061e1c0d060a0e750e49060a0d510a444b474f100a5a4b584b47590a570d060a510a444b474f100a5a4b584b47590a57060a0d0e750e444f0d060a1a060a1b060a510a49424b444d4f634e100a0d5c5258524d0d0a570311200a0a0a0a57 
 
 const dblCheck = _equal(payload2, JSON.parse(decrypted2)) // true
 

@@ -9,13 +9,17 @@
     "noImplicitThis": true,
     "declarationMap": true,
     "module": "CommonJS",
-    "target": "ES5",
+    "target": "ES2015",
     "outDir": "./lib",
     "declarationDir": "./lib/types",
+    "charset": "utf8",
     "strict": true,
     "pretty": true,
     "removeComments": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "typeRoots": [
+        "node_modules/@types"
+     ]
   },
   "include": [
     "src/"

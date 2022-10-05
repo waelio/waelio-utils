@@ -9,6 +9,9 @@
 
 # Index
 
+## Updated Docs soon ...
+#
+
 <ol>
 <li>Strings</li>
 <table>

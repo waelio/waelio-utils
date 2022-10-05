@@ -85,7 +85,7 @@ export const WaelioUtils: WaelioTools.Utils = {
   _sniffId: sniffId,
   _encrypt: encrypt,
   _decrypt: decrypt,
-  _config:config,
+  _config: config,
 };
 
 export namespace WaelioTools {

@@ -35,8 +35,8 @@ Object.keys(data).forEach((key) => {
   });
 });
 
-function watcher(myFunc:any) {
+function watcher(myFunc: any) {
   target = myFunc;
   // target && target();
-  target=null
+  target = null;
 }

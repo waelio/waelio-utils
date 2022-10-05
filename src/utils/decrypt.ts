@@ -1,6 +1,6 @@
 import { isValid } from './is_valid';
-import * as AES from 'crypto-js/aes';
-import * as Utf8 from 'crypto-js/enc-utf8';
+// import isObject from './is_object';
+import * as CryptoJS from 'crypto-js';
 
 /**
  * decrypt (new)
@@ -8,12 +8,18 @@ import * as Utf8 from 'crypto-js/enc-utf8';
  * @param payload
  * @param salt
  */
-export default function decrypt(payload: string, salt = 'secret key 007') {
+export const decrypt = (payload: string, salt = 'secret') => {
   if (!isValid(payload)) return payload;
+  const ourSecret = `${salt} key 007`;
+  try {
+    const bytes = CryptoJS.AES.decrypt(payload, ourSecret);
+    const decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+    return decryptedData;
+  } catch (_) {
+    const bytes = CryptoJS.AES.decrypt(payload, ourSecret);
+    const originalText = bytes.toString(CryptoJS.enc.Utf8);
+    return originalText;
+  }
+};
 
-  const bytes = AES.decrypt(payload, salt);
-  const originalText = bytes.toString(Utf8);
-  return originalText;
-}
-
-export { decrypt };
+export default decrypt;

@@ -21,7 +21,7 @@ test('_decrypt', () => {
     for (let indexx = 0; indexx < randomKeys.length; indexx++) {
       // enc
       let enc = _encrypt(payloads[index],randomKeys[indexx]);
-      expect(_decrypt(enc,randomKeys[indexx])).toEqual(payloads[index])      
+      expect(_decrypt(enc as string,randomKeys[indexx])).toEqual(payloads[index])      
     }
   }
 });

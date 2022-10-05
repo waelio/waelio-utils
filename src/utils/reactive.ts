@@ -1,25 +1,48 @@
-let data = { price: 5, quantity: 2 };
+let data = { name: 5, desc: 2 };
 let target = null;
+let internalValue: any;
 
 class Dep {
-  subscribers: [any];
+  subscribers: [];
   constructor() {
     this.subscribers = [];
   }
   depend() {
-    if (target && !this.subscribers.includes(target)) {
-      // Only if there is a target & it's not already subscribed
+    if (target && !this.subscribers[target]) {
       this.subscribers.push(target);
     }
   }
   notify() {
-    this.subscribers.forEach((sub) => sub());
+    this.subscribers.forEach((sub: Function) => sub());
   }
 }
 
-// Our simple Dep class
-let deps = new Map(); // Let's store all of our data's deps in a map
 Object.keys(data).forEach((key) => {
-  // Each property gets a dependency instance
-  deps.set(key, new Dep());
+  internalValue = data[key];
+
+  let dep = new Dep();
+
+  Object.defineProperty(data, key, {
+    get() {
+      dep.depend();
+      return internalValue;
+    },
+    set(newValue) {
+      dep.depend();
+      internalValue = newValue;
+      dep.notify();
+    },
+  });
 });
+
+function watcher(myFunc:any) {
+  target = myFunc;
+  // target && target();
+  target=null
+}
+let reactive;
+watcher(() => {
+   data = reactive
+})
+export default reactive = reactive;
+export  {reactive}

@@ -25,6 +25,7 @@ import { snakeToCamel } from './snake_to_camel';
 import { sniffId } from './sniff_id';
 import { encrypt } from './encrypt';
 import { decrypt } from './decrypt';
+import { config } from './config';
 
 // Expoerts
 export { cleanResponse as _cleanResponse };
@@ -54,6 +55,7 @@ export { snakeToCamel as _snakeToCamel };
 export { sniffId as _sniffId };
 export { encrypt as _encrypt };
 export { decrypt as _decrypt };
+export { config as _config };
 
 export const WaelioUtils: WaelioTools.Utils = {
   _cleanResponse: cleanResponse,
@@ -68,12 +70,12 @@ export const WaelioUtils: WaelioTools.Utils = {
   _calculateClockDrift: calculateClockDrift,
   _camelToSnake: camelToSnake,
   _generateId: generateId,
-  _isArray: isArray,
-  _isObject: isObject,
-  _isFunction: isFunction,
-  _isString: isString,
-  _isValid: isValid,
-  _isNumber: isNumber,
+  isArray: isArray,
+  isObject: isObject,
+  isFunction: isFunction,
+  isString: isString,
+  isValid: isValid,
+  isNumber: isNumber,
   _jsonToQueryString: jsonToQueryString,
   _notifyMe: notifyMe,
   _queryStringToJson: queryStringToJson,
@@ -83,6 +85,7 @@ export const WaelioUtils: WaelioTools.Utils = {
   _sniffId: sniffId,
   _encrypt: encrypt,
   _decrypt: decrypt,
+  _config: config,
 };
 
 export namespace WaelioTools {
@@ -108,12 +111,13 @@ export namespace WaelioTools {
     _a_or_an: typeof a_or_an;
     _encrypt: typeof encrypt;
     _decrypt: typeof decrypt;
-    _isArray: typeof isArray;
-    _isObject: typeof isObject;
-    _isFunction: typeof isFunction;
-    _isString: typeof isString;
-    _isValid: typeof isValid;
-    _isNumber: typeof isNumber;
+    _config: typeof config;
+    isArray: typeof isArray;
+    isObject: typeof isObject;
+    isFunction: typeof isFunction;
+    isString: typeof isString;
+    isValid: typeof isValid;
+    isNumber: typeof isNumber;
   }
 }
 export default { WaelioUtils };

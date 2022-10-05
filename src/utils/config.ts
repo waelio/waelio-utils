@@ -1,13 +1,13 @@
 class Config {
   [x: string]: any;
   constructor() {
-    this.setEnvironment();
+    this.#setEnvironment();
 
     // const _ = this
 
-    this._server = this.getServerVars();
-    this._client = this.getClientVars();
-    this._dev = this.getUrgentOverrides();
+    this._server = this.#getServerVars();
+    this._client = this.#getClientVars();
+    this._dev = this.#getUrgentOverrides();
 
     this._store = Object.assign(
       {},
@@ -51,7 +51,7 @@ class Config {
 
   get(key: string) {
     if (key.match(/:/)) {
-      const storeKey = this.buildNestedKey(key);
+      const storeKey = this.#buildNestedKey(key);
       return storeKey;
     }
 
@@ -79,7 +79,7 @@ class Config {
     return Boolean(this.get(key));
   }
 
-  setEnvironment() {
+  #setEnvironment() {
     if (process && process['browser']) {
       this._env = 'client';
     } else {
@@ -87,7 +87,7 @@ class Config {
     }
   }
 
-  getServerVars() {
+  #getServerVars() {
     let serverVars = {};
 
     if (this._env === 'server') {
@@ -103,7 +103,7 @@ class Config {
     return serverVars;
   }
 
-  getClientVars() {
+  #getClientVars() {
     let clientVars: { [key: string]: any };
 
     try {
@@ -119,7 +119,7 @@ class Config {
     return clientVars;
   }
 
-  getUrgentOverrides() {
+  #getUrgentOverrides() {
     let overrides;
     const filename = process.env.NODE_ENV === 'production' ? 'prod' : 'dev';
     try {
@@ -133,7 +133,7 @@ class Config {
     return overrides;
   }
 
-  buildNestedKey(nestedKey: string) {
+  #buildNestedKey(nestedKey: string) {
     const keys = nestedKey.split(':');
     let storeKey = this._store;
 
@@ -149,7 +149,7 @@ class Config {
   }
 }
 
-const _Config = new Config();
+const config = new Config();
 
-export default _Config;
-export { _Config };
+export default config;
+export { config };

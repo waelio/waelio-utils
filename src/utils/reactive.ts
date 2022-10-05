@@ -40,9 +40,3 @@ function watcher(myFunc:any) {
   // target && target();
   target=null
 }
-let reactive;
-watcher(() => {
-   data = reactive
-})
-export default reactive = reactive;
-export  {reactive}

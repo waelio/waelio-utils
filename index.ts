@@ -25,6 +25,7 @@ import { snakeToCamel } from './src/utils/snake_to_camel';
 import { sniffId } from './src/utils/sniff_id';
 import { encrypt } from './src/utils/encrypt';
 import { decrypt } from './src/utils/decrypt';
+import { config } from './src/utils/config';
 
 
 // Expoerts
@@ -49,6 +50,8 @@ export { snakeToCamel as _snakeToCamel };
 export { sniffId as _sniffId };
 export { encrypt as _encrypt };
 export { decrypt as _decrypt };
+export { config as _config };
+
 export { isArray };
 export { isObject };
 export { isFunction };
@@ -84,6 +87,7 @@ export const WaelioUtils: WaelioTools.Utils = {
   _sniffId: sniffId,
   _encrypt: encrypt,
   _decrypt: decrypt,
+  _config: config,
 };
 
 
@@ -111,6 +115,7 @@ export namespace WaelioTools {
     _a_or_an: typeof a_or_an;
     _encrypt: typeof encrypt;
     _decrypt: typeof decrypt;
+    _config: typeof config;
     isArray: typeof isArray;
     isObject: typeof isObject;
     isFunction: typeof isFunction;

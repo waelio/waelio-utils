@@ -149,7 +149,7 @@ class Config {
   }
 }
 
-const config = new Config();
+export const config = new Config();
 
 export default config;
-export { config };
+

@@ -125,7 +125,7 @@ class Config {
     try {
       overrides = process.env.NODE_ENV === 'production' ? require('../config/prod') : require('../config/dev');
 
-      console.log(`FYI: data in \`./config/${filename}.js\` file will override Server & Client equal data/values.`);
+      // console.log(`FYI: data in \`./config/${filename}.js\` file will override Server & Client equal data/values.`);
     } catch (e) {
       overrides = {};
     }

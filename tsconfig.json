@@ -31,7 +31,6 @@
     "./spec",
     "./example",
     "node_modules",
-    "./src/utils/meta",
-    "./dist/**/*"
+    "./src/utils/meta"
   ]
 }

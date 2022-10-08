@@ -73,12 +73,12 @@ export const WaelioUtils: WaelioTools.Utils = {
   _encrypt: encrypt,
   _equals: equals,
   _generateId: generateId,
-  _get: get,  
-  _hideRandom: hideRandom,  
+  _get: get,
+  _hideRandom: hideRandom,
   _jsonToQueryString: jsonToQueryString,
   _notifyMe: notifyMe,
   _queryStringToJson: queryStringToJson,
-  _reParseString: reParseString,  
+  _reParseString: reParseString,
   _repeat: repeat,
   _resetString: resetString,
   _rotateArray: rotateArray,
@@ -86,8 +86,6 @@ export const WaelioUtils: WaelioTools.Utils = {
   _sniffId: sniffId,
   _to: to,
   _toBase64: toBase64,
-  
-
 };
 
 export namespace WaelioTools {

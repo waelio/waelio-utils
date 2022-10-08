@@ -697,7 +697,7 @@ const dblCheck = _equal(payload2, JSON.parse(decrypted2)); // true
 
 # config
 
-### Finally I get to add my own config, although it is a rought implementation, yet it satisfied my requesrements.
+### Finally I get to add my own config, although it is a rought implementation, yet it satisfied my requerements.
 
 Current enviorments are `['client', 'server', 'dev', 'prod' ]`
 

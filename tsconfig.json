@@ -11,7 +11,7 @@
     "module": "CommonJS",
     "target": "ES2015",
     "outDir": "./lib",
-    "declarationDir": "./lib/types",
+    "declarationDir": "./types",
     "charset": "utf8",
     "strict": true,
     "pretty": true,
@@ -22,15 +22,16 @@
      ]
   },
   "include": [
-    "src/"
+    "src/**/*"
   ],
   "exclude": [
-    "./tsconfig.json",
-    "./tools",
-    "./r_n_d",
-    "./spec",
-    "./example",
+    "__tests__",
+    "example",
+    "lib",
+    "r_n_d",
+    "spec",
+    "src/utils/meta",
     "node_modules",
-    "./src/utils/meta"
+    "tsconfig.json"
   ]
 }

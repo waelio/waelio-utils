@@ -1,0 +1,1 @@
+{"version":3,"file":"camel_to_snake.d.ts","sourceRoot":"","sources":["../../src/utils/camel_to_snake.ts"],"names":[],"mappings":"AAUA,MAAM,CAAC,OAAO,UAAU,YAAY,CAAC,OAAO,EAAE,MAAM,EAAE,UAAU,GAAE,OAAe,UAMhF;AAED,OAAO,EAAE,YAAY,EAAE,CAAC"}

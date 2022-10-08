@@ -15,7 +15,7 @@
     "nuxt3"
   ],
   "main": "lib/waelioUtils.js",
-  "types": "lib/waelioUtils.d.ts",
+  "types": "types/waelioUtils.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
@@ -28,7 +28,8 @@
     "postversion": "git push && git push --tags"
   },
   "files": [
-    "lib/**/*"
+    "lib/**/*",
+    "types/**/*"
   ],
   "author": {
     "name": "Peace Marshal",

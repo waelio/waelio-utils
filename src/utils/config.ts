@@ -1,13 +1,13 @@
 class Config {
   [x: string]: any;
   constructor() {
-    this.#setEnvironment();
+    this.setEnvironment();
 
     // const _ = this
 
-    this._server = this.#getServerVars();
-    this._client = this.#getClientVars();
-    this._dev = this.#getUrgentOverrides();
+    this._server = this.getServerVars();
+    this._client = this.getClientVars();
+    this._dev = this.getUrgentOverrides();
 
     this._store = Object.assign(
       {},
@@ -51,7 +51,7 @@ class Config {
 
   get(key: string) {
     if (key.match(/:/)) {
-      const storeKey = this.#buildNestedKey(key);
+      const storeKey = this.buildNestedKey(key);
       return storeKey;
     }
 
@@ -79,7 +79,7 @@ class Config {
     return Boolean(this.get(key));
   }
 
-  #setEnvironment() {
+  setEnvironment() {
     if (process && process['browser']) {
       this._env = 'client';
     } else {
@@ -87,12 +87,12 @@ class Config {
     }
   }
 
-  #getServerVars() {
+  getServerVars() {
     let serverVars = {};
 
     if (this._env === 'server') {
       try {
-        serverVars = require('lib/config/server');
+        serverVars = require('../config/server');
       } catch (e: any) {
         if (process.env.NODE_ENV === 'development') {
           console.warn("Didn't find a server config in `./config`.");
@@ -103,11 +103,11 @@ class Config {
     return serverVars;
   }
 
-  #getClientVars() {
+  getClientVars() {
     let clientVars: { [key: string]: any };
 
     try {
-      clientVars = require('lib/config/client');
+      clientVars = require('../config/client');
     } catch (e) {
       clientVars = {};
 
@@ -119,13 +119,13 @@ class Config {
     return clientVars;
   }
 
-  #getUrgentOverrides() {
+  getUrgentOverrides() {
     let overrides;
     const filename = process.env.NODE_ENV === 'production' ? 'prod' : 'dev';
     try {
-      overrides = process.env.NODE_ENV === 'production' ? require('lib/config/prod') : require('lib/config/dev');
+      overrides = process.env.NODE_ENV === 'production' ? require('../config/prod') : require('../config/dev');
 
-      console.warn(`FYI: data in \`./config/${filename}.js\` file will override Server & Client equal data/values.`);
+      console.log(`FYI: data in \`./config/${filename}.js\` file will override Server & Client equal data/values.`);
     } catch (e) {
       overrides = {};
     }
@@ -133,7 +133,7 @@ class Config {
     return overrides;
   }
 
-  #buildNestedKey(nestedKey: string) {
+  buildNestedKey(nestedKey: string) {
     const keys = nestedKey.split(':');
     let storeKey = this._store;
 
@@ -148,7 +148,9 @@ class Config {
     return storeKey;
   }
 }
-
+/**
+ * Waelio Utils Config
+ */
 export const config = new Config();
 
 export default config;

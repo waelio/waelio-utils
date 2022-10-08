@@ -1,11 +1,15 @@
-import { config } from '../src/utils/config'
+"use strict"
 
-const dummy1 = 'test1';
-const dummy2 = {'hot':'cold'};
-const dummy3 = 'test1 test 2';
-const dummy4 = ['test1'];
+import { _config } from '../index';
 
-test('adds 1 + 2 to equal 3', () => {
-  config.set('test1', dummy1)
-  expect(config.get(dummy1)).toEqual(dummy1)
+test('testing config', () => {
+  const dummys = ['test1', 'hot_cold', 'test1 test 2'];
+  const envvs = ['client', 'dev', 'server'];
+
+  for (let index = 0; index < dummys.length; index++) {
+    for (let indexx = 0; indexx < envvs.length; indexx++) {
+      let tst = _config.set(`${envvs[indexx]}:${dummys[index]}`, dummys[index]);
+      expect(_config.get(`${envvs[indexx]}:${dummys[index]}`)).toEqual(dummys[index]);
+    }
+  }
 });

@@ -4,15 +4,20 @@
 
 ### The [WaelioUtils](https://github.com/waelio/waelio-utils) exported as a Javascript modules.
 
-#
 
 # docs
 
-## <ins>Recenetly reformated.</ins>
-
-#
 
 <ol>
+  <li>Recently Added/Updated</li>
+<table>  
+  <tr>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#config">_config</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a></div></td>
+  </tr>
+</table>
+<hr />
 <li>Strings</li>
 <table>
   <tr>  
@@ -23,12 +28,12 @@
   </tr>
   <tr>
     <td><div style="padding:.25rem; width: 150px;"><a href="#cameltosnake"> _camelToSnake</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#base64"> _toBase64</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#tobase64"> _toBase64</a></div></td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#generateid"> _generateId</a></div></td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#sniffid"> _sniffId</a></div></td>
   </tr>
   <tr>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#aoran">_a_or_an</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#a_or_an">_a_or_an</a></div></td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a></div></td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a></div></td>
   </tr>
@@ -64,7 +69,7 @@
 <li>Other</li>
 <table>
   <tr>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#calculateclockdrift"> _calculateClockDrift</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;">_calculateClockDrift</div></td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#notifyme"> _notifyMe</a></div></td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#meta"> _meta</a></div></td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#to">_to</a></div></td>    
@@ -79,13 +84,15 @@
 
 # Installation
 
-Using npm:
+In terminal:
+Pick your flavor, types included
 
 ```bash
-npm i -D waelio-utils
-pnpm add -D waelio-utils
-yarn add -D waelio-utils
+npm i -S waelio-utils
+pnpm add -S waelio-utils
+yarn add -S waelio-utils
 ```
+OR
 
 In browser:
 
@@ -93,7 +100,7 @@ In browser:
 <script src="https://unpkg.com/waelio-utils@latest/lib/waelioUtils.js"></script>
 ```
 
-Or indvidual packagees
+Or in terminal add indvidual packagees
 
 ```javascript
 // ES6
@@ -107,16 +114,9 @@ const { _snakeToCamel, _config_, _notifyMe } = require('waelio-utils');
 
 # jsonToQueryString
 
-#### `Function` that converts a `JSON` to URL Query `String`
-
-#### Example IN: `{"first":"John", "last": "Smith"}`
-
-#### Example Out: `first=John&last=Smith`
-
-#### @param `{}` JSON payload
-
-#### _Returns_ `String`
-
+`Function` that converts a `JSON` to URL Query `String`
+@param `{}` JSON payload
+_Returns_ `String`
 #### Example: In your `.js` or `.ts` file:
 
 ```javascript
@@ -139,15 +139,9 @@ const Result = jsonToQueryString(payload);
 
 # queryStringToJson
 
-#### Function that converts a URL Query String to JSON
-
-#### Param `payload` Type `@param {string}` as String
-
-#### Param `toObject` Type `@param {boolean}` as Boolean
-
-#### Output: `JS Object` OR `JSON`
-
-#### _Returns_ `JSON || Object`
+Function that converts a URL Query String to JSON
+@param `payload` Type `@param {string}` as String
+ _Returns_ `JSON || Object`
 
 #### Example: In your `.js` or `.ts` file:
 
@@ -171,8 +165,6 @@ const Result = queryStringToJson(query);
 
 # resetString
 
-#### Example: In your `.js` or `.ts` file:
-
 ```javascript
 import { _resetString } from 'waelio-utils';
 
@@ -190,17 +182,12 @@ Result === 'https://waelio.com';
 
 # snakeToCamel
 
-#### Function that converts snake_case or snake-case to camelCase "snakeCase"
+Function that converts snake_case or snake-case to camelCase "snakeCase"
+@name snakeToCamel
 
-#### Example IN: `snake_case`
+@param {string} `payload` QueryString
 
-#### Example Out: `snakeCase`
-
-#### @name snakeToCamel
-
-#### @param {string} `payload` QueryString
-
-#### _Returns_ `{string}`
+_Returns_ `{string}`
 
 #### Example: In your `.js` or `.ts` file:
 
@@ -224,19 +211,13 @@ const Result = snakeToCamel(payload);
 
 # camelToSnake
 
-#### Function that converts camelCase to snake_case or snake-case "snake-case"
+Function that converts camelCase to snake_case or snake-case "snake-case"
 
-#### Example IN: `snakeCase`
+@param {string} payload
 
-#### Example Out: `snake-case`
+@param {boolean} hyphenated controls the delimiter: true = "-" / false = "\_"
 
-#### @name camelToSnake
-
-#### @param {string} payload
-
-#### @param {boolean} hyphenated controls the delimiter: true = "-" / false = "\_"
-
-#### _Returns_ `{string}`
+_Returns_ `{string}`
 
 #### Example: In your `.js` or `.ts` file:
 
@@ -264,11 +245,9 @@ const Result = camelToSnake(payload);
 
 #
 
-# base64
+# toBase64
 
-### -- > Renamed as `toBase64` < --
-
-#### Converts a string to `Base64`
+Converts a string to `Base64`
 
 #### Example: In your `.js` or `.ts` file:
 
@@ -292,13 +271,13 @@ const Result = Base64(payload);
 
 # reParseString
 
-#### Simple object Standardization
+Simple object Standardization
 
-#### OR object Deep Cloning <- **_Not best practice_**
+OR object Deep Cloning <- **_Not best practice_**
 
-#### **_Warning_:** Watchout for `null`s, `undefined`, `NaN` and `date`s
+**_Warning_:** Watchout for `null`s, `undefined`, `NaN` and `date`s
 
-#### _Returns_ `JSON.parse(JSON.stringify(payload))`
+_Returns_ `JSON.parse(JSON.stringify(payload))`
 
 #### Example: In your `.js` or `.ts` file:
 
@@ -316,13 +295,13 @@ import { _reParseString } from 'waelio-utils';
 
 # generateId
 
-#### Generate random string/id
+Generate random string/id
 
-#### @param `{number}` start `2` **_OPTIONAL_**
+@param `{number}` start `2` **_OPTIONAL_**
 
-#### @param `{number}` len `9` **_OPTIONAL_**
+@param `{number}` len `9` **_OPTIONAL_**
 
-#### _Returns_ `{string}`
+_Returns_ `{string}`
 
 #### Example: In your `.js` or `.ts` file:
 
@@ -492,28 +471,7 @@ const test1 = _rotateArray(testArray);
 
 #
 
-# equals (\_equals)
-
-### compare 2 arrays with equal size
-
-Example:
-
-```javascript
-import { _equals } from 'waelio-utils';
-const array1 = [123456];
-const array2 = [123455];
-const test = _equals(array1, array2);
-
-// test === false
-```
-
-#
-
-[Back to TOP](#docs)
-
-#
-
-# repeat ( \_repeat )
+# repeat
 
 ### Repeat function N times
 
@@ -598,7 +556,7 @@ const cleanRes = _cleanResponse(demoRes);
 
 #
 
-# \_To
+# to
 
 Turn any function to Promise
 
@@ -707,12 +665,12 @@ const payload = 'testEndpoint';
 const payload2 = 'jfjhfjhd865y8';
 
 _config.set('client:endpoint', payload);
-_config.set('devt:pass', payload2);
+_config.set('dev:pass', payload2);
 
-expect('client:endpoint').toEqual(payload); // true
+expect(_config.get('client:endpoint')).toEqual(payload); // true
 //"testEndpoint"
 
-expect('devt:pass').toEqual(payload2); // true
+expect(_config.get('dev:pass')).toEqual(payload2); // true
 // "jfjhfjhd865y8"
 ```
 

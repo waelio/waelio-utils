@@ -120,17 +120,11 @@ class Config {
   }
 
   getUrgentOverrides() {
-    let overrides;
-    const filename = process.env.NODE_ENV === 'production' ? 'prod' : 'dev';
     try {
-      overrides = process.env.NODE_ENV === 'production' ? require('../config/prod') : require('../config/dev');
-
-      // console.log(`FYI: data in \`./config/${filename}.js\` file will override Server & Client equal data/values.`);
+      return  process.env.NODE_ENV === 'production' ? require('../config/prod') : require('../config/dev');
     } catch (e) {
-      overrides = {};
+      return {};
     }
-
-    return overrides;
   }
 
   buildNestedKey(nestedKey: string) {

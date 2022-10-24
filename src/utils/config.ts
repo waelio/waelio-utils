@@ -121,7 +121,7 @@ class Config {
 
   getUrgentOverrides() {
     try {
-      return  process.env.NODE_ENV === 'production' ? require('../config/prod') : require('../config/dev');
+      return process.env.NODE_ENV === 'production' ? require('../config/prod') : require('../config/dev');
     } catch (e) {
       return {};
     }

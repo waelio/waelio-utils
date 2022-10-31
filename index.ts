@@ -8,7 +8,6 @@ import { a_or_an } from './src/utils/a_or_an';
 import { calculateClockDrift } from './src/utils/calculate_clock_drift';
 import { camelToSnake } from './src/utils/camel_to_snake';
 import { cleanResponse } from './src/utils/clean_response';
-import { config } from './src/utils/config';
 import { decrypt } from './src/utils/decrypt';
 import { encrypt } from './src/utils/encrypt';
 import { equals } from './src/utils/equals';
@@ -38,7 +37,6 @@ export { a_or_an as _a_or_an };
 export { calculateClockDrift as _calculateClockDrift };
 export { camelToSnake as _camelToSnake };
 export { cleanResponse as _cleanResponse };
-export { config as _config };
 export { decrypt as _decrypt };
 export { encrypt as _encrypt };
 export { equals as _equals };
@@ -68,7 +66,6 @@ export const WaelioUtils: WaelioTools.Utils = {
   _calculateClockDrift: calculateClockDrift,
   _camelToSnake: camelToSnake,
   _cleanResponse: cleanResponse,
-  _config: config,
   _decrypt: decrypt,
   _encrypt: encrypt,
   _equals: equals,
@@ -100,7 +97,6 @@ export namespace WaelioTools {
     _calculateClockDrift: typeof calculateClockDrift;
     _camelToSnake: typeof camelToSnake;
     _cleanResponse: typeof cleanResponse;
-    _config: typeof config;
     _decrypt: typeof decrypt;
     _encrypt: typeof encrypt;
     _equals: typeof equals;

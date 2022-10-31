@@ -12,7 +12,7 @@
   <li>Recently Added/Updated</li>
 <table>  
   <tr>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#config">_config</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#config"> MOVED!! _ config</a></div></td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a></div></td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a></div></td>
   </tr>
@@ -104,10 +104,10 @@ Or in terminal add indvidual packagees
 
 ```javascript
 // ES6
-import { _snakeToCamel, _config_, _notifyMe } from 'waelio-utils';
+import { _snakeToCamel, _notifyMe } from 'waelio-utils';
 
 // NodeJS
-const { _snakeToCamel, _config_, _notifyMe } = require('waelio-utils');
+const { _snakeToCamel, _notifyMe } = require('waelio-utils');
 ```
 
 #
@@ -655,23 +655,8 @@ const dblCheck = _equal(payload2, JSON.parse(decrypted2)); // true
 
 # config
 
-### Finally I get to add my own config, although it is a rought implementation, yet it satisfied my requerements.
+### Moved to new home  [@waelio/ustore ](https://www.npmjs.com/package/@waelio/ustore)
 
-Current enviorments are `['client', 'server', 'dev', 'prod' ]`
 
-```js
-import { _config } from 'waelio-utils';
-const payload = 'testEndpoint';
-const payload2 = 'jfjhfjhd865y8';
-
-_config.set('client:endpoint', payload);
-_config.set('dev:pass', payload2);
-
-expect(_config.get('client:endpoint')).toEqual(payload); // true
-//"testEndpoint"
-
-expect(_config.get('dev:pass')).toEqual(payload2); // true
-// "jfjhfjhd865y8"
-```
 
 [Back to TOP](#docs)

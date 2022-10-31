@@ -1,3 +1,6 @@
-export default function to(promise: Promise<[any, any]>): void;
-export { to };
+export declare const to: (promise: Promise<string | Function>) => Promise<[
+    error: any,
+    sucess: any
+]>;
+export default to;
 //# sourceMappingURL=to.d.ts.map

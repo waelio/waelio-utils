@@ -7,7 +7,7 @@ import { isValid } from './is_valid';
 import { a_or_an } from './a_or_an';
 import { calculateClockDrift } from './calculate_clock_drift';
 import { camelToSnake } from './camel_to_snake';
-import { cleanResponse } from './clean_response'
+import { cleanResponse } from './clean_response';
 import { decrypt } from './decrypt';
 import { encrypt } from './encrypt';
 import { equals } from './equals';
@@ -36,7 +36,7 @@ export { isValid };
 export { a_or_an as _a_or_an };
 export { calculateClockDrift as _calculateClockDrift };
 export { camelToSnake as _camelToSnake };
-export { cleanResponse as _cleanResponse }
+export { cleanResponse as _cleanResponse };
 export { decrypt as _decrypt };
 export { encrypt as _encrypt };
 export { equals as _equals };

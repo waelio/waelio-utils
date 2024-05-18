@@ -114,5 +114,4 @@ export const WaelioUtils: Utils = {
   _toBase64: toBase64,
 };
 
-
 export default { WaelioUtils };

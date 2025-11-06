@@ -19,10 +19,10 @@ export const encrypt = (payload: unknown, secret = 'secret') => {
   const message = Array.isArray(payload)
     ? JSON.stringify(payload)
     : isObject(payload)
-      ? JSON.stringify(payload as any)
-      : isString(payload as any)
-        ? (payload as string)
-        : String(payload as any);
+    ? JSON.stringify(payload as any)
+    : isString(payload as any)
+    ? (payload as string)
+    : String(payload as any);
 
   return CryptoJS.AES.encrypt(message, key, {
     iv: salt,

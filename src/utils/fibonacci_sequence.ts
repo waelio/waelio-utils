@@ -5,23 +5,23 @@
  * @returns {number[]} An array representing the Fibonacci sequence up to n.
  */
 export const fibonacciSequence = (n: number): number[] => {
-    const num = Math.floor(n);
-    if (num < 0 || !isFinite(num)) {
-        return [];
-    }
+  const num = Math.floor(n);
+  if (num < 0 || !isFinite(num)) {
+    return [];
+  }
 
-    if (num === 0) {
-        return [0];
-    }
+  if (num === 0) {
+    return [0];
+  }
 
-    const sequence = [0, 1];
+  const sequence = [0, 1];
 
-    for (let i = 2; i <= num; i++) {
-        const nextValue = sequence[i - 1] + sequence[i - 2];
-        sequence.push(nextValue);
-    }
+  for (let i = 2; i <= num; i++) {
+    const nextValue = sequence[i - 1] + sequence[i - 2];
+    sequence.push(nextValue);
+  }
 
-    return sequence;
+  return sequence;
 };
 
 export default fibonacciSequence;

@@ -5,26 +5,26 @@
  * @returns {number} The nth Fibonacci number, or 0 for invalid input.
  */
 export const fibonacci = (n: number): number => {
-    // Ensure n is a non-negative integer.
-    const num = Math.floor(n);
-    if (num < 0 || !isFinite(num)) {
-        return 0;
-    }
+  // Ensure n is a non-negative integer.
+  const num = Math.floor(n);
+  if (num < 0 || !isFinite(num)) {
+    return 0;
+  }
 
-    if (num <= 1) {
-        return num;
-    }
+  if (num <= 1) {
+    return num;
+  }
 
-    let a = 0;
-    let b = 1;
+  let a = 0;
+  let b = 1;
 
-    for (let i = 2; i <= num; i++) {
-        const temp = a + b;
-        a = b;
-        b = temp;
-    }
+  for (let i = 2; i <= num; i++) {
+    const temp = a + b;
+    a = b;
+    b = temp;
+  }
 
-    return b;
+  return b;
 };
 
 export default fibonacci;

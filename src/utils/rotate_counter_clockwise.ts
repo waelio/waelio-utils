@@ -6,9 +6,9 @@ import { transpose } from './transpose';
  * @returns {T[][]} The new rotated 2D array.
  */
 export const rotateCounterClockwise = <T>(matrix: T[][]): T[][] => {
-    // A 90-degree counter-clockwise rotation is equivalent to a transpose
-    // followed by reversing the new rows (the outer array).
-    return transpose(matrix).reverse();
+  // A 90-degree counter-clockwise rotation is equivalent to a transpose
+  // followed by reversing the new rows (the outer array).
+  return transpose(matrix).reverse();
 };
 
 export default rotateCounterClockwise;

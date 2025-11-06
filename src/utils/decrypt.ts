@@ -50,8 +50,7 @@ export const decrypt = (ciphertext: string, secret = 'secret') => {
     // Parse only if it looks like a JSON object/array; leave strings/numbers/booleans as-is
     const trimmed = originalText.trim();
     const looksLikeJSON =
-      (trimmed.startsWith('{') && trimmed.endsWith('}')) ||
-      (trimmed.startsWith('[') && trimmed.endsWith(']'));
+      (trimmed.startsWith('{') && trimmed.endsWith('}')) || (trimmed.startsWith('[') && trimmed.endsWith(']'));
     return looksLikeJSON ? JSON.parse(originalText) : originalText;
   } catch (e) {
     // ...but if that fails, it was just a plain string, so return it.

@@ -1,27 +1,29 @@
 /**
- * Compare two arrays of equal size
- * @param {array} array
- * @param {array} needle
+ * Deeply compares two arrays for equality.
+ * @param {any[]} a The first array.
+ * @param {any[]} b The second array.
  * @returns {boolean}
  *
  * @author Peace Marshal
  */
-export type equalsPayloadType = string | number | number[] | string[] | [];
+export type equalsPayloadType = any[];
 
-export default function equals(arr: equalsPayloadType, needle: equalsPayloadType) {
-  // if the arr or needle are a falsy value, return
-  if (!(arr || !arr.toString.length || !(needle && needle.toString().length))) return false;
+export default function equals(a: equalsPayloadType, b: equalsPayloadType): boolean {
+  // Strict equality for primitives
+  if (a === b) return true;
 
-  for (let i = 0, l = needle.toString().length; i < l; i++) {
-    // Check if we have nested arrs
-    if (Array.isArray(needle[i]) && Array.isArray(needle[i])) {
-      try {
-        // recurse into the nested arrs
-        return equals(arr[i], needle[i] as Partial<string | number>);
-      } catch (error) {
-        return false;
-      }
-    } else if (needle[i] !== arr[i]) {
+  if (!Array.isArray(a) || !Array.isArray(b)) {
+    // This function is intended for arrays. For non-arrays, strict equality is the rule.
+    return false;
+  }
+
+  if (a.length !== b.length) return false;
+
+  for (let i = 0; i < a.length; i++) {
+    // Recurse for nested arrays, otherwise strict compare elements
+    if (Array.isArray(a[i]) && Array.isArray(b[i])) {
+      if (!equals(a[i], b[i])) return false;
+    } else if (a[i] !== b[i]) {
       return false;
     }
   }

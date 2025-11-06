@@ -5,6 +5,7 @@
  * @return 'a' | 'an'
  */
 export default function a_or_an(field: string) {
-  return /[aeiou]/.test(field.charAt(0)) ? 'an' : 'a';
+  if (!field) return 'a';
+  return /^[aeiou]/i.test(field) ? 'an' : 'a';
 }
 export { a_or_an };

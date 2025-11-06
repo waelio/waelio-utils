@@ -1,4 +1,4 @@
-export type equalsPayloadType = string | number | number[] | string[] | [];
-export default function equals(arr: equalsPayloadType, needle: equalsPayloadType): any;
+export type equalsPayloadType = any[];
+export default function equals(a: equalsPayloadType, b: equalsPayloadType): boolean;
 export { equals };
 //# sourceMappingURL=equals.d.ts.map

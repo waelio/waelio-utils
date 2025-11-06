@@ -1,3 +1,3 @@
-export declare const decrypt: (payload: string, salt?: string) => any;
+export declare const decrypt: (ciphertext: string, secret?: string) => any;
 export default decrypt;
 //# sourceMappingURL=decrypt.d.ts.map

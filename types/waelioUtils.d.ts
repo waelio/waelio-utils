@@ -52,40 +52,38 @@ export { snakeToCamel as _snakeToCamel };
 export { sniffId as _sniffId };
 export { to as _to };
 export { toBase64 as _toBase64 };
-export declare const WaelioUtils: WaelioTools.Utils;
-export declare namespace WaelioTools {
-    interface Utils {
-        isArray: typeof isArray;
-        isFunction: typeof isFunction;
-        isNumber: typeof isNumber;
-        isObject: typeof isObject;
-        isString: typeof isString;
-        isValid: typeof isValid;
-        _a_or_an: typeof a_or_an;
-        _calculateClockDrift: typeof calculateClockDrift;
-        _camelToSnake: typeof camelToSnake;
-        _cleanResponse: typeof cleanResponse;
-        _decrypt: typeof decrypt;
-        _encrypt: typeof encrypt;
-        _equals: typeof equals;
-        _generateId: typeof generateId;
-        _get: typeof get;
-        _hideRandom: typeof hideRandom;
-        _jsonToQueryString: typeof jsonToQueryString;
-        _notifyMe: typeof notifyMe;
-        _queryStringToJson: typeof queryStringToJson;
-        _reParseString: typeof reParseString;
-        _repeat: typeof repeat;
-        _resetString: typeof resetString;
-        _rotateArray: typeof rotateArray;
-        _snakeToCamel: typeof snakeToCamel;
-        _sniffId: typeof sniffId;
-        _to: typeof to;
-        _toBase64: typeof toBase64;
-    }
+interface Utils {
+    isArray: typeof isArray;
+    isFunction: typeof isFunction;
+    isNumber: typeof isNumber;
+    isObject: typeof isObject;
+    isString: typeof isString;
+    isValid: typeof isValid;
+    _a_or_an: typeof a_or_an;
+    _calculateClockDrift: typeof calculateClockDrift;
+    _camelToSnake: typeof camelToSnake;
+    _cleanResponse: typeof cleanResponse;
+    _decrypt: typeof decrypt;
+    _encrypt: typeof encrypt;
+    _equals: typeof equals;
+    _generateId: typeof generateId;
+    _get: typeof get;
+    _hideRandom: typeof hideRandom;
+    _jsonToQueryString: typeof jsonToQueryString;
+    _notifyMe: typeof notifyMe;
+    _queryStringToJson: typeof queryStringToJson;
+    _reParseString: typeof reParseString;
+    _repeat: typeof repeat;
+    _resetString: typeof resetString;
+    _rotateArray: typeof rotateArray;
+    _snakeToCamel: typeof snakeToCamel;
+    _sniffId: typeof sniffId;
+    _to: typeof to;
+    _toBase64: typeof toBase64;
 }
+export declare const WaelioUtils: Utils;
 declare const _default: {
-    WaelioUtils: WaelioTools.Utils;
+    WaelioUtils: Utils;
 };
 export default _default;
 //# sourceMappingURL=waelioUtils.d.ts.map

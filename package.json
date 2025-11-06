@@ -62,9 +62,6 @@
   "dependencies": {
     "crypto-js": "^4.2.0"
   },
-  "overrides": {
-    "axios": ">=0.28.0"
-  },
   "pnpm": {
     "overrides": {
       "axios@>=0.8.1 <0.28.0": ">=0.28.0"

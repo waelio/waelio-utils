@@ -2,11 +2,9 @@
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/waelio?locale.x=en_US) [![NPM version](https://img.shields.io/npm/v/waelio-utils.svg?style=flat&color=red&label=NPM)](https://www.npmjs.com/package/waelio-utils) [![NPM monthly downloads](https://img.shields.io/npm/dm/waelio-utils.svg?style=flat)](https://npmjs.org/package/waelio-utils) [![NPM total downloads](https://img.shields.io/npm/dt/waelio-utils.svg?style=flat&color=purple&label=Downloads)](https://npmjs.org/package/waelio-utils) [![Join the chat at https://discord.gg/tBZ2Fmdb7E](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/tBZ2Fmdb7E)
 
-### The [WaelioUtils](https://github.com/waelio/waelio-utils) exported as a Javascript modules.
-
+### The [WaelioUtils](https://github.com/waelio/waelio-utils) exported as a Javascript modules
 
 # docs
-
 
 <ol>
   <li>Recently Added/Updated</li>
@@ -72,7 +70,7 @@
     <td><div style="padding:.25rem; width: 150px;">_calculateClockDrift</div></td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#notifyme"> _notifyMe</a></div></td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#meta"> _meta</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#to">_to</a></div></td>    
+    <td><div style="padding:.25rem; width: 150px;"><a href="#to">_to</a></div></td>
   </tr>
   <tr>
     <td><div style="padding:.25rem; width: 150px;"><a href="#a_or_an">_a_or_an</a></div></td>
@@ -92,6 +90,7 @@ npm i -S waelio-utils
 pnpm add -S waelio-utils
 yarn add -S waelio-utils
 ```
+
 OR
 
 In browser:
@@ -117,7 +116,8 @@ const { _snakeToCamel, _notifyMe } = require('waelio-utils');
 `Function` that converts a `JSON` to URL Query `String`
 @param `{}` JSON payload
 _Returns_ `String`
-#### Example: In your `.js` or `.ts` file:
+
+#### Example: In your `.js` or `.ts` file
 
 ```javascript
 import { _jsonToQueryString } from 'waelio-utils';
@@ -125,7 +125,7 @@ const payload = { first: 'John', last: 'Smith' };
 const Result = jsonToQueryString(payload);
 ```
 
-#### Result:
+#### Result
 
 ```javascript
 'name=John&last=smith';
@@ -143,7 +143,7 @@ Function that converts a URL Query String to JSON
 @param `payload` Type `@param {string}` as String
  _Returns_ `JSON || Object`
 
-#### Example: In your `.js` or `.ts` file:
+#### Example: In your `.js` or `.ts` file
 
 ```javascript
 import { _queryStringToJson } from 'waelio-utils';
@@ -151,7 +151,7 @@ const query = (name = 'John&last=smith');
 const Result = queryStringToJson(query);
 ```
 
-#### Result:
+#### Result
 
 ```javascript
 { first: 'John', last: 'Smith' }
@@ -189,7 +189,7 @@ Function that converts snake_case or snake-case to camelCase "snakeCase"
 
 _Returns_ `{string}`
 
-#### Example: In your `.js` or `.ts` file:
+#### Example: In your `.js` or `.ts` file
 
 ```javascript
 import { _snakeToCamel } from 'waelio-utils';
@@ -197,7 +197,7 @@ const payload = 'north-west_meta';
 const Result = snakeToCamel(payload);
 ```
 
-#### Result:
+#### Result
 
 ```javascript
 'northWestMeta';
@@ -219,7 +219,7 @@ Function that converts camelCase to snake_case or snake-case "snake-case"
 
 _Returns_ `{string}`
 
-#### Example: In your `.js` or `.ts` file:
+#### Example: In your `.js` or `.ts` file
 
 ```javascript
 import { _camelToSnake } from 'waelio-utils';
@@ -249,7 +249,7 @@ const Result = camelToSnake(payload);
 
 Converts a string to `Base64`
 
-#### Example: In your `.js` or `.ts` file:
+#### Example: In your `.js` or `.ts` file
 
 ```javascript
 import { _toBase64 } from 'waelio-utils';
@@ -257,7 +257,7 @@ const payload = 'north-west_meta';
 const Result = Base64(payload);
 ```
 
-#### Result:
+#### Result
 
 ```javascript
 'bm9ydGgtd2VzdF9tZXRh';
@@ -279,7 +279,7 @@ OR object Deep Cloning <- **_Not best practice_**
 
 _Returns_ `JSON.parse(JSON.stringify(payload))`
 
-#### Example: In your `.js` or `.ts` file:
+#### Example: In your `.js` or `.ts` file
 
 ```javascript
 import { _reParseString } from 'waelio-utils';
@@ -303,7 +303,7 @@ Generate random string/id
 
 _Returns_ `{string}`
 
-#### Example: In your `.js` or `.ts` file:
+#### Example: In your `.js` or `.ts` file
 
 ```javascript
 import { _generateId } from 'waelio-utils';
@@ -322,7 +322,7 @@ const result = generateId();
 
 #
 
-# Quasar/Vue JS Stuff:
+# Quasar/Vue JS Stuff
 
 ### Will be relocated to `@waelio\utils` in the future
 
@@ -330,7 +330,7 @@ const result = generateId();
 
 # meta
 
-### Example:
+### Example
 
 ### in `quasar.conf.js`
 
@@ -379,7 +379,7 @@ return {
 
 #### `@param {string}` to send
 
-#### Example: In your `.js` or `.ts` file:
+#### Example: In your `.js` or `.ts` file
 
 ```javascript
 import { _notifyMe } from 'waelio-utils';
@@ -447,6 +447,7 @@ const test = _hideRandom(arr, 3);
 #
 
 # rotatearray
+
 ## Rotate array
 
 ```js
@@ -475,7 +476,7 @@ const test1 = _rotateArray(testArray);
 
 ### Repeat function N times
 
-### Example:
+### Example
 
 ```javascript
 import { _repeat } from 'waelio-utils';
@@ -495,7 +496,7 @@ _repeat(5)(f1);
 
 # equals
 
-### Example:
+### Example
 
 ```javascript
 import { _equals } from 'waelio-utils';
@@ -515,7 +516,7 @@ _equals(arr1, arr3); // false
 
 # cleanresponse
 
-### Example:
+### Example
 
 ```js
 import { _cleanResponse } from 'waelio-utils';
@@ -588,7 +589,7 @@ expect(resolve.data.length).toBeTruthy(); //true
 
 # a_or_an
 
-### Example:
+### Example
 
 ```js
 import { _a_or_an } from 'waelio-utils'
@@ -630,7 +631,7 @@ If **_`salt`_** is not provided and `asFunction` is `false` it will revert to th
 
 #### <hr />
 
-### Example:
+### Example
 
 ```js
 import { _encrypt, _decrypt, _generateId, _equal } from 'waelio-utils';
@@ -655,8 +656,7 @@ const dblCheck = _equal(payload2, JSON.parse(decrypted2)); // true
 
 # config
 
-### Moved to new home  [@waelio/ustore ](https://www.npmjs.com/package/@waelio/ustore)
-
-
+### Moved to new home  [@waelio/ustore](https://www.npmjs.com/package/@waelio/ustore)
 
 [Back to TOP](#docs)
+# [https://waelio.com/packages/waelio-utils](https://waelio.com/packages/waelio-utils)

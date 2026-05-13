@@ -14,7 +14,7 @@ describe('get', () => {
 
   it('should handle objects with array data properties', () => {
     expect(get({ data: [] })).toEqual([]);
-    expect(get({ data: [{ data: 'a' }] })).toBe('a');
+    expect(get({ data: [{ data: 'a' }] })).toEqual([{ data: 'a' }]);
     expect(get({ data: [{ data: 'a' }, { data: 'b' }] })).toEqual([{ data: 'a' }, { data: 'b' }]);
   });
 

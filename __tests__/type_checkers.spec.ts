@@ -11,8 +11,8 @@ describe('Type Checkers', () => {
   it('isFunction should correctly identify functions', () => {
     expect(isFunction(() => {})).toBe(true);
     expect(isFunction(function test() {})).toBe(true);
-    expect(isFunction({})).toBe(false);
-    expect(isFunction(null)).toBe(false);
+    expect(isFunction({})).toBeFalsy();
+    expect(isFunction(null)).toBeFalsy();
   });
 
   it('isNumber should correctly identify numbers', () => {

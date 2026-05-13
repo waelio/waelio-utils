@@ -1,6 +1,6 @@
 # Waelio Utilities
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/waelio?locale.x=en_US) [![NPM version](https://img.shields.io/npm/v/waelio-utils.svg?style=flat&color=red&label=NPM)](https://www.npmjs.com/package/waelio-utils) [![NPM monthly downloads](https://img.shields.io/npm/dm/waelio-utils.svg?style=flat)](https://npmjs.org/package/waelio-utils) [![NPM total downloads](https://img.shields.io/npm/dt/waelio-utils.svg?style=flat&color=purple&label=Downloads)](https://npmjs.org/package/waelio-utils) [![Join the chat at https://discord.gg/tBZ2Fmdb7E](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/tBZ2Fmdb7E) [![Try on RunKit](https://img.shields.io/badge/Try_on-RunKit-blue.svg?style=flat)](https://runkit.com/npm/waelio-utils) [![Edit on CodeSandbox](https://img.shields.io/badge/Edit_on-CodeSandbox-black.svg?style=flat)](https://codesandbox.io/s/github/waelio/waelio-utils/tree/master/example)
+[![Tests](https://img.shields.io/badge/Tests-107%20passed-brightgreen.svg?style=flat&logo=jest)](https://github.com/waelio/waelio-utils/tree/master/__tests__) [![NPM version](https://img.shields.io/npm/v/waelio-utils.svg?style=flat&color=red&label=NPM)](https://www.npmjs.com/package/waelio-utils) [![NPM monthly downloads](https://img.shields.io/npm/dm/waelio-utils.svg?style=flat)](https://npmjs.org/package/waelio-utils) [![NPM total downloads](https://img.shields.io/npm/dt/waelio-utils.svg?style=flat&color=purple&label=Downloads)](https://npmjs.org/package/waelio-utils) [![Join the chat at https://discord.gg/tBZ2Fmdb7E](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/tBZ2Fmdb7E) [![Edit on CodeSandbox](https://img.shields.io/badge/Edit_on-CodeSandbox-black.svg?style=flat)](https://codesandbox.io/p/github/waelio/waelio-utils/master) [![TypeScript](https://img.shields.io/badge/TypeScript-included-3178C6.svg?style=flat&logo=typescript&logoColor=white)](https://github.com/waelio/waelio-utils/tree/master/src)
 
 ### The [WaelioUtils](https://github.com/waelio/waelio-utils) exported as a Javascript modules
 
@@ -10,35 +10,30 @@
   <li>Recently Added/Updated</li>
 <table>  
   <tr>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#reactive">_reactive</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#trickle">_trickle</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#reparsestring">_reParseString</a></div></td>
-  </tr>
-  <tr>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#config"> MOVED!! _ config</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#reactive">_reactive</a><br/><small>Reactive object with property tracking</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#trickle">_trickle</a><br/><small>Reduces numbers array in stages</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#reparsestring">_reParseString</a><br/><small>Deep clone via JSON parse/stringify</small></div></td>
   </tr>
 </table>
 <hr />
 <li>Strings</li>
 <table>
   <tr>  
-    <td><div style="padding:.25rem; width: 150px;"><a href="#jsontoquerystring"> _jsonToQueryString</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#querystringtojson"> _queryStringToJson</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#resetstring"> _resetString</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#snaketocamel"> _snakeToCamel</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#jsontoquerystring"> _jsonToQueryString</a><br/><small>JSON object → URL query string</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#querystringtojson"> _queryStringToJson</a><br/><small>URL query string → JSON object</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#resetstring"> _resetString</a><br/><small>URL-decodes an encoded string</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#snaketocamel"> _snakeToCamel</a><br/><small>snake_case → camelCase</small></div></td>
   </tr>
   <tr>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#cameltosnake"> _camelToSnake</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#tobase64"> _toBase64</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#generateid"> _generateId</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#sniffid"> _sniffId</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#cameltosnake"> _camelToSnake</a><br/><small>camelCase → snake_case or kebab-case</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#tobase64"> _toBase64</a><br/><small>Encodes a string to Base64</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#generateid"> _generateId</a><br/><small>Generates a random ID string</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#sniffid"> _sniffId</a><br/><small>Extracts id/_id/Id from an object</small></div></td>
   </tr>
   <tr>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#a_or_an">_a_or_an</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#a_or_an">_a_or_an</a><br/><small>Returns "a" or "an" for a word</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a><br/><small>Encrypts any value with a salt</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a><br/><small>Decrypts an encrypted value</small></div></td>
   </tr>
 </table>
 
@@ -46,20 +41,20 @@
 <li>Arrays</li>
   <table>
     <tr>
-      <td><div style="padding:.25rem; width: 150px;"><a href="#hiderandom">_hideRandom</a></div></td>
-      <td><div style="padding:.25rem; width: 150px;"><a href="#rotatearray">_rotateArray</a></div></td>
-      <td><div style="padding:.25rem; width: 150px;"><a href="#equals"> _equals</a></div></td>
-      <td><div style="padding:.25rem; width: 150px;"><a href="#repeat"> _repeat</a></div></td>
+      <td><div style="padding:.25rem; width: 150px;"><a href="#hiderandom">_hideRandom</a><br/><small>Masks random indexes in an array</small></div></td>
+      <td><div style="padding:.25rem; width: 150px;"><a href="#rotatearray">_rotateArray</a><br/><small>Rotates a 2D array 90° clockwise</small></div></td>
+      <td><div style="padding:.25rem; width: 150px;"><a href="#equals"> _equals</a><br/><small>Deep equality check for arrays</small></div></td>
+      <td><div style="padding:.25rem; width: 150px;"><a href="#repeat"> _repeat</a><br/><small>Runs a function N times</small></div></td>
     </tr>
     <tr>
-      <td><div style="padding:.25rem; width: 150px;"><a href="#chunk">_chunk</a></div></td>
-      <td><div style="padding:.25rem; width: 150px;"><a href="#rotate">_rotate</a></div></td>
-      <td><div style="padding:.25rem; width: 150px;"><a href="#rotatecounterclockwise">_rotateCounterClockwise</a></div></td>
-      <td><div style="padding:.25rem; width: 150px;"><a href="#transpose">_transpose</a></div></td>
+      <td><div style="padding:.25rem; width: 150px;"><a href="#chunk">_chunk</a><br/><small>Splits array into chunks of size N</small></div></td>
+      <td><div style="padding:.25rem; width: 150px;"><a href="#rotate">_rotate</a><br/><small>Rotates a matrix 90° clockwise</small></div></td>
+      <td><div style="padding:.25rem; width: 150px;"><a href="#rotatecounterclockwise">_rotateCounterClockwise</a><br/><small>Rotates a matrix 90° counter-clockwise</small></div></td>
+      <td><div style="padding:.25rem; width: 150px;"><a href="#transpose">_transpose</a><br/><small>Swaps rows and columns of a matrix</small></div></td>
     </tr>
     <tr>
-      <td><div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a></div></td>
-      <td><div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a></div></td>
+      <td><div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a><br/><small>Encrypts any value with a salt</small></div></td>
+      <td><div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a><br/><small>Decrypts an encrypted value</small></div></td>
       <td></td>
       <td></td>
     </tr>
@@ -68,30 +63,30 @@
 <li>Objects</li>
 <table>
   <tr>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#sniffid"> _sniffId</a></div> </td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#cleanresponse">_cleanResponse</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#deepclone">_deepClone</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#get">_get</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#sniffid"> _sniffId</a><br/><small>Extracts id/_id/Id from an object</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#cleanresponse">_cleanResponse</a><br/><small>Unwraps paginated API response data</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#deepclone">_deepClone</a><br/><small>Deep clones objects, arrays, Dates</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#get">_get</a><br/><small>Safely reads nested object/array data</small></div></td>
   </tr>
   <tr>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#omit">_omit</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#pick">_pick</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#omit">_omit</a><br/><small>Creates object excluding specified keys</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#pick">_pick</a><br/><small>Creates object with only specified keys</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a><br/><small>Encrypts any value with a salt</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a><br/><small>Decrypts an encrypted value</small></div></td>
   </tr>
 </table>
 <hr />
 <li>Type Checkers / Validators</li>
 <table>
   <tr>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#isarray">_isArray</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#isfunction">_isFunction</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#isnumber">_isNumber</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#isobject">_isObject</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#isarray">_isArray</a><br/><small>Checks if value is an Array</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#isfunction">_isFunction</a><br/><small>Checks if value is a Function</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#isnumber">_isNumber</a><br/><small>Checks if value is a Number</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#isobject">_isObject</a><br/><small>Checks if value is an Object</small></div></td>
   </tr>
   <tr>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#isstring">_isString</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#isvalid">_isValid</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#isstring">_isString</a><br/><small>Checks if value is a String</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#isvalid">_isValid</a><br/><small>Checks if value is array, object, string, or number</small></div></td>
     <td></td>
     <td></td>
   </tr>
@@ -100,14 +95,14 @@
 <li>Math</li>
 <table>
   <tr>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#fibonacci">_fibonacci</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#fibonaccisequence">_fibonacciSequence</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#factorial">_factorial</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#isprime">_isPrime</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#fibonacci">_fibonacci</a><br/><small>Returns the nth Fibonacci number</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#fibonaccisequence">_fibonacciSequence</a><br/><small>Returns Fibonacci sequence up to nth</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#factorial">_factorial</a><br/><small>Returns factorial of a non-negative integer</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#isprime">_isPrime</a><br/><small>Checks if a number is prime</small></div></td>
   </tr>
   <tr>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#sieveoferatosthenes">_sieveOfEratosthenes</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#sumof">_sumOf</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#sieveoferatosthenes">_sieveOfEratosthenes</a><br/><small>All primes up to a given limit</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#sumof">_sumOf</a><br/><small>Sums an array of numbers</small></div></td>
     <td></td>
     <td></td>
   </tr>
@@ -116,14 +111,12 @@
 <li>Other</li>
 <table>
   <tr>
-    <td><div style="padding:.25rem; width: 150px;">_calculateClockDrift</div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#notifyme"> _notifyMe</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#meta"> _meta</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#to">_to</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#calculateclockdrift">_calculateClockDrift</a><br/><small>Calculates JWT token clock drift</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#notifyme"> _notifyMe</a><br/><small>Sends a PWA browser notification</small></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#to">_to</a><br/><small>Wraps a promise → [error, result]</small></div></td>
   </tr>
   <tr>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#a_or_an">_a_or_an</a></div></td>
-    <td><div style="padding:.25rem; width: 150px;"><a href="#config">_config</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#a_or_an">_a_or_an</a><br/><small>Returns "a" or "an" for a word</small></div></td>
   </tr>
 </table>
 <hr />
@@ -190,7 +183,7 @@ const Result = jsonToQueryString(payload);
 
 Function that converts a URL Query String to JSON
 @param `payload` Type `@param {string}` as String
- _Returns_ `JSON || Object`
+_Returns_ `JSON || Object`
 
 #### Example: In your `.js` or `.ts` file
 
@@ -371,47 +364,23 @@ const result = generateId();
 
 #
 
-# Quasar/Vue JS Stuff
+# calculateClockDrift
 
-### Will be relocated to `@waelio\utils` in the future
+Calculates the clock drift between the current time and the issued-at time (IAT) of access/ID tokens. Useful for detecting token expiry and clock skew.
 
-#### Perfect when Using [Quasar Framework](https://quasar.dev/quasar-plugins/meta)
+`@param {number}` iatAccessToken — IAT from the access token
 
-# meta
+`@param {number}` iatIdToken — IAT from the ID token
 
-### Example
+_Returns_ `{number}` seconds of drift
 
-### in `quasar.conf.js`
+#### Example: In your `.ts` file
 
-```javascript
-// quasar.conf.js
-return {
-  framework: {
-    plugins: ['Meta'],
-  },
-};
-```
+```typescript
+import { _calculateClockDrift } from 'waelio-utils';
 
-#### In a `.vue` file
-
-```javascript
-<script>
-  import { _meta } from 'waelio-utils'
-  export default {
-    name:'foo',
-    data () {
-      return {
-        metaTags: {
-          title: 'Site Title',
-          description: 'Website Utilities',
-          url: 'https://github.com/waelio/waelio-utils',
-          image: 'nwm_logo.png'
-        }
-      }
-    },
-    meta
-  }
-</script>
+const drift = _calculateClockDrift(accessToken.iat, idToken.iat);
+// drift === seconds between token issuance and now
 ```
 
 #
@@ -616,18 +585,17 @@ Turn any function to Promise
 
 Example:
 
-```javascript
-import { _To } from 'waelio-utils';
-import axios = 'axios';
+```typescript
+import { _to } from 'waelio-utils';
+import axios from 'axios';
 const testEndpoint = 'https://api.picmymenu.com/restaurants';
-const response = await _To(axios(testEndpoint));
-const [ reject, resolve ] = response;
+const response = await _to(axios(testEndpoint));
+const [reject, resolve] = response;
 
-expect(response).toBeTruthy() // true
-expect(resolve).toBeTruthy() // true
-expect(reject).not.toBeTruthy() //true
+expect(response).toBeTruthy(); // true
+expect(resolve).toBeTruthy(); // true
+expect(reject).not.toBeTruthy(); //true
 expect(resolve.data.length).toBeTruthy(); //true
-
 ```
 
 #
@@ -641,15 +609,14 @@ expect(resolve.data.length).toBeTruthy(); //true
 ### Example
 
 ```js
-import { _a_or_an } from 'waelio-utils'
-const payload1 = "apple";
-const payload2 = "bananas";
-const payload3 = "orange";
+import { _a_or_an } from 'waelio-utils';
+const payload1 = 'apple';
+const payload2 = 'bananas';
+const payload3 = 'orange';
 
-a_or_an(payload1 // an
-a_or_an(payload2) // a
-a_or_an(payload3) // an
-
+a_or_an(payload1); // an
+a_or_an(payload2); // a
+a_or_an(payload3); // an
 ```
 
 #
@@ -961,7 +928,10 @@ Example:
 ```javascript
 import { rotate } from 'waelio-utils';
 
-const matrix = [[1, 2], [3, 4]];
+const matrix = [
+  [1, 2],
+  [3, 4],
+];
 const rotated = rotate(matrix); // [[3, 1], [4, 2]]
 ```
 
@@ -980,7 +950,10 @@ Example:
 ```javascript
 import { rotateCounterClockwise } from 'waelio-utils';
 
-const matrix = [[1, 2], [3, 4]];
+const matrix = [
+  [1, 2],
+  [3, 4],
+];
 const rotated = rotateCounterClockwise(matrix); // [[2, 4], [1, 3]]
 ```
 
@@ -999,7 +972,10 @@ Example:
 ```javascript
 import { transpose } from 'waelio-utils';
 
-const matrix = [[1, 2], [3, 4]];
+const matrix = [
+  [1, 2],
+  [3, 4],
+];
 const transposed = transpose(matrix); // [[1, 3], [2, 4]]
 ```
 
@@ -1116,9 +1092,4 @@ isValid(null); // => false
 
 [Back to TOP](#docs)
 
-# config
-
-### Moved to new home  [@waelio/ustore](https://www.npmjs.com/package/@waelio/ustore)
-
-[Back to TOP](#docs)
 # [https://waelio.com/packages/waelio-utils](https://waelio.com/packages/waelio-utils)

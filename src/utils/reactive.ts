@@ -1,14 +1,15 @@
-let data = { name: 5, desc: 2 };
-let target = null;
-let internalValue: any;
+let target: Function | null = null;
 
-class Dep {
-  subscribers: [];
+/**
+ * A dependency tracker that stores subscribers.
+ */
+export class Dep {
+  subscribers: Function[];
   constructor() {
     this.subscribers = [];
   }
   depend() {
-    if (target && !this.subscribers[target]) {
+    if (target && !this.subscribers.includes(target)) {
       this.subscribers.push(target);
     }
   }
@@ -17,26 +18,39 @@ class Dep {
   }
 }
 
-Object.keys(data).forEach((key) => {
-  internalValue = data[key];
-
-  let dep = new Dep();
-
-  Object.defineProperty(data, key, {
-    get() {
-      dep.depend();
-      return internalValue;
-    },
-    set(newValue) {
-      dep.depend();
-      internalValue = newValue;
-      dep.notify();
-    },
-  });
-});
-
-function watcher(myFunc: any) {
+/**
+ * Registers a watcher function that depends on reactive data.
+ * @param myFunc The function to run and track.
+ */
+export function watcher(myFunc: Function) {
   target = myFunc;
-  // target && target();
+  target();
   target = null;
 }
+
+/**
+ * Makes an object reactive by tracking its properties.
+ * @param data The object to make reactive.
+ * @returns The reactive object.
+ */
+export function reactive<T extends object>(data: T): T {
+  const keys = Object.keys(data) as Array<keyof T>;
+  keys.forEach((key) => {
+    let internalValue = data[key];
+    const dep = new Dep();
+
+    Object.defineProperty(data, key, {
+      get() {
+        dep.depend();
+        return internalValue;
+      },
+      set(newValue) {
+        internalValue = newValue;
+        dep.notify();
+      },
+    });
+  });
+  return data;
+}
+
+export default reactive;

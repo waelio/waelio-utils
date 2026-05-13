@@ -1,6 +1,6 @@
 # Waelio Utilities
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/waelio?locale.x=en_US) [![NPM version](https://img.shields.io/npm/v/waelio-utils.svg?style=flat&color=red&label=NPM)](https://www.npmjs.com/package/waelio-utils) [![NPM monthly downloads](https://img.shields.io/npm/dm/waelio-utils.svg?style=flat)](https://npmjs.org/package/waelio-utils) [![NPM total downloads](https://img.shields.io/npm/dt/waelio-utils.svg?style=flat&color=purple&label=Downloads)](https://npmjs.org/package/waelio-utils) [![Join the chat at https://discord.gg/tBZ2Fmdb7E](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/tBZ2Fmdb7E)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/waelio?locale.x=en_US) [![NPM version](https://img.shields.io/npm/v/waelio-utils.svg?style=flat&color=red&label=NPM)](https://www.npmjs.com/package/waelio-utils) [![NPM monthly downloads](https://img.shields.io/npm/dm/waelio-utils.svg?style=flat)](https://npmjs.org/package/waelio-utils) [![NPM total downloads](https://img.shields.io/npm/dt/waelio-utils.svg?style=flat&color=purple&label=Downloads)](https://npmjs.org/package/waelio-utils) [![Join the chat at https://discord.gg/tBZ2Fmdb7E](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/tBZ2Fmdb7E) [![Try waelio-utils on RunKit](https://badge.runkitcdn.com/waelio-utils.svg)](https://npm.runkit.com/waelio-utils) [![Edit waelio-utils](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/waelio/waelio-utils/tree/master/example)
 
 ### The [WaelioUtils](https://github.com/waelio/waelio-utils) exported as a Javascript modules
 
@@ -9,6 +9,11 @@
 <ol>
   <li>Recently Added/Updated</li>
 <table>  
+  <tr>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#reactive">_reactive</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#trickle">_trickle</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#reparsestring">_reParseString</a></div></td>
+  </tr>
   <tr>
     <td><div style="padding:.25rem; width: 150px;"><a href="#config"> MOVED!! _ config</a></div></td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a></div></td>
@@ -47,8 +52,16 @@
       <td><div style="padding:.25rem; width: 150px;"><a href="#repeat"> _repeat</a></div></td>
     </tr>
     <tr>
+      <td><div style="padding:.25rem; width: 150px;"><a href="#chunk">_chunk</a></div></td>
+      <td><div style="padding:.25rem; width: 150px;"><a href="#rotate">_rotate</a></div></td>
+      <td><div style="padding:.25rem; width: 150px;"><a href="#rotatecounterclockwise">_rotateCounterClockwise</a></div></td>
+      <td><div style="padding:.25rem; width: 150px;"><a href="#transpose">_transpose</a></div></td>
+    </tr>
+    <tr>
       <td><div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a></div></td>
       <td><div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a></div></td>
+      <td></td>
+      <td></td>
     </tr>
 </table>
 <hr />
@@ -57,10 +70,46 @@
   <tr>
     <td><div style="padding:.25rem; width: 150px;"><a href="#sniffid"> _sniffId</a></div> </td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#cleanresponse">_cleanResponse</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#deepclone">_deepClone</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#get">_get</a></div></td>
   </tr>
   <tr>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#omit">_omit</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#pick">_pick</a></div></td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#encrypt">_encrypt</a></div></td>
     <td><div style="padding:.25rem; width: 150px;"><a href="#decrypt">_decrypt</a></div></td>
+  </tr>
+</table>
+<hr />
+<li>Type Checkers / Validators</li>
+<table>
+  <tr>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#isarray">_isArray</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#isfunction">_isFunction</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#isnumber">_isNumber</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#isobject">_isObject</a></div></td>
+  </tr>
+  <tr>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#isstring">_isString</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#isvalid">_isValid</a></div></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<hr />
+<li>Math</li>
+<table>
+  <tr>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#fibonacci">_fibonacci</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#fibonaccisequence">_fibonacciSequence</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#factorial">_factorial</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#isprime">_isPrime</a></div></td>
+  </tr>
+  <tr>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#sieveoferatosthenes">_sieveOfEratosthenes</a></div></td>
+    <td><div style="padding:.25rem; width: 150px;"><a href="#sumof">_sumOf</a></div></td>
+    <td></td>
+    <td></td>
   </tr>
 </table>
 <hr />
@@ -648,6 +697,419 @@ const decrypted3 = _decrypt(encrypted2, salt); // {"message":"What ever you want
 
 // Test
 const dblCheck = _equal(payload2, JSON.parse(decrypted2)); // true
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# reactive
+
+### Makes an object reactive by tracking its properties using a watcher.
+
+Example:
+
+```javascript
+import { reactive, watcher } from 'waelio-utils';
+
+const state = reactive({ count: 0 });
+
+watcher(() => {
+  console.log(`Count is: ${state.count}`);
+}); // Automatically logs "Count is: 0"
+
+state.count = 1; // Logs "Count is: 1"
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# trickle
+
+### Trickle reduces an array of numbers in stages.
+
+Example:
+
+```javascript
+import { trickle_first_stage, trickle_second_stage } from 'waelio-utils';
+
+const row = [19, 8, 92, 37, 46, 58, 6, 97, 78];
+const stage1 = trickle_first_stage(row); // [119, 141, 181]
+const stage2 = trickle_second_stage(stage1); // 441
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# fibonacci
+
+### Calculates the nth number in the Fibonacci sequence.
+
+Example:
+
+```javascript
+import { fibonacci } from 'waelio-utils';
+
+const result = fibonacci(6); // 8
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# fibonacciSequence
+
+### Generates an array containing the Fibonacci sequence up to the nth position.
+
+Example:
+
+```javascript
+import { fibonacciSequence } from 'waelio-utils';
+
+const result = fibonacciSequence(6); // [0, 1, 1, 2, 3, 5, 8]
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# factorial
+
+### Calculates the factorial of a given non-negative integer.
+
+Example:
+
+```javascript
+import { factorial } from 'waelio-utils';
+
+const result = factorial(5); // 120
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# isPrime
+
+### Checks if a given number is a prime number.
+
+Example:
+
+```javascript
+import { isPrime } from 'waelio-utils';
+
+const result = isPrime(7); // true
+const result2 = isPrime(10); // false
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# sieveOfEratosthenes
+
+### Uses the Sieve of Eratosthenes algorithm to find all prime numbers up to a given limit.
+
+Example:
+
+```javascript
+import { sieveOfEratosthenes } from 'waelio-utils';
+
+const primes = sieveOfEratosthenes(10); // [2, 3, 5, 7]
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# sumOf
+
+### Returns the sum of an array of numbers.
+
+Example:
+
+```javascript
+import { sumOf } from 'waelio-utils';
+
+const result = sumOf([1, 2, 3, 4, 5]); // 15
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# chunk
+
+### Creates an array of elements split into groups the length of `size`.
+
+Example:
+
+```javascript
+import { chunk } from 'waelio-utils';
+
+chunk(['a', 'b', 'c', 'd'], 2); // => [['a', 'b'], ['c', 'd']]
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# deepClone
+
+### Performs a deep clone of a value, handling objects, arrays, Dates, RegExps, and circular references.
+
+Example:
+
+```javascript
+import { deepClone } from 'waelio-utils';
+
+const obj = { a: 1, b: { c: 2 } };
+const cloned = deepClone(obj);
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# get
+
+### Safely gets nested data depending on if it's an object or array.
+
+Example:
+
+```javascript
+import { get } from 'waelio-utils';
+
+const data = { data: { inner: 'value' } };
+const innerData = get(data);
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# omit
+
+### Creates an object composed of the own and inherited enumerable property paths of an object that are not omitted.
+
+Example:
+
+```javascript
+import { omit } from 'waelio-utils';
+
+const obj = { a: 1, b: 2, c: 3 };
+const omitted = omit(obj, ['a', 'c']); // { b: 2 }
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# pick
+
+### Creates an object composed of the picked object properties.
+
+Example:
+
+```javascript
+import { pick } from 'waelio-utils';
+
+const obj = { a: 1, b: 2, c: 3 };
+const picked = pick(obj, ['a', 'c']); // { a: 1, c: 3 }
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# rotate
+
+### Rotates a 2D array (matrix) 90 degrees clockwise.
+
+Example:
+
+```javascript
+import { rotate } from 'waelio-utils';
+
+const matrix = [[1, 2], [3, 4]];
+const rotated = rotate(matrix); // [[3, 1], [4, 2]]
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# rotateCounterClockwise
+
+### Rotates a 2D array (matrix) 90 degrees counter-clockwise.
+
+Example:
+
+```javascript
+import { rotateCounterClockwise } from 'waelio-utils';
+
+const matrix = [[1, 2], [3, 4]];
+const rotated = rotateCounterClockwise(matrix); // [[2, 4], [1, 3]]
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# transpose
+
+### Transposes a 2D array (matrix), swapping rows and columns.
+
+Example:
+
+```javascript
+import { transpose } from 'waelio-utils';
+
+const matrix = [[1, 2], [3, 4]];
+const transposed = transpose(matrix); // [[1, 3], [2, 4]]
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# isArray
+
+### Checks if value is classified as an Array object.
+
+Example:
+
+```javascript
+import { isArray } from 'waelio-utils';
+
+isArray([1, 2, 3]); // => true
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# isFunction
+
+### Checks if value is classified as a Function object.
+
+Example:
+
+```javascript
+import { isFunction } from 'waelio-utils';
+
+isFunction(() => {}); // => true
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# isNumber
+
+### Checks if value is classified as a Number primitive or object.
+
+Example:
+
+```javascript
+import { isNumber } from 'waelio-utils';
+
+isNumber(3); // => true
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# isObject
+
+### Checks if value is the language type of Object.
+
+Example:
+
+```javascript
+import { isObject } from 'waelio-utils';
+
+isObject({}); // => true
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# isString
+
+### Checks if value is classified as a String primitive or object.
+
+Example:
+
+```javascript
+import { isString } from 'waelio-utils';
+
+isString('abc'); // => true
+```
+
+#
+
+[Back to TOP](#docs)
+
+#
+
+# isValid
+
+### Verifies payload is an Array, Object, String, or Number.
+
+Example:
+
+```javascript
+import { isValid } from 'waelio-utils';
+
+isValid({}); // => true
+isValid(null); // => false
 ```
 
 #

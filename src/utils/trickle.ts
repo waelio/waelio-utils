@@ -36,4 +36,3 @@ export const trickle_second_stage = ((row: [Digit, Digit, Digit]) => {
   const index = 0;
   return sumOf([row[index] as number, row[index + 1] as number, row[index + 2] as number]);
 }) as unknown as ReduceStage2;
-

@@ -1,0 +1,16 @@
+{
+  "name": "waelio-utils-example",
+  "version": "1.0.0",
+  "description": "Example sandbox for waelio-utils",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "waelio-utils": "latest"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}

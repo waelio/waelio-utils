@@ -36,6 +36,10 @@ export * from './sniff_id';
 export * from './transpose';
 export * from './to';
 export * from './to_base_64';
+export * from './re_parse_string';
+export * from './reactive';
+export * from './rotate_array';
+export * from './trickle';
 import * as utils from '.';
 export declare const WaelioUtils: any;
 export declare namespace WaelioTools {
